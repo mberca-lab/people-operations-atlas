@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Workforce Analytics &amp; People Operations: an interactive portfolio demonstration of HR reporting, payroll controls and operational analysis, by Margarita Bermejo Cano.">
+<meta name="description" content="A sample People Analytics &amp; Operations portfolio by Margarita Bermejo Cano: real Irish workforce statistics, synthetic HR examples, interactive findings and inspectable Excel evidence.">
 <title>Workforce Analytics &amp; People Operations · Portfolio</title>
 <script>
   (() => {
@@ -139,6 +139,8 @@ html[data-theme="dark"] .muted,html[data-theme="dark"] .footnote,html[data-theme
 #workforce-preview{max-width:none}#workforce-preview .hero-art{display:grid;grid-template-columns:.65fr 1fr;gap:20px 32px;padding:28px;background:var(--cp-workforce-bg);color:var(--cp-workforce-ink);border-radius:16px}#workforce-preview .canvas-wrap{grid-column:2;grid-row:1/4;max-width:520px}#workforce-preview .eyebrow{color:var(--cp-workforce-dot);margin-bottom:16px}#workforce-preview h3{font:32px/1.15 Georgia,serif;margin-bottom:20px}#workforce-preview .workforce-intro p{font-size:14px;margin:0}#workforce-preview .workforce-total{font:64px/1 Georgia,serif;display:block;margin-bottom:8px}#workforce-preview .art-controls{justify-content:start;margin:0}#workforce-preview button{background:var(--cp-workforce-bg);color:var(--cp-workforce-ink);border-color:var(--cp-workforce-grid);font-size:12px}#workforce-preview button[aria-pressed="true"]{background:var(--cp-workforce-dot);color:var(--cp-workforce-bg);border-color:var(--cp-workforce-dot)}#workforce-preview .art-caption{display:block;font-size:13px;border-color:var(--cp-workforce-grid);color:var(--cp-workforce-ink)}#workforce-preview .art-caption span{display:block;margin-bottom:8px}
 @media(max-width:760px){#workforce-preview .hero-art{display:block;padding:20px}#workforce-preview h3{font-size:28px;margin-bottom:12px}#workforce-preview .workforce-total{font-size:44px}#workforce-preview .canvas-wrap{max-width:400px;margin:12px auto}#workforce-preview .art-controls{gap:8px}#workforce-preview .art-caption{margin-top:16px}.lens-legend{font-size:12px}.lens-svg .lens-small{font-size:14px}}
 @media print{#workforce-preview{display:none}}
+.chart-takeaway{margin:16px 0 0;padding-top:12px;border-top:1px solid var(--cp-border);font-size:13px;line-height:1.6}.chart-takeaway>strong,.lens-finding-label{display:block;font:10px/1.5 Consolas,"Courier New",monospace;letter-spacing:.8px;text-transform:uppercase;color:var(--cp-accent);margin-bottom:8px}.chart-takeaway p,.lens-reading p{margin:0}.lens-finding-label{color:var(--cp-lens-women)}.hero-context .hero-sub strong{color:var(--cp-text)}
+@media(max-width:760px){.hero-copy>.hero-context{grid-row:4}.gender-lens{grid-row:5}.hero-context .hero-lead{font-size:16px;margin:0 0 12px}.hero-context .hero-sub{font-size:13px;line-height:1.6;margin-bottom:12px}}
 </style>
 </head>
 <body>
@@ -150,38 +152,40 @@ html[data-theme="dark"] .muted,html[data-theme="dark"] .footnote,html[data-theme
 </header>
 <section class="hero" id="top" aria-labelledby="hero-title">
   <div class="hero-copy">
-    <div class="eyebrow">An interactive portfolio demonstration</div>
-    <span class="tag lab">Public evidence + fictional operations lab</span>
+    <div class="eyebrow">Sample portfolio · interactive demonstration</div>
+    <span class="tag lab">Real public data + synthetic HR examples</span>
     <h1 id="hero-title">Workforce<em>Analytics.</em></h1>
-    <p class="hero-lead">People Operations Portfolio.<br>HR reporting, payroll controls and operational follow-through.</p>
-    <p class="hero-sub">Seven synthetic HR sources, an inspectable Excel model and a documented payroll investigation. Official Irish workforce statistics provide the wider context.</p>
+    <div class="hero-context" id="portfolio-context">
+      <p class="hero-lead">A sample portfolio in People Analytics &amp; Operations.</p>
+      <p class="hero-sub"><strong>Real data:</strong> official Irish sector statistics.<br><strong>Synthetic data:</strong> employee, pay and HR-control examples. No employer records.</p>
+    </div>
     <div class="hero-actions"><a href="#overview">Read the review brief ↓</a><a href="#evidence">See the skill evidence</a></div>
     <p class="reading-note">Four-section overview · Detailed analysis and workbook available below</p>
   </div>
   <article class="gender-lens" id="pay-lens" aria-labelledby="lens-title">
-    <div class="eyebrow">GENDER PAY LENS / A CONSTRUCTED EXAMPLE</div>
+    <div class="eyebrow">GENDER PAY LENS / SYNTHETIC SAMPLE</div>
     <h2 id="lens-title">Behind the <em>pay gap.</em></h2>
     <div class="lens-controls" role="group" aria-label="Gender pay comparison view"><button type="button" data-lens-mode="overall" aria-pressed="true">Whole workforce</button><button type="button" data-lens-mode="levels" aria-pressed="false">By job level</button><button type="button" id="lens-motion" aria-label="Pause all portfolio motion">Pause</button></div>
     <div class="lens-metrics"><div><span>OVERALL MEAN GAP</span><strong id="lens-mean-gap"></strong></div><div><span>OVERALL MEDIAN GAP</span><strong id="lens-median-gap"></strong></div></div>
     <div class="lens-legend"><span class="lens-women-key">Women · n = 100</span><span class="lens-men-key">Men · n = 100</span></div>
-    <svg class="lens-svg" id="lens-chart" role="img" aria-labelledby="lens-title lens-description"><desc id="lens-description"></desc><g id="lens-grid"></g><g id="lens-dots"></g><g id="lens-markers"></g><g id="lens-labels"></g></svg>
+    <svg class="lens-svg" id="lens-chart" role="img" aria-labelledby="lens-title lens-description" aria-describedby="lens-reading"><desc id="lens-description"></desc><g id="lens-grid"></g><g id="lens-dots"></g><g id="lens-markers"></g><g id="lens-labels"></g></svg>
     <div class="lens-rate-key"><span>Hourly base pay · EUR</span><span>Dashed line: mean · Diamond: median</span></div>
     <p class="small">One dot = one fictional person. Rows show women, then men.</p>
     <span class="lens-state" id="lens-state">01 / WHOLE WORKFORCE</span>
-    <p class="lens-reading" id="lens-reading" aria-live="off"></p>
+    <div class="lens-reading"><strong class="lens-finding-label">Key finding · synthetic example</strong><p id="lens-reading" aria-live="off"></p></div>
     <p class="lens-scope">200 fictional people · Separate illustrative cohort.<br>No employer data. A pay gap is not an equal-pay assessment.</p>
     <details id="lens-method"><summary>Method, exact figures &amp; limitations</summary><div class="lens-method" id="lens-method-copy"></div><div class="table-wrap" id="lens-table"></div><a class="small" href="outputs/pay_lens.json" download>Download the fictional pay model ↓</a></details>
   </article>
   <div class="hero-art">
-    <div class="workforce-intro"><div class="eyebrow">WORKFORCE STRUCTURE</div><h3>From records<br>to a workforce.</h3><p><strong class="workforce-total">360</strong>fictional identities · seven source feeds.<br>The same people, rearranged across three views.</p></div>
-    <div class="canvas-wrap"><canvas id="workforce" role="img" aria-label="360 synthetic employees shown across source-system, department and control views. Each dot represents one employee in the demonstration dataset."></canvas></div>
+    <div class="workforce-intro"><div class="eyebrow">WORKFORCE STRUCTURE</div><h3>From records<br>to a workforce.</h3><p><strong class="workforce-total">360</strong>fictional identities · seven source feeds.<br>The same people in three schematic views.</p></div>
+    <div class="canvas-wrap"><canvas id="workforce" role="img" aria-label="360 synthetic employees shown across source-system, department and control views. Each dot represents one employee in the demonstration dataset." aria-describedby="art-note"></canvas></div>
     <div class="art-controls" role="group" aria-label="Workforce visual mode">
       <button type="button" data-phase="0" aria-pressed="true">01 / Fragmented</button>
       <button type="button" data-phase="1" aria-pressed="false">02 / Connected</button>
       <button type="button" data-phase="2" aria-pressed="false">03 / Controlled</button>
       <button type="button" id="motion" aria-pressed="false">Pause motion</button>
     </div>
-    <div class="art-caption"><span>360 fictional people · 7 source systems</span><span id="art-note">Employee records across seven source systems.</span></div>
+    <div class="art-caption"><span><strong>What this shows · synthetic model</strong></span><span id="art-note">One person can appear in several feeds. These 360 dots show identities, not source record totals.</span></div>
   </div>
   <div class="hero-foot"><span>MARGARITA BERMEJO CANO · PEOPLE ANALYTICS / PEOPLE SCIENCE / AI</span><span>Independent, AI-assisted portfolio · Public portfolio edition · No employer data</span></div>
 </section>
@@ -190,7 +194,7 @@ html[data-theme="dark"] .muted,html[data-theme="dark"] .footnote,html[data-theme
 </nav>
 <main>
 <section class="chapter overview review-section" id="overview" aria-labelledby="overview-title">
-  <div class="chapter-heading reveal"><div class="section-index">01</div><div><span class="tag lab">Synthetic workforce · October 2026</span><h2 id="overview-title">Workforce review.<br><em>Findings and actions.</em></h2><p>A monthly review of reporting integrity, payroll discrepancies and operational follow-up.</p></div></div>
+  <div class="chapter-heading reveal"><div class="section-index">01</div><div><span class="tag lab">Synthetic workforce · October 2026</span><h2 id="overview-title">Workforce review.<br><em>Findings and actions.</em></h2><p>A fictional monthly review demonstrating reporting validation, payroll investigation and HR follow-up.</p></div></div>
   <div class="brief-grid reveal">
     <article class="brief-card"><span class="mono">01 / REPORTING INTEGRITY</span><h3><span data-qa="active_headcount"></span> validated active employees.</h3><p>Duplicates, conflicting identities and critical-field failures are separated from the reporting population. <span data-qa="exceptions"></span> control flags retain their original source references.</p><p><strong>Action:</strong> resolve quarantined records with the source owner and approve exact employee-key mappings.</p></article>
     <article class="brief-card"><span class="mono">02 / PAYROLL CONTROL</span><h3><span data-qa="payroll_amount_exceptions"></span> amount discrepancies.</h3><p><span data-qa="reconciled_employees"></span> of <span data-qa="comparable_payroll_rows"></span> comparable payments reconcile. The absolute discrepancy is <strong id="brief-absolute"></strong>; signed net variance is <span id="brief-net"></span>.</p><p><strong>Action:</strong> verify the approval trail, correct the authorised source and independently re-check the payment.</p></article>
@@ -201,7 +205,7 @@ html[data-theme="dark"] .muted,html[data-theme="dark"] .footnote,html[data-theme
   <details id="workforce-detail" open><summary>Workforce constellation · 360 fictional people across seven source systems</summary><div id="workforce-preview"></div></details>
 </section>
 <section class="chapter" id="context" aria-labelledby="context-title">
-  <div class="chapter-heading reveal"><div class="section-index">01</div><div><span class="tag public">Public evidence · CSO Ireland</span><h2 id="context-title">Irish workforce trends<br><em>and sector context.</em></h2><p>Compare employment, earnings, paid hours and labour costs in finance and insurance with selected Irish sectors. Quarterly trends and year-on-year changes use CSO EHQ03 estimates.</p></div></div>
+  <div class="chapter-heading reveal"><div class="section-index">01</div><div><span class="tag public">Real public data · CSO Ireland</span><h2 id="context-title">Irish workforce trends<br><em>and sector context.</em></h2><p>Compare employment, earnings, paid hours and labour costs in finance and insurance with selected Irish sectors. Quarterly trends and year-on-year changes use CSO EHQ03 estimates.</p></div></div>
   <div class="split reveal">
     <div class="panel">
       <div class="toolbar">
@@ -210,16 +214,16 @@ html[data-theme="dark"] .muted,html[data-theme="dark"] .footnote,html[data-theme
         <div class="segmented" role="group" aria-label="Public chart scale"><button type="button" data-scale="index" aria-pressed="true">2019 = 100</button><button type="button" data-scale="level" aria-pressed="false">Levels</button></div>
       </div>
       <div class="panel-title"><h3 id="public-chart-title">Employment · 2019Q1 = 100</h3><span class="mono small" id="public-period"></span></div>
-      <svg id="public-chart" class="chart" viewBox="0 0 760 340" role="img" aria-label="Indexed quarterly employment in finance and insurance compared with all economic sectors"></svg>
+      <svg id="public-chart" class="chart" viewBox="0 0 760 340" role="img" aria-label="Indexed quarterly employment in finance and insurance compared with all economic sectors" aria-describedby="public-observation"></svg>
       <div class="range"><label class="field" for="public-quarter">Explore through quarter<input type="range" id="public-quarter" min="4" max="29" value="29"></label><output id="quarter-output" for="public-quarter"></output></div>
       <div class="legend"><span>Finance &amp; insurance (K)</span><span class="peer" id="peer-legend">All economic sectors</span></div>
+      <div class="chart-takeaway"><strong>Key finding · real CSO data</strong><p id="public-observation"></p></div>
       <details><summary>Show the exact chart data and units</summary><div id="public-table" class="table-wrap"></div></details>
       <p class="footnote">Official EHQ03 · all employees · unadjusted quarterly estimates. Selected values are complete. Published sector groups may overlap and are analysed separately.</p>
     </div>
     <div>
       <div class="eyebrow">SECTOR GROWTH AND ANNUAL CHANGE</div>
       <p class="big-insight" id="public-insight"></p>
-      <p id="public-observation" class="muted"></p>
       <div class="mini-metrics"><div><span class="small muted">FINANCE / LATEST</span><span class="number" id="finance-value"></span><span class="small muted" id="finance-unit"></span></div><div><span class="small muted">YEAR-ON-YEAR</span><span class="number" id="finance-yoy"></span><span class="small muted">same quarter, prior year</span></div></div>
       <div class="callout"><strong>Interpreting sector estimates.</strong><p>Published means describe sectors and enterprises. Individual pay benchmarking and working-time assessment require employee-level records and a suitable comparison group.</p></div>
       <div class="quality-stamp"><span class="dot-key"></span><strong>3,150 selected public cells.</strong><br><span class="muted">30 quarters · 5 measures · 21 published sector groups. 130,536 cells in the source cube.</span></div>
@@ -239,14 +243,14 @@ html[data-theme="dark"] .muted,html[data-theme="dark"] .footnote,html[data-theme
     <div>
       <span class="tag">Fictional lab / conceptual connection map</span>
       <svg id="systems-diagram" viewBox="0 0 700 660" role="img" aria-label="Seven fictional source systems converge on 360 fixture employee keys. Select a system to see its data grain and control."></svg>
-      <p class="theatre-foot">Equal-sized nodes show source types and row counts. Links represent conceptual system relationships.</p>
+      <p class="theatre-foot">One employee can have many records across feeds. Nodes show record counts, not headcounts; links are conceptual, not evidence of a live system integration.</p>
     </div>
   </div>
 </section>
 <section class="chapter" id="controls" aria-labelledby="controls-title">
   <div class="chapter-heading reveal"><div class="section-index">02</div><div><span class="tag lab">Fictional control lab · as-of 31 October 2026</span><h2 id="controls-title">Data quality<br><em>and reporting population.</em></h2><p>Resolve employee identities, validate critical fields and apply employment-date rules before calculating headcount and payroll totals. Each exclusion retains a source reference.</p></div></div>
   <div class="gates reveal" id="gates"></div>
-  <p class="footnote">Each stage defines a reporting population, from raw HR rows through to comparable payroll records. Unresolved payments remain outside comparable totals until verified.</p>
+  <div class="chart-takeaway"><strong>Key finding · synthetic records</strong><p><span data-qa="fixture_people"></span> identities yield <span data-qa="active_headcount"></span> validated active employees—not <span data-qa="hr_raw_rows"></span> staff. Duplicates, invalid records and employment dates change the reporting population.</p></div>
   <div class="split equal reveal">
     <div>
       <p class="big-insight">Record validation<br><em>and exclusions.</em></p>
@@ -262,7 +266,8 @@ html[data-theme="dark"] .muted,html[data-theme="dark"] .footnote,html[data-theme
   <div class="split reveal">
     <div class="panel">
       <div class="panel-title"><h3>The discrepancy bridge</h3><span class="small mono">EUR · actual minus expected</span></div>
-      <svg id="pay-chart" class="chart" viewBox="0 0 760 330" role="img" aria-label="A signed payroll discrepancy bridge. Select a difference to inspect its source evidence."></svg>
+      <svg id="pay-chart" class="chart" viewBox="0 0 760 330" role="img" aria-label="A signed payroll discrepancy bridge. Select a difference to inspect its source evidence." aria-describedby="pay-finding"></svg>
+      <div class="chart-takeaway"><strong>Key finding · synthetic payroll</strong><p id="pay-finding"></p></div>
       <div class="bridge-summary"><div>Approved expectation<strong id="pay-expected"></strong></div><div>Recorded actual<strong id="pay-actual"></strong></div></div>
       <p class="footnote">Three employee-level variances sum to the net difference. Expected and actual payroll totals cover the same 340-record comparable population.</p>
       <details><summary>Show all three discrepancies</summary><div id="pay-table" class="table-wrap"></div></details>
@@ -272,7 +277,7 @@ html[data-theme="dark"] .muted,html[data-theme="dark"] .footnote,html[data-theme
   <div class="callout"><strong>Approved compensation changes.</strong> EMP0044's approved 8% salary increase and EMP0055's approved EUR 420 variable payment both reconcile. The calculation covers full-month gross pay; tax, net pay, pensions and proration are outside its scope.</div>
 </section>
 <section class="chapter review-section" id="review" aria-labelledby="review-title">
-  <div class="chapter-heading reveal"><div class="section-index">02</div><div><span class="tag lab">Evidence folio · synthetic case SIM-CLOSE-001</span><h2 id="review-title">Payroll investigation.<br><em>Source to sign-off.</em></h2><p>One payment falls below its approved expectation. Follow the evidence, inspect the Excel calculation and verify the separate correction.</p></div></div>
+  <div class="chapter-heading reveal"><div class="section-index">02</div><div><span class="tag lab">Evidence folio · synthetic case SIM-CLOSE-001</span><h2 id="review-title">Payroll investigation.<br><em>Source to sign-off.</em></h2><p>Follow a fictional underpayment from the approval record to the Excel formula, then inspect a separately simulated correction.</p></div></div>
   <div class="pay-stage reveal" id="payroll-visual" aria-label="Animated baseline payroll discrepancy review">
     <div class="pay-stage-head"><div><span class="eyebrow">BASELINE / ACTUAL MINUS APPROVED</span><h3>Trace the three discrepancies.</h3></div><button type="button" id="pay-motion" aria-pressed="false">Play review</button></div>
     <div id="payroll-visual-content"></div>
@@ -282,14 +287,14 @@ html[data-theme="dark"] .muted,html[data-theme="dark"] .footnote,html[data-theme
   <div class="review-steps folio-steps reveal" role="group" aria-label="Payroll review steps"><button type="button" data-review-step="0" aria-controls="folio-source review-step-detail" aria-pressed="true">1. Check the approval</button><button type="button" data-review-step="1" aria-controls="folio-calculation review-step-detail" aria-pressed="false">2. Inspect the formula</button><button type="button" data-review-step="2" aria-controls="folio-source review-step-detail" aria-pressed="false">3. Apply the correction</button><button type="button" data-review-step="3" aria-controls="folio-note review-step-detail" aria-pressed="false">4. Verify the result</button></div>
   <div class="folio reveal" aria-label="Annotated payroll evidence folio">
     <article class="folio-page is-selected" id="folio-source"><div class="eyebrow">01 / SOURCE EXTRACTS</div><h3>EMP0018 · October payroll</h3><dl class="folio-record"><div><dt>Payment reference</dt><dd>PAY-0018</dd></div><div><dt>Salary approval</dt><dd id="folio-approval"></dd></div><div><dt>Effective date</dt><dd id="folio-effective"></dd></div><div id="folio-original-row"><dt>Original gross</dt><dd id="folio-original"></dd></div><div id="folio-corrected-row"><dt>Corrected gross</dt><dd id="folio-corrected"></dd></div></dl><div class="segmented" role="group" aria-label="Correction example version"><button type="button" data-closure-version="original" aria-pressed="true">Original extract</button><button type="button" data-closure-version="corrected" aria-pressed="false">Corrected scenario</button></div><p class="muted">The original export retains the previous base salary. Both extracts are preserved.</p></article>
-    <article class="folio-page" id="folio-calculation"><div class="eyebrow">02 / INDEPENDENT EXPECTATION</div><h3>Approved compensation</h3><div class="folio-calculation" id="folio-arithmetic"></div><svg id="closure-chart" class="chart" viewBox="0 0 660 190" role="img" aria-label="Approved gross compared with the selected synthetic payroll extract"></svg><details id="folio-formulas"><summary>Inspect the exact Excel formulas</summary><pre class="formula-note" id="folio-formula-text"></pre><p class="footnote">Open the workbook's Excel Walkthrough sheet. Save a copy before changing clean inputs or refreshing the native PivotTables.</p></details></article>
+    <article class="folio-page" id="folio-calculation"><div class="eyebrow">02 / INDEPENDENT EXPECTATION</div><h3>Approved compensation</h3><div class="folio-calculation" id="folio-arithmetic"></div><svg id="closure-chart" class="chart" viewBox="0 0 660 190" role="img" aria-label="Approved gross compared with the selected synthetic payroll extract" aria-describedby="closure-finding"></svg><div class="chart-takeaway"><strong>Key finding · simulated correction</strong><p id="closure-finding"></p></div><details id="folio-formulas"><summary>Inspect the exact Excel formulas</summary><pre class="formula-note" id="folio-formula-text"></pre><p class="footnote">Open the workbook's Excel Walkthrough sheet. Save a copy before changing clean inputs or refreshing the native PivotTables.</p></details></article>
     <article class="folio-page" id="folio-note"><div class="eyebrow">03 / REVIEW ANNOTATION</div><div id="review-step-detail" class="review-copy" aria-live="polite"></div><div class="case-metrics" aria-live="polite"><div><span class="metric-label">Employee variance</span><span class="number" id="closure-delta"></span></div><div><span class="metric-label">Control result</span><strong id="closure-result"></strong></div></div><p id="closure-population" class="small muted"></p><p class="review-scope">Separate synthetic scenario. The original 340-record comparison and 58-flag register remain unchanged. Approvals, review roles and sign-offs are simulated.</p></article>
   </div>
   <div class="folio-foot"><a href="outputs/People_Operations_Control_Workbook.xlsx" download>Open the working Excel model ↓</a><a href="outputs/tables/review_corrected_payroll.csv" download>Corrected synthetic extract ↓</a><a href="#payroll">Inspect all payroll discrepancies</a></div>
   <details class="reveal"><summary>Inspect the complete correction and review trail</summary><div class="table-wrap" id="closure-trail"></div><p class="hash" id="closure-hashes"></p></details>
 </section>
 <section class="chapter review-section" id="people" aria-labelledby="people-title">
-  <div class="chapter-heading reveal"><div class="section-index">03</div><div><span class="tag lab">Synthetic operational reporting</span><h2 id="people-title">People Operations.<br><em>Measures, owners and follow-up.</em></h2><p>Three reporting controls connect reliable calculations to the next responsible action.</p></div></div>
+  <div class="chapter-heading reveal"><div class="section-index">03</div><div><span class="tag lab">Synthetic operational reporting</span><h2 id="people-title">People Operations.<br><em>Measures, owners and follow-up.</em></h2><p>Sample absence, working-time and renewal reports demonstrate calculation, coverage checks and accountable follow-up.</p></div></div>
   <div class="operations-ledger reveal">
     <article class="ledger-item"><span class="eyebrow">ABSENCE / JULY–OCTOBER</span><span class="number" id="people-absence"></span><h3>Validate scheduled exposure.</h3><p>Unique lost hours divided by employment-aware weekday/FTE exposure. Overlapping dates are counted once.</p><p><strong>Follow-up:</strong> People Operations reconciles episode and worked-time records; roster and holiday assumptions need owner validation.</p><a href="#absence">Inspect the absence reporting ↗</a></article>
     <article class="ledger-item"><span class="eyebrow">WORKING TIME / 17-WEEK SCREEN</span><span class="number"><span data-qa="time_above_screen"></span> <small>above 48h · <span data-qa="time_incomplete"></span> incomplete</small></span><h3>Review coverage before conclusions.</h3><p>A missing reporting week retains an unknown result. The separate calendar-period example illustrates leave exclusions.</p><p><strong>Follow-up:</strong> the source owner resolves coverage gaps; qualified HR/legal review determines statutory applicability.</p><a href="#time">Inspect the working-time review ↗</a></article>
@@ -309,15 +314,15 @@ html[data-theme="dark"] .muted,html[data-theme="dark"] .footnote,html[data-theme
 <section class="chapter" id="absence" aria-labelledby="absence-title">
   <div class="chapter-heading reveal"><div class="section-index">05</div><div><span class="tag lab">Fictional absence · July–October 2026</span><h2 id="absence-title">Absence reporting<br><em>and scheduled exposure.</em></h2><p>Calculate department-level absence rates from unique lost hours and FTE-weighted scheduled hours. Validate episode dates, remove overlaps and reconcile absence records against worked time.</p></div></div>
   <div class="split reveal">
-    <div class="panel"><div class="panel-title"><h3>Lost / scheduled hours</h3><span class="small mono">FTE-weighted · %</span></div><div class="table-wrap" id="absence-heatmap"></div><p class="footnote">Select a department to inspect monthly lost and scheduled hours. Colour intensity reflects the absence rate.</p></div>
+    <div class="panel"><div class="panel-title"><h3>Lost / scheduled hours</h3><span class="small mono">FTE-weighted · %</span></div><div class="table-wrap" id="absence-heatmap"></div><div class="chart-takeaway"><strong>Key finding · synthetic absence</strong><p id="absence-heat-finding"></p></div><p class="footnote">Select a department to inspect monthly lost and scheduled hours. Colour intensity reflects the absence rate.</p></div>
     <div><div class="eyebrow">EPISODE RECONCILIATION</div><p class="big-insight"><span data-qa="absence_naive_valid_days"></span> recorded episode-days.<br><em><span data-qa="absence_unique_days"></span> unique lost days.</em></p><p class="muted">One overlapping scheduled day and four exact repeated episodes are removed. Invalid date ranges and unresolved employee keys remain in the audit trail.</p><div class="callout"><strong id="absence-rate"></strong><p>Overall lost-hour rate on employment-aware weekday exposure. Assumes 7.5 hours/day × FTE; excludes public-holiday and custom-roster adjustments.</p></div><p class="small muted" id="absence-conflict-note"></p></div>
   </div>
-  <div class="panel reveal" style="margin-top:28px"><div class="panel-title"><h3 id="absence-detail-title">Operations · monthly exposure</h3><label class="field">Department<select id="absence-department"></select></label></div><div class="split equal"><svg id="absence-bars" class="chart" viewBox="0 0 660 260" role="img" aria-label="Monthly fictional absence rate for the selected department"></svg><div class="table-wrap" id="absence-detail-table"></div></div></div>
+  <div class="panel reveal" style="margin-top:28px"><div class="panel-title"><h3 id="absence-detail-title">Operations · monthly exposure</h3><label class="field">Department<select id="absence-department"></select></label></div><div class="split equal"><div><svg id="absence-bars" class="chart" viewBox="0 0 660 260" role="img" aria-label="Monthly fictional absence rate for the selected department" aria-describedby="absence-finding"></svg><div class="chart-takeaway"><strong>Key finding · selected synthetic department</strong><p id="absence-finding"></p></div></div><div class="table-wrap" id="absence-detail-table"></div></div></div>
 </section>
 <section class="chapter" id="time" aria-labelledby="time-title">
   <div class="chapter-heading reveal"><div class="section-index">06</div><div><span class="tag lab">Fictional working-time screen</span><h2 id="time-title">Working-time review<br><em>and data completeness.</em></h2><p>Review mean weekly hours, coverage gaps, logged rest intervals and break durations. Findings are referred to the responsible HR or legal specialist.</p></div></div>
   <div class="split reveal">
-    <div class="panel"><div class="panel-title"><h3>Observed mean hours / week</h3><span class="small mono">17-week operational window</span></div><svg id="time-chart" class="chart" viewBox="0 0 760 360" role="img" aria-label="Employee mean weekly hours, with incomplete coverage shown in a separate review lane."></svg><div class="range"><label class="field" for="time-threshold">Scenario: screening threshold (hours/week)<input type="range" id="time-threshold" min="40" max="60" step="1" value="48"></label><output id="time-threshold-output">48h</output></div><div class="legend"><span id="time-count"></span><span class="peer" id="time-incomplete"></span></div><label class="field" style="margin-top:24px">Inspect a fictional record<select id="time-employee"></select></label><div id="time-record" class="callout" aria-live="polite"></div><details><summary>Show the complete time-screen data</summary><div class="table-wrap" id="time-table"></div></details></div>
+    <div class="panel"><div class="panel-title"><h3>Observed mean hours / week</h3><span class="small mono">17-week operational window</span></div><svg id="time-chart" class="chart" viewBox="0 0 760 360" role="img" aria-label="Employee mean weekly hours, with incomplete coverage shown in a separate review lane." aria-describedby="time-finding"></svg><div class="range"><label class="field" for="time-threshold">Scenario: screening threshold (hours/week)<input type="range" id="time-threshold" min="40" max="60" step="1" value="48"></label><output id="time-threshold-output">48h</output></div><div class="legend"><span id="time-count"></span><span class="peer" id="time-incomplete"></span></div><div class="chart-takeaway"><strong>Key finding · synthetic working time</strong><p id="time-finding"></p></div><label class="field" style="margin-top:24px">Inspect a fictional record<select id="time-employee"></select></label><div id="time-record" class="callout" aria-live="polite"></div><details><summary>Show the complete time-screen data</summary><div class="table-wrap" id="time-table"></div></details></div>
     <div>
       <div class="eyebrow">PEAK AND AVERAGE HOURS</div><p class="big-insight">Peak: 60 hours.<br><em id="spike-average"></em> weekly average.</p><p class="muted">EMP0150's 60-hour peak week accompanies an average below the 48-hour screen. EMP0103 has 16 complete weeks and is classified as incomplete.</p>
       <div class="callout"><strong>Reference-period scope.</strong><p>The WRC general rule is a 48-hour average over four calendar months, with specified exceptions. This operational review covers 17 weeks, July 6–October 30. Statutory assessment requires the applicable reference period and leave adjustments.</p></div>
@@ -336,7 +341,7 @@ html[data-theme="dark"] .muted,html[data-theme="dark"] .footnote,html[data-theme
 <section class="chapter" id="operations" aria-labelledby="operations-title">
   <div class="chapter-heading reveal"><div class="section-index">07</div><div><span class="tag lab">Fictional governance trackers</span><h2 id="operations-title">Renewal tracking<br><em>and case governance.</em></h2><p>Monitor visa expiry, renewal evidence, PIP reviews and ER administration through dated actions and named owners. The trackers use fictional case metadata.</p></div></div>
   <div class="split equal reveal">
-    <div class="panel"><div class="panel-title"><h3>Permission review horizon</h3><span class="small mono">as-of 31 Oct 2026</span></div><div class="segmented" role="group" aria-label="Visa review service horizon"><button type="button" data-horizon="30" aria-pressed="false">30 days</button><button type="button" data-horizon="90" aria-pressed="true">90 days</button><button type="button" data-horizon="180" aria-pressed="false">180 days</button></div><div class="mini-metrics"><div><span class="small muted">UNEXPIRED IN WINDOW</span><span class="number" id="visa-window-count"></span></div><div><span class="small muted">EXPIRED / VERIFY</span><span class="number" data-qa="visa_expired_records"></span></div></div><div class="timeline"><svg id="visa-chart" class="chart" viewBox="0 0 650 460" role="img" aria-label="Fictional visa records within the chosen service horizon, with expired records shown separately"></svg></div><details><summary>Show the review dates and evidence</summary><div class="table-wrap" id="visa-table"></div></details><p class="footnote">Review windows of 30/90/180 days are operational service levels. Continuing permission requires authorised HR or provider verification. Personal identity and eligibility data are excluded.</p></div>
+    <div class="panel"><div class="panel-title"><h3>Permission review horizon</h3><span class="small mono">as-of 31 Oct 2026</span></div><div class="segmented" role="group" aria-label="Visa review service horizon"><button type="button" data-horizon="30" aria-pressed="false">30 days</button><button type="button" data-horizon="90" aria-pressed="true">90 days</button><button type="button" data-horizon="180" aria-pressed="false">180 days</button></div><div class="mini-metrics"><div><span class="small muted">UNEXPIRED IN WINDOW</span><span class="number" id="visa-window-count"></span></div><div><span class="small muted">EXPIRED / VERIFY</span><span class="number" data-qa="visa_expired_records"></span></div></div><div class="timeline"><svg id="visa-chart" class="chart" viewBox="0 0 650 460" role="img" aria-label="Fictional visa records within the chosen service horizon, with expired records shown separately" aria-describedby="visa-finding"></svg></div><div class="chart-takeaway"><strong>Key finding · synthetic renewal tracker</strong><p id="visa-finding"></p></div><details><summary>Show the review dates and evidence</summary><div class="table-wrap" id="visa-table"></div></details><p class="footnote">30/90/180 days are analyst-set service levels, not legal deadlines. Personal identity and eligibility data are excluded.</p></div>
     <div class="panel"><div class="panel-title"><h3>PIP &amp; ER governance</h3><span class="small mono">metadata only</span></div><div class="mini-metrics"><div><span class="small muted">FICTIONAL CASES</span><span class="number" id="case-total"></span></div><div><span class="small muted">FOLLOW-UP FLAGS</span><span class="number" data-qa="case_followups"></span></div></div><div id="case-overview"></div><div class="callout"><strong>Restricted HR follow-up.</strong><p>Escalate missing ownership, overdue reviews and incomplete documentation to a qualified HR specialist. Substantive performance and employee-relations decisions remain with that specialist.</p></div><details><summary>Show the complete case tracker</summary><div class="table-wrap" id="case-table"></div></details><p class="footnote">Each flagged case is counted once. A case may meet several follow-up conditions.</p></div>
   </div>
 </section>
@@ -473,9 +478,10 @@ function workforce(){
     positions.forEach((p,i)=>{const t=target(i);if(advance){p.x+=(t.x-p.x)*.06;p.y+=(t.y-p.y)*.06}else{p.x=t.x;p.y=t.y}const pulse=!paused&&phase===0?Math.sin(frame*.015+i)*1.3:0;ctx.beginPath();ctx.arc(p.x+pulse,p.y,width<400?4.2:3.5,0,Math.PI*2);ctx.fillStyle=color(DATA.dots[i].flag&&phase===2?"--cp-workforce-alert":"--cp-workforce-dot");ctx.fill()});
     if(advance)frame++;
   }
-  function tick(){if(autoCycle&&frame>0&&frame%300===0){phase=(phase+1)%3;setPressed("[data-phase]",phase,"phase");$("art-note").textContent=["Employee records across seven source systems.","Employee identities grouped by department.","Red dots identify baseline review flags."][phase]}draw();if(!paused&&visible)animation=requestAnimationFrame(tick)}
+  const readings=["One person can appear in several feeds. These 360 dots show identities, not source record totals.","Grouping illustrates an employee-key join; cluster sizes do not show actual department headcounts.",`${DATA.dots.filter(row=>row.flag).length} identities have baseline control flags; several flags may refer to the same person.`];
+  function tick(){if(autoCycle&&frame>0&&frame%300===0){phase=(phase+1)%3;setPressed("[data-phase]",phase,"phase");$("art-note").textContent=readings[phase]}draw();if(!paused&&visible)animation=requestAnimationFrame(tick)}
   function restart(){cancelAnimationFrame(animation);if(paused||!visible)draw(false);else tick()}
-  document.querySelectorAll("[data-phase]").forEach(b=>b.addEventListener("click",()=>{autoCycle=false;phase=Number(b.dataset.phase);setPressed("[data-phase]",phase,"phase");$("art-note").textContent=["Employee records across seven source systems.","Employee identities grouped by department.","Red dots identify baseline review flags."][phase];restart()}));
+  document.querySelectorAll("[data-phase]").forEach(b=>b.addEventListener("click",()=>{autoCycle=false;phase=Number(b.dataset.phase);setPressed("[data-phase]",phase,"phase");$("art-note").textContent=readings[phase];restart()}));
   $("motion").textContent=paused?"Resume motion":"Pause motion";$("motion").setAttribute("aria-pressed",String(paused));
   $("motion").addEventListener("click",()=>{paused=!paused;document.body.classList.toggle("motion-paused",paused);paused?$("systems-diagram").pauseAnimations():$("systems-diagram").unpauseAnimations();$("motion").textContent=paused?"Resume motion":"Pause motion";$("motion").setAttribute("aria-pressed",String(paused));restart()});
   new ResizeObserver(resize).observe(canvas);
@@ -534,8 +540,8 @@ function genderPayLens(){
     $("lens-state").textContent=mode==="overall"?"01 / WHOLE WORKFORCE":"02 / SAME PEOPLE, BY JOB LEVEL";
     $("lens-reading").setAttribute("aria-live",manual?"polite":"off");
     $("lens-reading").textContent=mode==="overall"?
-      "An overall pay gap can reflect representation in higher-paid roles. Switch to job levels to explore the composition of this fictional workforce.":
-      "Here, the mean and median pay are deliberately equal within each level. Different representation across those levels produces the overall gap, which remains unchanged.";
+      `Women's mean hourly pay is ${percent(model.overall.mean_gap_pct)} lower overall. In this constructed sample, different representation across job levels drives the gap. Select By job level: mean pay is equal within each level.`:
+      `Mean and median pay are equal within every level by construction. More men occupy the higher-paid levels, producing the overall ${percent(model.overall.mean_gap_pct)} mean gap. Rearranging the same people does not change it.`;
     $("lens-description").textContent=`200 fictional people. Overall mean gap ${percent(model.overall.mean_gap_pct)}; median gap ${percent(model.overall.median_gap_pct)}. ${mode==="overall"?"Two hourly-pay distributions show 100 women and 100 men.":"The same people are separated into four job levels, each with equal mean and median pay by construction."} Dashed markers show means; diamonds show medians. Exact values and counts are in the method table.`;
     let grid="",labels="",markers="";
     for(const amount of [20,30,40,50,60,70]){grid+=`<line class="lens-grid" x1="${x(amount)}" y1="12" x2="${x(amount)}" y2="${h-32}"/>`;labels+=svgText(x(amount),h-10,String(amount),'text-anchor="middle"')}
@@ -599,7 +605,7 @@ function renderPublic(){
   $("public-period").textContent=a.at(-1).quarter;$("quarter-output").textContent=a.at(-1).quarter;$("peer-legend").textContent=peerName;
   const yoy=(a.at(-1).value/a.at(-5).value-1)*100,peerYoy=(b.at(-1).value/b.at(-5).value-1)*100,change=(a.at(-1).value/a[0].value-1)*100;
   $("public-insight").innerHTML=`Finance &amp; insurance:<br><em>${esc(signed(change))}%</em> since 2019Q1.`;
-  $("public-observation").textContent=`${meta.metric} changed ${signed(yoy)}% year-on-year in ${a.at(-1).quarter}, compared with ${signed(peerYoy)}% for ${peerName.toLowerCase()}. The comparison describes published sector-level changes.`;
+  $("public-observation").textContent=`${meta.metric} changed ${signed(yoy)}% year-on-year in ${a.at(-1).quarter}, compared with ${signed(peerYoy)}% for ${peerName.toLowerCase()}. These are real sector estimates, not results from the fictional workforce.`;
   $("finance-value").textContent=fmt(a.at(-1).value,meta.unit==="Number"?0:2);$("finance-unit").textContent=meta.unit==="Number"?"people · published sector employment":meta.unit;$("finance-yoy").textContent=signed(yoy)+"%";
   const rows=a.map((r,i)=>({quarter:r.quarter,finance:r.value,peer:b[i].value,index:av[i],peerIndex:bv[i]}));
   $("public-table").innerHTML=table([{label:"Quarter",key:"quarter"},{label:`Finance (${meta.unit})`,key:"finance",numeric:true,format:v=>fmt(v,2)},{label:`Peer (${meta.unit})`,key:"peer",numeric:true,format:v=>fmt(v,2)},{label:"Displayed finance",key:"index",numeric:true,format:v=>fmt(v,2)},{label:"Displayed peer",key:"peerIndex",numeric:true,format:v=>fmt(v,2)}],rows,"Exact source values; displayed values follow the selected scale.");
@@ -665,6 +671,7 @@ function payEvidence(id,automatic=false){
 }
 function renderPay(){
   const qa=DATA.qa;$("pay-net").textContent=money(qa.signed_payroll_delta_eur);$("pay-absolute").textContent=money(qa.absolute_payroll_delta_eur);$("pay-expected").textContent=money(qa.expected_comparable_eur);$("pay-actual").textContent=money(qa.actual_comparable_eur);
+  $("pay-finding").textContent=`${qa.payroll_amount_exceptions} payments differ from approved expectations. Their ${money(qa.absolute_payroll_delta_eur)} combined discrepancy exceeds the ${money(qa.signed_payroll_delta_eur)} net because overpayments and underpayments offset.`;
   const y=v=>275-v/2600*214;let sum=0,svg="";
   for(const v of [0,500,1000,1500,2000,2500])svg+=axis(72,y(v),730,y(v))+svgText(56,y(v)+4,fmt(v),'text-anchor="end"');
   differences.forEach((r,i)=>{const before=sum;sum+=r.delta_eur;const top=Math.max(before,sum),low=Math.min(before,sum),x=104+i*166;
@@ -727,6 +734,8 @@ function renderAbsence(){
   $("absence-heatmap").querySelectorAll("[data-absence-dept]").forEach(b=>b.addEventListener("click",()=>{$("absence-department").value=b.dataset.absenceDept;absenceDetail()}));
   DATA.departments.forEach(d=>$("absence-department").add(new Option(d,d)));$("absence-department").addEventListener("change",absenceDetail);
   $("absence-rate").textContent=fmt(DATA.qa.absence_rate_pct,3)+"% overall lost-hour rate";
+  const peak=DATA.absence.reduce((highest,row)=>row.rate_pct>highest.rate_pct?row:highest,DATA.absence[0]);
+  $("absence-heat-finding").textContent=`Highest department-month rate in the sample: ${peak.department}, ${peak.month}, at ${fmt(peak.rate_pct,2)}%. Compare rates, not lost-day totals: departments have different scheduled exposure.`;
   const clashes=DATA.exceptions.filter(e=>e.area==="Absence"&&/worked|time/i.test(e.code+" "+e.detail));$("absence-conflict-note").textContent=`${clashes.length} absence/worked-time collision flags require source-record reconciliation.`;
   absenceDetail();
 }
@@ -736,6 +745,8 @@ function absenceDetail(){
   for(let i=0;i<=3;i++){const v=hi*i/3;svg+=axis(58,y(v),624,y(v))+svgText(48,y(v)+4,fmt(v,1)+"%",'text-anchor="end"')}
   rows.forEach((r,i)=>{const x=98+i*136;svg+=`<rect class="chart-main" x="${x}" y="${y(r.rate_pct)}" width="66" height="${214-y(r.rate_pct)}" rx="3"/>${svgText(x+33,y(r.rate_pct)-10,fmt(r.rate_pct,2)+"%",'text-anchor="middle" class="label-strong"')}${svgText(x+33,245,r.month,'text-anchor="middle"')}`});
   $("absence-bars").innerHTML=svg;$("absence-bars").setAttribute("aria-label",`Monthly lost-hour rates for ${dept}, July through October 2026`);$("absence-detail-title").textContent=dept+" · monthly exposure";
+  const lost=rows.reduce((sum,row)=>sum+row.lost_hours,0),scheduled=rows.reduce((sum,row)=>sum+row.scheduled_hours,0);
+  $("absence-finding").textContent=`Across July–October, ${dept}'s lost-hour rate is ${scheduled?fmt(lost/scheduled*100,2)+"%":"unknown"}. The denominator is scheduled hours—not headcount; overlapping absence dates count once.`;
   $("absence-detail-table").innerHTML=table([{label:"Month",key:"month"},{label:"Lost hours",key:"lost_hours",numeric:true,format:v=>fmt(v,1)},{label:"Scheduled hours",key:"scheduled_hours",numeric:true,format:v=>fmt(v,1)},{label:"Rate %",key:"rate_pct",numeric:true,format:v=>fmt(v,3)}],rows,"Employment-aware weekday exposure; rate = lost / scheduled hours × 100.");
 }
 
@@ -751,6 +762,7 @@ function renderTime(){
   svg+=svgText(92,344,"Operational review window: 17 weeks. Incomplete records require follow-up.");
   $("time-chart").innerHTML=svg;$("time-chart").setAttribute("aria-label",`${count} complete records above the ${threshold}-hour scenario screen; ${incomplete.length} incomplete record in a separate unknown lane.`);
   $("time-threshold-output").textContent=threshold+"h";$("time-count").textContent=count+" complete records above "+threshold+"h";$("time-incomplete").textContent=incomplete.length+" incomplete · review separately";
+  $("time-finding").textContent=`${count} complete records exceed the ${threshold}h mean-weekly screen. ${incomplete.length} record${incomplete.length===1?" has":"s have"} incomplete coverage. These are review flags, not legal compliance findings.`;
   timeRecord();
 }
 function timeRecord(){
@@ -765,6 +777,7 @@ let horizon=90;
 function renderVisa(){
   const rows=DATA.visa.filter(r=>r.days_remaining<=horizon).sort((a,b)=>a.days_remaining-b.days_remaining),height=80+rows.length*27,x=d=>240+(d+20)/(horizon+20)*354;
   $("visa-window-count").textContent=rows.filter(r=>r.days_remaining>=0).length;
+  $("visa-finding").textContent=`Within ${horizon} days: ${rows.filter(r=>r.days_remaining>=0).length} unexpired records, plus ${rows.filter(r=>r.days_remaining<0).length} already expired. The chart prioritises administrative verification; it does not establish continuing permission.`;
   let svg=`<rect class="chart-fill" x="${x(0)}" y="44" width="${x(Math.min(30,horizon))-x(0)}" height="${height-62}"/>`;
   for(const day of [...new Set([-15,0,30,horizon])])svg+=axis(x(day),38,x(day),height-18)+svgText(x(day),23,String(day)+"d",'text-anchor="middle"');
   rows.forEach((r,i)=>{const y=64+i*27;svg+=svgText(8,y+4,r.case_id+" / "+r.employee_id)+`<line class="axis" x1="${x(-20)}" y1="${y}" x2="${x(r.days_remaining)}" y2="${y}"/><circle class="${r.days_remaining<0?"negative":r.status==="Submitted"?"chart-main":"node"}" cx="${x(r.days_remaining)}" cy="${y}" r="5"/><title>${esc(r.case_id+" · "+r.days_remaining+" days · "+r.status+" · evidence "+r.evidence)}</title>`});
@@ -807,6 +820,9 @@ function renderClosure(){
   const width=v=>v/closedCase.expected_gross_eur*400;
   $("closure-chart").innerHTML=svgText(24,36,"Approved expectation")+`<rect class="chart-fill" x="24" y="48" width="400" height="24" rx="3"/>`+svgText(634,65,money(closedCase.expected_gross_eur),'text-anchor="end" class="label-strong"')+svgText(24,112,corrected?"Corrected scenario":"Original export")+`<rect class="chart-main" x="24" y="124" width="${width(gross)}" height="24" rx="3"/>`+svgText(634,141,money(gross),'text-anchor="end" class="label-strong"');
   $("closure-chart").setAttribute("aria-label",`${corrected?"Corrected":"Original"} gross ${money(gross)}, approved expectation ${money(closedCase.expected_gross_eur)}, variance ${money(delta)}.`);
+  $("closure-finding").textContent=corrected?
+    `The separate correction eliminates this employee's ${money(Math.abs(closedCase.original_delta_eur))} shortfall. ${qa.payroll_amount_exceptions} other amount discrepancies remain; the original baseline is unchanged.`:
+    `The original export is ${money(Math.abs(delta))} below approved gross. This is one stale-salary example, not the net variance for the whole payroll.`;
   $("folio-original-row").classList.toggle("selected-record",!corrected);
   $("folio-corrected-row").classList.toggle("selected-record",corrected);
 }

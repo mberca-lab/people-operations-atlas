@@ -1,10 +1,12 @@
 # Workforce Analytics & People Operations
 
-An independent, AI-assisted People Data & Operations portfolio project by Margarita Bermejo Cano. **Official public data and clearly labelled fictional demonstrations; not affiliated with Waystone.**
+An independent, AI-assisted **sample People Analytics & Operations portfolio** by Margarita Bermejo Cano. **Real data:** official Irish sector statistics. **Synthetic data:** fictional employee, pay and HR-control examples. No employer records or business-impact claims; not affiliated with Waystone.
 
 **[Explore the live portfolio](https://mberca.github.io/people-operations-atlas/)** · [Download the complete portfolio package](https://github.com/mberca/people-operations-atlas/releases/latest/download/Workforce_Analytics_Portfolio.zip)
 
 The atlas presents Irish workforce trends, multi-source data validation, payroll reconciliation, absence reporting, working-time review and case governance. An interactive source-system map and a 29-requirement evidence map connect the analysis to the People Data & Operations role.
+
+Recruiter-facing guidance identifies the data layers before the opening chart. Short, labelled takeaways accompany the pay distributions, reporting populations, payroll bridge, correction comparison, public trends, absence reports, working-time screen and renewal timeline. Takeaways follow the selected view, quarter, department, threshold or horizon; schematic system layouts are not presented as measured department headcounts.
 
 The opening **Gender Pay Lens** follows the same 200 fictional people from whole-workforce hourly-pay distributions into four job levels. Equally filled teal/ivory marks, direct group labels, visible mean hourly rates, mean/median markers and keyboard controls make the comparison inspectable without person icons. A one-time guided transition respects global pause, reduced motion, interaction and off-screen visibility. The overall gap remains fixed when the layout changes.
 
