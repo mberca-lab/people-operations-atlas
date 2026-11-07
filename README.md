@@ -10,6 +10,8 @@ The main review follows four sections: **review brief → payroll investigation 
 
 The complete public-data charts, source-system map, reporting populations, exception register, absence/time/renewal trackers and operational scenarios remain in **Detailed analysis and methods**, collapsed initially. Existing topic links open the relevant detail automatically, including links shared directly to a section. All 29 requirements are available in the expandable evidence map; important synthetic-data and professional-experience boundaries remain visible in the main review.
 
+The main payroll review includes the baseline discrepancy bridge with animated bar entry, a tracing path and a guided three-case review. Selecting a case pauses the automatic review; hovering or focusing the visual suspends it while evidence is read. Motion pauses off-screen and respects reduced-motion preferences. The workforce constellation remains visible on desktop and mobile. All displayed amounts stay fixed to the validated baseline; the folio correction remains a separate scenario.
+
 For offline review, extract `Workforce_Analytics_Portfolio.zip` and open `index.html`. Keep the accompanying folders so that the workbook, notebook and summary downloads remain available.
 
 ## Evidence layers

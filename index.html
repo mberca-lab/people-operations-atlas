@@ -124,6 +124,12 @@ html[data-theme="dark"] .muted,html[data-theme="dark"] .footnote,html[data-theme
 @media(max-width:760px){.hero{min-height:0;padding-top:32px}.hero h1{margin:16px 0}.hero-art{display:none}.hero-lead{font-size:17px;margin-top:16px}.hero-actions{gap:16px}.review-section{padding:44px 6%}.review-section h2{font-size:38px}.review-section .chapter-heading p{font-size:15px}.folio{grid-template-columns:1fr}.folio-page+.folio-page{border-left:0;border-top:1px solid var(--cp-border)}.folio-page.is-selected{border-top:3px solid var(--cp-accent)}.folio-steps{grid-template-columns:1fr 1fr}.operations-ledger{grid-template-columns:1fr;gap:24px}.ledger-item .number{font-size:36px;margin:12px 0}.supporting{padding:28px 6% 40px}.supporting-detail>.chapter{padding:28px 0}.supporting-detail>.theatre{padding:28px 5%}.supporting-detail .chapter-heading{grid-template-columns:1fr}.supporting-detail .section-index{display:none}.folio-calculation strong{font-size:36px}.folio-page .chart text{font-size:15px}}
 @media(prefers-reduced-motion:reduce){.folio-page{transition:none}}
 @media print{.hero{min-height:0}.review-section{padding:28px 5%}.folio{grid-template-columns:1fr 1fr}.folio-page:last-child{grid-column:1/-1}.folio-steps{display:none}.supporting-detail:not([open]){display:none}.operations-ledger{grid-template-columns:repeat(3,1fr)}}
+.pay-stage{margin:28px 0;border:1px solid var(--cp-border);border-radius:16px;padding:24px;background:var(--cp-bg-elevated)}.pay-stage-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}.pay-stage-head h3{margin:8px 0 0;font:25px Georgia,serif}.pay-stage-head .eyebrow{margin:0}.pay-stage .split{grid-template-columns:1.7fr 1fr;gap:28px;align-items:center}.pay-stage .panel{background:none;border:0;padding:0;border-radius:0}.pay-stage .panel-title,.pay-stage .bridge-summary,.pay-stage .panel>.footnote{display:none}.pay-stage .evidence-box{padding:12px 0 0}.pay-stage .evidence-box h3{font-size:24px;margin:8px 0}.pay-stage .evidence-box p{font-size:13px}.pay-stage .evidence-box .big-insight{font-size:30px;margin:16px 0}.pay-stage .source-ref{font-size:10px;margin:12px 0}.pay-stage .chart .bridge-button{opacity:.42;transition:opacity .35s}.pay-stage .chart .bridge-button.is-selected{opacity:1}.pay-stage .chart .negative{fill:var(--cp-danger)}.pay-stage .chart .pay-trace{stroke:var(--cp-accent);fill:none;stroke-width:1.5;stroke-dasharray:5 12;opacity:.65}.pay-stage .chart .pay-marker{stroke:var(--cp-accent);fill:var(--cp-bg-elevated);stroke-width:2}.pay-stage .chart .pay-pulse{stroke:var(--cp-accent);fill:none;stroke-width:1.5;opacity:0;transform-box:fill-box;transform-origin:center}.pay-stage .chart .bridge-button.is-selected .pay-pulse{opacity:1}.pay-stage.review-running .pay-trace{animation:pay-trace 2s linear infinite}.pay-stage.review-running .bridge-button.is-selected .pay-pulse{animation:pay-pulse 1.8s ease-out infinite}.pay-stage.review-running .bridge-button>rect{animation:pay-rise .8s both;animation-delay:calc(var(--order)*160ms);transform-box:fill-box;transform-origin:center bottom}.pay-stage .chart text{font-size:14px}.pay-case-buttons{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.pay-case-buttons button{font-size:11px;padding:8px 12px}.pay-stage-note{font-size:12px;color:var(--cp-text-muted);margin:12px 0 0}.pay-stage button{white-space:normal}.motion-paused .pay-stage *{animation-play-state:paused!important}.pay-stage:not(.review-running) *{animation-play-state:paused!important}
+@keyframes pay-trace{to{stroke-dashoffset:-34}}@keyframes pay-pulse{from{transform:scale(.8);opacity:.85}to{transform:scale(2.4);opacity:0}}@keyframes pay-rise{from{transform:scaleY(.04)}to{transform:scaleY(1)}}
+.pay-stage .pay-trace{pointer-events:none}
+@media(max-width:760px){.hero-art{display:block;margin-top:0}.canvas-wrap{max-width:320px}.art-controls{gap:6px;margin:8px 0}.art-controls button{font-size:10px;padding:8px}.art-caption{font-size:10px;gap:8px}.pay-stage{padding:18px;margin:24px 0}.pay-stage-head{align-items:start}.pay-stage-head h3{font-size:22px}.pay-stage-head button{font-size:11px;padding:8px;flex-shrink:0}.pay-stage .split{grid-template-columns:1fr;gap:16px}.pay-stage .chart text{font-size:26px}.pay-stage .evidence-box h3{font-size:23px}.pay-stage .evidence-box .big-insight{font-size:28px}.pay-case-buttons{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.pay-case-buttons button{font-size:10px;padding:8px 4px}.pay-stage .evidence-box{min-height:0}.pay-stage .source-ref{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.pay-stage *{animation:none!important;transition:none!important}}
+@media print{.pay-stage{padding:16px;break-inside:avoid}.pay-stage-head button,.pay-case-buttons{display:none}.pay-stage *{animation:none!important}.pay-stage .split{grid-template-columns:1.5fr 1fr}.pay-stage .chart .bridge-button{opacity:1}}
 </style>
 </head>
 <body>
@@ -242,6 +248,12 @@ html[data-theme="dark"] .muted,html[data-theme="dark"] .footnote,html[data-theme
 </section>
 <section class="chapter review-section" id="review" aria-labelledby="review-title">
   <div class="chapter-heading reveal"><div class="section-index">02</div><div><span class="tag lab">Evidence folio · synthetic case SIM-CLOSE-001</span><h2 id="review-title">Payroll investigation.<br><em>Source to sign-off.</em></h2><p>One payment falls below its approved expectation. Follow the evidence, inspect the Excel calculation and verify the separate correction.</p></div></div>
+  <div class="pay-stage reveal" id="payroll-visual" aria-label="Animated baseline payroll discrepancy review">
+    <div class="pay-stage-head"><div><span class="eyebrow">BASELINE / ACTUAL MINUS APPROVED</span><h3>Trace the three discrepancies.</h3></div><button type="button" id="pay-motion" aria-pressed="false">Play review</button></div>
+    <div id="payroll-visual-content"></div>
+    <div class="pay-case-buttons" id="pay-case-buttons" role="group" aria-label="Select a baseline payroll discrepancy"></div>
+    <p class="pay-stage-note">Motion guides attention through the recorded variances; it does not change the baseline. Select a case to pause the review. The separate correction is documented in the folio below.</p>
+  </div>
   <div class="review-steps folio-steps reveal" role="group" aria-label="Payroll review steps"><button type="button" data-review-step="0" aria-controls="folio-source review-step-detail" aria-pressed="true">1. Check the approval</button><button type="button" data-review-step="1" aria-controls="folio-calculation review-step-detail" aria-pressed="false">2. Inspect the formula</button><button type="button" data-review-step="2" aria-controls="folio-source review-step-detail" aria-pressed="false">3. Apply the correction</button><button type="button" data-review-step="3" aria-controls="folio-note review-step-detail" aria-pressed="false">4. Verify the result</button></div>
   <div class="folio reveal" aria-label="Annotated payroll evidence folio">
     <article class="folio-page is-selected" id="folio-source"><div class="eyebrow">01 / SOURCE EXTRACTS</div><h3>EMP0018 · October payroll</h3><dl class="folio-record"><div><dt>Payment reference</dt><dd>PAY-0018</dd></div><div><dt>Salary approval</dt><dd id="folio-approval"></dd></div><div><dt>Effective date</dt><dd id="folio-effective"></dd></div><div id="folio-original-row"><dt>Original gross</dt><dd id="folio-original"></dd></div><div id="folio-corrected-row"><dt>Corrected gross</dt><dd id="folio-corrected"></dd></div></dl><div class="segmented" role="group" aria-label="Correction example version"><button type="button" data-closure-version="original" aria-pressed="true">Original extract</button><button type="button" data-closure-version="corrected" aria-pressed="false">Corrected scenario</button></div><p class="muted">The original export retains the previous base salary. Both extracts are preserved.</p></article>
@@ -376,6 +388,9 @@ supportingTopics.forEach(([id,label])=>{
   detail.className="supporting-detail";detail.id="detail-"+id;summary.textContent=label;
   detail.append(summary,$(id));$("supporting").append(detail);
 });
+const payrollBridge=$("payroll").querySelector(".split");
+payrollBridge.classList.remove("reveal");
+$("payroll-visual-content").append(payrollBridge);
 function openLinkedEvidence(){
   let id;try{id=decodeURIComponent(location.hash.slice(1))}catch{return}
   const target=$(id);if(!target)return;
@@ -433,7 +448,7 @@ function workforce(){
     positions.forEach((p,i)=>{const t=target(i);if(advance){p.x+=(t.x-p.x)*.06;p.y+=(t.y-p.y)*.06}else{p.x=t.x;p.y=t.y}const pulse=!paused&&phase===0?Math.sin(frame*.015+i)*1.3:0;ctx.beginPath();ctx.arc(p.x+pulse,p.y,phase===2?2.7:2.4,0,Math.PI*2);ctx.fillStyle=color(DATA.dots[i].flag&&phase===2?"--cp-danger":i%7===0?"--cp-accent":"--cp-text-muted");ctx.globalAlpha=phase===2?1:.68;ctx.fill();ctx.globalAlpha=1});
     if(advance)frame++;
   }
-  function tick(){if(autoCycle&&frame>0&&frame%480===0){phase=(phase+1)%3;setPressed("[data-phase]",phase,"phase");$("art-note").textContent=["Employee records across seven source systems.","Employee identities grouped by department.","Red dots identify baseline review flags."][phase]}draw();if(!paused&&visible)animation=requestAnimationFrame(tick)}
+  function tick(){if(autoCycle&&frame>0&&frame%300===0){phase=(phase+1)%3;setPressed("[data-phase]",phase,"phase");$("art-note").textContent=["Employee records across seven source systems.","Employee identities grouped by department.","Red dots identify baseline review flags."][phase]}draw();if(!paused&&visible)animation=requestAnimationFrame(tick)}
   function restart(){cancelAnimationFrame(animation);if(paused||!visible)draw(false);else tick()}
   document.querySelectorAll("[data-phase]").forEach(b=>b.addEventListener("click",()=>{autoCycle=false;phase=Number(b.dataset.phase);setPressed("[data-phase]",phase,"phase");$("art-note").textContent=["Employee records across seven source systems.","Employee identities grouped by department.","Red dots identify baseline review flags."][phase];restart()}));
   $("motion").textContent=paused?"Resume motion":"Pause motion";$("motion").setAttribute("aria-pressed",String(paused));
@@ -507,24 +522,64 @@ $("system-buttons").querySelectorAll("button").forEach(b=>b.addEventListener("cl
 
 const differences=DATA.reconciliation.filter(r=>r.result==="Amount exception").sort((a,b)=>a.employee_id.localeCompare(b.employee_id));
 const payReasons={"EMP0005":["Unsupported movement","Recorded gross exceeds the approved expectation by EUR 2,000; the demonstration data contains no supporting approval.","Confirm the payment authority and source entries with Payroll, using the independent compensation approval record."],"EMP0011":["Allowance mismatch","Recorded allowance is EUR 250 higher than the approved allowance trail.","Reconcile the recurring allowance record, effective date and approval. Obtain Payroll sign-off before a correction."],"EMP0018":["Stale payroll salary","Payroll retains the previous salary after an approved 8% increase effective 1 October.","Trace APR-018 to the payroll cutoff and effective-date mapping; confirm the compensation owner and approved correction."]};
-function payEvidence(id){
+let paySelected="EMP0018",payAuto=true,payVisible=false,payTimer=0,payEngaged=false;
+function schedulePayReview(){
+  clearTimeout(payTimer);
+  const running=payAuto&&!paused&&!payEngaged&&payVisible&&!document.hidden;
+  $("payroll-visual").classList.toggle("review-running",running);
+  $("pay-motion").textContent=payAuto&&!paused?"Pause review":"Play review";
+  $("pay-motion").setAttribute("aria-pressed",String(payAuto&&!paused));
+  if(running)payTimer=setTimeout(()=>{
+    const index=differences.findIndex(row=>row.employee_id===paySelected);
+    payEvidence(differences[(index+1)%differences.length].employee_id,true);
+    schedulePayReview();
+  },5000);
+}
+function payEvidence(id,automatic=false){
+  paySelected=id;
+  if(!automatic){payAuto=false;schedulePayReview()}
   const row=differences.find(r=>r.employee_id===id),why=payReasons[id];
   const approval=DATA.approvals.find(r=>r.employee_id===id&&r.kind==="Salary");
+  $("pay-evidence").setAttribute("aria-live",automatic?"off":"polite");
   $("pay-evidence").innerHTML=`<div class="eyebrow">SELECT A BAR TO TRACE THE DIFFERENCE</div><span class="tag lab">${esc(id)} · fictional</span><div class="evidence-box"><h3>${esc(why[0])}</h3><p>${esc(why[1])}</p><p class="big-insight"><em>${esc(signed(row.delta_eur,2))} EUR</em></p><div class="source-ref">${esc(row.payment_ref)} · expected ${esc(money(row.expected_gross_eur))} · actual ${esc(money(row.gross_eur))}${approval?`<br>${esc(approval.approval_id)} · effective ${esc(date(approval.effective_date))} · approved annual ${esc(money(approval.amount_eur))}`:""}</div><p class="small muted"><strong>Control action:</strong> ${esc(why[2])}</p><a class="small" href="#investigate" id="pay-open-case">Open this in the investigation desk →</a></div>`;
   $("pay-open-case").addEventListener("click",()=>{const e=DATA.exceptions.find(e=>e.employee_id===id&&e.amount_eur!==null);$("exception-search").value=id;$("area-filter").value="Payroll";$("severity-filter").value="";renderExceptions(e?.exception_id)});
+  $("pay-chart").querySelectorAll("[data-pay-id]").forEach(bar=>{const selected=bar.dataset.payId===id;bar.classList.toggle("is-selected",selected);bar.setAttribute("aria-pressed",String(selected))});
+  setPressed("[data-pay-pick]",id,"payPick");
 }
 function renderPay(){
   const qa=DATA.qa;$("pay-net").textContent=money(qa.signed_payroll_delta_eur);$("pay-absolute").textContent=money(qa.absolute_payroll_delta_eur);$("pay-expected").textContent=money(qa.expected_comparable_eur);$("pay-actual").textContent=money(qa.actual_comparable_eur);
   const y=v=>275-v/2600*214;let sum=0,svg="";
   for(const v of [0,500,1000,1500,2000,2500])svg+=axis(72,y(v),730,y(v))+svgText(56,y(v)+4,fmt(v),'text-anchor="end"');
   differences.forEach((r,i)=>{const before=sum;sum+=r.delta_eur;const top=Math.max(before,sum),low=Math.min(before,sum),x=104+i*166;
-    svg+=`<g class="bridge-button" tabindex="0" role="button" data-pay-id="${r.employee_id}" aria-label="${esc(r.employee_id+": "+signed(r.delta_eur,2)+" EUR; inspect evidence")}"><title>${esc(payReasons[r.employee_id][0])}</title><rect class="${r.delta_eur<0?"negative":"chart-main"}" x="${x}" y="${y(top)}" width="94" height="${Math.max(2,y(low)-y(top))}" rx="3"/>${svgText(x+47,y(top)-13,signed(r.delta_eur,2),'text-anchor="middle" class="label-strong"')}${svgText(x+47,310,r.employee_id,'text-anchor="middle"')}</g>`;
+    svg+=`<g class="bridge-button" tabindex="0" role="button" data-pay-id="${r.employee_id}" style="--order:${i}" aria-label="${esc(r.employee_id+": "+signed(r.delta_eur,2)+" EUR; inspect evidence")}"><title>${esc(payReasons[r.employee_id][0])}</title><rect class="${r.delta_eur<0?"negative":"chart-main"}" x="${x}" y="${y(top)}" width="94" height="${Math.max(2,y(low)-y(top))}" rx="3"/><circle class="pay-pulse" cx="${x+47}" cy="${y(sum)}" r="7"/><circle class="pay-marker" cx="${x+47}" cy="${y(sum)}" r="3"/>${svgText(x+47,y(top)-13,signed(r.delta_eur,2),'text-anchor="middle" class="label-strong"')}${svgText(x+47,310,r.employee_id,'text-anchor="middle"')}</g>`;
     if(i<2)svg+=`<line x1="${x+94}" y1="${y(sum)}" x2="${x+166}" y2="${y(sum)}" class="axis" stroke-dasharray="4 3"/>`;
   });
+  let traceSum=0,trace=`M72,${y(0)}`;
+  differences.forEach((row,index)=>{const x=151+index*166;trace+=`H${x}V${y(traceSum+row.delta_eur)}`;traceSum+=row.delta_eur});
+  svg+=`<path class="pay-trace" d="${trace}H661" aria-hidden="true"/>`;
   svg+=`<rect class="chart-fill" x="614" y="${y(sum)}" width="94" height="${y(0)-y(sum)}" rx="3" stroke="var(--cp-accent)"/>${svgText(661,y(sum)-13,fmt(sum,2),'text-anchor="middle" class="label-strong"')}${svgText(661,310,"Net",'text-anchor="middle"')}`;
   $("pay-chart").innerHTML=svg;$("pay-chart").querySelectorAll("[data-pay-id]").forEach(g=>{g.addEventListener("click",()=>payEvidence(g.dataset.payId));g.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();payEvidence(g.dataset.payId)}})});
   $("pay-table").innerHTML=table([{label:"Employee",key:"employee_id"},{label:"Expected gross EUR",key:"expected_gross_eur",numeric:true,format:v=>fmt(v,2)},{label:"Actual gross EUR",key:"gross_eur",numeric:true,format:v=>fmt(v,2)},{label:"Difference EUR",key:"delta_eur",numeric:true,format:v=>signed(v,2)}],differences,"Three fictional differences on a common comparable payroll base.");
-  payEvidence("EMP0018");
+  $("pay-case-buttons").innerHTML=differences.map(row=>`<button type="button" data-pay-pick="${esc(row.employee_id)}" aria-pressed="false">${esc(row.employee_id)}<br>${esc(payReasons[row.employee_id][0])}</button>`).join("");
+  $("pay-case-buttons").querySelectorAll("button").forEach(button=>button.addEventListener("click",()=>payEvidence(button.dataset.payPick)));
+  payEvidence(paySelected,true);
+}
+function payrollMotion(){
+  const stage=$("payroll-visual");
+  $("pay-motion").addEventListener("click",()=>{
+    payEngaged=false;
+    if(paused){payAuto=true;$("motion").click()}
+    else payAuto=!payAuto;
+    schedulePayReview();
+  });
+  $("motion").addEventListener("click",schedulePayReview);
+  new IntersectionObserver(entries=>{payVisible=entries[0].isIntersecting;schedulePayReview()},{threshold:.15}).observe(stage);
+  stage.addEventListener("pointerenter",()=>{payEngaged=true;schedulePayReview()});
+  stage.addEventListener("pointerleave",()=>{payEngaged=stage.contains(document.activeElement)&&document.activeElement!==$("pay-motion");schedulePayReview()});
+  stage.addEventListener("focusin",event=>{payEngaged=event.target!==$("pay-motion");schedulePayReview()});
+  stage.addEventListener("focusout",event=>{payEngaged=(stage.contains(event.relatedTarget)&&event.relatedTarget!==$("pay-motion"))||stage.matches(":hover");schedulePayReview()});
+  document.addEventListener("visibilitychange",schedulePayReview);
+  schedulePayReview();
 }
 let filteredExceptions=[],selectedException="",triage={};
 function renderCase(id){
@@ -678,7 +733,7 @@ function renderScenario(kind="proration"){
   $("scenario-detail").innerHTML=content;
 }
 document.querySelectorAll("[data-scenario]").forEach(button=>button.addEventListener("click",()=>renderScenario(button.dataset.scenario)));
-renderPublic();renderSystems();renderPay();renderExceptions();renderAbsence();renderTime();renderVisa();renderRequirements();renderClosure();renderReviewStep();renderScenario();workforce();openLinkedEvidence();
+renderPublic();renderSystems();renderPay();renderExceptions();renderAbsence();renderTime();renderVisa();renderRequirements();renderClosure();renderReviewStep();renderScenario();workforce();payrollMotion();openLinkedEvidence();
 </script>
 </body>
 </html>
