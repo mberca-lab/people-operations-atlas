@@ -95,7 +95,7 @@ def plots(public, result):
     exception_counts = result["exceptions"].groupby("area").size().sort_values()
     fig, ax = plt.subplots(figsize=(10, 5))
     ax.barh(exception_counts.index, exception_counts.values, color=palette[0])
-    ax.set(title="Fictional exception register · control flags, not unique people", xlabel="Exception flags", ylabel="Control area")
+    ax.set(title="Synthetic exception register · flags by control area", xlabel="Exception flags (multiple per employee possible)", ylabel="Control area")
     save("exception_areas")
 
 
@@ -106,17 +106,17 @@ def notebook(public, provenance, result):
             "# People, in Balance\n"
             "## A People Data & Operations portfolio analysis\n\n"
             "Independent, AI-assisted project by Margarita Bermejo Cano. No affiliation with Waystone.\n\n"
-            "**Evidence layers:** official CSO aggregate context + a fully fictional multi-system operations lab. "
-            "Do not present simulated payroll, absence, visa or case findings as employer evidence."
+            "**Data sources:** official CSO workforce aggregates and a synthetic multi-system HR dataset. "
+            "Operational results describe the demonstration dataset."
         ),
         nbf.new_markdown_cell(
             "## EDA decision log\n\n"
             f"- **Source:** CSO EHQ03, official API; snapshot SHA-256 `{provenance['sha256']}`.\n"
             f"- **Scale:** {provenance['raw_cells']:,} published cube cells; {len(public):,} selected cells; full data, no sampling.\n"
-            "- **Selection:** all employees, five unadjusted metrics, all published sectors, 2019Q1 onward. Overlapping sector aggregates are never added together.\n"
+            "- **Selection:** all employees, five unadjusted metrics, all published sectors, 2019Q1 onward. Overlapping sector aggregates are analysed separately.\n"
             "- **Level:** in-depth operational analysis: quality, reconciliation, exceptions, distributions, relationships, controls and limitations.\n"
             "- **Synthetic source:** seed 731; 360 fictional employees; as-of 2026-10-31; seven independent-format feeds. No real sensitive records.\n"
-            "- **Decision:** deterministic controls fit this task better than a predictive employee risk model. No employee scoring, causal claims or artificial significance tests.\n"
+            "- **Analytical approach:** deterministic validation and reconciliation controls address the operational reporting requirements. Predictive employee scoring and causal inference are outside scope.\n"
             "- **Uncertainty:** public revisions and missing inferential variances; fictional payroll assumptions; statutory working-time periods; holiday calendars; real HR/legal judgement."
         ),
         nbf.new_code_cell(
@@ -130,7 +130,7 @@ def notebook(public, provenance, result):
             "display(pd.DataFrame([{'source': name, 'rows': len(frame), 'columns': len(frame.columns),"
             "'memory_MB': round(frame.memory_usage(deep=True).sum()/1024**2,2)} for name,frame in sources.items()]))"
         ),
-        nbf.new_markdown_cell("## 1 / Preview, types and missingness\nPublic cells and synthetic records have different units and grains. Missing critical employment or payroll values are not filled with zero."),
+        nbf.new_markdown_cell("## 1 / Data structure and completeness\nReview the units, reporting grains and missing values in each source. Missing critical employment or payroll values remain unknown and are referred for resolution."),
         nbf.new_code_cell(
             "display(public.head(5)); display(public.tail(5)); display(public.dtypes.to_frame('dtype'))\n"
             "display(public.describe(include='all'))\n"
@@ -142,8 +142,8 @@ def notebook(public, provenance, result):
         ),
         nbf.new_markdown_cell(
             "## 2 / Public workforce context\n"
-            "CSO means are enterprise-survey aggregates, not employee salary benchmarks. Employment, earnings and paid hours use different concepts. "
-            "Nominal, unadjusted changes may reflect seasonality, bonuses or workforce composition. Prefer year-on-year comparisons; no inflation-adjusted claim is made."
+            "CSO means describe enterprise-survey aggregates. Individual salary benchmarking requires a suitable employee-level comparison. Employment, earnings and paid hours use different concepts. "
+            "Nominal, unadjusted changes may reflect seasonality, bonuses or workforce composition. Year-on-year comparisons provide context; inflation adjustment is outside scope."
         ),
         nbf.new_code_cell(
             "findings = public_findings(public)\n"
@@ -156,8 +156,7 @@ def notebook(public, provenance, result):
             "## 3 / Relationships and outlier sensitivity\n"
             "Within finance/insurance, inspect changes rather than correlations between trending levels. "
             "These are only 29 quarterly differences, serially dependent and based on aggregate survey estimates. "
-            "Pearson correlations and IQR outliers are descriptive diagnostics, not significance or causal evidence. "
-            "Skipping formal normality/p-value testing avoids treating survey aggregates as independent employee observations."
+            "Pearson correlations and IQR outliers are used as descriptive diagnostics. Serial dependence, sample size and aggregate survey estimation limit statistical inference; formal significance and causal tests are outside scope."
         ),
         nbf.new_code_cell(
             "wide = public[public['sector_code'].eq('K')].pivot(index='quarter', columns='metric', values='value')\n"
@@ -173,9 +172,9 @@ def notebook(public, provenance, result):
             "display(Image(filename=str(OUTPUT / 'plots' / 'public_change_pairs.png')))"
         ),
         nbf.new_markdown_cell(
-            "## 4 / From records to a controlled reporting base\n"
+            "## 4 / Data validation and reporting population\n"
             "Normalise keys and field types, collapse only equivalent payloads, quarantine conflicts and reject critical-field failures. "
-            "The seeded roster has 360 people; validated active headcount is a different, narrower reporting population. "
+            "The synthetic roster contains 360 employee keys. Validation and employment-date rules define the active reporting population. "
             "Exact repeats and conflicting records have different treatment."
         ),
         nbf.new_code_cell(
@@ -187,7 +186,7 @@ def notebook(public, provenance, result):
             "## 5 / Payroll reconciliation and investigation\n"
             "Approved full-time annual salary / 12 x FTE + approved recurring allowance + approved variable pay. "
             "No mid-month proration, tax, PRSI, pension or net-pay checks. Unmatched or unknown amounts are excluded from the common comparable sum. "
-            "The net difference can hide opposite-signed discrepancies. Seeded root causes are demonstrable mechanisms, not conclusions from employer records."
+            "Report signed and absolute discrepancies to show both the net effect and the total variance magnitude. Root-cause examples are deliberately introduced in the synthetic data."
         ),
         nbf.new_code_cell(
             "recon = result['reconciliation']\n"
@@ -200,10 +199,10 @@ def notebook(public, provenance, result):
             "display(Image(filename=str(OUTPUT / 'plots' / 'payroll_distribution.png')))"
         ),
         nbf.new_markdown_cell(
-            "## 6 / Absence: numerator and exposure first\n"
+            "## 6 / Absence rates and scheduled exposure\n"
             "Deduplicate episodes, validate dates and keys, union scheduled lost dates and reconcile worked-time collisions. "
             "The denominator uses weekdays within employment dates multiplied by FTE x 7.5 hours/day. "
-            "No public holidays, special rosters, diagnoses or causal absence drivers are inferred."
+            "Public-holiday and custom-roster adjustments are outside scope. The analysis uses synthetic scheduling metadata and excludes health information."
         ),
         nbf.new_code_cell(
             "display(result['absence_summary'])\n"
@@ -212,11 +211,11 @@ def notebook(public, provenance, result):
             "display(Image(filename=str(OUTPUT / 'plots' / 'absence_heatmap.png')))"
         ),
         nbf.new_markdown_cell(
-            "## 7 / Working time: screen, do not certify\n"
+            "## 7 / Working-time review and completeness\n"
             "The WRC general rule is a 48-hour average over four calendar months, with exceptions. "
             "This lab uses 17 complete weeks (2026-07-06 to 2026-10-30) as an operational screen only. "
             "Coverage gaps remain unknown; annual/sick-leave adjustments, weekly rest, reference-period exceptions and compensatory rest need HR/legal review. "
-            "A 60-hour peak week is not automatically a breach of an average-hours rule."
+            "Peak weeks and reference-period averages are reviewed separately. A statutory assessment would require the applicable period, adjustments and qualified legal interpretation."
         ),
         nbf.new_code_cell(
             "display(result['time_summary'].groupby('result').agg(employees=('employee_id','size'),mean_observed=('average_hours','mean')))\n"
@@ -227,9 +226,9 @@ def notebook(public, provenance, result):
         nbf.new_markdown_cell(
             "## 8 / Visa, PIP and ER administration\n"
             "Fictional metadata illustrates expiry horizons, owner/evidence gaps and overdue review dates. "
-            "90 days is an operational service-level assumption, not an immigration rule. "
-            "No nationality, passport, diagnoses, case narratives or substantive employment decisions are used. "
-            "Live administration and professional judgement are design-only skills, not established by this project."
+            "The 90-day review horizon is an operational service-level assumption. "
+            "Sensitive personal fields and substantive employment decisions are excluded. "
+            "Provider coordination and specialist HR judgement are represented by proposed procedures; practical experience requires separate evidence."
         ),
         nbf.new_code_cell(
             "display(result['visa'][['case_id','employee_id','expiry_date','days_remaining','status','owner','evidence','result']])\n"
@@ -239,8 +238,8 @@ def notebook(public, provenance, result):
         ),
         nbf.new_markdown_cell(
             "## 9 / Controls, Excel evidence and requirement coverage\n"
-            "Inspect the genuine Excel pivots and editable formulas separately. Raw-to-clean transformations and roster membership are regenerated by Python; clean-input formulas and pivots recalculate in Excel. "
-            "Proposed controls require operational approval. Portfolio evidence is not a claim of employer impact."
+            "Inspect the native Excel PivotTables and editable formulas. Raw-to-clean transformations and roster membership are regenerated by Python; clean-input formulas and pivots recalculate in Excel. "
+            "The control designs require operational approval before implementation. Employer impact would need measurement in a live setting."
         ),
         nbf.new_code_cell(
             "requirements = pd.DataFrame(json.loads((ROOT/'assets'/'requirements.json').read_text()))\n"
@@ -254,14 +253,14 @@ def notebook(public, provenance, result):
         ),
         nbf.new_markdown_cell(
             "## Findings and next actions\n\n"
-            f"- **{result['qa']['active_headcount']} validated active employees**, not the full 360-person fixture; excluded records remain in the audit trail.\n"
+            f"- **{result['qa']['active_headcount']} validated active employees** after applying master-data and employment-date rules; excluded records remain in the audit trail.\n"
             f"- **{result['qa']['payroll_amount_exceptions']} amount discrepancies**: net EUR {result['qa']['signed_payroll_delta_eur']:,.2f}, absolute EUR {result['qa']['absolute_payroll_delta_eur']:,.2f}, on the same {result['qa']['comparable_payroll_rows']}-record comparable base.\n"
             f"- **{result['qa']['absence_overlap_days_removed']} overlapping scheduled day(s)** removed from the numerator; worked-time collisions require source review.\n"
-            f"- **{result['qa']['time_above_screen']} above-screen time records and {result['qa']['time_incomplete']} incomplete record** warrant separate follow-up, not a legal conclusion.\n"
-            f"- **{result['qa']['visa_within_90_days']} fictional permissions in the 0–90-day horizon**, plus {result['qa']['visa_expired_records']} expired records needing verification; submission is not assumed to prove permission.\n"
+            f"- **{result['qa']['time_above_screen']} above-screen time records and {result['qa']['time_incomplete']} incomplete record** require HR/legal review of the relevant hours and coverage.\n"
+            f"- **{result['qa']['visa_within_90_days']} fictional permissions in the 0–90-day horizon**, plus {result['qa']['visa_expired_records']} expired records requiring authorised verification.\n"
             "- Immediate control priorities: identity uniqueness; approved effective-dated compensation; lifecycle/payroll cutoff; absence overlap/time reconciliation; complete time data; owned visa/case follow-up.\n"
             "- Before real use: confirm data-owner permissions and AI scope, minimise sensitive fields, add legal/roster/holiday rules, test source-system mappings, obtain HR/payroll/legal review and segregate correction approval.\n"
-            "- Not established here: years of experience, live BambooHR SME capability, actual immigration case administration, substantive Tier 2 ER judgement or hands-on Power BI authoring."
+            "- CV/interview evidence required: years of experience, live BambooHR capability, immigration administration, Tier 2 ER judgement and hands-on Power BI authoring."
         ),
     ]
     notebook = nbf.new_notebook(cells=cells, metadata={

@@ -4,15 +4,17 @@ An independent, AI-assisted People Data & Operations portfolio project by Margar
 
 **[Explore the live atlas](https://mberca.github.io/people-operations-atlas/)** · [Download the complete portfolio package](https://github.com/mberca/people-operations-atlas/releases/latest/download/People_in_Balance_Portfolio.zip)
 
-Open `index.html` in a browser. The self-contained atlas combines a morphing workforce constellation, an interactive seven-system connection map, official Irish sector context, a transparent reporting-population journey, a payroll discrepancy bridge, an investigation desk, absence heatmaps, working-time screens, visa/case timelines and a 29-requirement evidence map. Keep the accompanying folders if you want the download links to work. For a complete review package, extract `People_in_Balance_Portfolio.zip` and open its `index.html`; do not publish or email any real employee data.
+The atlas presents Irish workforce trends, multi-source data validation, payroll reconciliation, absence reporting, working-time review and case governance. An interactive source-system map and a 29-requirement evidence map connect the analysis to the People Data & Operations role.
+
+For offline review, extract `People_in_Balance_Portfolio.zip` and open `index.html`. Keep the accompanying folders so that the workbook, notebook and summary downloads remain available.
 
 ## Evidence layers
 
 **Public:** CSO Ireland EHQ03, *Average Earnings, Hours Worked, Employment and Labour Costs*, CC BY 4.0. The pinned official snapshot contains 130,536 cells; the analysis selects 3,150 all-employee cells across five unadjusted measures and 30 quarters, 2019Q1–2026Q2. Source hash, URLs, retrieval date, units and coverage are in `data\public\provenance.json`. Indexing and changes are transformations; public cells are never silently imputed. Overlapping published sector aggregates are never summed.
 
-**Fictional:** 360 wholly fictional employee keys and seven differently structured HR/payroll/approval/absence/time/visa/case feeds, seed 731, as-of 2026-10-31. No real employee, customer, health, nationality, passport or case narrative data. Seeded mechanisms demonstrate controls; they are not discoveries about an employer.
+**Synthetic operations:** 360 fictional employee keys across seven HR/payroll/approval/absence/time/visa/case feeds, seed 731, as-of 2026-10-31. All operational records are synthetic; sensitive personal and employer data are excluded. Deliberately introduced data-quality issues support the control demonstrations.
 
-**Not experience claims:** live BambooHR SME capability, actual Tier 2/ER judgement, end-to-end immigration administration, hands-on Power BI authoring and years of experience are not established here. The evidence map distinguishes demonstrated features, simulations, proposed design and unsupported experience.
+**Professional experience:** the evidence map distinguishes implemented features, synthetic scenarios and proposed procedures. Years of experience, live BambooHR capability, Tier 2/ER judgement, immigration administration and Power BI authoring require separate CV and interview evidence.
 
 ## Deliverables
 
@@ -29,9 +31,9 @@ Open `index.html` in a browser. The self-contained atlas combines a morphing wor
 
 ## Main fictional control results
 
-364 raw HR rows → 360 keys → 355 valid masters → 344 active people / 324 FTE → 340 payroll-comparable records → 337 reconciled. Quarantined conflicts, invalid fields, future hires, leavers and unknown payments stay visible rather than being silently included or filled.
+364 raw HR rows → 360 keys → 355 valid masters → 344 active people / 324 FTE → 340 payroll-comparable records → 337 reconciled. The exception register retains quarantined conflicts, invalid fields and unresolved payments. Employment-date rules determine starter and leaver inclusion.
 
-The same comparable base yields a **EUR 1,847.33 signed discrepancy** versus **EUR 2,652.67 absolute discrepancy**. Approved salary/variable-pay changes correctly reconcile; unsupported movement, allowance mismatch and stale salary are separated. Absence uses 296 unique scheduled lost dates after removing one overlap; the FTE-weighted lost-hour rate is 0.975%. Seven complete time records exceed the baseline screen and one incomplete record remains unknown. Visa/case flags are operational service-level demonstrations, not legal findings.
+The comparable base yields a **EUR 1,847.33 signed discrepancy** and **EUR 2,652.67 absolute discrepancy**. Approved salary and variable-pay changes reconcile; unsupported movement, allowance mismatch and stale salary require follow-up. Absence uses 296 unique scheduled lost dates after removing one overlap; the FTE-weighted lost-hour rate is 0.975%. Seven complete time records exceed the baseline screen and one incomplete record requires coverage review. Visa and case flags identify operational follow-up priorities.
 
 ## Rebuild and validate on Windows
 
@@ -70,12 +72,12 @@ Change clean-sheet inputs or Parameters to explore formulas, then **Data → Ref
 
 ## Methodological and operational limits
 
-CSO means are aggregate enterprise-survey estimates, not individual pay benchmarks or employer-specific comparisons. Employment, earnings and paid hours have different concepts/denominators; the estimates are unadjusted, nominal and revisable. Descriptive change correlations use a small, serially dependent quarterly series; no p-values, causal or individual-level claims are made.
+CSO means describe aggregate enterprise-survey estimates. Individual pay benchmarking and employer-specific comparisons require suitable additional data. Employment, earnings and paid hours have different concepts and denominators; the estimates are unadjusted, nominal and revisable. Change correlations are descriptive, based on a small, serially dependent quarterly series. Statistical significance and causal inference are outside scope.
 
-Fictional payroll is full-month approved gross only: no tax, net pay, PRSI, pension or proration. Absence assumes weekday/FTE exposure, without public holidays or custom rosters. Lost days are clipped to employment dates and overlapping dates unioned; time collisions require source review, not inference about health or motive.
+Synthetic payroll covers full-month approved gross. Tax, net pay, PRSI, pensions and proration are outside scope. Absence assumes weekday/FTE exposure; public-holiday and custom-roster adjustments require further development. Lost days are clipped to employment dates and overlapping dates combined. Absence/time collisions require source reconciliation.
 
-The working-time lab uses **17 complete weeks**, not the statutory **four calendar months**. [WRC guidance](https://www.workplacerelations.ie/en/what_you_should_know/hours-and-wages/working_hours/) informs screening only; statutory leave adjustments, weekly rest, exemptions, compensatory rest, night work and legal judgements are not fully implemented. Complete absence of time records is retained as unknown, not silently dropped. Logged break totals do not prove compliant break timing.
+The operational working-time review covers **17 complete weeks**. The general statutory reference period described in [WRC guidance](https://www.workplacerelations.ie/en/what_you_should_know/hours-and-wages/working_hours/) is **four calendar months**, subject to specified exceptions. Statutory leave adjustments, weekly rest, exemptions, compensatory rest and night work require further assessment. Missing time records remain unknown. Break timing requires review in addition to logged duration.
 
-Visa horizons are analyst-set service levels, not immigration rules; submitted renewals do not establish permission. PIP/ER records are fictional administration metadata. Closure requires qualified, authorised human judgement and source evidence.
+Visa horizons are analyst-set service levels. Continuing permission requires authorised verification, including review of the renewal evidence. PIP/ER records contain fictional administration metadata. Closure requires qualified HR judgement and source evidence.
 
-Before real deployment: confirm data-owner and AI-use authorisation, minimise/restrict sensitive fields, confirm EUDB/FedRAMP scope if relevant, validate source mappings and legal/roster/holiday rules, segregate correction approvals and obtain HR/payroll/legal sign-off. No production-readiness or employer-impact claim is made.
+Before operational implementation, confirm data-owner and AI-use authorisation, minimise restricted fields, confirm EUDB/FedRAMP scope where relevant, validate source mappings and legal/roster/holiday rules, segregate correction approvals and obtain HR/payroll/legal sign-off. Employer impact would require measurement after implementation.

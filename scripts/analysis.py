@@ -247,7 +247,7 @@ def analyse(sources):
             ("end date", row["invalid_end"] or (pd.notna(row["end_date"]) and row["end_date"] < row["start_date"])),
         ] if bad]
         issue("HR master", row["employee_id"], "Critical field", f"Unusable {', '.join(failed)}.",
-              row["source_row"], "Correct at source; do not guess or silently fill critical employment fields.")
+              row["source_row"], "Obtain a verified source correction for the critical employment fields.")
     clean = master[valid].drop(columns="invalid_end").copy()
     clean["active"] = clean["start_date"].le(AS_OF) & (clean["end_date"].isna() | clean["end_date"].ge(AS_OF))
     active = clean[clean["active"]].copy()
@@ -267,11 +267,11 @@ def analyse(sources):
     for _, row in payroll[invalid_key].iterrows():
         issue("Payroll", row["employee_id"], "Unmapped key", "Payroll key does not match the HR identifier contract.",
               f"{row['source_row']} / {row['payment_ref']}",
-              "Confirm the cross-system key mapping with the source owner; never fuzzy-match identities automatically.")
+              "Confirm an exact cross-system employee-key mapping with the source owner.")
     payroll = payroll[~invalid_key].copy()
     for _, row in payroll[payroll["gross_eur"].isna()].iterrows():
         issue("Payroll", row["employee_id"], "Missing gross", "Gross pay cannot be parsed.",
-              row["source_row"], "Request a corrected payroll export; keep the amount unknown, not zero.", "High")
+              row["source_row"], "Request a corrected payroll export and retain the amount as unknown pending verification.", "High")
 
     approvals = sources["approvals"].copy()
     approvals["effective_date"] = pd.to_datetime(approvals["effective_date"])
@@ -318,7 +318,7 @@ def analyse(sources):
             code = "Unvalidated HR reference"
             detail = "Payroll refers to a quarantined or invalid HR master record."
         issue("Payroll", row["employee_id"], code, detail, row["payment_ref"],
-              "Verify lifecycle dates and any approved settlement; an exception is not proof of an unlawful payment.", "High")
+              "Verify employment dates, payment authority and any approved settlement or proration with Payroll.", "High")
 
     abs_raw = sources["absence_raw"].copy()
     abs_clean = abs_raw.drop_duplicates("episode_id").copy()
@@ -396,7 +396,7 @@ def analyse(sources):
               f"{row['complete_weeks']} complete weeks; observed mean " +
               (f"{row['average_hours']:.2f} hours." if pd.notna(row["average_hours"]) else "unknown."),
               "Daily time records, 2026-07-06 to 2026-10-30",
-              "Review actual hours, statutory reference period and leave adjustments with HR; 17 weeks is an operational screen, not a legal compliance determination.")
+              "Review actual hours, the statutory reference period and leave adjustments with HR/legal. The current operational window covers 17 weeks.")
     shifts = time[time["worked_hours"].gt(0)].copy()
     shifts["shift_start"] = pd.to_datetime(shifts["shift_start"])
     shifts["shift_end"] = pd.to_datetime(shifts["shift_end"])
@@ -413,7 +413,7 @@ def analyse(sources):
     for employee, group in breaks.groupby("employee_id"):
         issue("Working time", employee, "Break record review",
               "Logged break minutes are below the general total-duration screen.",
-              ", ".join(group["date"]), "Verify break timing and entitlements; total minutes alone cannot prove compliant timing.")
+              ", ".join(group["date"]), "Verify both break timing and duration against the applicable entitlements.")
 
     visa = sources["visa_raw"].copy()
     visa["expiry_date"] = pd.to_datetime(visa["expiry_date"])
@@ -425,7 +425,7 @@ def analyse(sources):
     )
     for _, row in visa[visa["days_remaining"].le(90) | visa["owner"].eq("")].iterrows():
         issue("Visa", row["employee_id"], "Renewal follow-up", f"{row['days_remaining']} days to recorded expiry; {row['status']}.",
-              row["case_id"], "Verify permission and renewal evidence with an authorised provider; 90 days is a demo service-level trigger, not immigration law.")
+              row["case_id"], "Verify permission and renewal evidence with an authorised provider. Apply the 90-day operational service horizon for follow-up.")
     cases = sources["cases_raw"].copy()
     cases["next_review"] = pd.to_datetime(cases["next_review"])
     cases["days_overdue"] = (AS_OF - cases["next_review"]).dt.days.clip(lower=0)
@@ -436,7 +436,7 @@ def analyse(sources):
     for _, row in cases[cases["result"].eq("Governance follow-up")].iterrows():
         issue("PIP / ER", row["employee_id"], "Case governance",
               f"{row['case_type']}: {row['days_overdue']} day(s) overdue; documentation {row['documentation']}; owner {'missing' if not row['owner'] else 'assigned'}.",
-              row["case_id"], "Assign an owner and review date, complete documentation and escalate substantive ER decisions; do not automate employment decisions.")
+              row["case_id"], "Assign an owner and review date, complete documentation and refer substantive ER decisions to the qualified HR specialist.")
 
     comparable = recon[recon["gross_eur"].notna()]
     amount_exceptions = recon[recon["result"].eq("Amount exception")]

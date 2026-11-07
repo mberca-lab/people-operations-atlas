@@ -84,28 +84,28 @@ def build(public, sources, result):
         ["Public data", "CSO EHQ03 official sector aggregates, CC BY 4.0; source URL and hash are in the Public Sources sheet."],
         ["Synthetic operations", "Every employee, payment, absence, visa and case record is fictional. Seed 731; as-of 2026-10-31."],
         ["How to review", "Start in Dashboard, inspect Reconciliation and Payroll Pivot, then investigate Exceptions with source references."],
-        ["Editable calculations", "Change clean inputs or Parameters to explore formulas. Raw-to-clean identity resolution and roster membership require a Python rebuild; they are not automatically refreshed from raw sheets."],
+        ["Editable calculations", "Change clean inputs or Parameters to explore formulas. Rebuild in Python to update raw-to-clean identity resolution and roster membership."],
         ["PivotTables", "Payroll Pivot and Case Pivot are genuine native Excel PivotTables. After changing inputs, use Data > Refresh All."],
         ["Salary assumptions", "EUR annual full-time salary / 12 x FTE, full calendar month, no mid-month starters in the approved active base. No tax, PRSI, pension, deductions or net-pay validation."],
         ["Approvals", "This fixture has at most one current approved salary event per employee and recurring allowance events with no expiry. Multiple salary events trigger review. Real implementation needs effective start/end intervals and payroll cutoff rules."],
-        ["Identity controls", "Exact repeated payloads collapse once. Conflicting groups and invalid keys are quarantined; no first-row guessing or fuzzy identity matching."],
-        ["Missing gross", "Missing/non-numeric pay remains unknown, never zero. Reconciliation uses a common comparable base."],
+        ["Identity controls", "Remove exact duplicate payloads. Quarantine conflicting groups and invalid keys. Join records using verified exact-match employee keys."],
+        ["Missing gross", "Classify missing or non-numeric pay as unknown. Reconciliation totals use the common population with confirmed actual and expected gross."],
         ["Absence", "Rates use FTE-weighted scheduled hours, weekday calendars, employment dates and unioned lost dates. Public holidays and differing roster patterns are not implemented."],
-        ["Working time", "17 complete weeks is a screening window, NOT the statutory four calendar months. Leave adjustments, exemptions, weekly rest and legal decisions are outside this demo."],
-        ["Visa", "30/90-day alert windows are demonstration service levels, not immigration law. Fictional expiry is not a determination of permission to work."],
+        ["Working time", "Operational review covers 17 complete weeks. Statutory assessment requires the applicable four-calendar-month reference period, leave adjustments, exemptions, weekly-rest checks and qualified review."],
+        ["Visa", "30/90-day alert windows are operational service levels. Continuing permission requires verification by authorised HR or immigration providers."],
         ["Case data", "PIP/ER metadata only; no case narratives, health diagnoses, passport data or automated employment decisions."],
-        ["Evidence boundary", "A workbook cannot establish five years of experience, real BambooHR expertise, live immigration administration or hands-on Power BI skills."],
+        ["Professional experience", "Employment history, live BambooHR expertise, immigration administration and hands-on Power BI experience require separate CV and interview evidence."],
         ["Source references", "CSO: https://data.gov.ie/dataset/ehq03-average-earnings-hours-worked-employment-and-labour-costs"],
         ["WRC guidance", "https://www.workplacerelations.ie/en/what_you_should_know/hours-and-wages/working_hours/"],
     ])
     readme.column_dimensions["B"].width = 110
     parameters = write_sheet(workbook, "Parameters", ["Parameter", "Value", "Meaning"], [
-        ["Edition", "Synthetic lab", "Inputs below are analyst-set or fixture values, not company policy."],
+        ["Edition", "Synthetic lab", "Parameters are analyst-set demonstration values. Operational adoption requires policy approval."],
         ["As of", AS_OF.to_pydatetime(), "Reporting cutoff; changing month requires rebuilding source extracts."],
-        ["Pay tolerance EUR", 0.02, "Analyst-set rounding tolerance, not materiality approval."],
-        ["Visa horizon days", 90, "Demonstration operational lead time, not a legal threshold."],
+        ["Pay tolerance EUR", 0.02, "Analyst-set rounding tolerance; materiality thresholds require separate approval."],
+        ["Visa horizon days", 90, "Operational review lead time for the demonstration tracker."],
         ["Weekly hours screen", 48, "General WRC maximum average rule; this demo only screens a 17-week window."],
-        ["Required complete weeks", 17, "Operational screen, not a substitute for four calendar months."],
+        ["Required complete weeks", 17, "Required coverage for this operational review. Statutory reference-period assessment requires separate validation."],
         ["Window start", datetime(2026, 7, 6), "Daily time fixture start."],
         ["Window end", datetime(2026, 10, 30), "Daily time fixture end."],
         ["Full-time daily hours", 7.5, "Fictional Monday-Friday roster; no public-holiday adjustment."],
@@ -172,9 +172,9 @@ def build(public, sources, result):
         "expected_gross_eur", "actual_gross_eur", "delta_eur", "result", "absolute_delta_eur",
     ], recon_rows)
     reconciliation["D2"].comment = Comment(
-        "One effective approved salary event is allowed in this fixture. Multiple events trigger Ambiguous; do not use a first-match salary.", "Portfolio")
+        "One effective approved salary event is allowed in this fixture. Multiple current events trigger an Ambiguous status and require source review.", "Portfolio")
     reconciliation["J2"].comment = Comment(
-        "Payroll Clean stores nonnumeric gross as Unknown. Never convert a missing amount to zero.", "Portfolio")
+        "Payroll Clean classifies nonnumeric gross as Unknown and excludes unresolved amounts from comparable totals.", "Portfolio")
     reconciliation.conditional_formatting.add(
         f"K2:K{n+1}", CellIsRule(operator="notBetween", formula=["-Parameters!$B$4", "Parameters!$B$4"],
                                 fill=PatternFill("solid", fgColor="FCE3E8"))
@@ -289,12 +289,12 @@ def build(public, sources, result):
     ])
     add_frame(workbook, "Public Context", public)
     mapping = write_sheet(workbook, "System Mapping", ["System / grain", "Key / field mapping", "Capture control / limitation"], [
-        ["HR master / one resolved employee", "employee_id -> employeeNumber-style key; start_date -> hireDate-style field", "BambooHR-style design only, not a validated BambooHR import schema or API integration."],
+        ["HR master / one resolved employee", "employee_id -> employeeNumber-style key; start_date -> hireDate-style field", "Proposed BambooHR-style mapping; validate the import schema with the platform owner before implementation."],
         ["Employment history / effective interval", "employee_id + effective_start + effective_end", "Nonoverlapping intervals; hire/end dates; contractual status reconciled to approvals."],
         ["Compensation / approved event", "employee_id + kind + effective date + approval_id", "Exactly one active base-salary event; segregate approver and payroll preparer."],
         ["Payroll / employee-month-payment", "employee_id + period + payment_ref", "Duplicate/conflict guards, valid amounts, gross components and payroll cutoff."],
         ["Absence / episode and unioned date", "episode_id; employee_id + scheduled date", "Date validity, overlap union, roster exposure and worked-time cross-check."],
-        ["Time / employee-date-shift", "employee_id + date + shift identity", "Actual worked time, break timing, coverage and leave adjustments; do not substitute paid-hours aggregates."],
+        ["Time / employee-date-shift", "employee_id + date + shift identity", "Use individual worked-time records, break timing, coverage and applicable leave adjustments."],
         ["Visa / permission record", "case_id + employee_id + validity interval", "Authorised evidence/provider, expiry/renewal review, minimised sensitive documents."],
         ["Case / HR workflow", "case_id + owner + review date", "Restricted case access; metadata reporting only; substantive ER judgement remains human."],
         ["Power BI model / design only", "Employee snapshot, Date, Pay Components, Absence Days, Exposure, Time, Case facts", "Single-direction one-to-many dimensions; avoid double-counting employee records across facts. No Power BI file is delivered."],
@@ -303,10 +303,10 @@ def build(public, sources, result):
     sop = write_sheet(workbook, "SOP", ["Stage", "Owner", "Control / output"], [
         ["01 Acquire", "People Systems", "Immutable dated extracts, source totals, schema/key contracts and restricted access."],
         ["02 Validate", "People Systems", "Typed fields, dates, reference keys, full-record duplicates and conflicting payloads."],
-        ["03 Quarantine", "Source owner", "Retain original row references; critical missing/conflicting data is not silently repaired."],
+        ["03 Quarantine", "Source owner", "Retain original row references and obtain verified corrections for critical missing or conflicting data."],
         ["04 Reconcile", "Payroll Control", "Exact current-period joins, effective approvals, lifecycle dates and comparable amount base."],
-        ["05 Investigate", "People Operations + Payroll", "Confirm the root cause against source evidence; seeded cases are demonstrations, not real investigation outcomes."],
-        ["06 Correct", "Authorised source owner", "Approve a source-system correction; never change pay or employee status from an automated flag."],
+        ["05 Investigate", "People Operations + Payroll", "Confirm the root cause against source evidence. Case examples use deliberately introduced synthetic data issues."],
+        ["06 Correct", "Authorised source owner", "Obtain authorised approval for source-system corrections affecting pay or employee status."],
         ["07 Verify", "Independent reviewer", "Rerun control, confirm source and payment evidence, retain before/after audit trail."],
         ["08 Close", "Accountable control owner", "Evidence, resolution date and reviewer recorded; exceptions in this fixture remain open demonstrations."],
         ["Absence follow-up", "People Operations", "Review metadata and overlaps privately; seek human HR judgement for sickness cases."],
@@ -316,19 +316,19 @@ def build(public, sources, result):
     ])
     sop.column_dimensions["C"].width = 110
     write_sheet(workbook, "Dashboard", ["Metric", "Value", "Denominator / definition"], [
-        ["Validated active headcount", f'=COUNTIF({hr_active},"Y")', "As-of valid canonical HR records; not the full seeded roster."],
+        ["Validated active headcount", f'=COUNTIF({hr_active},"Y")', "Validated employee records active at the reporting date."],
         ["Active FTE", f'=SUMIF({hr_active},"Y",{hr_fte})', "Contractual FTE for that same active base."],
         ["Reconciled employees", f'=COUNTIF(Reconciliation!L2:L{n+1},"Reconciled")', "Current valid employees with known matched gross within tolerance."],
-        ["Amount exceptions", f'=COUNTIF(Reconciliation!L2:L{n+1},"Amount exception")', "Not a confirmed over/underpayment finding."],
+        ["Amount exceptions", f'=COUNTIF(Reconciliation!L2:L{n+1},"Amount exception")', "Variance beyond the rounding tolerance; requires Payroll review."],
         ["Comparable expected EUR", f'=SUMIF(Reconciliation!L2:L{n+1},"Reconciled",Reconciliation!I2:I{n+1})+SUMIF(Reconciliation!L2:L{n+1},"Amount exception",Reconciliation!I2:I{n+1})', "Known expected and actual gross for the same matched active rows."],
         ["Comparable actual EUR", f'=SUMIF(Reconciliation!L2:L{n+1},"Reconciled",Reconciliation!J2:J{n+1})+SUMIF(Reconciliation!L2:L{n+1},"Amount exception",Reconciliation!J2:J{n+1})', "Unknown, unmatched, inactive and invalid-master amounts excluded."],
         ["Signed discrepancy EUR", f'=SUM(Reconciliation!K2:K{n+1})', "Net signed difference; positive and negative amounts can offset."],
         ["Absolute discrepancy EUR", f'=SUM(Reconciliation!M2:M{n+1})', "Sum of absolute differences; distinct from net difference."],
         ["Absence rate", '=IF(SUM(\'Absence Summary\'!C2:C21)=0,"Unknown",SUM(\'Absence Summary\'!D2:D21)/SUM(\'Absence Summary\'!C2:C21))', "Lost / scheduled FTE-weighted hours, weekdays only."],
-        ["Working time above screen", f'=COUNTIF(\'Time Review\'!F2:F{len(time_rows)+1},"Above screen / review")', "Only complete 17-week logs; not statutory compliance."],
+        ["Working time above screen", f'=COUNTIF(\'Time Review\'!F2:F{len(time_rows)+1},"Above screen / review")', "Complete 17-week logs exceeding the selected operational threshold."],
         ["Working time incomplete", f'=COUNTIF(\'Time Review\'!F2:F{len(time_rows)+1},"Incomplete / review")', "Missing coverage remains a separate uncertainty."],
         ["Visa expiry within horizon", f'=COUNTIFS(\'Visa Tracker\'!G2:G{len(visa_rows)+1},">=0",\'Visa Tracker\'!G2:G{len(visa_rows)+1},"<="&Parameters!B5)', "Nonexpired within demonstration horizon; expired tracked separately."],
-        ["Expired visa records", f'=COUNTIF(\'Visa Tracker\'!G2:G{len(visa_rows)+1},"<0")', "Requires permission/evidence review, not a legal status finding."],
+        ["Expired visa records", f'=COUNTIF(\'Visa Tracker\'!G2:G{len(visa_rows)+1},"<0")', "Recorded expiry dates requiring authorised permission and evidence review."],
         ["Case follow-ups", f'=COUNTIF(\'Case Tracker\'!I2:I{len(case_rows)+1},"Governance follow-up")', "Overdue, missing owner or missing documentation."],
     ])
     workbook["Dashboard"]["B10"].number_format = "0.00%"
