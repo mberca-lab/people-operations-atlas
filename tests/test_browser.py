@@ -1,0 +1,178 @@
+import json
+import sys
+from pathlib import Path
+
+from playwright.sync_api import sync_playwright
+
+ROOT = Path(__file__).resolve().parents[1]
+SHOTS = ROOT / "outputs" / "screenshots"
+SHOTS.mkdir(parents=True, exist_ok=True)
+
+
+def main():
+    checks, errors, requests = [], [], []
+
+    def check(condition, label):
+        if not condition:
+            raise AssertionError(label)
+        checks.append(label)
+
+    def set_range(selector, value):
+        page.locator(selector).evaluate("(element,value)=>{element.value=String(value);element.dispatchEvent(new Event('input',{bubbles:true}))}", value)
+
+    with sync_playwright() as playwright:
+        try:
+            browser = playwright.chromium.launch(headless=True)
+        except Exception as error:
+            if "Executable doesn't exist" not in str(error):
+                raise
+            browser = playwright.chromium.launch(channel="msedge", headless=True)
+        context = browser.new_context(viewport={"width": 1440, "height": 960}, reduced_motion="reduce", color_scheme="light")
+        page = context.new_page()
+        page.on("pageerror", lambda error: errors.append(str(error)))
+        page.on("request", lambda request: requests.append(request.url))
+        page.goto(ROOT.joinpath("index.html").as_uri() + "?scoutTheme=light")
+        page.wait_for_selector("#public-chart path")
+        check(not errors, "Atlas initialises without JavaScript errors")
+        check(page.locator("body").inner_text().count("Not affiliated with Waystone") == 1, "Affiliation boundary visible")
+        check(page.locator("#desk-count").inner_text() == "58 of 58 baseline flags", "Baseline register agrees with analysis")
+        check(page.locator("#pay-net").inner_text() == "€1,847.33", "Signed discrepancy displayed correctly")
+        check(page.locator("#pay-absolute").inner_text() == "€2,652.67", "Absolute discrepancy displayed separately")
+        page.keyboard.press("Tab")
+        check(page.locator(":focus").inner_text() == "Skip to analysis", "Keyboard skip link is first")
+        page.get_by_role("button", name="03 / Controlled", exact=True).click()
+        check(page.locator('[data-phase="2"]').get_attribute("aria-pressed") == "true", "Workforce identity/control visual switches")
+        check(page.locator("#motion").inner_text() == "Resume motion", "Reduced-motion setting pauses animation")
+        page.screenshot(path=str(SHOTS / "hero-desktop-light.png"))
+        page.locator("#anatomy").evaluate("element=>element.scrollIntoView({block:'start',behavior:'instant'})")
+        page.locator('[data-system-button="time_raw"]').click()
+        check("29,745" in page.locator("#system-detail").inner_text(), "Systems constellation exposes the selected source grain")
+        page.locator('[data-system="approvals"]').focus()
+        page.keyboard.press("Enter")
+        check("23" in page.locator("#system-detail").inner_text(), "Systems constellation supports keyboard inspection")
+        page.screenshot(path=str(SHOTS / "systems-constellation-desktop.png"))
+        page.locator("#context").scroll_into_view_if_needed()
+        page.select_option("#public-metric", "EHQ03C02")
+        page.select_option("#public-peer", "J")
+        page.get_by_role("button", name="Levels", exact=True).click()
+        set_range("#public-quarter", 24)
+        check("Euro" in page.locator("#public-chart-title").inner_text(), "Public metric and level units update")
+        check(page.locator("#quarter-output").inner_text() == "2025Q1", "Public endpoint and year-on-year observation update")
+        check("Information and communication" in page.locator("#peer-legend").inner_text(), "Public comparison selector updates")
+        page.screenshot(path=str(SHOTS / "public-context-desktop.png"))
+        page.select_option("#public-metric", "EHQ03C01")
+        page.select_option("#public-peer", "-")
+        page.get_by_role("button", name="2019 = 100", exact=True).click()
+        set_range("#public-quarter", 29)
+        page.locator('[data-pay-id="EMP0005"]').focus()
+        page.keyboard.press("Enter")
+        check("Unsupported movement" in page.locator("#pay-evidence").inner_text(), "Payroll SVG bars are keyboard inspectable")
+        page.locator('[data-pay-id="EMP0018"]').focus()
+        page.keyboard.press("Enter")
+        check("APR-018" in page.locator("#pay-evidence").inner_text(), "Payroll investigation traces effective approval evidence")
+        page.locator("#payroll").scroll_into_view_if_needed()
+        page.screenshot(path=str(SHOTS / "payroll-desktop.png"))
+        page.select_option("#area-filter", "Payroll")
+        page.fill("#exception-search", "EMP0018")
+        check(page.locator("#desk-count").inner_text() == "1 of 58 baseline flags", "Area and search filters combine correctly")
+        check("APR-018" in page.locator("#case-detail").inner_text(), "Filtered exception retains source reference")
+        baseline = page.locator("#pay-net").inner_text()
+        page.get_by_role("button", name='Simulate “Investigating”', exact=True).click()
+        check(page.locator("#triage-state").inner_text() == "Investigating / simulated", "Triage state explicitly simulated")
+        check(page.locator("#pay-net").inner_text() == baseline, "Triage does not change baseline payroll")
+        check(page.locator("#desk-count").inner_text() == "1 of 58 baseline flags", "Triage does not conceal baseline flags")
+        with page.expect_download() as download:
+            page.get_by_role("button", name="Export filtered queue ↓", exact=True).click()
+        check(download.value.suggested_filename == "fictional_filtered_exceptions.csv", "Filtered queue downloads with a fictional label")
+        page.fill("#exception-search", "no-match-example")
+        check("No matching control flags" in page.locator("#exception-table").inner_text(), "Empty queue has an explicit message")
+        page.fill("#exception-search", "")
+        page.select_option("#area-filter", "")
+        page.select_option("#severity-filter", "High")
+        check(all(text == "High" for text in page.locator("#exception-table .status").all_text_contents()), "Severity filter preserves only selected severity")
+        page.select_option("#severity-filter", "")
+        page.locator("#investigate").scroll_into_view_if_needed()
+        page.screenshot(path=str(SHOTS / "investigation-desktop.png"))
+        page.get_by_role("button", name="Technology", exact=True).click()
+        check("Technology" in page.locator("#absence-detail-title").inner_text(), "Heatmap department drill-down updates exposure")
+        check("Scheduled hours" in page.locator("#absence-detail-table").inner_text(), "Absence denominator remains inspectable")
+        page.select_option("#time-employee", "EMP0103")
+        check("Unknown / incomplete coverage" in page.locator("#time-record").inner_text(), "Incomplete time record is not presumed below threshold")
+        set_range("#time-threshold", 60)
+        check(page.locator("#time-count").inner_text() == "0 complete records above 60h", "Time scenario threshold changes screen, not evidence")
+        set_range("#time-threshold", 48)
+        check(page.locator("#time-count").inner_text() == "7 complete records above 48h", "Baseline time threshold restores verified result")
+        page.select_option("#time-employee", "EMP0150")
+        page.get_by_role("button", name="30 days", exact=True).click()
+        thirty = int(page.locator("#visa-window-count").inner_text())
+        page.get_by_role("button", name="90 days", exact=True).click()
+        check(int(page.locator("#visa-window-count").inner_text()) == 10 and thirty < 10, "Visa horizon excludes expired records from unexpired count")
+        page.select_option("#requirement-filter", "Not evidenced")
+        check(page.locator("#requirement-table tbody tr").count() == 2, "Unsupported experience claims remain explicit")
+        page.select_option("#requirement-filter", "")
+        check(page.locator("#requirement-table tbody tr").count() == 29, "All 29 requirements included")
+        check("11,919" in page.locator("#validation-stamp").inner_text(), "Native workbook evidence displayed")
+        for section in page.locator(".chapter").all():
+            section.scroll_into_view_if_needed()
+        page.evaluate("window.scrollTo(0,0)")
+        page.screenshot(path=str(SHOTS / "atlas-desktop-light.png"), full_page=True)
+        page.locator("#theme").click()
+        check(page.locator("html").get_attribute("data-theme") == "dark", "Manual dark theme changes")
+        page.screenshot(path=str(SHOTS / "hero-desktop-dark.png"))
+        for theme in ["light", "dark"]:
+            page.set_viewport_size({"width": 390, "height": 844})
+            page.goto(ROOT.joinpath("index.html").as_uri() + "?scoutTheme=" + theme)
+            page.wait_for_selector("#public-chart path")
+            check(page.locator("html").get_attribute("data-theme") == theme, "Mobile theme parameter " + theme)
+            check(page.evaluate("document.documentElement.scrollWidth <= innerWidth"), "No mobile page overflow in " + theme)
+            page.screenshot(path=str(SHOTS / f"hero-mobile-{theme}.png"))
+            for section in page.locator(".chapter").all():
+                section.scroll_into_view_if_needed()
+                check(page.evaluate("document.documentElement.scrollWidth <= innerWidth"), "Responsive section " + section.get_attribute("id") + " / " + theme)
+            page.locator("#anatomy").scroll_into_view_if_needed()
+            check(page.evaluate("document.documentElement.scrollWidth <= innerWidth"), "Responsive systems constellation / " + theme)
+            page.screenshot(path=str(SHOTS / f"systems-constellation-mobile-{theme}.png"))
+            page.locator("#absence").evaluate("element=>element.scrollIntoView({block:'start',behavior:'instant'})")
+            check(page.locator("#absence-heatmap").evaluate("element=>element.scrollWidth<=element.clientWidth"), "All four absence months fit on mobile / " + theme)
+            page.screenshot(path=str(SHOTS / f"absence-mobile-{theme}.png"))
+            page.evaluate("window.scrollTo(0,0)")
+            page.screenshot(path=str(SHOTS / f"atlas-mobile-{theme}.png"), full_page=True)
+            for anchor in page.locator("a[download]").all():
+                check((ROOT / anchor.get_attribute("href")).is_file(), "Download exists: " + anchor.get_attribute("href"))
+        animated = browser.new_context(viewport={"width": 1440, "height": 960}, reduced_motion="no-preference", color_scheme="light")
+        moving = animated.new_page()
+        moving.on("pageerror", lambda error: errors.append(str(error)))
+        moving.on("request", lambda request: requests.append(request.url))
+        moving.goto(ROOT.joinpath("index.html").as_uri() + "?scoutTheme=light")
+        moving.wait_for_selector("#public-chart path")
+        check(moving.locator("#motion").inner_text() == "Pause motion", "Standard-motion view starts animated")
+        before = moving.locator("#workforce").evaluate("canvas=>canvas.toDataURL()")
+        moving.wait_for_timeout(500)
+        check(before != moving.locator("#workforce").evaluate("canvas=>canvas.toDataURL()"), "Workforce canvas visibly animates")
+        moving.wait_for_function("document.querySelector('[data-phase=\"1\"]').getAttribute('aria-pressed')==='true'", timeout=25000)
+        check("grouped by department" in moving.locator("#art-note").inner_text(), "Workforce constellation automatically morphs between narrative modes")
+        moving.screenshot(path=str(SHOTS / "hero-desktop-connected.png"))
+        moving.locator("#motion").click()
+        moving.get_by_role("button", name="01 / Fragmented", exact=True).click()
+        frozen = moving.locator("#workforce").evaluate("canvas=>canvas.toDataURL()")
+        moving.wait_for_timeout(350)
+        check(frozen == moving.locator("#workforce").evaluate("canvas=>canvas.toDataURL()"), "Manual pause actually freezes canvas motion")
+        check(moving.locator("#systems-diagram").evaluate("svg=>svg.animationsPaused()"), "Manual pause also pauses systems signal motion")
+        moving.locator("#motion").click()
+        moving.wait_for_timeout(350)
+        check(frozen != moving.locator("#workforce").evaluate("canvas=>canvas.toDataURL()"), "Manual resume restarts canvas motion")
+        check(not moving.locator("#systems-diagram").evaluate("svg=>svg.animationsPaused()"), "Manual resume also restarts systems signal motion")
+        animated.close()
+        check(not errors, "All tested interactions complete without JavaScript errors")
+        check(not any(url.startswith(("http:", "https:")) for url in requests), "No runtime network requests or trackers")
+        context.close()
+        browser.close()
+    report = {"checks": len(checks), "successful": True, "javascript_errors": errors,
+              "runtime_network_requests": 0, "viewports": ["1440x960", "390x844"],
+              "themes": ["light", "dark"], "motion_modes": ["reduced", "animated"], "verified": checks}
+    (ROOT / "outputs" / "browser_validation.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
+    print(json.dumps(report, indent=2))
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,8 @@
+{
+  "tests": 17,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "successful": true,
+  "scope": "Source decoding, seeded control fixtures, missing-time edge cases, Python/Excel parity, native Excel scenarios, genuine pivots and executed notebook."
+}

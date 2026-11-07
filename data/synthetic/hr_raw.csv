@@ -1,0 +1,365 @@
+source_row,employee_id,department,annual_salary_eur,fte,start_date,end_date,contract
+HR-0001, emp0001 ,ops ,75700.0,1.0,2021-01-01,,Permanent
+HR-0002,EMP0002,Client Services,61100.0,1.0,2022-01-01,,Permanent
+HR-0003,EMP0003,Risk & Compliance,62300.0,1.0,2023-01-01,,Permanent
+HR-0004,EMP0004,Technology,75900.0,0.6,2024-01-01,,Permanent
+HR-0005,EMP0005,Corporate,97900.0,1.0,2020-01-01,,Permanent
+HR-0006,EMP0006,Operations,56400.0,1.0,2021-01-01,,Permanent
+HR-0007,EMP0007,Client Services,,1.0,2022-01-01,,Fixed term
+HR-0008,EMP0008,Risk & Compliance,41400.0,1.0,2023-01-01,,Permanent
+HR-0009,EMP0009,Technology,57600.0,0.8,2024-01-01,,Permanent
+HR-0010,EMP0010,Corporate,79100.0,1.0,2020-01-01,,Permanent
+HR-0011,EMP0011,Operations,44900.0,0.8,2021-01-01,,Permanent
+HR-0012,EMP0012,Client Services,57500.0,0.8,2022-01-01,,Permanent
+HR-0013,EMP0013,Risk & Compliance,62600.0,1.0,2023-01-01,,Permanent
+HR-0014, emp0014 ,Technology,91100.0,1.0,2024-01-01,,Fixed term
+HR-0015,EMP0015,Corporate,97500.0,"0,8",2020-01-01,,Permanent
+HR-0016,EMP0016,Operations,90900.0,0.8,2021-01-01,,Permanent
+HR-0017,EMP0017,Client Services,63500.0,0.8,2022-01-01,,Permanent
+HR-0018,EMP0018,Risk & Compliance ,60400.0,1.0,2023-01-01,,Permanent
+HR-0019,EMP0019,Technology,39200.0,1.0,2024-01-01,,Permanent
+HR-0020,EMP0020,,43300.0,1.0,2020-01-01,,Permanent
+HR-0021,EMP0021,Operations,98400.0,1.0,2021-01-01,,Fixed term
+HR-0022,EMP0022,Client Services,88400.0,1.0,2022-01-01,,Permanent
+HR-0023,EMP0023,Risk & Compliance,47200.0,0.6,2023-01-01,,Permanent
+HR-0024,EMP0024,Technology,41000.0,0.8,2024-01-01,,Permanent
+HR-0025,EMP0025,Corporate,62800.0,1.0,2020-01-01,,Permanent
+HR-0026,EMP0026,Operations,54600.0,0.8,2021-01-01,,Permanent
+HR-0027, emp0027 ,Client Services,94800.0,1.0,2022-01-01,,Permanent
+HR-0028,EMP0028,Risk & Compliance,77400.0,1.0,2026-11-15,,Fixed term
+HR-0029,EMP0029,Technology,51600.0,1.0,2024-01-01,,Permanent
+HR-0030,EMP0030,Corporate,61100.0,1.0,31/02/2026,,Permanent
+HR-0031,EMP0031,Operations,39100.0,1.0,2021-01-01,,Permanent
+HR-0032,EMP0032,Client Services,40100.0,1.0,2022-01-01,,Permanent
+HR-0033,EMP0033,Risk & Compliance,80100.0,0.8,2023-01-01,,Permanent
+HR-0034,EMP0034,Technology,56100.0,1.0,2024-01-01,,Permanent
+HR-0035,EMP0035,Corporate ,80600.0,1.0,2020-01-01,,Fixed term
+HR-0036,EMP0036,Operations,50200.0,0.8,2021-01-01,,Permanent
+HR-0037,EMP0037,Client Services,67700.0,1.0,2022-01-01,,Permanent
+HR-0038,EMP0038,Risk & Compliance,71400.0,1.0,2023-01-01,,Permanent
+HR-0039,EMP0039,Technology,98400.0,1.0,2024-01-01,,Permanent
+HR-0040, emp0040 ,Corporate,48200.0,1.0,2020-01-01,,Permanent
+HR-0041,EMP0041,Operations,85100.0,1.8,2021-01-01,,Permanent
+HR-0042,EMP0042,Client Services,62100.0,1.0,2022-01-01,,Fixed term
+HR-0043,EMP0043,Risk & Compliance,74400.0,1.0,2023-01-01,,Permanent
+HR-0044,EMP0044,Technology,55500.0,1.0,2024-01-01,,Permanent
+HR-0045,EMP0045,Corporate,84900.0,1.0,2020-01-01,,Permanent
+HR-0046,EMP0046,Operations,50000.0,1.0,2021-01-01,,Permanent
+HR-0047,EMP0047,Client Services,78200.0,0.8,2022-01-01,,Permanent
+HR-0048,EMP0048,Risk & Compliance,77300.0,1.0,2023-01-01,,Permanent
+HR-0049,EMP0049,Technology,87400.0,0.8,2024-01-01,,Fixed term
+HR-0050,EMP0050,Corporate,81800.0,1.0,2020-01-01,,Permanent
+HR-0051,EMP0051,Operations,49200.0,1.0,2021-01-01,,Permanent
+HR-0052,EMP0052,Client Services ,47800.0,1.0,2022-01-01,,Permanent
+HR-0053, emp0053 ,Risk & Compliance,55700.0,1.0,2023-01-01,,Permanent
+HR-0054,EMP0054,Technology,65600.0,1.0,2024-01-01,,Permanent
+HR-0055,EMP0055,Corporate,80400.0,1.0,2020-01-01,,Permanent
+HR-0056,EMP0056,Operations,55400.0,1.0,2021-01-01,,Fixed term
+HR-0057,EMP0057,Client Services,65600.0,1.0,2022-01-01,,Permanent
+HR-0058,EMP0058,Risk & Compliance,53700.0,1.0,2023-01-01,,Permanent
+HR-0059,EMP0059,Technology,67100.0,1.0,2024-01-01,,Permanent
+HR-0060,EMP0060,Corporate,67300.0,1.0,2020-01-01,,Permanent
+HR-0061,EMP0061,Operations,52700.0,1.0,2021-01-01,,Permanent
+HR-0062,EMP0062,Client Services,73400.0,1.0,2022-01-01,,Permanent
+HR-0063,EMP0063,Risk & Compliance,38100.0,1.0,2023-01-01,,Fixed term
+HR-0064,EMP0064,Technology,61300.0,1.0,2024-01-01,,Permanent
+HR-0065,EMP0065,Corporate,63800.0,1.0,2020-01-01,,Permanent
+HR-0066, emp0066 ,Operations,68700.0,1.0,2021-01-01,,Permanent
+HR-0067,EMP0067,Client Services,57300.0,1.0,2022-01-01,,Permanent
+HR-0068,EMP0068,Risk & Compliance,95300.0,0.8,2023-01-01,,Permanent
+HR-0069,EMP0069,Technology ,40200.0,0.6,2024-01-01,,Permanent
+HR-0070,EMP0070,Corporate,90700.0,1.0,2020-01-01,,Fixed term
+HR-0071,EMP0071,Operations,56500.0,1.0,2021-01-01,,Permanent
+HR-0072,EMP0072,Client Services,78800.0,1.0,2022-01-01,,Permanent
+HR-0073,EMP0073,Risk & Compliance,54400.0,0.8,2023-01-01,,Permanent
+HR-0074,EMP0074,Technology,77200.0,1.0,2024-01-01,,Permanent
+HR-0075,EMP0075,Corporate,74700.0,1.0,2020-01-01,,Permanent
+HR-0076,EMP0076,Operations,38500.0,1.0,2021-01-01,,Permanent
+HR-0077,EMP0077,Client Services,65400.0,0.8,2022-01-01,,Fixed term
+HR-0078,EMP0078,Risk & Compliance,78900.0,0.8,2023-01-01,,Permanent
+HR-0079, emp0079 ,Technology,56700.0,1.0,2024-01-01,,Permanent
+HR-0080,EMP0080,Corporate,93600.0,0.6,2020-01-01,,Permanent
+HR-0081,EMP0081,Operations,69900.0,0.8,2021-01-01,,Permanent
+HR-0082,EMP0082,Client Services,59000.0,1.0,2022-01-01,,Permanent
+HR-0083,EMP0083,Risk & Compliance,95900.0,1.0,2023-01-01,,Permanent
+HR-0084,EMP0084,Technology,70700.0,1.0,2024-01-01,,Fixed term
+HR-0085,EMP0085,Corporate,68900.0,1.0,2020-01-01,,Permanent
+HR-0086,EMP0086,ops ,74700.0,1.0,2021-01-01,,Permanent
+HR-0087,EMP0087,Client Services,62200.0,1.0,2022-01-01,,Permanent
+HR-0088,EMP0088,Risk & Compliance,76900.0,1.0,2023-01-01,,Permanent
+HR-0089,EMP0089,Technology,85400.0,1.0,2024-01-01,,Permanent
+HR-0090,EMP0090,Corporate,58100.0,1.0,2020-01-01,,Permanent
+HR-0091,EMP0091,Operations,57200.0,1.0,2021-01-01,,Fixed term
+HR-0092, emp0092 ,Client Services,42700.0,1.0,2022-01-01,,Permanent
+HR-0093,EMP0093,Risk & Compliance,62800.0,1.0,2023-01-01,,Permanent
+HR-0094,EMP0094,Technology,79600.0,1.0,2024-01-01,,Permanent
+HR-0095,EMP0095,Corporate,63900.0,1.0,2020-01-01,,Permanent
+HR-0096,EMP0096,Operations,41900.0,1.0,2021-01-01,,Permanent
+HR-0097,EMP0097,Client Services,52300.0,1.0,2022-01-01,,Permanent
+HR-0098,EMP0098,Risk & Compliance,83300.0,1.0,2023-01-01,,Fixed term
+HR-0099,EMP0099,Technology,79500.0,1.0,2024-01-01,,Permanent
+HR-0100,EMP0100,Corporate,45900.0,1.0,2020-01-01,,Permanent
+HR-0101,EMP0101,Operations,86800.0,1.0,2021-01-01,,Permanent
+HR-0102,EMP0102,Client Services,64500.0,1.0,2022-01-01,,Permanent
+HR-0103,EMP0103,Risk & Compliance ,38400.0,1.0,2023-01-01,,Permanent
+HR-0104,EMP0104,Technology,90500.0,0.6,2024-01-01,,Permanent
+HR-0105, emp0105 ,Corporate,65000.0,1.0,2020-01-01,,Fixed term
+HR-0106,EMP0106,Operations,74900.0,1.0,2021-01-01,,Permanent
+HR-0107,EMP0107,Client Services,54100.0,1.0,2022-01-01,,Permanent
+HR-0108,EMP0108,Risk & Compliance,89000.0,0.8,2023-01-01,,Permanent
+HR-0109,EMP0109,Technology,40900.0,0.8,2024-01-01,,Permanent
+HR-0110,EMP0110,Corporate,47800.0,1.0,2020-01-01,,Permanent
+HR-0111,EMP0111,Operations,49900.0,1.0,2021-01-01,,Permanent
+HR-0112,EMP0112,Client Services,44700.0,1.0,2022-01-01,,Fixed term
+HR-0113,EMP0113,Risk & Compliance,42300.0,0.8,2023-01-01,,Permanent
+HR-0114,EMP0114,Technology,60600.0,1.0,2024-01-01,,Permanent
+HR-0115,EMP0115,Corporate,51500.0,1.0,2020-01-01,,Permanent
+HR-0116,EMP0116,Operations,55800.0,1.0,2021-01-01,,Permanent
+HR-0117,EMP0117,Client Services,66200.0,0.8,2022-01-01,,Permanent
+HR-0118, emp0118 ,Risk & Compliance,74300.0,1.0,2023-01-01,,Permanent
+HR-0119,EMP0119,Technology,64500.0,1.0,2024-01-01,,Fixed term
+HR-0120,EMP0120,Corporate ,54700.0,1.0,2020-01-01,,Permanent
+HR-0121,EMP0121,Operations,80100.0,1.0,2021-01-01,,Permanent
+HR-0122,EMP0122,Client Services,91800.0,1.0,2022-01-01,,Permanent
+HR-0123,EMP0123,Risk & Compliance,45800.0,1.0,2023-01-01,,Permanent
+HR-0124,EMP0124,Technology,91200.0,1.0,2024-01-01,,Permanent
+HR-0125,EMP0125,Corporate,66500.0,1.0,2020-01-01,,Permanent
+HR-0126,EMP0126,Operations,83200.0,1.0,2021-01-01,,Fixed term
+HR-0127,EMP0127,Client Services,88200.0,1.0,2022-01-01,,Permanent
+HR-0128,EMP0128,Risk & Compliance,97000.0,0.6,2023-01-01,,Permanent
+HR-0129,EMP0129,Technology,94100.0,1.0,2024-01-01,,Permanent
+HR-0130,EMP0130,Corporate,98800.0,1.0,2020-01-01,,Permanent
+HR-0131, emp0131 ,Operations,85700.0,1.0,2021-01-01,,Permanent
+HR-0132,EMP0132,Client Services,82300.0,0.6,2022-01-01,,Permanent
+HR-0133,EMP0133,Risk & Compliance,94000.0,1.0,2023-01-01,,Fixed term
+HR-0134,EMP0134,Technology,77600.0,1.0,2024-01-01,,Permanent
+HR-0135,EMP0135,Corporate,53300.0,1.0,2020-01-01,,Permanent
+HR-0136,EMP0136,Operations,52300.0,1.0,2021-01-01,,Permanent
+HR-0137,EMP0137,Client Services ,97600.0,1.0,2022-01-01,,Permanent
+HR-0138,EMP0138,Risk & Compliance,80900.0,1.0,2023-01-01,,Permanent
+HR-0139,EMP0139,Technology,96500.0,1.0,2024-01-01,,Permanent
+HR-0140,EMP0140,Corporate,82900.0,0.8,2020-01-01,,Fixed term
+HR-0141,EMP0141,Operations,91800.0,1.0,2021-01-01,,Permanent
+HR-0142,EMP0142,Client Services,93800.0,0.8,2022-01-01,,Permanent
+HR-0143,EMP0143,Risk & Compliance,80400.0,0.8,2023-01-01,,Permanent
+HR-0144, emp0144 ,Technology,53200.0,0.8,2024-01-01,,Permanent
+HR-0145,EMP0145,Corporate,48200.0,1.0,2020-01-01,,Permanent
+HR-0146,EMP0146,Operations,42900.0,1.0,2021-01-01,,Permanent
+HR-0147,EMP0147,Client Services,92500.0,1.0,2022-01-01,,Fixed term
+HR-0148,EMP0148,Risk & Compliance,78600.0,1.0,2023-01-01,,Permanent
+HR-0149,EMP0149,Technology,82400.0,1.0,2024-01-01,,Permanent
+HR-0150,EMP0150,Corporate,48700.0,1.0,2020-01-01,,Permanent
+HR-0151,EMP0151,Operations,42100.0,1.0,2021-01-01,,Permanent
+HR-0152,EMP0152,Client Services,96700.0,1.0,2022-01-01,,Permanent
+HR-0153,EMP0153,Risk & Compliance,38000.0,0.8,2023-01-01,,Permanent
+HR-0154,EMP0154,Technology ,75400.0,1.0,2024-01-01,,Fixed term
+HR-0155,EMP0155,Corporate,58600.0,1.0,2020-01-01,,Permanent
+HR-0156,EMP0156,Operations,63800.0,1.0,2021-01-01,,Permanent
+HR-0157, emp0157 ,Client Services,79800.0,1.0,2022-01-01,,Permanent
+HR-0158,EMP0158,Risk & Compliance,82500.0,1.0,2023-01-01,,Permanent
+HR-0159,EMP0159,Technology,82900.0,0.8,2024-01-01,,Permanent
+HR-0160,EMP0160,Corporate,65800.0,1.0,2020-01-01,,Permanent
+HR-0161,EMP0161,Operations,69700.0,1.0,2021-01-01,,Fixed term
+HR-0162,EMP0162,Client Services,44700.0,1.0,2022-01-01,,Permanent
+HR-0163,EMP0163,Risk & Compliance,62600.0,1.0,2023-01-01,,Permanent
+HR-0164,EMP0164,Technology,82800.0,0.8,2024-01-01,,Permanent
+HR-0165,EMP0165,Corporate,44600.0,0.6,2020-01-01,,Permanent
+HR-0166,EMP0166,Operations,59500.0,1.0,2021-01-01,,Permanent
+HR-0167,EMP0167,Client Services,95200.0,1.0,2022-01-01,,Permanent
+HR-0168,EMP0168,Risk & Compliance,83500.0,0.6,2023-01-01,,Fixed term
+HR-0169,EMP0169,Technology,73700.0,1.0,2024-01-01,,Permanent
+HR-0170, emp0170 ,Corporate,42000.0,1.0,2020-01-01,,Permanent
+HR-0171,EMP0171,ops ,90500.0,1.0,2021-01-01,,Permanent
+HR-0172,EMP0172,Client Services,81500.0,1.0,2022-01-01,,Permanent
+HR-0173,EMP0173,Risk & Compliance,41600.0,1.0,2023-01-01,,Permanent
+HR-0174,EMP0174,Technology,45100.0,1.0,2024-01-01,,Permanent
+HR-0175,EMP0175,Corporate,72800.0,1.0,2020-01-01,,Fixed term
+HR-0176,EMP0176,Operations,41800.0,1.0,2021-01-01,,Permanent
+HR-0177,EMP0177,Client Services,57000.0,1.0,2022-01-01,,Permanent
+HR-0178,EMP0178,Risk & Compliance,70000.0,1.0,2023-01-01,,Permanent
+HR-0179,EMP0179,Technology,89600.0,1.0,2024-01-01,,Permanent
+HR-0180,EMP0180,Corporate,61100.0,1.0,2020-01-01,,Permanent
+HR-0181,EMP0181,Operations,50900.0,1.0,2021-01-01,,Permanent
+HR-0182,EMP0182,Client Services,65900.0,0.8,2022-01-01,,Fixed term
+HR-0183, emp0183 ,Risk & Compliance,78100.0,1.0,2023-01-01,,Permanent
+HR-0184,EMP0184,Technology,76600.0,1.0,2024-01-01,,Permanent
+HR-0185,EMP0185,Corporate,81800.0,1.0,2020-01-01,,Permanent
+HR-0186,EMP0186,Operations,40600.0,1.0,2021-01-01,,Permanent
+HR-0187,EMP0187,Client Services,78900.0,1.0,2022-01-01,,Permanent
+HR-0188,EMP0188,Risk & Compliance ,38900.0,1.0,2023-01-01,,Permanent
+HR-0189,EMP0189,Technology,73100.0,1.0,2024-01-01,,Fixed term
+HR-0190,EMP0190,Corporate,74900.0,1.0,2020-01-01,,Permanent
+HR-0191,EMP0191,Operations,39200.0,0.8,2021-01-01,,Permanent
+HR-0192,EMP0192,Client Services,56100.0,1.0,2022-01-01,,Permanent
+HR-0193,EMP0193,Risk & Compliance,67400.0,1.0,2023-01-01,,Permanent
+HR-0194,EMP0194,Technology,57900.0,0.8,2024-01-01,,Permanent
+HR-0195,EMP0195,Corporate,48600.0,1.0,2020-01-01,,Permanent
+HR-0196, emp0196 ,Operations,43300.0,1.0,2021-01-01,,Fixed term
+HR-0197,EMP0197,Client Services,70400.0,1.0,2022-01-01,,Permanent
+HR-0198,EMP0198,Risk & Compliance,55500.0,1.0,2023-01-01,,Permanent
+HR-0199,EMP0199,Technology,84600.0,1.0,2024-01-01,,Permanent
+HR-0200,EMP0200,Corporate,53500.0,1.0,2020-01-01,,Permanent
+HR-0201,EMP0201,Operations,40600.0,1.0,2021-01-01,,Permanent
+HR-0202,EMP0202,Client Services,59500.0,0.6,2022-01-01,,Permanent
+HR-0203,EMP0203,Risk & Compliance,87100.0,0.8,2023-01-01,,Fixed term
+HR-0204,EMP0204,Technology,48500.0,1.0,2024-01-01,,Permanent
+HR-0205,EMP0205,Corporate ,88500.0,1.0,2020-01-01,,Permanent
+HR-0206,EMP0206,Operations,48500.0,1.0,2021-01-01,,Permanent
+HR-0207,EMP0207,Client Services,83100.0,0.8,2022-01-01,,Permanent
+HR-0208,EMP0208,Risk & Compliance,98200.0,1.0,2023-01-01,,Permanent
+HR-0209, emp0209 ,Technology,38900.0,1.0,2024-01-01,,Permanent
+HR-0210,EMP0210,Corporate,50300.0,1.0,2020-01-01,,Fixed term
+HR-0211,EMP0211,Operations,73900.0,1.0,2021-01-01,,Permanent
+HR-0212,EMP0212,Client Services,53300.0,1.0,2022-01-01,,Permanent
+HR-0213,EMP0213,Risk & Compliance,87300.0,0.8,2023-01-01,,Permanent
+HR-0214,EMP0214,Technology,59800.0,1.0,2024-01-01,,Permanent
+HR-0215,EMP0215,Corporate,85200.0,1.0,2020-01-01,,Permanent
+HR-0216,EMP0216,Operations,39500.0,1.0,2021-01-01,,Permanent
+HR-0217,EMP0217,Client Services,85200.0,1.0,2022-01-01,,Fixed term
+HR-0218,EMP0218,Risk & Compliance,82400.0,1.0,2023-01-01,,Permanent
+HR-0219,EMP0219,Technology,69800.0,0.8,2024-01-01,,Permanent
+HR-0220,EMP0220,Corporate,52500.0,1.0,2020-01-01,,Permanent
+HR-0221,EMP0221,Operations,43600.0,1.0,2021-01-01,,Permanent
+HR-0222, emp0222 ,Client Services ,55500.0,1.0,2022-01-01,,Permanent
+HR-0223,EMP0223,Risk & Compliance,78000.0,1.0,2023-01-01,,Permanent
+HR-0224,EMP0224,Technology,59100.0,1.0,2024-01-01,,Fixed term
+HR-0225,EMP0225,Corporate,42700.0,1.0,2020-01-01,,Permanent
+HR-0226,EMP0226,Operations,80000.0,1.0,2021-01-01,,Permanent
+HR-0227,EMP0227,Client Services,73000.0,1.0,2022-01-01,,Permanent
+HR-0228,EMP0228,Risk & Compliance,82800.0,1.0,2023-01-01,,Permanent
+HR-0229,EMP0229,Technology,91200.0,0.8,2024-01-01,,Permanent
+HR-0230,EMP0230,Corporate,67900.0,0.8,2020-01-01,,Permanent
+HR-0231,EMP0231,Operations,79700.0,1.0,2021-01-01,,Fixed term
+HR-0232,EMP0232,Client Services,91700.0,0.8,2022-01-01,,Permanent
+HR-0233,EMP0233,Risk & Compliance,96700.0,1.0,2023-01-01,,Permanent
+HR-0234,EMP0234,Technology,38600.0,1.0,2024-01-01,,Permanent
+HR-0235, emp0235 ,Corporate,54100.0,0.8,2020-01-01,,Permanent
+HR-0236,EMP0236,Operations,57100.0,1.0,2021-01-01,,Permanent
+HR-0237,EMP0237,Client Services,70200.0,0.6,2022-01-01,,Permanent
+HR-0238,EMP0238,Risk & Compliance,71600.0,1.0,2023-01-01,,Fixed term
+HR-0239,EMP0239,Technology ,44100.0,1.0,2024-01-01,,Permanent
+HR-0240,EMP0240,Corporate,98300.0,1.0,2020-01-01,,Permanent
+HR-0241,EMP0241,Operations,62300.0,1.0,2021-01-01,,Permanent
+HR-0242,EMP0242,Client Services,84900.0,1.0,2022-01-01,,Permanent
+HR-0243,EMP0243,Risk & Compliance,45200.0,1.0,2023-01-01,,Permanent
+HR-0244,EMP0244,Technology,82100.0,1.0,2024-01-01,,Permanent
+HR-0245,EMP0245,Corporate,91800.0,1.0,2020-01-01,,Fixed term
+HR-0246,EMP0246,Operations,48800.0,1.0,2021-01-01,,Permanent
+HR-0247,EMP0247,Client Services,53800.0,1.0,2022-01-01,,Permanent
+HR-0248, emp0248 ,Risk & Compliance,44700.0,1.0,2023-01-01,,Permanent
+HR-0249,EMP0249,Technology,51300.0,1.0,2024-01-01,,Permanent
+HR-0250,EMP0250,Corporate,90300.0,1.0,2020-01-01,,Permanent
+HR-0251,EMP0251,Operations,66700.0,0.8,2021-01-01,,Permanent
+HR-0252,EMP0252,Client Services,92800.0,0.8,2022-01-01,,Fixed term
+HR-0253,EMP0253,Risk & Compliance,58500.0,0.8,2023-01-01,,Permanent
+HR-0254,EMP0254,Technology,40400.0,1.0,2024-01-01,,Permanent
+HR-0255,EMP0255,Corporate,40800.0,1.0,2020-01-01,,Permanent
+HR-0256,EMP0256,ops ,62100.0,1.0,2021-01-01,,Permanent
+HR-0257,EMP0257,Client Services,73600.0,1.0,2022-01-01,,Permanent
+HR-0258,EMP0258,Risk & Compliance,62100.0,1.0,2023-01-01,,Permanent
+HR-0259,EMP0259,Technology,64700.0,1.0,2024-01-01,,Fixed term
+HR-0260,EMP0260,Corporate,51600.0,0.8,2020-01-01,,Permanent
+HR-0261, emp0261 ,Operations,78800.0,0.6,2021-01-01,,Permanent
+HR-0262,EMP0262,Client Services,94300.0,1.0,2022-01-01,,Permanent
+HR-0263,EMP0263,Risk & Compliance,48000.0,1.0,2023-01-01,,Permanent
+HR-0264,EMP0264,Technology,45600.0,1.0,2024-01-01,,Permanent
+HR-0265,EMP0265,Corporate,92700.0,0.6,2020-01-01,,Permanent
+HR-0266,EMP0266,Operations,57600.0,1.0,2021-01-01,,Fixed term
+HR-0267,EMP0267,Client Services,58200.0,1.0,2022-01-01,,Permanent
+HR-0268,EMP0268,Risk & Compliance,79600.0,1.0,2023-01-01,,Permanent
+HR-0269,EMP0269,Technology,55900.0,0.6,2024-01-01,,Permanent
+HR-0270,EMP0270,Corporate,72200.0,1.0,2020-01-01,,Permanent
+HR-0271,EMP0271,Operations,65100.0,1.0,2021-01-01,,Permanent
+HR-0272,EMP0272,Client Services,53200.0,1.0,2022-01-01,,Permanent
+HR-0273,EMP0273,Risk & Compliance ,67000.0,1.0,2023-01-01,,Fixed term
+HR-0274, emp0274 ,Technology,61000.0,1.0,2024-01-01,,Permanent
+HR-0275,EMP0275,Corporate,84100.0,1.0,2020-01-01,,Permanent
+HR-0276,EMP0276,Operations,73500.0,0.8,2021-01-01,,Permanent
+HR-0277,EMP0277,Client Services,67400.0,1.0,2022-01-01,,Permanent
+HR-0278,EMP0278,Risk & Compliance,74700.0,1.0,2023-01-01,,Permanent
+HR-0279,EMP0279,Technology,72400.0,0.6,2024-01-01,,Permanent
+HR-0280,EMP0280,Corporate,92200.0,1.0,2020-01-01,,Fixed term
+HR-0281,EMP0281,Operations,41000.0,1.0,2021-01-01,,Permanent
+HR-0282,EMP0282,Client Services,42600.0,1.0,2022-01-01,,Permanent
+HR-0283,EMP0283,Risk & Compliance,71700.0,1.0,2023-01-01,,Permanent
+HR-0284,EMP0284,Technology,95100.0,1.0,2024-01-01,,Permanent
+HR-0285,EMP0285,Corporate,93700.0,1.0,2020-01-01,,Permanent
+HR-0286,EMP0286,Operations,57700.0,1.0,2021-01-01,,Permanent
+HR-0287, emp0287 ,Client Services,59800.0,1.0,2022-01-01,,Fixed term
+HR-0288,EMP0288,Risk & Compliance,67100.0,1.0,2023-01-01,,Permanent
+HR-0289,EMP0289,Technology,57100.0,1.0,2024-01-01,,Permanent
+HR-0290,EMP0290,Corporate ,94200.0,1.0,2020-01-01,,Permanent
+HR-0291,EMP0291,Operations,72400.0,1.0,2021-01-01,,Permanent
+HR-0292,EMP0292,Client Services,89500.0,0.8,2022-01-01,,Permanent
+HR-0293,EMP0293,Risk & Compliance,46100.0,0.8,2023-01-01,,Permanent
+HR-0294,EMP0294,Technology,72400.0,0.6,2024-01-01,,Fixed term
+HR-0295,EMP0295,Corporate,84200.0,1.0,2020-01-01,,Permanent
+HR-0296,EMP0296,Operations,77000.0,1.0,2021-01-01,,Permanent
+HR-0297,EMP0297,Client Services,44500.0,1.0,2022-01-01,,Permanent
+HR-0298,EMP0298,Risk & Compliance,73100.0,0.6,2023-01-01,,Permanent
+HR-0299,EMP0299,Technology,91500.0,1.0,2024-01-01,,Permanent
+HR-0300, emp0300 ,Corporate,43300.0,1.0,2020-01-01,,Permanent
+HR-0301,EMP0301,Operations,53300.0,1.0,2021-01-01,,Fixed term
+HR-0302,EMP0302,Client Services,88400.0,1.0,2022-01-01,,Permanent
+HR-0303,EMP0303,Risk & Compliance,55500.0,1.0,2023-01-01,,Permanent
+HR-0304,EMP0304,Technology,74900.0,0.8,2024-01-01,,Permanent
+HR-0305,EMP0305,Corporate,95500.0,0.8,2020-01-01,,Permanent
+HR-0306,EMP0306,Operations,57300.0,1.0,2021-01-01,,Permanent
+HR-0307,EMP0307,Client Services ,41500.0,1.0,2022-01-01,,Permanent
+HR-0308,EMP0308,Risk & Compliance,68500.0,0.6,2023-01-01,,Fixed term
+HR-0309,EMP0309,Technology,51100.0,1.0,2024-01-01,,Permanent
+HR-0310,EMP0310,Corporate,60500.0,0.6,2020-01-01,,Permanent
+HR-0311,EMP0311,Operations,95600.0,0.6,2021-01-01,,Permanent
+HR-0312,EMP0312,Client Services,66200.0,1.0,2022-01-01,,Permanent
+HR-0313, emp0313 ,Risk & Compliance,80700.0,1.0,2023-01-01,,Permanent
+HR-0314,EMP0314,Technology,94000.0,1.0,2024-01-01,,Permanent
+HR-0315,EMP0315,Corporate,71400.0,1.0,2020-01-01,,Fixed term
+HR-0316,EMP0316,Operations,96400.0,1.0,2021-01-01,,Permanent
+HR-0317,EMP0317,Client Services,93400.0,0.6,2022-01-01,,Permanent
+HR-0318,EMP0318,Risk & Compliance,44700.0,1.0,2023-01-01,,Permanent
+HR-0319,EMP0319,Technology,96300.0,1.0,2024-01-01,,Permanent
+HR-0320,EMP0320,Corporate,78400.0,1.0,2020-01-01,,Permanent
+HR-0321,EMP0321,Operations,46400.0,0.8,2021-01-01,,Permanent
+HR-0322,EMP0322,Client Services,79000.0,0.8,2022-01-01,,Fixed term
+HR-0323,EMP0323,Risk & Compliance,41400.0,1.0,2023-01-01,,Permanent
+HR-0324,EMP0324,Technology ,40900.0,1.0,2024-01-01,,Permanent
+HR-0325,EMP0325,Corporate,73300.0,1.0,2020-01-01,,Permanent
+HR-0326, emp0326 ,Operations,48800.0,1.0,2021-01-01,,Permanent
+HR-0327,EMP0327,Client Services,65100.0,1.0,2022-01-01,,Permanent
+HR-0328,EMP0328,Risk & Compliance,64000.0,1.0,2023-01-01,,Permanent
+HR-0329,EMP0329,Technology,62900.0,1.0,2024-01-01,,Fixed term
+HR-0330,EMP0330,Corporate,79800.0,0.8,2020-01-01,,Permanent
+HR-0331,EMP0331,Operations,76000.0,1.0,2021-01-01,,Permanent
+HR-0332,EMP0332,Client Services,71700.0,1.0,2022-01-01,,Permanent
+HR-0333,EMP0333,Risk & Compliance,95700.0,1.0,2023-01-01,,Permanent
+HR-0334,EMP0334,Technology,58300.0,1.0,2024-01-01,,Permanent
+HR-0335,EMP0335,Corporate,45300.0,1.0,2020-01-01,,Permanent
+HR-0336,EMP0336,Operations,72800.0,1.0,2021-01-01,,Fixed term
+HR-0337,EMP0337,Client Services,67100.0,1.0,2022-01-01,,Permanent
+HR-0338,EMP0338,Risk & Compliance,40600.0,0.6,2023-01-01,,Permanent
+HR-0339, emp0339 ,Technology,77400.0,1.0,2024-01-01,,Permanent
+HR-0340,EMP0340,Corporate,89100.0,0.8,2020-01-01,,Permanent
+HR-0341,EMP0341,ops ,50500.0,1.0,2021-01-01,,Permanent
+HR-0342,EMP0342,Client Services,55700.0,1.0,2022-01-01,,Permanent
+HR-0343,EMP0343,Risk & Compliance,60000.0,1.0,2023-01-01,,Fixed term
+HR-0344,EMP0344,Technology,58100.0,1.0,2024-01-01,,Permanent
+HR-0345,EMP0345,Corporate,54300.0,1.0,2020-01-01,,Permanent
+HR-0346,EMP0346,Operations,50400.0,1.0,2021-01-01,,Permanent
+HR-0347,EMP0347,Client Services,76500.0,0.6,2022-01-01,,Permanent
+HR-0348,EMP0348,Risk & Compliance,75400.0,0.8,2023-01-01,,Permanent
+HR-0349,EMP0349,Technology,39700.0,1.0,2024-01-01,,Permanent
+HR-0350,EMP0350,Corporate,60500.0,0.8,2020-01-01,,Fixed term
+HR-0351,EMP0351,Operations,79900.0,0.8,2021-01-01,2026-09-30,Permanent
+HR-0352, emp0352 ,Client Services,66000.0,0.6,2022-01-01,2026-09-30,Permanent
+HR-0353,EMP0353,Risk & Compliance,48200.0,1.0,2023-01-01,2026-09-30,Permanent
+HR-0354,EMP0354,Technology,75700.0,1.0,2024-01-01,2026-09-30,Permanent
+HR-0355,EMP0355,Corporate,96600.0,1.0,2020-01-01,2026-09-30,Permanent
+HR-0356,EMP0356,Operations,39900.0,1.0,2021-01-01,2026-09-30,Permanent
+HR-0357,EMP0357,Client Services,90200.0,1.0,2022-01-01,2026-09-30,Fixed term
+HR-0358,EMP0358,Risk & Compliance ,52600.0,1.0,2023-01-01,2026-09-30,Permanent
+HR-0359,EMP0359,Technology,61000.0,0.8,2024-01-01,2026-09-30,Permanent
+HR-0360,EMP0360,Corporate,87000.0,1.0,2020-01-01,2026-09-30,Permanent
+HR-0361,EMP0012,Client Services,57500.0,0.8,2022-01-01,,Permanent
+HR-0362,EMP0046,Operations,50000.0,1.0,2021-01-01,,Permanent
+HR-0363,EMP0088,Risk & Compliance,76900.0,1.0,2023-01-01,,Permanent
+HR-0364,EMP0060,Corporate,72300.0,1.0,2020-01-01,,Permanent

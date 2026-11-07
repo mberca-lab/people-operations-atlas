@@ -1,0 +1,27 @@
+case_id,employee_id,permission,expiry_date,status,owner,evidence,provider,days_remaining,action_by,result
+VISA-001,EMP0200,Fictional permission record,2026-10-16,Submitted,Immigration Coordinator,Pending,Demo external provider,-15,2026-07-18,Expired / verify
+VISA-002,EMP0201,Fictional permission record,2026-10-29,Not started,Immigration Coordinator,Recorded,Demo external provider,-2,2026-07-31,Expired / verify
+VISA-003,EMP0202,Fictional permission record,2026-10-31,Not started,Immigration Coordinator,Recorded,Demo external provider,0,2026-08-02,0-30 days
+VISA-004,EMP0203,Fictional permission record,2026-11-07,Not started,Immigration Coordinator,Pending,Demo external provider,7,2026-08-09,0-30 days
+VISA-005,EMP0204,Fictional permission record,2026-11-15,Submitted,Immigration Coordinator,Recorded,Demo external provider,15,2026-08-17,0-30 days
+VISA-006,EMP0205,Fictional permission record,2026-11-25,Not started,Immigration Coordinator,Recorded,Demo external provider,25,2026-08-27,0-30 days
+VISA-007,EMP0206,Fictional permission record,2026-12-05,Not started,Immigration Coordinator,Pending,Demo external provider,35,2026-09-06,31-90 days
+VISA-008,EMP0207,Fictional permission record,2026-12-15,Not started,Immigration Coordinator,Recorded,Demo external provider,45,2026-09-16,31-90 days
+VISA-009,EMP0208,Fictional permission record,2026-12-30,Submitted,,Recorded,Demo external provider,60,2026-10-01,31-90 days
+VISA-010,EMP0209,Fictional permission record,2027-01-09,Not started,Immigration Coordinator,Pending,Demo external provider,70,2026-10-11,31-90 days
+VISA-011,EMP0210,Fictional permission record,2027-01-19,Not started,Immigration Coordinator,Recorded,Demo external provider,80,2026-10-21,31-90 days
+VISA-012,EMP0211,Fictional permission record,2027-01-29,Not started,Immigration Coordinator,Recorded,Demo external provider,90,2026-10-31,31-90 days
+VISA-013,EMP0212,Fictional permission record,2027-02-08,Submitted,Immigration Coordinator,Pending,Demo external provider,100,2026-11-10,Over 90 days
+VISA-014,EMP0213,Fictional permission record,2027-02-18,Not started,Immigration Coordinator,Recorded,Demo external provider,110,2026-11-20,Over 90 days
+VISA-015,EMP0214,Fictional permission record,2027-02-28,Not started,Immigration Coordinator,Recorded,Demo external provider,120,2026-11-30,Over 90 days
+VISA-016,EMP0215,Fictional permission record,2027-03-10,Not started,Immigration Coordinator,Pending,Demo external provider,130,2026-12-10,Over 90 days
+VISA-017,EMP0216,Fictional permission record,2027-03-20,Submitted,Immigration Coordinator,Recorded,Demo external provider,140,2026-12-20,Over 90 days
+VISA-018,EMP0217,Fictional permission record,2027-03-30,Not started,Immigration Coordinator,Recorded,Demo external provider,150,2026-12-30,Over 90 days
+VISA-019,EMP0218,Fictional permission record,2027-04-29,Not started,Immigration Coordinator,Pending,Demo external provider,180,2027-01-29,Over 90 days
+VISA-020,EMP0219,Fictional permission record,2027-05-19,Not started,Immigration Coordinator,Recorded,Demo external provider,200,2027-02-18,Over 90 days
+VISA-021,EMP0220,Fictional permission record,2027-06-08,Submitted,Immigration Coordinator,Recorded,Demo external provider,220,2027-03-10,Over 90 days
+VISA-022,EMP0221,Fictional permission record,2027-06-28,Not started,Immigration Coordinator,Pending,Demo external provider,240,2027-03-30,Over 90 days
+VISA-023,EMP0222,Fictional permission record,2027-07-28,Not started,Immigration Coordinator,Recorded,Demo external provider,270,2027-04-29,Over 90 days
+VISA-024,EMP0223,Fictional permission record,2027-08-27,Not started,Immigration Coordinator,Recorded,Demo external provider,300,2027-05-29,Over 90 days
+VISA-025,EMP0224,Fictional permission record,2027-09-26,Submitted,Immigration Coordinator,Pending,Demo external provider,330,2027-06-28,Over 90 days
+VISA-026,EMP0225,Fictional permission record,2027-10-31,Not started,Immigration Coordinator,Recorded,Demo external provider,365,2027-08-02,Over 90 days

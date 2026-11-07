@@ -1,0 +1,345 @@
+employee_id,department,weeks,average_hours,peak_hours,complete_weeks,result
+EMP0001,Operations,17,37.5,37.5,17,Below screen
+EMP0002,Client Services,17,37.5,37.5,17,Below screen
+EMP0003,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0004,Technology,17,22.5,22.5,17,Below screen
+EMP0005,Corporate,17,37.5,37.5,17,Below screen
+EMP0006,Operations,17,37.5,37.5,17,Below screen
+EMP0008,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0009,Technology,17,30.0,30.0,17,Below screen
+EMP0010,Corporate,17,37.5,37.5,17,Below screen
+EMP0011,Operations,17,30.0,30.0,17,Below screen
+EMP0012,Client Services,17,30.0,30.0,17,Below screen
+EMP0013,Risk & Compliance,17,36.1764705882353,37.5,17,Below screen
+EMP0014,Technology,17,37.5,37.5,17,Below screen
+EMP0015,Corporate,17,30.0,30.0,17,Below screen
+EMP0016,Operations,17,30.0,30.0,17,Below screen
+EMP0017,Client Services,17,30.0,30.0,17,Below screen
+EMP0018,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0019,Technology,17,37.5,37.5,17,Below screen
+EMP0021,Operations,17,37.5,37.5,17,Below screen
+EMP0022,Client Services,17,37.5,37.5,17,Below screen
+EMP0023,Risk & Compliance,17,21.176470588235293,22.5,17,Below screen
+EMP0024,Technology,17,30.0,30.0,17,Below screen
+EMP0025,Corporate,17,37.5,37.5,17,Below screen
+EMP0026,Operations,17,30.0,30.0,17,Below screen
+EMP0027,Client Services,17,37.5,37.5,17,Below screen
+EMP0029,Technology,17,33.970588235294116,37.5,17,Below screen
+EMP0031,Operations,17,37.5,37.5,17,Below screen
+EMP0032,Client Services,17,37.5,37.5,17,Below screen
+EMP0033,Risk & Compliance,17,30.0,30.0,17,Below screen
+EMP0034,Technology,17,37.5,37.5,17,Below screen
+EMP0035,Corporate,17,37.5,37.5,17,Below screen
+EMP0036,Operations,17,30.0,30.0,17,Below screen
+EMP0037,Client Services,17,34.85294117647059,37.5,17,Below screen
+EMP0038,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0039,Technology,17,34.85294117647059,37.5,17,Below screen
+EMP0040,Corporate,17,37.5,37.5,17,Below screen
+EMP0042,Client Services,17,37.5,37.5,17,Below screen
+EMP0043,Risk & Compliance,17,36.61764705882353,37.5,17,Below screen
+EMP0044,Technology,17,37.5,37.5,17,Below screen
+EMP0045,Corporate,17,37.5,37.5,17,Below screen
+EMP0046,Operations,17,37.5,37.5,17,Below screen
+EMP0047,Client Services,17,30.0,30.0,17,Below screen
+EMP0048,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0049,Technology,17,30.0,30.0,17,Below screen
+EMP0050,Corporate,17,37.5,37.5,17,Below screen
+EMP0051,Operations,17,37.5,37.5,17,Below screen
+EMP0052,Client Services,17,35.294117647058826,37.5,17,Below screen
+EMP0053,Risk & Compliance,17,35.294117647058826,37.5,17,Below screen
+EMP0054,Technology,17,37.5,37.5,17,Below screen
+EMP0055,Corporate,17,35.73529411764706,37.5,17,Below screen
+EMP0056,Operations,17,37.5,37.5,17,Below screen
+EMP0057,Client Services,17,37.5,37.5,17,Below screen
+EMP0058,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0059,Technology,17,37.5,37.5,17,Below screen
+EMP0061,Operations,17,37.5,37.5,17,Below screen
+EMP0062,Client Services,17,37.5,37.5,17,Below screen
+EMP0063,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0064,Technology,17,34.85294117647059,37.5,17,Below screen
+EMP0065,Corporate,17,37.5,37.5,17,Below screen
+EMP0066,Operations,17,37.5,37.5,17,Below screen
+EMP0067,Client Services,17,37.5,37.5,17,Below screen
+EMP0068,Risk & Compliance,17,30.0,30.0,17,Below screen
+EMP0069,Technology,17,22.5,22.5,17,Below screen
+EMP0070,Corporate,17,37.5,37.5,17,Below screen
+EMP0071,Operations,17,37.5,37.5,17,Below screen
+EMP0072,Client Services,17,37.5,37.5,17,Below screen
+EMP0073,Risk & Compliance,17,30.0,30.0,17,Below screen
+EMP0074,Technology,17,37.05882352941177,37.5,17,Below screen
+EMP0075,Corporate,17,37.5,37.5,17,Below screen
+EMP0076,Operations,17,37.5,37.5,17,Below screen
+EMP0077,Client Services,17,30.0,30.0,17,Below screen
+EMP0078,Risk & Compliance,17,27.88235294117647,30.0,17,Below screen
+EMP0079,Technology,17,37.5,37.5,17,Below screen
+EMP0080,Corporate,17,22.5,22.5,17,Below screen
+EMP0081,Operations,17,29.647058823529413,30.0,17,Below screen
+EMP0082,Client Services,17,37.5,37.5,17,Below screen
+EMP0083,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0084,Technology,17,37.5,37.5,17,Below screen
+EMP0085,Corporate,17,37.05882352941177,37.5,17,Below screen
+EMP0086,Operations,17,37.5,37.5,17,Below screen
+EMP0087,Client Services,17,37.5,37.5,17,Below screen
+EMP0088,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0089,Technology,17,37.5,37.5,17,Below screen
+EMP0090,Corporate,17,37.5,37.5,17,Below screen
+EMP0091,Operations,17,37.5,37.5,17,Below screen
+EMP0092,Client Services,17,37.5,37.5,17,Below screen
+EMP0093,Risk & Compliance,17,34.85294117647059,37.5,17,Below screen
+EMP0094,Technology,17,35.294117647058826,37.5,17,Below screen
+EMP0095,Corporate,17,37.5,37.5,17,Below screen
+EMP0096,Operations,17,37.5,37.5,17,Below screen
+EMP0097,Client Services,17,37.5,37.5,17,Below screen
+EMP0098,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0099,Technology,17,37.5,37.5,17,Below screen
+EMP0100,Corporate,17,55.0,55.0,17,Above 48h / review
+EMP0101,Operations,17,55.0,55.0,17,Above 48h / review
+EMP0102,Client Services,17,55.0,55.0,17,Above 48h / review
+EMP0103,Risk & Compliance,16,55.0,55.0,16,Incomplete / review
+EMP0104,Technology,17,55.0,55.0,17,Above 48h / review
+EMP0105,Corporate,17,51.11764705882353,55.0,17,Above 48h / review
+EMP0106,Operations,17,55.0,55.0,17,Above 48h / review
+EMP0107,Client Services,17,54.35294117647059,55.0,17,Above 48h / review
+EMP0108,Risk & Compliance,17,30.0,30.0,17,Below screen
+EMP0109,Technology,17,30.0,30.0,17,Below screen
+EMP0110,Corporate,17,37.5,37.5,17,Below screen
+EMP0111,Operations,17,37.5,37.5,17,Below screen
+EMP0112,Client Services,17,37.5,37.5,17,Below screen
+EMP0113,Risk & Compliance,17,30.0,30.0,17,Below screen
+EMP0114,Technology,17,37.5,37.5,17,Below screen
+EMP0115,Corporate,17,37.05882352941177,37.5,17,Below screen
+EMP0116,Operations,17,34.85294117647059,37.5,17,Below screen
+EMP0117,Client Services,17,29.294117647058822,30.0,17,Below screen
+EMP0118,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0119,Technology,17,37.5,37.5,17,Below screen
+EMP0120,Corporate,17,37.5,37.5,17,Below screen
+EMP0121,Operations,17,37.5,37.5,17,Below screen
+EMP0122,Client Services,17,37.5,37.5,17,Below screen
+EMP0123,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0124,Technology,17,34.85294117647059,37.5,17,Below screen
+EMP0125,Corporate,17,37.5,37.5,17,Below screen
+EMP0126,Operations,17,37.5,37.5,17,Below screen
+EMP0127,Client Services,17,37.5,37.5,17,Below screen
+EMP0128,Risk & Compliance,17,22.5,22.5,17,Below screen
+EMP0129,Technology,17,37.5,37.5,17,Below screen
+EMP0130,Corporate,17,37.5,37.5,17,Below screen
+EMP0131,Operations,17,37.5,37.5,17,Below screen
+EMP0132,Client Services,17,22.5,22.5,17,Below screen
+EMP0133,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0134,Technology,17,37.5,37.5,17,Below screen
+EMP0135,Corporate,17,37.5,37.5,17,Below screen
+EMP0136,Operations,17,34.85294117647059,37.5,17,Below screen
+EMP0137,Client Services,17,37.05882352941177,37.5,17,Below screen
+EMP0138,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0139,Technology,17,37.5,37.5,17,Below screen
+EMP0140,Corporate,17,30.0,30.0,17,Below screen
+EMP0141,Operations,17,37.5,37.5,17,Below screen
+EMP0142,Client Services,17,30.0,30.0,17,Below screen
+EMP0143,Risk & Compliance,17,28.941176470588236,30.0,17,Below screen
+EMP0144,Technology,17,30.0,30.0,17,Below screen
+EMP0145,Corporate,17,37.5,37.5,17,Below screen
+EMP0146,Operations,17,36.1764705882353,37.5,17,Below screen
+EMP0147,Client Services,17,37.5,37.5,17,Below screen
+EMP0148,Risk & Compliance,17,36.61764705882353,37.5,17,Below screen
+EMP0149,Technology,17,33.970588235294116,37.5,17,Below screen
+EMP0150,Corporate,17,38.8235294117647,60.0,17,Below screen
+EMP0151,Operations,17,37.05882352941177,37.5,17,Below screen
+EMP0152,Client Services,17,37.5,37.5,17,Below screen
+EMP0153,Risk & Compliance,17,30.0,30.0,17,Below screen
+EMP0154,Technology,17,36.1764705882353,37.5,17,Below screen
+EMP0155,Corporate,17,37.5,37.5,17,Below screen
+EMP0156,Operations,17,37.5,37.5,17,Below screen
+EMP0157,Client Services,17,37.5,37.5,17,Below screen
+EMP0158,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0159,Technology,17,30.0,30.0,17,Below screen
+EMP0160,Corporate,17,37.5,37.5,17,Below screen
+EMP0161,Operations,17,37.5,37.5,17,Below screen
+EMP0162,Client Services,17,37.5,37.5,17,Below screen
+EMP0163,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0164,Technology,17,30.0,30.0,17,Below screen
+EMP0165,Corporate,17,22.5,22.5,17,Below screen
+EMP0166,Operations,17,36.1764705882353,37.5,17,Below screen
+EMP0167,Client Services,17,37.5,37.5,17,Below screen
+EMP0168,Risk & Compliance,17,22.5,22.5,17,Below screen
+EMP0169,Technology,17,37.5,37.5,17,Below screen
+EMP0170,Corporate,17,36.529411764705884,43.5,17,Below screen
+EMP0171,Operations,17,37.5,37.5,17,Below screen
+EMP0172,Client Services,17,37.5,37.5,17,Below screen
+EMP0173,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0174,Technology,17,37.5,37.5,17,Below screen
+EMP0175,Corporate,17,37.5,37.5,17,Below screen
+EMP0176,Operations,17,37.5,37.5,17,Below screen
+EMP0177,Client Services,17,37.5,37.5,17,Below screen
+EMP0178,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0179,Technology,17,37.5,37.5,17,Below screen
+EMP0180,Corporate,17,37.5,37.5,17,Below screen
+EMP0181,Operations,17,34.85294117647059,37.5,17,Below screen
+EMP0182,Client Services,17,30.0,30.0,17,Below screen
+EMP0183,Risk & Compliance,17,35.294117647058826,37.5,17,Below screen
+EMP0184,Technology,17,37.05882352941177,37.5,17,Below screen
+EMP0185,Corporate,17,37.5,37.5,17,Below screen
+EMP0186,Operations,17,37.5,37.5,17,Below screen
+EMP0187,Client Services,17,37.5,37.5,17,Below screen
+EMP0188,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0189,Technology,17,33.970588235294116,37.5,17,Below screen
+EMP0190,Corporate,17,37.5,37.5,17,Below screen
+EMP0191,Operations,17,30.0,30.0,17,Below screen
+EMP0192,Client Services,17,37.5,37.5,17,Below screen
+EMP0193,Risk & Compliance,17,32.205882352941174,37.5,17,Below screen
+EMP0194,Technology,17,30.0,30.0,17,Below screen
+EMP0195,Corporate,17,37.05882352941177,37.5,17,Below screen
+EMP0196,Operations,17,37.5,37.5,17,Below screen
+EMP0197,Client Services,17,37.5,37.5,17,Below screen
+EMP0198,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0199,Technology,17,37.5,37.5,17,Below screen
+EMP0200,Corporate,17,37.5,37.5,17,Below screen
+EMP0201,Operations,17,37.5,37.5,17,Below screen
+EMP0202,Client Services,17,22.5,22.5,17,Below screen
+EMP0203,Risk & Compliance,17,27.529411764705884,30.0,17,Below screen
+EMP0204,Technology,17,37.5,37.5,17,Below screen
+EMP0205,Corporate,17,37.5,37.5,17,Below screen
+EMP0206,Operations,17,37.5,37.5,17,Below screen
+EMP0207,Client Services,17,29.294117647058822,30.0,17,Below screen
+EMP0208,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0209,Technology,17,35.73529411764706,37.5,17,Below screen
+EMP0210,Corporate,17,37.5,37.5,17,Below screen
+EMP0211,Operations,17,37.5,37.5,17,Below screen
+EMP0212,Client Services,17,37.5,37.5,17,Below screen
+EMP0213,Risk & Compliance,17,28.235294117647058,30.0,17,Below screen
+EMP0214,Technology,17,37.5,37.5,17,Below screen
+EMP0215,Corporate,17,37.5,37.5,17,Below screen
+EMP0216,Operations,17,37.5,37.5,17,Below screen
+EMP0217,Client Services,17,37.5,37.5,17,Below screen
+EMP0218,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0219,Technology,17,30.0,30.0,17,Below screen
+EMP0220,Corporate,17,37.5,37.5,17,Below screen
+EMP0221,Operations,17,34.85294117647059,37.5,17,Below screen
+EMP0222,Client Services,17,37.5,37.5,17,Below screen
+EMP0223,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0224,Technology,17,37.5,37.5,17,Below screen
+EMP0225,Corporate,17,37.5,37.5,17,Below screen
+EMP0226,Operations,17,37.5,37.5,17,Below screen
+EMP0227,Client Services,17,37.5,37.5,17,Below screen
+EMP0228,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0229,Technology,17,30.0,30.0,17,Below screen
+EMP0230,Corporate,17,30.0,30.0,17,Below screen
+EMP0231,Operations,17,37.5,37.5,17,Below screen
+EMP0232,Client Services,17,30.0,30.0,17,Below screen
+EMP0233,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0234,Technology,17,35.73529411764706,37.5,17,Below screen
+EMP0235,Corporate,17,30.0,30.0,17,Below screen
+EMP0236,Operations,17,37.5,37.5,17,Below screen
+EMP0237,Client Services,17,22.5,22.5,17,Below screen
+EMP0238,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0239,Technology,17,37.5,37.5,17,Below screen
+EMP0240,Corporate,17,37.5,37.5,17,Below screen
+EMP0241,Operations,17,34.85294117647059,37.5,17,Below screen
+EMP0242,Client Services,17,34.411764705882355,37.5,17,Below screen
+EMP0243,Risk & Compliance,17,36.61764705882353,37.5,17,Below screen
+EMP0244,Technology,17,37.5,37.5,17,Below screen
+EMP0245,Corporate,17,37.5,37.5,17,Below screen
+EMP0246,Operations,17,37.5,37.5,17,Below screen
+EMP0247,Client Services,17,37.5,37.5,17,Below screen
+EMP0248,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0249,Technology,17,37.5,37.5,17,Below screen
+EMP0250,Corporate,17,37.5,37.5,17,Below screen
+EMP0251,Operations,17,30.0,30.0,17,Below screen
+EMP0252,Client Services,17,30.0,30.0,17,Below screen
+EMP0253,Risk & Compliance,17,30.0,30.0,17,Below screen
+EMP0254,Technology,17,37.5,37.5,17,Below screen
+EMP0255,Corporate,17,37.5,37.5,17,Below screen
+EMP0256,Operations,17,36.1764705882353,37.5,17,Below screen
+EMP0257,Client Services,17,36.61764705882353,37.5,17,Below screen
+EMP0258,Risk & Compliance,17,35.294117647058826,37.5,17,Below screen
+EMP0259,Technology,17,37.5,37.5,17,Below screen
+EMP0260,Corporate,17,27.529411764705884,30.0,17,Below screen
+EMP0261,Operations,17,22.5,22.5,17,Below screen
+EMP0262,Client Services,17,37.5,37.5,17,Below screen
+EMP0263,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0264,Technology,17,37.5,37.5,17,Below screen
+EMP0265,Corporate,17,21.970588235294116,22.5,17,Below screen
+EMP0266,Operations,17,35.73529411764706,37.5,17,Below screen
+EMP0267,Client Services,17,37.5,37.5,17,Below screen
+EMP0268,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0269,Technology,17,22.5,22.5,17,Below screen
+EMP0270,Corporate,17,37.5,37.5,17,Below screen
+EMP0271,Operations,17,37.5,37.5,17,Below screen
+EMP0272,Client Services,17,37.5,37.5,17,Below screen
+EMP0273,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0274,Technology,17,35.73529411764706,37.5,17,Below screen
+EMP0275,Corporate,17,37.5,37.5,17,Below screen
+EMP0276,Operations,17,30.0,30.0,17,Below screen
+EMP0277,Client Services,17,37.5,37.5,17,Below screen
+EMP0278,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0279,Technology,17,22.5,22.5,17,Below screen
+EMP0280,Corporate,17,37.5,37.5,17,Below screen
+EMP0281,Operations,17,37.5,37.5,17,Below screen
+EMP0282,Client Services,17,37.5,37.5,17,Below screen
+EMP0283,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0284,Technology,17,37.5,37.5,17,Below screen
+EMP0285,Corporate,17,37.5,37.5,17,Below screen
+EMP0286,Operations,17,37.5,37.5,17,Below screen
+EMP0287,Client Services,17,37.5,37.5,17,Below screen
+EMP0288,Risk & Compliance,17,36.1764705882353,37.5,17,Below screen
+EMP0289,Technology,17,34.411764705882355,37.5,17,Below screen
+EMP0290,Corporate,17,37.5,37.5,17,Below screen
+EMP0291,Operations,17,37.5,37.5,17,Below screen
+EMP0292,Client Services,17,30.0,30.0,17,Below screen
+EMP0293,Risk & Compliance,17,30.0,30.0,17,Below screen
+EMP0294,Technology,17,22.5,22.5,17,Below screen
+EMP0295,Corporate,17,35.73529411764706,37.5,17,Below screen
+EMP0296,Operations,17,35.294117647058826,37.5,17,Below screen
+EMP0297,Client Services,17,37.5,37.5,17,Below screen
+EMP0298,Risk & Compliance,17,22.5,22.5,17,Below screen
+EMP0299,Technology,17,36.61764705882353,37.5,17,Below screen
+EMP0300,Corporate,17,37.05882352941177,37.5,17,Below screen
+EMP0301,Operations,17,37.5,37.5,17,Below screen
+EMP0302,Client Services,17,37.5,37.5,17,Below screen
+EMP0303,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0304,Technology,17,30.0,30.0,17,Below screen
+EMP0305,Corporate,17,30.0,30.0,17,Below screen
+EMP0306,Operations,17,35.294117647058826,37.5,17,Below screen
+EMP0307,Client Services,17,37.5,37.5,17,Below screen
+EMP0308,Risk & Compliance,17,22.5,22.5,17,Below screen
+EMP0309,Technology,17,37.5,37.5,17,Below screen
+EMP0310,Corporate,17,21.441176470588236,22.5,17,Below screen
+EMP0311,Operations,17,22.5,22.5,17,Below screen
+EMP0312,Client Services,17,37.5,37.5,17,Below screen
+EMP0313,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0314,Technology,17,37.5,37.5,17,Below screen
+EMP0315,Corporate,17,37.5,37.5,17,Below screen
+EMP0316,Operations,17,37.5,37.5,17,Below screen
+EMP0317,Client Services,17,22.5,22.5,17,Below screen
+EMP0318,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0319,Technology,17,35.294117647058826,37.5,17,Below screen
+EMP0320,Corporate,17,37.5,37.5,17,Below screen
+EMP0321,Operations,17,30.0,30.0,17,Below screen
+EMP0322,Client Services,17,30.0,30.0,17,Below screen
+EMP0323,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0324,Technology,17,37.5,37.5,17,Below screen
+EMP0325,Corporate,17,37.5,37.5,17,Below screen
+EMP0326,Operations,17,37.5,37.5,17,Below screen
+EMP0327,Client Services,17,37.5,37.5,17,Below screen
+EMP0328,Risk & Compliance,17,35.294117647058826,37.5,17,Below screen
+EMP0329,Technology,17,37.5,37.5,17,Below screen
+EMP0330,Corporate,17,30.0,30.0,17,Below screen
+EMP0331,Operations,17,37.5,37.5,17,Below screen
+EMP0332,Client Services,17,37.5,37.5,17,Below screen
+EMP0333,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0334,Technology,17,37.5,37.5,17,Below screen
+EMP0335,Corporate,17,37.5,37.5,17,Below screen
+EMP0336,Operations,17,37.5,37.5,17,Below screen
+EMP0337,Client Services,17,37.5,37.5,17,Below screen
+EMP0338,Risk & Compliance,17,22.5,22.5,17,Below screen
+EMP0339,Technology,17,34.411764705882355,37.5,17,Below screen
+EMP0340,Corporate,17,30.0,30.0,17,Below screen
+EMP0341,Operations,17,37.5,37.5,17,Below screen
+EMP0342,Client Services,17,36.1764705882353,37.5,17,Below screen
+EMP0343,Risk & Compliance,17,37.5,37.5,17,Below screen
+EMP0344,Technology,17,37.5,37.5,17,Below screen
+EMP0345,Corporate,17,37.5,37.5,17,Below screen
+EMP0346,Operations,17,37.5,37.5,17,Below screen
+EMP0347,Client Services,17,22.5,22.5,17,Below screen
+EMP0348,Risk & Compliance,17,30.0,30.0,17,Below screen
+EMP0349,Technology,17,37.5,37.5,17,Below screen
+EMP0350,Corporate,17,27.88235294117647,30.0,17,Below screen

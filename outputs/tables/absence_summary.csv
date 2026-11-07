@@ -1,0 +1,21 @@
+month,department,scheduled_hours,lost_hours,rate_pct
+2026-07,Operations,11764.5,118.5,1.007
+2026-07,Client Services,11419.5,67.5,0.591
+2026-07,Risk & Compliance,11385.0,144.0,1.265
+2026-07,Technology,11592.0,97.5,0.841
+2026-07,Corporate,11316.0,130.5,1.153
+2026-08,Operations,10741.5,105.0,0.978
+2026-08,Client Services,10426.5,60.0,0.575
+2026-08,Risk & Compliance,10395.0,118.5,1.14
+2026-08,Technology,10584.0,262.5,2.48
+2026-08,Corporate,10332.0,39.0,0.377
+2026-09,Operations,11253.0,37.5,0.333
+2026-09,Client Services,10923.0,57.0,0.522
+2026-09,Risk & Compliance,10890.0,195.0,1.791
+2026-09,Technology,11088.0,127.5,1.15
+2026-09,Corporate,10824.0,105.0,0.97
+2026-10,Operations,10956.0,150.0,1.369
+2026-10,Client Services,10659.0,49.5,0.464
+2026-10,Risk & Compliance,10560.0,66.0,0.625
+2026-10,Technology,10791.0,172.5,1.599
+2026-10,Corporate,10494.0,25.5,0.243

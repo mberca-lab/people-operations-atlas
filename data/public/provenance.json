@@ -1,0 +1,38 @@
+{
+  "publisher": "Central Statistics Office, Ireland",
+  "dataset": "EHQ03",
+  "label": "Average Earnings, Hours Worked, Employment and Labour Costs",
+  "url": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/EHQ03/JSON-stat/2.0/en",
+  "retrieved_utc": "2026-11-07T16:15:47.545155+00:00",
+  "publisher_updated": "2026-08-25T11:00:00.000Z",
+  "sha256": "02cea5148d39cd8dadd1fa91687d1b2751d2da50af224d67e58f4314108f057b",
+  "license": "Creative Commons Attribution 4.0",
+  "license_url": "https://data.gov.ie/dataset/ehq03-average-earnings-hours-worked-employment-and-labour-costs",
+  "methodology_url": "https://www.cso.ie/en/methods/earnings/earningshoursandemploymentcostssurvey/",
+  "background_url": "https://www.cso.ie/en/methods/surveybackgroundnotes/earningsandlabourcostsquarterly/",
+  "working_time_guidance_url": "https://www.workplacerelations.ie/en/what_you_should_know/hours-and-wages/working_hours/",
+  "raw_dimensions": [
+    "STATISTIC",
+    "TLIST(Q1)",
+    "C02665V03225",
+    "C02397V02888"
+  ],
+  "raw_size": [
+    21,
+    74,
+    21,
+    4
+  ],
+  "raw_cells": 130536,
+  "selection": "All employees; unadjusted Employment, Weekly Earnings, Hourly Earnings, Weekly Paid Hours and Hourly Total Labour Costs; 2019Q1 onward. All published sectors retained, never summed across overlapping sector groupings.",
+  "boundaries": [
+    "Public sector aggregates, not Waystone or employee-level data.",
+    "Survey coverage: enterprises with 3+ employees; all with 50+ and a sample with 3-49. Small enterprises below 3 employees are excluded.",
+    "Means are not individual salary benchmarks. Employment and earnings have different denominator definitions.",
+    "Hours are paid hours, not individual actual working hours or working-time compliance evidence.",
+    "Unadjusted quarter-on-quarter changes may reflect seasonality; year-on-year comparisons are descriptive, nominal and subject to revisions.",
+    "Missing published cells remain missing; no interpolation or imputation.",
+    "NACE K is a broad finance/insurance context, not a company-specific peer match.",
+    "Use the current survey methodology for current coverage; the general background page contains older legislation and register details."
+  ]
+}

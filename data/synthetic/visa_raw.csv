@@ -1,0 +1,27 @@
+case_id,employee_id,permission,expiry_date,status,owner,evidence,provider
+VISA-001,EMP0200,Fictional permission record,2026-10-16,Submitted,Immigration Coordinator,Pending,Demo external provider
+VISA-002,EMP0201,Fictional permission record,2026-10-29,Not started,Immigration Coordinator,Recorded,Demo external provider
+VISA-003,EMP0202,Fictional permission record,2026-10-31,Not started,Immigration Coordinator,Recorded,Demo external provider
+VISA-004,EMP0203,Fictional permission record,2026-11-07,Not started,Immigration Coordinator,Pending,Demo external provider
+VISA-005,EMP0204,Fictional permission record,2026-11-15,Submitted,Immigration Coordinator,Recorded,Demo external provider
+VISA-006,EMP0205,Fictional permission record,2026-11-25,Not started,Immigration Coordinator,Recorded,Demo external provider
+VISA-007,EMP0206,Fictional permission record,2026-12-05,Not started,Immigration Coordinator,Pending,Demo external provider
+VISA-008,EMP0207,Fictional permission record,2026-12-15,Not started,Immigration Coordinator,Recorded,Demo external provider
+VISA-009,EMP0208,Fictional permission record,2026-12-30,Submitted,,Recorded,Demo external provider
+VISA-010,EMP0209,Fictional permission record,2027-01-09,Not started,Immigration Coordinator,Pending,Demo external provider
+VISA-011,EMP0210,Fictional permission record,2027-01-19,Not started,Immigration Coordinator,Recorded,Demo external provider
+VISA-012,EMP0211,Fictional permission record,2027-01-29,Not started,Immigration Coordinator,Recorded,Demo external provider
+VISA-013,EMP0212,Fictional permission record,2027-02-08,Submitted,Immigration Coordinator,Pending,Demo external provider
+VISA-014,EMP0213,Fictional permission record,2027-02-18,Not started,Immigration Coordinator,Recorded,Demo external provider
+VISA-015,EMP0214,Fictional permission record,2027-02-28,Not started,Immigration Coordinator,Recorded,Demo external provider
+VISA-016,EMP0215,Fictional permission record,2027-03-10,Not started,Immigration Coordinator,Pending,Demo external provider
+VISA-017,EMP0216,Fictional permission record,2027-03-20,Submitted,Immigration Coordinator,Recorded,Demo external provider
+VISA-018,EMP0217,Fictional permission record,2027-03-30,Not started,Immigration Coordinator,Recorded,Demo external provider
+VISA-019,EMP0218,Fictional permission record,2027-04-29,Not started,Immigration Coordinator,Pending,Demo external provider
+VISA-020,EMP0219,Fictional permission record,2027-05-19,Not started,Immigration Coordinator,Recorded,Demo external provider
+VISA-021,EMP0220,Fictional permission record,2027-06-08,Submitted,Immigration Coordinator,Recorded,Demo external provider
+VISA-022,EMP0221,Fictional permission record,2027-06-28,Not started,Immigration Coordinator,Pending,Demo external provider
+VISA-023,EMP0222,Fictional permission record,2027-07-28,Not started,Immigration Coordinator,Recorded,Demo external provider
+VISA-024,EMP0223,Fictional permission record,2027-08-27,Not started,Immigration Coordinator,Recorded,Demo external provider
+VISA-025,EMP0224,Fictional permission record,2027-09-26,Submitted,Immigration Coordinator,Pending,Demo external provider
+VISA-026,EMP0225,Fictional permission record,2027-10-31,Not started,Immigration Coordinator,Recorded,Demo external provider

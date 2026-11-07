@@ -1,0 +1,31 @@
+case_id,employee_id,case_type,opened_date,next_review,status,owner,documentation
+CASE-001,EMP0120,PIP review,2026-10-01,2026-10-23,Open,People Operations,Complete
+CASE-002,EMP0121,PIP review,2026-10-01,2026-10-24,Open,People Operations,Complete
+CASE-003,EMP0122,PIP review,2026-10-01,2026-10-25,Open,People Operations,Complete
+CASE-004,EMP0123,PIP review,2026-10-01,2026-10-26,Open,,Missing
+CASE-005,EMP0124,PIP review,2026-10-01,2026-10-27,Open,People Operations,Complete
+CASE-006,EMP0125,PIP review,2026-10-01,2026-10-28,Open,People Operations,Complete
+CASE-007,EMP0126,PIP review,2026-10-01,2026-10-29,Open,People Operations,Complete
+CASE-008,EMP0127,PIP review,2026-10-01,2026-10-30,Open,People Operations,Missing
+CASE-009,EMP0128,PIP review,2026-10-01,2026-10-31,Open,People Operations,Complete
+CASE-010,EMP0129,PIP review,2026-10-01,2026-11-01,Open,People Operations,Complete
+CASE-011,EMP0130,PIP review,2026-10-01,2026-11-02,Open,People Operations,Complete
+CASE-012,EMP0131,PIP review,2026-10-01,2026-11-03,Open,People Operations,Complete
+CASE-013,EMP0132,PIP review,2026-10-01,2026-11-04,Open,People Operations,Complete
+CASE-014,EMP0133,PIP review,2026-10-01,2026-11-05,Open,People Operations,Complete
+CASE-015,EMP0134,PIP review,2026-10-01,2026-11-06,Open,People Operations,Complete
+CASE-016,EMP0135,PIP review,2026-10-01,2026-11-07,Open,People Operations,Complete
+CASE-017,EMP0136,PIP review,2026-10-01,2026-11-08,Open,People Operations,Complete
+CASE-018,EMP0137,PIP review,2026-10-01,2026-11-09,Open,People Operations,Complete
+CASE-019,EMP0138,ER triage,2026-10-01,2026-11-10,Open,People Operations,Complete
+CASE-020,EMP0139,ER triage,2026-10-01,2026-11-11,Open,People Operations,Complete
+CASE-021,EMP0140,ER triage,2026-10-01,2026-11-12,Open,People Operations,Missing
+CASE-022,EMP0141,ER triage,2026-10-01,2026-11-13,Open,People Operations,Complete
+CASE-023,EMP0142,ER triage,2026-10-01,2026-11-14,Open,,Complete
+CASE-024,EMP0143,ER triage,2026-10-01,2026-11-15,Open,People Operations,Complete
+CASE-025,EMP0144,ER triage,2026-10-01,2026-11-16,Open,People Operations,Complete
+CASE-026,EMP0145,ER triage,2026-10-01,2026-11-17,Open,People Operations,Complete
+CASE-027,EMP0146,ER triage,2026-10-01,2026-11-18,Open,People Operations,Complete
+CASE-028,EMP0147,ER triage,2026-10-01,2026-11-19,Open,People Operations,Complete
+CASE-029,EMP0148,ER triage,2026-10-01,2026-11-20,Open,People Operations,Complete
+CASE-030,EMP0149,ER triage,2026-10-01,2026-11-21,Open,People Operations,Complete
