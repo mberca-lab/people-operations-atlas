@@ -1,0 +1,6576 @@
+{
+  "closure": {
+    "case_id": "SIM-CLOSE-001",
+    "employee_id": "EMP0018",
+    "approval_id": "APR-018",
+    "effective_date": "2026-10-01",
+    "approved_salary_eur": 65232.00000000001,
+    "fte": 1.0,
+    "allowance_eur": 120.0,
+    "variable_eur": 0.0,
+    "expected_gross_eur": 5556.0,
+    "original_gross_eur": 5153.33,
+    "corrected_gross_eur": 5556.0,
+    "original_delta_eur": -402.67,
+    "corrected_delta_eur": 0.0,
+    "before_qa": {
+      "seed": 731,
+      "as_of": "2026-10-31",
+      "fixture_people": 360,
+      "hr_raw_rows": 364,
+      "hr_unique_keys": 360,
+      "hr_exact_duplicates_removed": 3,
+      "hr_conflicting_keys": 1,
+      "hr_critical_records_excluded": 4,
+      "hr_valid_records": 355,
+      "active_headcount": 344,
+      "active_fte": 324.0,
+      "payroll_raw_rows": 353,
+      "payroll_exact_duplicates_removed": 2,
+      "payroll_conflicting_keys": 1,
+      "payroll_resolved_rows": 348,
+      "reconciled_employees": 337,
+      "payroll_amount_exceptions": 3,
+      "comparable_payroll_rows": 340,
+      "expected_comparable_eur": 1788429.38,
+      "actual_comparable_eur": 1790276.71,
+      "signed_payroll_delta_eur": 1847.33,
+      "absolute_payroll_delta_eur": 2652.67,
+      "absence_raw_rows": 87,
+      "absence_exact_duplicates_removed": 4,
+      "absence_valid_episodes": 80,
+      "absence_naive_valid_days": 297,
+      "absence_unique_days": 296,
+      "absence_overlap_days_removed": 1,
+      "absence_rate_pct": 0.975,
+      "working_time_daily_rows": 29745,
+      "time_above_screen": 7,
+      "time_incomplete": 1,
+      "visa_within_90_days": 10,
+      "visa_expired_records": 2,
+      "case_followups": 10,
+      "exceptions": 58
+    },
+    "after_qa": {
+      "seed": 731,
+      "as_of": "2026-10-31",
+      "fixture_people": 360,
+      "hr_raw_rows": 364,
+      "hr_unique_keys": 360,
+      "hr_exact_duplicates_removed": 3,
+      "hr_conflicting_keys": 1,
+      "hr_critical_records_excluded": 4,
+      "hr_valid_records": 355,
+      "active_headcount": 344,
+      "active_fte": 324.0,
+      "payroll_raw_rows": 353,
+      "payroll_exact_duplicates_removed": 2,
+      "payroll_conflicting_keys": 1,
+      "payroll_resolved_rows": 348,
+      "reconciled_employees": 338,
+      "payroll_amount_exceptions": 2,
+      "comparable_payroll_rows": 340,
+      "expected_comparable_eur": 1788429.38,
+      "actual_comparable_eur": 1790679.38,
+      "signed_payroll_delta_eur": 2250.0,
+      "absolute_payroll_delta_eur": 2250.0,
+      "absence_raw_rows": 87,
+      "absence_exact_duplicates_removed": 4,
+      "absence_valid_episodes": 80,
+      "absence_naive_valid_days": 297,
+      "absence_unique_days": 296,
+      "absence_overlap_days_removed": 1,
+      "absence_rate_pct": 0.975,
+      "working_time_daily_rows": 29745,
+      "time_above_screen": 7,
+      "time_incomplete": 1,
+      "visa_within_90_days": 10,
+      "visa_expired_records": 2,
+      "case_followups": 10,
+      "exceptions": 57
+    },
+    "original_payroll_sha256": "bb596afb0c4d89d602bd7b1baf13991bf4fe51d08607d2692d54e88e56b489d9",
+    "corrected_payroll_sha256": "5958e48b39d50fb5142e311f663f2de9e0b93dd09476e08a6865e0baa13fd268",
+    "events": [
+      {
+        "stage": "1 / Evidence",
+        "owner": "Payroll reviewer",
+        "reference": "PAY-0018 + APR-018",
+        "action": "Compare the recorded payment with the approved salary effective 1 October."
+      },
+      {
+        "stage": "2 / Finding",
+        "owner": "Compensation owner",
+        "reference": "Synthetic source comparison",
+        "action": "The payroll export retains the previous base salary. The approved increase is absent from that export."
+      },
+      {
+        "stage": "3 / Correction",
+        "owner": "Authorised payroll preparer",
+        "reference": "SIM-CORR-001",
+        "action": "Apply the approved base salary in a separate corrected extract; retain both versions."
+      },
+      {
+        "stage": "4 / Verification",
+        "owner": "Independent review role",
+        "reference": "SIM-CHECK-001",
+        "action": "Re-run the full controls and independently calculate salary / 12 x FTE plus approved components."
+      },
+      {
+        "stage": "5 / Closure",
+        "owner": "Accountable control owner",
+        "reference": "SIM-SIGNOFF-001",
+        "action": "Record a zero residual variance and simulated sign-off. Add an effective-date approval-to-payroll check."
+      }
+    ]
+  },
+  "corrected_payroll": [
+    {
+      "source_row": "PR-0001",
+      "employee_id": "EMP0001",
+      "period": "2026-10",
+      "payment_ref": "PAY-0001",
+      "base_eur": 6308.33,
+      "allowance_eur": 120.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6428.33
+    },
+    {
+      "source_row": "PR-0002",
+      "employee_id": "EMP0002",
+      "period": "2026-10",
+      "payment_ref": "PAY-0002",
+      "base_eur": 5091.67,
+      "allowance_eur": 120.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5211.67
+    },
+    {
+      "source_row": "PR-0003",
+      "employee_id": "EMP0003",
+      "period": "2026-10",
+      "payment_ref": "PAY-0003",
+      "base_eur": 5191.67,
+      "allowance_eur": 120.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5311.67
+    },
+    {
+      "source_row": "PR-0004",
+      "employee_id": "EMP0004",
+      "period": "2026-10",
+      "payment_ref": "PAY-0004",
+      "base_eur": 3795.0,
+      "allowance_eur": 120.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3915.0
+    },
+    {
+      "source_row": "PR-0005",
+      "employee_id": "EMP0005",
+      "period": "2026-10",
+      "payment_ref": "PAY-0005",
+      "base_eur": 10158.33,
+      "allowance_eur": 120.0,
+      "variable_eur": 0.0,
+      "gross_eur": 10278.33
+    },
+    {
+      "source_row": "PR-0006",
+      "employee_id": "EMP0006",
+      "period": "2026-10",
+      "payment_ref": "PAY-0006",
+      "base_eur": 4700.0,
+      "allowance_eur": 120.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4820.0
+    },
+    {
+      "source_row": "PR-0007",
+      "employee_id": "EMP0007",
+      "period": "2026-10",
+      "payment_ref": "PAY-0007",
+      "base_eur": 6258.33,
+      "allowance_eur": 120.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6378.33
+    },
+    {
+      "source_row": "PR-0008",
+      "employee_id": "EMP0008",
+      "period": "2026-10",
+      "payment_ref": "PAY-0008",
+      "base_eur": 3450.0,
+      "allowance_eur": 120.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3570.0
+    },
+    {
+      "source_row": "PR-0009",
+      "employee_id": "EMP0009",
+      "period": "2026-10",
+      "payment_ref": "PAY-0009",
+      "base_eur": 3840.0,
+      "allowance_eur": 120.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3960.0
+    },
+    {
+      "source_row": "PR-0010",
+      "employee_id": "EMP0010",
+      "period": "2026-10",
+      "payment_ref": "PAY-0010",
+      "base_eur": 6591.67,
+      "allowance_eur": 120.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6711.67
+    },
+    {
+      "source_row": "PR-0011",
+      "employee_id": "EMP0011",
+      "period": "2026-10",
+      "payment_ref": "PAY-0011",
+      "base_eur": 2993.33,
+      "allowance_eur": 370.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3363.33
+    },
+    {
+      "source_row": "PR-0012",
+      "employee_id": "EMP0012",
+      "period": "2026-10",
+      "payment_ref": "PAY-0012",
+      "base_eur": 3833.33,
+      "allowance_eur": 120.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3953.33
+    },
+    {
+      "source_row": "PR-0013",
+      "employee_id": "EMP0013",
+      "period": "2026-10",
+      "payment_ref": "PAY-0013",
+      "base_eur": 5216.67,
+      "allowance_eur": 120.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5336.67
+    },
+    {
+      "source_row": "PR-0014",
+      "employee_id": "EMP0014",
+      "period": "2026-10",
+      "payment_ref": "PAY-0014",
+      "base_eur": 7591.67,
+      "allowance_eur": 120.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7711.67
+    },
+    {
+      "source_row": "PR-0015",
+      "employee_id": "EMP0015",
+      "period": "2026-10",
+      "payment_ref": "PAY-0015",
+      "base_eur": 6500.0,
+      "allowance_eur": 120.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6620.0
+    },
+    {
+      "source_row": "PR-0016",
+      "employee_id": "EMP0016",
+      "period": "2026-10",
+      "payment_ref": "PAY-0016",
+      "base_eur": 6060.0,
+      "allowance_eur": 120.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6180.0
+    },
+    {
+      "source_row": "PR-0017",
+      "employee_id": "EMP0017",
+      "period": "2026-10",
+      "payment_ref": "PAY-0017",
+      "base_eur": 4233.33,
+      "allowance_eur": 120.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4353.33
+    },
+    {
+      "source_row": "PR-0018",
+      "employee_id": "EMP0018",
+      "period": "2026-10",
+      "payment_ref": "PAY-0018",
+      "base_eur": 5436.0,
+      "allowance_eur": 120.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5556.0
+    },
+    {
+      "source_row": "PR-0019",
+      "employee_id": "EMP0019",
+      "period": "2026-10",
+      "payment_ref": "PAY-0019",
+      "base_eur": 3266.67,
+      "allowance_eur": 120.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3386.67
+    },
+    {
+      "source_row": "PR-0020",
+      "employee_id": "EMP0020",
+      "period": "2026-10",
+      "payment_ref": "PAY-0020",
+      "base_eur": 3608.33,
+      "allowance_eur": 120.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3728.33
+    },
+    {
+      "source_row": "PR-0021",
+      "employee_id": "EMP0021",
+      "period": "2026-10",
+      "payment_ref": "PAY-0021",
+      "base_eur": 8200.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 8200.0
+    },
+    {
+      "source_row": "PR-0022",
+      "employee_id": "EMP0022",
+      "period": "2026-10",
+      "payment_ref": "PAY-0022",
+      "base_eur": 7366.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7366.67
+    },
+    {
+      "source_row": "PR-0023",
+      "employee_id": "EMP0023",
+      "period": "2026-10",
+      "payment_ref": "PAY-0023",
+      "base_eur": 2360.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 2360.0
+    },
+    {
+      "source_row": "PR-0024",
+      "employee_id": "EMP0024",
+      "period": "2026-10",
+      "payment_ref": "PAY-0024",
+      "base_eur": 2733.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": "not supplied"
+    },
+    {
+      "source_row": "PR-0025",
+      "employee_id": "EMP0025",
+      "period": "2026-10",
+      "payment_ref": "PAY-0025",
+      "base_eur": 5233.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5233.33
+    },
+    {
+      "source_row": "PR-0026",
+      "employee_id": "EMP0026",
+      "period": "2026-10",
+      "payment_ref": "PAY-0026",
+      "base_eur": 3640.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3640.0
+    },
+    {
+      "source_row": "PR-0027",
+      "employee_id": "EMP0027",
+      "period": "2026-10",
+      "payment_ref": "PAY-0027",
+      "base_eur": 7900.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7900.0
+    },
+    {
+      "source_row": "PR-0028",
+      "employee_id": "EMP0028",
+      "period": "2026-10",
+      "payment_ref": "PAY-0028",
+      "base_eur": 6450.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6450.0
+    },
+    {
+      "source_row": "PR-0029",
+      "employee_id": "EMP0029",
+      "period": "2026-10",
+      "payment_ref": "PAY-0029",
+      "base_eur": 4300.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4300.0
+    },
+    {
+      "source_row": "PR-0030",
+      "employee_id": "EMP0030",
+      "period": "2026-10",
+      "payment_ref": "PAY-0030",
+      "base_eur": 5091.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5091.67
+    },
+    {
+      "source_row": "PR-0031",
+      "employee_id": "EMP0031",
+      "period": "2026-10",
+      "payment_ref": "PAY-0031",
+      "base_eur": 3258.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3258.33
+    },
+    {
+      "source_row": "PR-0032",
+      "employee_id": "EMP0032",
+      "period": "2026-10",
+      "payment_ref": "PAY-0032",
+      "base_eur": 3341.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3341.67
+    },
+    {
+      "source_row": "PR-0033",
+      "employee_id": "E033",
+      "period": "2026-10",
+      "payment_ref": "PAY-0033",
+      "base_eur": 5340.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5340.0
+    },
+    {
+      "source_row": "PR-0034",
+      "employee_id": "EMP0034",
+      "period": "2026-10",
+      "payment_ref": "PAY-0034",
+      "base_eur": 4675.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4675.0
+    },
+    {
+      "source_row": "PR-0035",
+      "employee_id": "EMP0035",
+      "period": "2026-10",
+      "payment_ref": "PAY-0035",
+      "base_eur": 6716.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6716.67
+    },
+    {
+      "source_row": "PR-0036",
+      "employee_id": "EMP0036",
+      "period": "2026-10",
+      "payment_ref": "PAY-0036",
+      "base_eur": 3346.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3346.67
+    },
+    {
+      "source_row": "PR-0037",
+      "employee_id": "EMP0037",
+      "period": "2026-10",
+      "payment_ref": "PAY-0037",
+      "base_eur": 5641.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5641.67
+    },
+    {
+      "source_row": "PR-0038",
+      "employee_id": "EMP0038",
+      "period": "2026-10",
+      "payment_ref": "PAY-0038",
+      "base_eur": 5950.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5950.0
+    },
+    {
+      "source_row": "PR-0039",
+      "employee_id": "EMP0039",
+      "period": "2026-10",
+      "payment_ref": "PAY-0039",
+      "base_eur": 8200.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 8200.0
+    },
+    {
+      "source_row": "PR-0040",
+      "employee_id": "EMP0040",
+      "period": "2026-10",
+      "payment_ref": "PAY-0040",
+      "base_eur": 4016.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4016.67
+    },
+    {
+      "source_row": "PR-0041",
+      "employee_id": "EMP0041",
+      "period": "2026-10",
+      "payment_ref": "PAY-0041",
+      "base_eur": 7091.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7091.67
+    },
+    {
+      "source_row": "PR-0042",
+      "employee_id": "EMP0042",
+      "period": "2026-10",
+      "payment_ref": "PAY-0042",
+      "base_eur": 5175.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5175.0
+    },
+    {
+      "source_row": "PR-0043",
+      "employee_id": "EMP0043",
+      "period": "2026-10",
+      "payment_ref": "PAY-0043",
+      "base_eur": 6200.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6200.0
+    },
+    {
+      "source_row": "PR-0044",
+      "employee_id": "EMP0044",
+      "period": "2026-10",
+      "payment_ref": "PAY-0044",
+      "base_eur": 4995.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4995.0
+    },
+    {
+      "source_row": "PR-0045",
+      "employee_id": "EMP0045",
+      "period": "2026-10",
+      "payment_ref": "PAY-0045",
+      "base_eur": 7075.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7075.0
+    },
+    {
+      "source_row": "PR-0046",
+      "employee_id": "EMP0046",
+      "period": "2026-10",
+      "payment_ref": "PAY-0046",
+      "base_eur": 4166.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4166.67
+    },
+    {
+      "source_row": "PR-0047",
+      "employee_id": "EMP0047",
+      "period": "2026-10",
+      "payment_ref": "PAY-0047",
+      "base_eur": 5213.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5213.33
+    },
+    {
+      "source_row": "PR-0048",
+      "employee_id": "EMP0048",
+      "period": "2026-10",
+      "payment_ref": "PAY-0048",
+      "base_eur": 6441.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6441.67
+    },
+    {
+      "source_row": "PR-0049",
+      "employee_id": "EMP0049",
+      "period": "2026-10",
+      "payment_ref": "PAY-0049",
+      "base_eur": 5826.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5826.67
+    },
+    {
+      "source_row": "PR-0050",
+      "employee_id": "EMP0050",
+      "period": "2026-10",
+      "payment_ref": "PAY-0050",
+      "base_eur": 6816.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6816.67
+    },
+    {
+      "source_row": "PR-0051",
+      "employee_id": "EMP0051",
+      "period": "2026-10",
+      "payment_ref": "PAY-0051",
+      "base_eur": 4100.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4100.0
+    },
+    {
+      "source_row": "PR-0052",
+      "employee_id": "EMP0052",
+      "period": "2026-10",
+      "payment_ref": "PAY-0052",
+      "base_eur": 3983.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3983.33
+    },
+    {
+      "source_row": "PR-0053",
+      "employee_id": "EMP0053",
+      "period": "2026-10",
+      "payment_ref": "PAY-0053",
+      "base_eur": 4641.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4641.67
+    },
+    {
+      "source_row": "PR-0054",
+      "employee_id": "EMP0054",
+      "period": "2026-10",
+      "payment_ref": "PAY-0054",
+      "base_eur": 5466.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5466.67
+    },
+    {
+      "source_row": "PR-0055",
+      "employee_id": "EMP0055",
+      "period": "2026-10",
+      "payment_ref": "PAY-0055",
+      "base_eur": 6700.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 420.0,
+      "gross_eur": 7120.0
+    },
+    {
+      "source_row": "PR-0056",
+      "employee_id": "EMP0056",
+      "period": "2026-10",
+      "payment_ref": "PAY-0056",
+      "base_eur": 4616.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4616.67
+    },
+    {
+      "source_row": "PR-0057",
+      "employee_id": "EMP0057",
+      "period": "2026-10",
+      "payment_ref": "PAY-0057",
+      "base_eur": 5466.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5466.67
+    },
+    {
+      "source_row": "PR-0058",
+      "employee_id": "EMP0058",
+      "period": "2026-10",
+      "payment_ref": "PAY-0058",
+      "base_eur": 4475.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4475.0
+    },
+    {
+      "source_row": "PR-0059",
+      "employee_id": "EMP0059",
+      "period": "2026-10",
+      "payment_ref": "PAY-0059",
+      "base_eur": 5591.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5591.67
+    },
+    {
+      "source_row": "PR-0060",
+      "employee_id": "EMP0060",
+      "period": "2026-10",
+      "payment_ref": "PAY-0060",
+      "base_eur": 5608.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5608.33
+    },
+    {
+      "source_row": "PR-0061",
+      "employee_id": "EMP0061",
+      "period": "2026-10",
+      "payment_ref": "PAY-0061",
+      "base_eur": 4391.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4391.67
+    },
+    {
+      "source_row": "PR-0062",
+      "employee_id": "EMP0062",
+      "period": "2026-10",
+      "payment_ref": "PAY-0062",
+      "base_eur": 6116.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6116.67
+    },
+    {
+      "source_row": "PR-0063",
+      "employee_id": "EMP0063",
+      "period": "2026-10",
+      "payment_ref": "PAY-0063",
+      "base_eur": 3175.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3175.0
+    },
+    {
+      "source_row": "PR-0064",
+      "employee_id": "EMP0064",
+      "period": "2026-10",
+      "payment_ref": "PAY-0064",
+      "base_eur": 5108.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5108.33
+    },
+    {
+      "source_row": "PR-0065",
+      "employee_id": "EMP0065",
+      "period": "2026-10",
+      "payment_ref": "PAY-0065",
+      "base_eur": 5316.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5316.67
+    },
+    {
+      "source_row": "PR-0066",
+      "employee_id": "EMP0066",
+      "period": "2026-10",
+      "payment_ref": "PAY-0066",
+      "base_eur": 5725.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5725.0
+    },
+    {
+      "source_row": "PR-0067",
+      "employee_id": "EMP0067",
+      "period": "2026-10",
+      "payment_ref": "PAY-0067",
+      "base_eur": 4775.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4775.0
+    },
+    {
+      "source_row": "PR-0068",
+      "employee_id": "EMP0068",
+      "period": "2026-10",
+      "payment_ref": "PAY-0068",
+      "base_eur": 6353.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6353.33
+    },
+    {
+      "source_row": "PR-0069",
+      "employee_id": "EMP0069",
+      "period": "2026-10",
+      "payment_ref": "PAY-0069",
+      "base_eur": 2010.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 2010.0
+    },
+    {
+      "source_row": "PR-0070",
+      "employee_id": "EMP0070",
+      "period": "2026-10",
+      "payment_ref": "PAY-0070",
+      "base_eur": 7558.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7558.33
+    },
+    {
+      "source_row": "PR-0071",
+      "employee_id": "EMP0071",
+      "period": "2026-10",
+      "payment_ref": "PAY-0071",
+      "base_eur": 4708.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4708.33
+    },
+    {
+      "source_row": "PR-0072",
+      "employee_id": "EMP0072",
+      "period": "2026-10",
+      "payment_ref": "PAY-0072",
+      "base_eur": 6566.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6566.67
+    },
+    {
+      "source_row": "PR-0073",
+      "employee_id": "EMP0073",
+      "period": "2026-10",
+      "payment_ref": "PAY-0073",
+      "base_eur": 3626.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3626.67
+    },
+    {
+      "source_row": "PR-0074",
+      "employee_id": "EMP0074",
+      "period": "2026-10",
+      "payment_ref": "PAY-0074",
+      "base_eur": 6433.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6433.33
+    },
+    {
+      "source_row": "PR-0075",
+      "employee_id": "EMP0075",
+      "period": "2026-10",
+      "payment_ref": "PAY-0075",
+      "base_eur": 6225.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6225.0
+    },
+    {
+      "source_row": "PR-0076",
+      "employee_id": "EMP0076",
+      "period": "2026-10",
+      "payment_ref": "PAY-0076",
+      "base_eur": 3208.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3208.33
+    },
+    {
+      "source_row": "PR-0077",
+      "employee_id": "EMP0077",
+      "period": "2026-10",
+      "payment_ref": "PAY-0077",
+      "base_eur": 4360.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4360.0
+    },
+    {
+      "source_row": "PR-0078",
+      "employee_id": "EMP0078",
+      "period": "2026-10",
+      "payment_ref": "PAY-0078",
+      "base_eur": 5260.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5260.0
+    },
+    {
+      "source_row": "PR-0079",
+      "employee_id": "EMP0079",
+      "period": "2026-10",
+      "payment_ref": "PAY-0079",
+      "base_eur": 4725.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4725.0
+    },
+    {
+      "source_row": "PR-0080",
+      "employee_id": "EMP0080",
+      "period": "2026-10",
+      "payment_ref": "PAY-0080",
+      "base_eur": 4680.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4680.0
+    },
+    {
+      "source_row": "PR-0081",
+      "employee_id": "EMP0081",
+      "period": "2026-10",
+      "payment_ref": "PAY-0081",
+      "base_eur": 4660.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4660.0
+    },
+    {
+      "source_row": "PR-0082",
+      "employee_id": "EMP0082",
+      "period": "2026-10",
+      "payment_ref": "PAY-0082",
+      "base_eur": 4916.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4916.67
+    },
+    {
+      "source_row": "PR-0083",
+      "employee_id": "EMP0083",
+      "period": "2026-10",
+      "payment_ref": "PAY-0083",
+      "base_eur": 7991.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7991.67
+    },
+    {
+      "source_row": "PR-0084",
+      "employee_id": "EMP0084",
+      "period": "2026-10",
+      "payment_ref": "PAY-0084",
+      "base_eur": 5891.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5891.67
+    },
+    {
+      "source_row": "PR-0085",
+      "employee_id": "EMP0085",
+      "period": "2026-10",
+      "payment_ref": "PAY-0085",
+      "base_eur": 5741.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5741.67
+    },
+    {
+      "source_row": "PR-0086",
+      "employee_id": "EMP0086",
+      "period": "2026-10",
+      "payment_ref": "PAY-0086",
+      "base_eur": 6225.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6225.0
+    },
+    {
+      "source_row": "PR-0087",
+      "employee_id": "EMP0087",
+      "period": "2026-10",
+      "payment_ref": "PAY-0087",
+      "base_eur": 5183.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5183.33
+    },
+    {
+      "source_row": "PR-0088",
+      "employee_id": "EMP0088",
+      "period": "2026-10",
+      "payment_ref": "PAY-0088",
+      "base_eur": 6408.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6408.33
+    },
+    {
+      "source_row": "PR-0089",
+      "employee_id": "EMP0089",
+      "period": "2026-10",
+      "payment_ref": "PAY-0089",
+      "base_eur": 7116.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7116.67
+    },
+    {
+      "source_row": "PR-0090",
+      "employee_id": "EMP0090",
+      "period": "2026-10",
+      "payment_ref": "PAY-0090",
+      "base_eur": 4841.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4841.67
+    },
+    {
+      "source_row": "PR-0091",
+      "employee_id": "EMP0091",
+      "period": "2026-10",
+      "payment_ref": "PAY-0091",
+      "base_eur": 4766.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4766.67
+    },
+    {
+      "source_row": "PR-0092",
+      "employee_id": "EMP0092",
+      "period": "2026-10",
+      "payment_ref": "PAY-0092",
+      "base_eur": 3558.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3558.33
+    },
+    {
+      "source_row": "PR-0093",
+      "employee_id": "EMP0093",
+      "period": "2026-10",
+      "payment_ref": "PAY-0093",
+      "base_eur": 5233.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5233.33
+    },
+    {
+      "source_row": "PR-0094",
+      "employee_id": "EMP0094",
+      "period": "2026-10",
+      "payment_ref": "PAY-0094",
+      "base_eur": 6633.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6633.33
+    },
+    {
+      "source_row": "PR-0095",
+      "employee_id": "EMP0095",
+      "period": "2026-10",
+      "payment_ref": "PAY-0095",
+      "base_eur": 5325.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5325.0
+    },
+    {
+      "source_row": "PR-0096",
+      "employee_id": "EMP0096",
+      "period": "2026-10",
+      "payment_ref": "PAY-0096",
+      "base_eur": 3491.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3491.67
+    },
+    {
+      "source_row": "PR-0097",
+      "employee_id": "EMP0097",
+      "period": "2026-10",
+      "payment_ref": "PAY-0097",
+      "base_eur": 4358.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4358.33
+    },
+    {
+      "source_row": "PR-0098",
+      "employee_id": "EMP0098",
+      "period": "2026-10",
+      "payment_ref": "PAY-0098",
+      "base_eur": 6941.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6941.67
+    },
+    {
+      "source_row": "PR-0099",
+      "employee_id": "EMP0100",
+      "period": "2026-10",
+      "payment_ref": "PAY-0100",
+      "base_eur": 3825.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3825.0
+    },
+    {
+      "source_row": "PR-0100",
+      "employee_id": "EMP0101",
+      "period": "2026-10",
+      "payment_ref": "PAY-0101",
+      "base_eur": 7233.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7233.33
+    },
+    {
+      "source_row": "PR-0101",
+      "employee_id": "EMP0102",
+      "period": "2026-10",
+      "payment_ref": "PAY-0102",
+      "base_eur": 5375.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5375.0
+    },
+    {
+      "source_row": "PR-0102",
+      "employee_id": "EMP0103",
+      "period": "2026-10",
+      "payment_ref": "PAY-0103",
+      "base_eur": 3200.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3200.0
+    },
+    {
+      "source_row": "PR-0103",
+      "employee_id": "EMP0104",
+      "period": "2026-10",
+      "payment_ref": "PAY-0104",
+      "base_eur": 4525.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4525.0
+    },
+    {
+      "source_row": "PR-0104",
+      "employee_id": "EMP0105",
+      "period": "2026-10",
+      "payment_ref": "PAY-0105",
+      "base_eur": 5416.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5416.67
+    },
+    {
+      "source_row": "PR-0105",
+      "employee_id": "EMP0106",
+      "period": "2026-10",
+      "payment_ref": "PAY-0106",
+      "base_eur": 6241.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6241.67
+    },
+    {
+      "source_row": "PR-0106",
+      "employee_id": "EMP0107",
+      "period": "2026-10",
+      "payment_ref": "PAY-0107",
+      "base_eur": 4508.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4508.33
+    },
+    {
+      "source_row": "PR-0107",
+      "employee_id": "EMP0108",
+      "period": "2026-10",
+      "payment_ref": "PAY-0108",
+      "base_eur": 5933.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5933.33
+    },
+    {
+      "source_row": "PR-0108",
+      "employee_id": "EMP0109",
+      "period": "2026-10",
+      "payment_ref": "PAY-0109",
+      "base_eur": 2726.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 2726.67
+    },
+    {
+      "source_row": "PR-0109",
+      "employee_id": "EMP0110",
+      "period": "2026-10",
+      "payment_ref": "PAY-0110",
+      "base_eur": 3983.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3983.33
+    },
+    {
+      "source_row": "PR-0110",
+      "employee_id": "EMP0111",
+      "period": "2026-10",
+      "payment_ref": "PAY-0111",
+      "base_eur": 4158.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4158.33
+    },
+    {
+      "source_row": "PR-0111",
+      "employee_id": "EMP0112",
+      "period": "2026-10",
+      "payment_ref": "PAY-0112",
+      "base_eur": 3725.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3725.0
+    },
+    {
+      "source_row": "PR-0112",
+      "employee_id": "EMP0113",
+      "period": "2026-10",
+      "payment_ref": "PAY-0113",
+      "base_eur": 2820.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 2820.0
+    },
+    {
+      "source_row": "PR-0113",
+      "employee_id": "EMP0114",
+      "period": "2026-10",
+      "payment_ref": "PAY-0114",
+      "base_eur": 5050.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5050.0
+    },
+    {
+      "source_row": "PR-0114",
+      "employee_id": "EMP0115",
+      "period": "2026-10",
+      "payment_ref": "PAY-0115",
+      "base_eur": 4291.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4291.67
+    },
+    {
+      "source_row": "PR-0115",
+      "employee_id": "EMP0116",
+      "period": "2026-10",
+      "payment_ref": "PAY-0116",
+      "base_eur": 4650.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4650.0
+    },
+    {
+      "source_row": "PR-0116",
+      "employee_id": "EMP0117",
+      "period": "2026-10",
+      "payment_ref": "PAY-0117",
+      "base_eur": 4413.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4413.33
+    },
+    {
+      "source_row": "PR-0117",
+      "employee_id": "EMP0118",
+      "period": "2026-10",
+      "payment_ref": "PAY-0118",
+      "base_eur": 6191.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6191.67
+    },
+    {
+      "source_row": "PR-0118",
+      "employee_id": "EMP0119",
+      "period": "2026-10",
+      "payment_ref": "PAY-0119",
+      "base_eur": 5375.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5375.0
+    },
+    {
+      "source_row": "PR-0119",
+      "employee_id": "EMP0120",
+      "period": "2026-10",
+      "payment_ref": "PAY-0120",
+      "base_eur": 4558.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4558.33
+    },
+    {
+      "source_row": "PR-0120",
+      "employee_id": "EMP0121",
+      "period": "2026-10",
+      "payment_ref": "PAY-0121",
+      "base_eur": 6675.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6675.0
+    },
+    {
+      "source_row": "PR-0121",
+      "employee_id": "EMP0122",
+      "period": "2026-10",
+      "payment_ref": "PAY-0122",
+      "base_eur": 7650.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7650.0
+    },
+    {
+      "source_row": "PR-0122",
+      "employee_id": "EMP0123",
+      "period": "2026-10",
+      "payment_ref": "PAY-0123",
+      "base_eur": 3816.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3816.67
+    },
+    {
+      "source_row": "PR-0123",
+      "employee_id": "EMP0124",
+      "period": "2026-10",
+      "payment_ref": "PAY-0124",
+      "base_eur": 7600.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7600.0
+    },
+    {
+      "source_row": "PR-0124",
+      "employee_id": "EMP0125",
+      "period": "2026-10",
+      "payment_ref": "PAY-0125",
+      "base_eur": 5541.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5541.67
+    },
+    {
+      "source_row": "PR-0125",
+      "employee_id": "EMP0126",
+      "period": "2026-10",
+      "payment_ref": "PAY-0126",
+      "base_eur": 6933.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6933.33
+    },
+    {
+      "source_row": "PR-0126",
+      "employee_id": "EMP0127",
+      "period": "2026-10",
+      "payment_ref": "PAY-0127",
+      "base_eur": 7350.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7350.0
+    },
+    {
+      "source_row": "PR-0127",
+      "employee_id": "EMP0128",
+      "period": "2026-10",
+      "payment_ref": "PAY-0128",
+      "base_eur": 4850.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4850.0
+    },
+    {
+      "source_row": "PR-0128",
+      "employee_id": "EMP0129",
+      "period": "2026-10",
+      "payment_ref": "PAY-0129",
+      "base_eur": 7841.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7841.67
+    },
+    {
+      "source_row": "PR-0129",
+      "employee_id": "EMP0130",
+      "period": "2026-10",
+      "payment_ref": "PAY-0130",
+      "base_eur": 8233.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 8233.33
+    },
+    {
+      "source_row": "PR-0130",
+      "employee_id": "EMP0131",
+      "period": "2026-10",
+      "payment_ref": "PAY-0131",
+      "base_eur": 7141.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7141.67
+    },
+    {
+      "source_row": "PR-0131",
+      "employee_id": "EMP0132",
+      "period": "2026-10",
+      "payment_ref": "PAY-0132",
+      "base_eur": 4115.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4115.0
+    },
+    {
+      "source_row": "PR-0132",
+      "employee_id": "EMP0133",
+      "period": "2026-10",
+      "payment_ref": "PAY-0133",
+      "base_eur": 7833.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7833.33
+    },
+    {
+      "source_row": "PR-0133",
+      "employee_id": "EMP0134",
+      "period": "2026-10",
+      "payment_ref": "PAY-0134",
+      "base_eur": 6466.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6466.67
+    },
+    {
+      "source_row": "PR-0134",
+      "employee_id": "EMP0135",
+      "period": "2026-10",
+      "payment_ref": "PAY-0135",
+      "base_eur": 4441.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4441.67
+    },
+    {
+      "source_row": "PR-0135",
+      "employee_id": "EMP0136",
+      "period": "2026-10",
+      "payment_ref": "PAY-0136",
+      "base_eur": 4358.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4358.33
+    },
+    {
+      "source_row": "PR-0136",
+      "employee_id": "EMP0137",
+      "period": "2026-10",
+      "payment_ref": "PAY-0137",
+      "base_eur": 8133.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 8133.33
+    },
+    {
+      "source_row": "PR-0137",
+      "employee_id": "EMP0138",
+      "period": "2026-10",
+      "payment_ref": "PAY-0138",
+      "base_eur": 6741.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6741.67
+    },
+    {
+      "source_row": "PR-0138",
+      "employee_id": "EMP0139",
+      "period": "2026-10",
+      "payment_ref": "PAY-0139",
+      "base_eur": 8041.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 8041.67
+    },
+    {
+      "source_row": "PR-0139",
+      "employee_id": "EMP0140",
+      "period": "2026-10",
+      "payment_ref": "PAY-0140",
+      "base_eur": 5526.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5526.67
+    },
+    {
+      "source_row": "PR-0140",
+      "employee_id": "EMP0141",
+      "period": "2026-10",
+      "payment_ref": "PAY-0141",
+      "base_eur": 7650.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7650.0
+    },
+    {
+      "source_row": "PR-0141",
+      "employee_id": "EMP0142",
+      "period": "2026-10",
+      "payment_ref": "PAY-0142",
+      "base_eur": 6253.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6253.33
+    },
+    {
+      "source_row": "PR-0142",
+      "employee_id": "EMP0143",
+      "period": "2026-10",
+      "payment_ref": "PAY-0143",
+      "base_eur": 5360.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5360.0
+    },
+    {
+      "source_row": "PR-0143",
+      "employee_id": "EMP0144",
+      "period": "2026-10",
+      "payment_ref": "PAY-0144",
+      "base_eur": 3546.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3546.67
+    },
+    {
+      "source_row": "PR-0144",
+      "employee_id": "EMP0145",
+      "period": "2026-10",
+      "payment_ref": "PAY-0145",
+      "base_eur": 4016.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4016.67
+    },
+    {
+      "source_row": "PR-0145",
+      "employee_id": "EMP0146",
+      "period": "2026-10",
+      "payment_ref": "PAY-0146",
+      "base_eur": 3575.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3575.0
+    },
+    {
+      "source_row": "PR-0146",
+      "employee_id": "EMP0147",
+      "period": "2026-10",
+      "payment_ref": "PAY-0147",
+      "base_eur": 7708.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7708.33
+    },
+    {
+      "source_row": "PR-0147",
+      "employee_id": "EMP0148",
+      "period": "2026-10",
+      "payment_ref": "PAY-0148",
+      "base_eur": 6550.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6550.0
+    },
+    {
+      "source_row": "PR-0148",
+      "employee_id": "EMP0149",
+      "period": "2026-10",
+      "payment_ref": "PAY-0149",
+      "base_eur": 6866.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6866.67
+    },
+    {
+      "source_row": "PR-0149",
+      "employee_id": "EMP0150",
+      "period": "2026-10",
+      "payment_ref": "PAY-0150",
+      "base_eur": 4058.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4058.33
+    },
+    {
+      "source_row": "PR-0150",
+      "employee_id": "EMP0151",
+      "period": "2026-10",
+      "payment_ref": "PAY-0151",
+      "base_eur": 3508.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3508.33
+    },
+    {
+      "source_row": "PR-0151",
+      "employee_id": "EMP0152",
+      "period": "2026-10",
+      "payment_ref": "PAY-0152",
+      "base_eur": 8058.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 8058.33
+    },
+    {
+      "source_row": "PR-0152",
+      "employee_id": "EMP0153",
+      "period": "2026-10",
+      "payment_ref": "PAY-0153",
+      "base_eur": 2533.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 2533.33
+    },
+    {
+      "source_row": "PR-0153",
+      "employee_id": "EMP0154",
+      "period": "2026-10",
+      "payment_ref": "PAY-0154",
+      "base_eur": 6283.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6283.33
+    },
+    {
+      "source_row": "PR-0154",
+      "employee_id": "EMP0155",
+      "period": "2026-10",
+      "payment_ref": "PAY-0155",
+      "base_eur": 4883.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4883.33
+    },
+    {
+      "source_row": "PR-0155",
+      "employee_id": "EMP0156",
+      "period": "2026-10",
+      "payment_ref": "PAY-0156",
+      "base_eur": 5316.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5316.67
+    },
+    {
+      "source_row": "PR-0156",
+      "employee_id": "EMP0157",
+      "period": "2026-10",
+      "payment_ref": "PAY-0157",
+      "base_eur": 6650.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6650.0
+    },
+    {
+      "source_row": "PR-0157",
+      "employee_id": "EMP0158",
+      "period": "2026-10",
+      "payment_ref": "PAY-0158",
+      "base_eur": 6875.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6875.0
+    },
+    {
+      "source_row": "PR-0158",
+      "employee_id": "EMP0159",
+      "period": "2026-10",
+      "payment_ref": "PAY-0159",
+      "base_eur": 5526.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5526.67
+    },
+    {
+      "source_row": "PR-0159",
+      "employee_id": "EMP0160",
+      "period": "2026-10",
+      "payment_ref": "PAY-0160",
+      "base_eur": 5483.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5483.33
+    },
+    {
+      "source_row": "PR-0160",
+      "employee_id": "EMP0161",
+      "period": "2026-10",
+      "payment_ref": "PAY-0161",
+      "base_eur": 5808.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5808.33
+    },
+    {
+      "source_row": "PR-0161",
+      "employee_id": "EMP0162",
+      "period": "2026-10",
+      "payment_ref": "PAY-0162",
+      "base_eur": 3725.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3725.0
+    },
+    {
+      "source_row": "PR-0162",
+      "employee_id": "EMP0163",
+      "period": "2026-10",
+      "payment_ref": "PAY-0163",
+      "base_eur": 5216.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5216.67
+    },
+    {
+      "source_row": "PR-0163",
+      "employee_id": "EMP0164",
+      "period": "2026-10",
+      "payment_ref": "PAY-0164",
+      "base_eur": 5520.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5520.0
+    },
+    {
+      "source_row": "PR-0164",
+      "employee_id": "EMP0165",
+      "period": "2026-10",
+      "payment_ref": "PAY-0165",
+      "base_eur": 2230.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 2230.0
+    },
+    {
+      "source_row": "PR-0165",
+      "employee_id": "EMP0166",
+      "period": "2026-10",
+      "payment_ref": "PAY-0166",
+      "base_eur": 4958.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4958.33
+    },
+    {
+      "source_row": "PR-0166",
+      "employee_id": "EMP0167",
+      "period": "2026-10",
+      "payment_ref": "PAY-0167",
+      "base_eur": 7933.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7933.33
+    },
+    {
+      "source_row": "PR-0167",
+      "employee_id": "EMP0168",
+      "period": "2026-10",
+      "payment_ref": "PAY-0168",
+      "base_eur": 4175.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4175.0
+    },
+    {
+      "source_row": "PR-0168",
+      "employee_id": "EMP0169",
+      "period": "2026-10",
+      "payment_ref": "PAY-0169",
+      "base_eur": 6141.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6141.67
+    },
+    {
+      "source_row": "PR-0169",
+      "employee_id": "EMP0170",
+      "period": "2026-10",
+      "payment_ref": "PAY-0170",
+      "base_eur": 3500.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3500.0
+    },
+    {
+      "source_row": "PR-0170",
+      "employee_id": "EMP0171",
+      "period": "2026-10",
+      "payment_ref": "PAY-0171",
+      "base_eur": 7541.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7541.67
+    },
+    {
+      "source_row": "PR-0171",
+      "employee_id": "EMP0172",
+      "period": "2026-10",
+      "payment_ref": "PAY-0172",
+      "base_eur": 6791.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6791.67
+    },
+    {
+      "source_row": "PR-0172",
+      "employee_id": "EMP0173",
+      "period": "2026-10",
+      "payment_ref": "PAY-0173",
+      "base_eur": 3466.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3466.67
+    },
+    {
+      "source_row": "PR-0173",
+      "employee_id": "EMP0174",
+      "period": "2026-10",
+      "payment_ref": "PAY-0174",
+      "base_eur": 3758.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3758.33
+    },
+    {
+      "source_row": "PR-0174",
+      "employee_id": "EMP0175",
+      "period": "2026-10",
+      "payment_ref": "PAY-0175",
+      "base_eur": 6066.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6066.67
+    },
+    {
+      "source_row": "PR-0175",
+      "employee_id": "EMP0176",
+      "period": "2026-10",
+      "payment_ref": "PAY-0176",
+      "base_eur": 3483.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3483.33
+    },
+    {
+      "source_row": "PR-0176",
+      "employee_id": "EMP0177",
+      "period": "2026-10",
+      "payment_ref": "PAY-0177",
+      "base_eur": 4750.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4750.0
+    },
+    {
+      "source_row": "PR-0177",
+      "employee_id": "EMP0178",
+      "period": "2026-10",
+      "payment_ref": "PAY-0178",
+      "base_eur": 5833.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5833.33
+    },
+    {
+      "source_row": "PR-0178",
+      "employee_id": "EMP0179",
+      "period": "2026-10",
+      "payment_ref": "PAY-0179",
+      "base_eur": 7466.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7466.67
+    },
+    {
+      "source_row": "PR-0179",
+      "employee_id": "EMP0180",
+      "period": "2026-10",
+      "payment_ref": "PAY-0180",
+      "base_eur": 5091.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5091.67
+    },
+    {
+      "source_row": "PR-0180",
+      "employee_id": "EMP0181",
+      "period": "2026-10",
+      "payment_ref": "PAY-0181",
+      "base_eur": 4241.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4241.67
+    },
+    {
+      "source_row": "PR-0181",
+      "employee_id": "EMP0182",
+      "period": "2026-10",
+      "payment_ref": "PAY-0182",
+      "base_eur": 4393.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4393.33
+    },
+    {
+      "source_row": "PR-0182",
+      "employee_id": "EMP0183",
+      "period": "2026-10",
+      "payment_ref": "PAY-0183",
+      "base_eur": 6508.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6508.33
+    },
+    {
+      "source_row": "PR-0183",
+      "employee_id": "EMP0184",
+      "period": "2026-10",
+      "payment_ref": "PAY-0184",
+      "base_eur": 6383.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6383.33
+    },
+    {
+      "source_row": "PR-0184",
+      "employee_id": "EMP0185",
+      "period": "2026-10",
+      "payment_ref": "PAY-0185",
+      "base_eur": 6816.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6816.67
+    },
+    {
+      "source_row": "PR-0185",
+      "employee_id": "EMP0186",
+      "period": "2026-10",
+      "payment_ref": "PAY-0186",
+      "base_eur": 3383.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3383.33
+    },
+    {
+      "source_row": "PR-0186",
+      "employee_id": "EMP0187",
+      "period": "2026-10",
+      "payment_ref": "PAY-0187",
+      "base_eur": 6575.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6575.0
+    },
+    {
+      "source_row": "PR-0187",
+      "employee_id": "EMP0188",
+      "period": "2026-10",
+      "payment_ref": "PAY-0188",
+      "base_eur": 3241.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3241.67
+    },
+    {
+      "source_row": "PR-0188",
+      "employee_id": "EMP0189",
+      "period": "2026-10",
+      "payment_ref": "PAY-0189",
+      "base_eur": 6091.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6091.67
+    },
+    {
+      "source_row": "PR-0189",
+      "employee_id": "EMP0190",
+      "period": "2026-10",
+      "payment_ref": "PAY-0190",
+      "base_eur": 6241.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6241.67
+    },
+    {
+      "source_row": "PR-0190",
+      "employee_id": "EMP0191",
+      "period": "2026-10",
+      "payment_ref": "PAY-0191",
+      "base_eur": 2613.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 2613.33
+    },
+    {
+      "source_row": "PR-0191",
+      "employee_id": "EMP0192",
+      "period": "2026-10",
+      "payment_ref": "PAY-0192",
+      "base_eur": 4675.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4675.0
+    },
+    {
+      "source_row": "PR-0192",
+      "employee_id": "EMP0193",
+      "period": "2026-10",
+      "payment_ref": "PAY-0193",
+      "base_eur": 5616.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5616.67
+    },
+    {
+      "source_row": "PR-0193",
+      "employee_id": "EMP0194",
+      "period": "2026-10",
+      "payment_ref": "PAY-0194",
+      "base_eur": 3860.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3860.0
+    },
+    {
+      "source_row": "PR-0194",
+      "employee_id": "EMP0195",
+      "period": "2026-10",
+      "payment_ref": "PAY-0195",
+      "base_eur": 4050.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4050.0
+    },
+    {
+      "source_row": "PR-0195",
+      "employee_id": "EMP0196",
+      "period": "2026-10",
+      "payment_ref": "PAY-0196",
+      "base_eur": 3608.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3608.33
+    },
+    {
+      "source_row": "PR-0196",
+      "employee_id": "EMP0197",
+      "period": "2026-10",
+      "payment_ref": "PAY-0197",
+      "base_eur": 5866.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5866.67
+    },
+    {
+      "source_row": "PR-0197",
+      "employee_id": "EMP0198",
+      "period": "2026-10",
+      "payment_ref": "PAY-0198",
+      "base_eur": 4625.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4625.0
+    },
+    {
+      "source_row": "PR-0198",
+      "employee_id": "EMP0199",
+      "period": "2026-10",
+      "payment_ref": "PAY-0199",
+      "base_eur": 7050.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7050.0
+    },
+    {
+      "source_row": "PR-0199",
+      "employee_id": "EMP0200",
+      "period": "2026-10",
+      "payment_ref": "PAY-0200",
+      "base_eur": 4458.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4458.33
+    },
+    {
+      "source_row": "PR-0200",
+      "employee_id": "EMP0201",
+      "period": "2026-10",
+      "payment_ref": "PAY-0201",
+      "base_eur": 3383.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3383.33
+    },
+    {
+      "source_row": "PR-0201",
+      "employee_id": "EMP0202",
+      "period": "2026-10",
+      "payment_ref": "PAY-0202",
+      "base_eur": 2975.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 2975.0
+    },
+    {
+      "source_row": "PR-0202",
+      "employee_id": "EMP0203",
+      "period": "2026-10",
+      "payment_ref": "PAY-0203",
+      "base_eur": 5806.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5806.67
+    },
+    {
+      "source_row": "PR-0203",
+      "employee_id": "EMP0204",
+      "period": "2026-10",
+      "payment_ref": "PAY-0204",
+      "base_eur": 4041.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4041.67
+    },
+    {
+      "source_row": "PR-0204",
+      "employee_id": "EMP0205",
+      "period": "2026-10",
+      "payment_ref": "PAY-0205",
+      "base_eur": 7375.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7375.0
+    },
+    {
+      "source_row": "PR-0205",
+      "employee_id": "EMP0206",
+      "period": "2026-10",
+      "payment_ref": "PAY-0206",
+      "base_eur": 4041.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4041.67
+    },
+    {
+      "source_row": "PR-0206",
+      "employee_id": "EMP0207",
+      "period": "2026-10",
+      "payment_ref": "PAY-0207",
+      "base_eur": 5540.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5540.0
+    },
+    {
+      "source_row": "PR-0207",
+      "employee_id": "EMP0208",
+      "period": "2026-10",
+      "payment_ref": "PAY-0208",
+      "base_eur": 8183.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 8183.33
+    },
+    {
+      "source_row": "PR-0208",
+      "employee_id": "EMP0209",
+      "period": "2026-10",
+      "payment_ref": "PAY-0209",
+      "base_eur": 3241.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3241.67
+    },
+    {
+      "source_row": "PR-0209",
+      "employee_id": "EMP0210",
+      "period": "2026-10",
+      "payment_ref": "PAY-0210",
+      "base_eur": 4191.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4191.67
+    },
+    {
+      "source_row": "PR-0210",
+      "employee_id": "EMP0211",
+      "period": "2026-10",
+      "payment_ref": "PAY-0211",
+      "base_eur": 6158.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6158.33
+    },
+    {
+      "source_row": "PR-0211",
+      "employee_id": "EMP0212",
+      "period": "2026-10",
+      "payment_ref": "PAY-0212",
+      "base_eur": 4441.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4441.67
+    },
+    {
+      "source_row": "PR-0212",
+      "employee_id": "EMP0213",
+      "period": "2026-10",
+      "payment_ref": "PAY-0213",
+      "base_eur": 5820.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5820.0
+    },
+    {
+      "source_row": "PR-0213",
+      "employee_id": "EMP0214",
+      "period": "2026-10",
+      "payment_ref": "PAY-0214",
+      "base_eur": 4983.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4983.33
+    },
+    {
+      "source_row": "PR-0214",
+      "employee_id": "EMP0215",
+      "period": "2026-10",
+      "payment_ref": "PAY-0215",
+      "base_eur": 7100.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7100.0
+    },
+    {
+      "source_row": "PR-0215",
+      "employee_id": "EMP0216",
+      "period": "2026-10",
+      "payment_ref": "PAY-0216",
+      "base_eur": 3291.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3291.67
+    },
+    {
+      "source_row": "PR-0216",
+      "employee_id": "EMP0217",
+      "period": "2026-10",
+      "payment_ref": "PAY-0217",
+      "base_eur": 7100.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7100.0
+    },
+    {
+      "source_row": "PR-0217",
+      "employee_id": "EMP0218",
+      "period": "2026-10",
+      "payment_ref": "PAY-0218",
+      "base_eur": 6866.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6866.67
+    },
+    {
+      "source_row": "PR-0218",
+      "employee_id": "EMP0219",
+      "period": "2026-10",
+      "payment_ref": "PAY-0219",
+      "base_eur": 4653.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4653.33
+    },
+    {
+      "source_row": "PR-0219",
+      "employee_id": "EMP0220",
+      "period": "2026-10",
+      "payment_ref": "PAY-0220",
+      "base_eur": 4375.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4375.0
+    },
+    {
+      "source_row": "PR-0220",
+      "employee_id": "EMP0221",
+      "period": "2026-10",
+      "payment_ref": "PAY-0221",
+      "base_eur": 3633.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3633.33
+    },
+    {
+      "source_row": "PR-0221",
+      "employee_id": "EMP0222",
+      "period": "2026-10",
+      "payment_ref": "PAY-0222",
+      "base_eur": 4625.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4625.0
+    },
+    {
+      "source_row": "PR-0222",
+      "employee_id": "EMP0223",
+      "period": "2026-10",
+      "payment_ref": "PAY-0223",
+      "base_eur": 6500.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6500.0
+    },
+    {
+      "source_row": "PR-0223",
+      "employee_id": "EMP0224",
+      "period": "2026-10",
+      "payment_ref": "PAY-0224",
+      "base_eur": 4925.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4925.0
+    },
+    {
+      "source_row": "PR-0224",
+      "employee_id": "EMP0225",
+      "period": "2026-10",
+      "payment_ref": "PAY-0225",
+      "base_eur": 3558.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3558.33
+    },
+    {
+      "source_row": "PR-0225",
+      "employee_id": "EMP0226",
+      "period": "2026-10",
+      "payment_ref": "PAY-0226",
+      "base_eur": 6666.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6666.67
+    },
+    {
+      "source_row": "PR-0226",
+      "employee_id": "EMP0227",
+      "period": "2026-10",
+      "payment_ref": "PAY-0227",
+      "base_eur": 6083.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6083.33
+    },
+    {
+      "source_row": "PR-0227",
+      "employee_id": "EMP0228",
+      "period": "2026-10",
+      "payment_ref": "PAY-0228",
+      "base_eur": 6900.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6900.0
+    },
+    {
+      "source_row": "PR-0228",
+      "employee_id": "EMP0229",
+      "period": "2026-10",
+      "payment_ref": "PAY-0229",
+      "base_eur": 6080.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6080.0
+    },
+    {
+      "source_row": "PR-0229",
+      "employee_id": "EMP0230",
+      "period": "2026-10",
+      "payment_ref": "PAY-0230",
+      "base_eur": 4526.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4526.67
+    },
+    {
+      "source_row": "PR-0230",
+      "employee_id": "EMP0231",
+      "period": "2026-10",
+      "payment_ref": "PAY-0231",
+      "base_eur": 6641.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6641.67
+    },
+    {
+      "source_row": "PR-0231",
+      "employee_id": "EMP0232",
+      "period": "2026-10",
+      "payment_ref": "PAY-0232",
+      "base_eur": 6113.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6113.33
+    },
+    {
+      "source_row": "PR-0232",
+      "employee_id": "EMP0233",
+      "period": "2026-10",
+      "payment_ref": "PAY-0233",
+      "base_eur": 8058.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 8058.33
+    },
+    {
+      "source_row": "PR-0233",
+      "employee_id": "EMP0234",
+      "period": "2026-10",
+      "payment_ref": "PAY-0234",
+      "base_eur": 3216.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3216.67
+    },
+    {
+      "source_row": "PR-0234",
+      "employee_id": "EMP0235",
+      "period": "2026-10",
+      "payment_ref": "PAY-0235",
+      "base_eur": 3606.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3606.67
+    },
+    {
+      "source_row": "PR-0235",
+      "employee_id": "EMP0236",
+      "period": "2026-10",
+      "payment_ref": "PAY-0236",
+      "base_eur": 4758.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4758.33
+    },
+    {
+      "source_row": "PR-0236",
+      "employee_id": "EMP0237",
+      "period": "2026-10",
+      "payment_ref": "PAY-0237",
+      "base_eur": 3510.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3510.0
+    },
+    {
+      "source_row": "PR-0237",
+      "employee_id": "EMP0238",
+      "period": "2026-10",
+      "payment_ref": "PAY-0238",
+      "base_eur": 5966.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5966.67
+    },
+    {
+      "source_row": "PR-0238",
+      "employee_id": "EMP0239",
+      "period": "2026-10",
+      "payment_ref": "PAY-0239",
+      "base_eur": 3675.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3675.0
+    },
+    {
+      "source_row": "PR-0239",
+      "employee_id": "EMP0240",
+      "period": "2026-10",
+      "payment_ref": "PAY-0240",
+      "base_eur": 8191.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 8191.67
+    },
+    {
+      "source_row": "PR-0240",
+      "employee_id": "EMP0241",
+      "period": "2026-10",
+      "payment_ref": "PAY-0241",
+      "base_eur": 5191.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5191.67
+    },
+    {
+      "source_row": "PR-0241",
+      "employee_id": "EMP0242",
+      "period": "2026-10",
+      "payment_ref": "PAY-0242",
+      "base_eur": 7075.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7075.0
+    },
+    {
+      "source_row": "PR-0242",
+      "employee_id": "EMP0243",
+      "period": "2026-10",
+      "payment_ref": "PAY-0243",
+      "base_eur": 3766.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3766.67
+    },
+    {
+      "source_row": "PR-0243",
+      "employee_id": "EMP0244",
+      "period": "2026-10",
+      "payment_ref": "PAY-0244",
+      "base_eur": 6841.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6841.67
+    },
+    {
+      "source_row": "PR-0244",
+      "employee_id": "EMP0245",
+      "period": "2026-10",
+      "payment_ref": "PAY-0245",
+      "base_eur": 7650.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7650.0
+    },
+    {
+      "source_row": "PR-0245",
+      "employee_id": "EMP0246",
+      "period": "2026-10",
+      "payment_ref": "PAY-0246",
+      "base_eur": 4066.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4066.67
+    },
+    {
+      "source_row": "PR-0246",
+      "employee_id": "EMP0247",
+      "period": "2026-10",
+      "payment_ref": "PAY-0247",
+      "base_eur": 4483.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4483.33
+    },
+    {
+      "source_row": "PR-0247",
+      "employee_id": "EMP0248",
+      "period": "2026-10",
+      "payment_ref": "PAY-0248",
+      "base_eur": 3725.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3725.0
+    },
+    {
+      "source_row": "PR-0248",
+      "employee_id": "EMP0249",
+      "period": "2026-10",
+      "payment_ref": "PAY-0249",
+      "base_eur": 4275.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4275.0
+    },
+    {
+      "source_row": "PR-0249",
+      "employee_id": "EMP0250",
+      "period": "2026-10",
+      "payment_ref": "PAY-0250",
+      "base_eur": 7525.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7525.0
+    },
+    {
+      "source_row": "PR-0250",
+      "employee_id": "EMP0251",
+      "period": "2026-10",
+      "payment_ref": "PAY-0251",
+      "base_eur": 4446.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4446.67
+    },
+    {
+      "source_row": "PR-0251",
+      "employee_id": "EMP0252",
+      "period": "2026-10",
+      "payment_ref": "PAY-0252",
+      "base_eur": 6186.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6186.67
+    },
+    {
+      "source_row": "PR-0252",
+      "employee_id": "EMP0253",
+      "period": "2026-10",
+      "payment_ref": "PAY-0253",
+      "base_eur": 3900.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3900.0
+    },
+    {
+      "source_row": "PR-0253",
+      "employee_id": "EMP0254",
+      "period": "2026-10",
+      "payment_ref": "PAY-0254",
+      "base_eur": 3366.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3366.67
+    },
+    {
+      "source_row": "PR-0254",
+      "employee_id": "EMP0255",
+      "period": "2026-10",
+      "payment_ref": "PAY-0255",
+      "base_eur": 3400.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3400.0
+    },
+    {
+      "source_row": "PR-0255",
+      "employee_id": "EMP0256",
+      "period": "2026-10",
+      "payment_ref": "PAY-0256",
+      "base_eur": 5175.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5175.0
+    },
+    {
+      "source_row": "PR-0256",
+      "employee_id": "EMP0257",
+      "period": "2026-10",
+      "payment_ref": "PAY-0257",
+      "base_eur": 6133.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6133.33
+    },
+    {
+      "source_row": "PR-0257",
+      "employee_id": "EMP0258",
+      "period": "2026-10",
+      "payment_ref": "PAY-0258",
+      "base_eur": 5175.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5175.0
+    },
+    {
+      "source_row": "PR-0258",
+      "employee_id": "EMP0259",
+      "period": "2026-10",
+      "payment_ref": "PAY-0259",
+      "base_eur": 5391.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5391.67
+    },
+    {
+      "source_row": "PR-0259",
+      "employee_id": "EMP0260",
+      "period": "2026-10",
+      "payment_ref": "PAY-0260",
+      "base_eur": 3440.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3440.0
+    },
+    {
+      "source_row": "PR-0260",
+      "employee_id": "EMP0261",
+      "period": "2026-10",
+      "payment_ref": "PAY-0261",
+      "base_eur": 3940.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3940.0
+    },
+    {
+      "source_row": "PR-0261",
+      "employee_id": "EMP0262",
+      "period": "2026-10",
+      "payment_ref": "PAY-0262",
+      "base_eur": 7858.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7858.33
+    },
+    {
+      "source_row": "PR-0262",
+      "employee_id": "EMP0263",
+      "period": "2026-10",
+      "payment_ref": "PAY-0263",
+      "base_eur": 4000.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4000.0
+    },
+    {
+      "source_row": "PR-0263",
+      "employee_id": "EMP0264",
+      "period": "2026-10",
+      "payment_ref": "PAY-0264",
+      "base_eur": 3800.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3800.0
+    },
+    {
+      "source_row": "PR-0264",
+      "employee_id": "EMP0265",
+      "period": "2026-10",
+      "payment_ref": "PAY-0265",
+      "base_eur": 4635.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4635.0
+    },
+    {
+      "source_row": "PR-0265",
+      "employee_id": "EMP0266",
+      "period": "2026-10",
+      "payment_ref": "PAY-0266",
+      "base_eur": 4800.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4800.0
+    },
+    {
+      "source_row": "PR-0266",
+      "employee_id": "EMP0267",
+      "period": "2026-10",
+      "payment_ref": "PAY-0267",
+      "base_eur": 4850.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4850.0
+    },
+    {
+      "source_row": "PR-0267",
+      "employee_id": "EMP0268",
+      "period": "2026-10",
+      "payment_ref": "PAY-0268",
+      "base_eur": 6633.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6633.33
+    },
+    {
+      "source_row": "PR-0268",
+      "employee_id": "EMP0269",
+      "period": "2026-10",
+      "payment_ref": "PAY-0269",
+      "base_eur": 2795.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 2795.0
+    },
+    {
+      "source_row": "PR-0269",
+      "employee_id": "EMP0270",
+      "period": "2026-10",
+      "payment_ref": "PAY-0270",
+      "base_eur": 6016.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6016.67
+    },
+    {
+      "source_row": "PR-0270",
+      "employee_id": "EMP0271",
+      "period": "2026-10",
+      "payment_ref": "PAY-0271",
+      "base_eur": 5425.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5425.0
+    },
+    {
+      "source_row": "PR-0271",
+      "employee_id": "EMP0272",
+      "period": "2026-10",
+      "payment_ref": "PAY-0272",
+      "base_eur": 4433.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4433.33
+    },
+    {
+      "source_row": "PR-0272",
+      "employee_id": "EMP0273",
+      "period": "2026-10",
+      "payment_ref": "PAY-0273",
+      "base_eur": 5583.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5583.33
+    },
+    {
+      "source_row": "PR-0273",
+      "employee_id": "EMP0274",
+      "period": "2026-10",
+      "payment_ref": "PAY-0274",
+      "base_eur": 5083.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5083.33
+    },
+    {
+      "source_row": "PR-0274",
+      "employee_id": "EMP0275",
+      "period": "2026-10",
+      "payment_ref": "PAY-0275",
+      "base_eur": 7008.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7008.33
+    },
+    {
+      "source_row": "PR-0275",
+      "employee_id": "EMP0276",
+      "period": "2026-10",
+      "payment_ref": "PAY-0276",
+      "base_eur": 4900.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4900.0
+    },
+    {
+      "source_row": "PR-0276",
+      "employee_id": "EMP0277",
+      "period": "2026-10",
+      "payment_ref": "PAY-0277",
+      "base_eur": 5616.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5616.67
+    },
+    {
+      "source_row": "PR-0277",
+      "employee_id": "EMP0278",
+      "period": "2026-10",
+      "payment_ref": "PAY-0278",
+      "base_eur": 6225.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6225.0
+    },
+    {
+      "source_row": "PR-0278",
+      "employee_id": "EMP0279",
+      "period": "2026-10",
+      "payment_ref": "PAY-0279",
+      "base_eur": 3620.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3620.0
+    },
+    {
+      "source_row": "PR-0279",
+      "employee_id": "EMP0280",
+      "period": "2026-10",
+      "payment_ref": "PAY-0280",
+      "base_eur": 7683.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7683.33
+    },
+    {
+      "source_row": "PR-0280",
+      "employee_id": "EMP0281",
+      "period": "2026-10",
+      "payment_ref": "PAY-0281",
+      "base_eur": 3416.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3416.67
+    },
+    {
+      "source_row": "PR-0281",
+      "employee_id": "EMP0282",
+      "period": "2026-10",
+      "payment_ref": "PAY-0282",
+      "base_eur": 3550.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3550.0
+    },
+    {
+      "source_row": "PR-0282",
+      "employee_id": "EMP0283",
+      "period": "2026-10",
+      "payment_ref": "PAY-0283",
+      "base_eur": 5975.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5975.0
+    },
+    {
+      "source_row": "PR-0283",
+      "employee_id": "EMP0284",
+      "period": "2026-10",
+      "payment_ref": "PAY-0284",
+      "base_eur": 7925.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7925.0
+    },
+    {
+      "source_row": "PR-0284",
+      "employee_id": "EMP0285",
+      "period": "2026-10",
+      "payment_ref": "PAY-0285",
+      "base_eur": 7808.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7808.33
+    },
+    {
+      "source_row": "PR-0285",
+      "employee_id": "EMP0286",
+      "period": "2026-10",
+      "payment_ref": "PAY-0286",
+      "base_eur": 4808.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4808.33
+    },
+    {
+      "source_row": "PR-0286",
+      "employee_id": "EMP0287",
+      "period": "2026-10",
+      "payment_ref": "PAY-0287",
+      "base_eur": 4983.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4983.33
+    },
+    {
+      "source_row": "PR-0287",
+      "employee_id": "EMP0288",
+      "period": "2026-10",
+      "payment_ref": "PAY-0288",
+      "base_eur": 5591.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5591.67
+    },
+    {
+      "source_row": "PR-0288",
+      "employee_id": "EMP0289",
+      "period": "2026-10",
+      "payment_ref": "PAY-0289",
+      "base_eur": 4758.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4758.33
+    },
+    {
+      "source_row": "PR-0289",
+      "employee_id": "EMP0290",
+      "period": "2026-10",
+      "payment_ref": "PAY-0290",
+      "base_eur": 7850.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7850.0
+    },
+    {
+      "source_row": "PR-0290",
+      "employee_id": "EMP0291",
+      "period": "2026-10",
+      "payment_ref": "PAY-0291",
+      "base_eur": 6033.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6033.33
+    },
+    {
+      "source_row": "PR-0291",
+      "employee_id": "EMP0292",
+      "period": "2026-10",
+      "payment_ref": "PAY-0292",
+      "base_eur": 5966.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5966.67
+    },
+    {
+      "source_row": "PR-0292",
+      "employee_id": "EMP0293",
+      "period": "2026-10",
+      "payment_ref": "PAY-0293",
+      "base_eur": 3073.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3073.33
+    },
+    {
+      "source_row": "PR-0293",
+      "employee_id": "EMP0294",
+      "period": "2026-10",
+      "payment_ref": "PAY-0294",
+      "base_eur": 3620.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3620.0
+    },
+    {
+      "source_row": "PR-0294",
+      "employee_id": "EMP0295",
+      "period": "2026-10",
+      "payment_ref": "PAY-0295",
+      "base_eur": 7016.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7016.67
+    },
+    {
+      "source_row": "PR-0295",
+      "employee_id": "EMP0296",
+      "period": "2026-10",
+      "payment_ref": "PAY-0296",
+      "base_eur": 6416.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6416.67
+    },
+    {
+      "source_row": "PR-0296",
+      "employee_id": "EMP0297",
+      "period": "2026-10",
+      "payment_ref": "PAY-0297",
+      "base_eur": 3708.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3708.33
+    },
+    {
+      "source_row": "PR-0297",
+      "employee_id": "EMP0298",
+      "period": "2026-10",
+      "payment_ref": "PAY-0298",
+      "base_eur": 3655.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3655.0
+    },
+    {
+      "source_row": "PR-0298",
+      "employee_id": "EMP0299",
+      "period": "2026-10",
+      "payment_ref": "PAY-0299",
+      "base_eur": 7625.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7625.0
+    },
+    {
+      "source_row": "PR-0299",
+      "employee_id": "EMP0300",
+      "period": "2026-10",
+      "payment_ref": "PAY-0300",
+      "base_eur": 3608.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3608.33
+    },
+    {
+      "source_row": "PR-0300",
+      "employee_id": "EMP0301",
+      "period": "2026-10",
+      "payment_ref": "PAY-0301",
+      "base_eur": 4441.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4441.67
+    },
+    {
+      "source_row": "PR-0301",
+      "employee_id": "EMP0302",
+      "period": "2026-10",
+      "payment_ref": "PAY-0302",
+      "base_eur": 7366.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7366.67
+    },
+    {
+      "source_row": "PR-0302",
+      "employee_id": "EMP0303",
+      "period": "2026-10",
+      "payment_ref": "PAY-0303",
+      "base_eur": 4625.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4625.0
+    },
+    {
+      "source_row": "PR-0303",
+      "employee_id": "EMP0304",
+      "period": "2026-10",
+      "payment_ref": "PAY-0304",
+      "base_eur": 4993.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4993.33
+    },
+    {
+      "source_row": "PR-0304",
+      "employee_id": "EMP0305",
+      "period": "2026-10",
+      "payment_ref": "PAY-0305",
+      "base_eur": 6366.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6366.67
+    },
+    {
+      "source_row": "PR-0305",
+      "employee_id": "EMP0306",
+      "period": "2026-10",
+      "payment_ref": "PAY-0306",
+      "base_eur": 4775.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4775.0
+    },
+    {
+      "source_row": "PR-0306",
+      "employee_id": "EMP0307",
+      "period": "2026-10",
+      "payment_ref": "PAY-0307",
+      "base_eur": 3458.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3458.33
+    },
+    {
+      "source_row": "PR-0307",
+      "employee_id": "EMP0308",
+      "period": "2026-10",
+      "payment_ref": "PAY-0308",
+      "base_eur": 3425.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3425.0
+    },
+    {
+      "source_row": "PR-0308",
+      "employee_id": "EMP0309",
+      "period": "2026-10",
+      "payment_ref": "PAY-0309",
+      "base_eur": 4258.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4258.33
+    },
+    {
+      "source_row": "PR-0309",
+      "employee_id": "EMP0310",
+      "period": "2026-10",
+      "payment_ref": "PAY-0310",
+      "base_eur": 3025.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3025.0
+    },
+    {
+      "source_row": "PR-0310",
+      "employee_id": "EMP0311",
+      "period": "2026-10",
+      "payment_ref": "PAY-0311",
+      "base_eur": 4780.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4780.0
+    },
+    {
+      "source_row": "PR-0311",
+      "employee_id": "EMP0312",
+      "period": "2026-10",
+      "payment_ref": "PAY-0312",
+      "base_eur": 5516.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5516.67
+    },
+    {
+      "source_row": "PR-0312",
+      "employee_id": "EMP0313",
+      "period": "2026-10",
+      "payment_ref": "PAY-0313",
+      "base_eur": 6725.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6725.0
+    },
+    {
+      "source_row": "PR-0313",
+      "employee_id": "EMP0314",
+      "period": "2026-10",
+      "payment_ref": "PAY-0314",
+      "base_eur": 7833.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7833.33
+    },
+    {
+      "source_row": "PR-0314",
+      "employee_id": "EMP0315",
+      "period": "2026-10",
+      "payment_ref": "PAY-0315",
+      "base_eur": 5950.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5950.0
+    },
+    {
+      "source_row": "PR-0315",
+      "employee_id": "EMP0316",
+      "period": "2026-10",
+      "payment_ref": "PAY-0316",
+      "base_eur": 8033.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 8033.33
+    },
+    {
+      "source_row": "PR-0316",
+      "employee_id": "EMP0317",
+      "period": "2026-10",
+      "payment_ref": "PAY-0317",
+      "base_eur": 4670.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4670.0
+    },
+    {
+      "source_row": "PR-0317",
+      "employee_id": "EMP0318",
+      "period": "2026-10",
+      "payment_ref": "PAY-0318",
+      "base_eur": 3725.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3725.0
+    },
+    {
+      "source_row": "PR-0318",
+      "employee_id": "EMP0319",
+      "period": "2026-10",
+      "payment_ref": "PAY-0319",
+      "base_eur": 8025.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 8025.0
+    },
+    {
+      "source_row": "PR-0319",
+      "employee_id": "EMP0320",
+      "period": "2026-10",
+      "payment_ref": "PAY-0320",
+      "base_eur": 6533.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6533.33
+    },
+    {
+      "source_row": "PR-0320",
+      "employee_id": "EMP0321",
+      "period": "2026-10",
+      "payment_ref": "PAY-0321",
+      "base_eur": 3093.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3093.33
+    },
+    {
+      "source_row": "PR-0321",
+      "employee_id": "EMP0322",
+      "period": "2026-10",
+      "payment_ref": "PAY-0322",
+      "base_eur": 5266.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5266.67
+    },
+    {
+      "source_row": "PR-0322",
+      "employee_id": "EMP0323",
+      "period": "2026-10",
+      "payment_ref": "PAY-0323",
+      "base_eur": 3450.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3450.0
+    },
+    {
+      "source_row": "PR-0323",
+      "employee_id": "EMP0324",
+      "period": "2026-10",
+      "payment_ref": "PAY-0324",
+      "base_eur": 3408.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3408.33
+    },
+    {
+      "source_row": "PR-0324",
+      "employee_id": "EMP0325",
+      "period": "2026-10",
+      "payment_ref": "PAY-0325",
+      "base_eur": 6108.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6108.33
+    },
+    {
+      "source_row": "PR-0325",
+      "employee_id": "EMP0326",
+      "period": "2026-10",
+      "payment_ref": "PAY-0326",
+      "base_eur": 4066.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4066.67
+    },
+    {
+      "source_row": "PR-0326",
+      "employee_id": "EMP0327",
+      "period": "2026-10",
+      "payment_ref": "PAY-0327",
+      "base_eur": 5425.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5425.0
+    },
+    {
+      "source_row": "PR-0327",
+      "employee_id": "EMP0328",
+      "period": "2026-10",
+      "payment_ref": "PAY-0328",
+      "base_eur": 5333.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5333.33
+    },
+    {
+      "source_row": "PR-0328",
+      "employee_id": "EMP0329",
+      "period": "2026-10",
+      "payment_ref": "PAY-0329",
+      "base_eur": 5241.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5241.67
+    },
+    {
+      "source_row": "PR-0329",
+      "employee_id": "EMP0330",
+      "period": "2026-10",
+      "payment_ref": "PAY-0330",
+      "base_eur": 5320.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5320.0
+    },
+    {
+      "source_row": "PR-0330",
+      "employee_id": "EMP0331",
+      "period": "2026-10",
+      "payment_ref": "PAY-0331",
+      "base_eur": 6333.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6333.33
+    },
+    {
+      "source_row": "PR-0331",
+      "employee_id": "EMP0332",
+      "period": "2026-10",
+      "payment_ref": "PAY-0332",
+      "base_eur": 5975.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5975.0
+    },
+    {
+      "source_row": "PR-0332",
+      "employee_id": "EMP0333",
+      "period": "2026-10",
+      "payment_ref": "PAY-0333",
+      "base_eur": 7975.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7975.0
+    },
+    {
+      "source_row": "PR-0333",
+      "employee_id": "EMP0334",
+      "period": "2026-10",
+      "payment_ref": "PAY-0334",
+      "base_eur": 4858.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4858.33
+    },
+    {
+      "source_row": "PR-0334",
+      "employee_id": "EMP0335",
+      "period": "2026-10",
+      "payment_ref": "PAY-0335",
+      "base_eur": 3775.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3775.0
+    },
+    {
+      "source_row": "PR-0335",
+      "employee_id": "EMP0336",
+      "period": "2026-10",
+      "payment_ref": "PAY-0336",
+      "base_eur": 6066.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6066.67
+    },
+    {
+      "source_row": "PR-0336",
+      "employee_id": "EMP0337",
+      "period": "2026-10",
+      "payment_ref": "PAY-0337",
+      "base_eur": 5591.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5591.67
+    },
+    {
+      "source_row": "PR-0337",
+      "employee_id": "EMP0338",
+      "period": "2026-10",
+      "payment_ref": "PAY-0338",
+      "base_eur": 2030.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 2030.0
+    },
+    {
+      "source_row": "PR-0338",
+      "employee_id": "EMP0339",
+      "period": "2026-10",
+      "payment_ref": "PAY-0339",
+      "base_eur": 6450.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 6450.0
+    },
+    {
+      "source_row": "PR-0339",
+      "employee_id": "EMP0340",
+      "period": "2026-10",
+      "payment_ref": "PAY-0340",
+      "base_eur": 5940.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5940.0
+    },
+    {
+      "source_row": "PR-0340",
+      "employee_id": "EMP0341",
+      "period": "2026-10",
+      "payment_ref": "PAY-0341",
+      "base_eur": 4208.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4208.33
+    },
+    {
+      "source_row": "PR-0341",
+      "employee_id": "EMP0342",
+      "period": "2026-10",
+      "payment_ref": "PAY-0342",
+      "base_eur": 4641.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4641.67
+    },
+    {
+      "source_row": "PR-0342",
+      "employee_id": "EMP0343",
+      "period": "2026-10",
+      "payment_ref": "PAY-0343",
+      "base_eur": 5000.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5000.0
+    },
+    {
+      "source_row": "PR-0343",
+      "employee_id": "EMP0344",
+      "period": "2026-10",
+      "payment_ref": "PAY-0344",
+      "base_eur": 4841.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4841.67
+    },
+    {
+      "source_row": "PR-0344",
+      "employee_id": "EMP0345",
+      "period": "2026-10",
+      "payment_ref": "PAY-0345",
+      "base_eur": 4525.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4525.0
+    },
+    {
+      "source_row": "PR-0345",
+      "employee_id": "EMP0346",
+      "period": "2026-10",
+      "payment_ref": "PAY-0346",
+      "base_eur": 4200.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4200.0
+    },
+    {
+      "source_row": "PR-0346",
+      "employee_id": "EMP0347",
+      "period": "2026-10",
+      "payment_ref": "PAY-0347",
+      "base_eur": 3825.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3825.0
+    },
+    {
+      "source_row": "PR-0347",
+      "employee_id": "EMP0348",
+      "period": "2026-10",
+      "payment_ref": "PAY-0348",
+      "base_eur": 5026.67,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 5026.67
+    },
+    {
+      "source_row": "PR-0348",
+      "employee_id": "EMP0349",
+      "period": "2026-10",
+      "payment_ref": "PAY-0349",
+      "base_eur": 3308.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3308.33
+    },
+    {
+      "source_row": "PR-0349",
+      "employee_id": "EMP0350",
+      "period": "2026-10",
+      "payment_ref": "PAY-0350",
+      "base_eur": 4033.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4033.33
+    },
+    {
+      "source_row": "PR-0350",
+      "employee_id": "EMP0355",
+      "period": "2026-10",
+      "payment_ref": "PAY-0355",
+      "base_eur": 3500.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 3500.0
+    },
+    {
+      "source_row": "PR-0351",
+      "employee_id": "EMP0080",
+      "period": "2026-10",
+      "payment_ref": "PAY-0080",
+      "base_eur": 4680.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4680.0
+    },
+    {
+      "source_row": "PR-0352",
+      "employee_id": "EMP0081",
+      "period": "2026-10",
+      "payment_ref": "PAY-0081",
+      "base_eur": 4660.0,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 4660.0
+    },
+    {
+      "source_row": "PR-0353",
+      "employee_id": "EMP0101",
+      "period": "2026-10",
+      "payment_ref": "PAY-0101",
+      "base_eur": 7233.33,
+      "allowance_eur": 0.0,
+      "variable_eur": 0.0,
+      "gross_eur": 7433.33
+    }
+  ],
+  "proration": [
+    {
+      "employee_id": "JOIN-01",
+      "scenario": "Mid-month starter",
+      "annual_salary_eur": 72000,
+      "fte": 1,
+      "hire_date": "2026-10-12",
+      "end_date": null,
+      "month": "2026-10-01",
+      "active_days": 20,
+      "month_days": 31,
+      "monthly_base_eur": 6000.0,
+      "prorated_base_eur": 3870.97
+    },
+    {
+      "employee_id": "LEAVE-01",
+      "scenario": "Mid-month leaver",
+      "annual_salary_eur": 57600,
+      "fte": 1,
+      "hire_date": "2025-01-01",
+      "end_date": "2026-10-20",
+      "month": "2026-10-01",
+      "active_days": 20,
+      "month_days": 31,
+      "monthly_base_eur": 4800.0,
+      "prorated_base_eur": 3096.77
+    },
+    {
+      "employee_id": "PART-01",
+      "scenario": "Part-time full month",
+      "annual_salary_eur": 48000,
+      "fte": 0.6,
+      "hire_date": "2025-01-01",
+      "end_date": null,
+      "month": "2026-10-01",
+      "active_days": 31,
+      "month_days": 31,
+      "monthly_base_eur": 2400.0,
+      "prorated_base_eur": 2400.0
+    }
+  ],
+  "roster_inputs": [
+    {
+      "employee_id": "ROSTER-01",
+      "roster": "Mon-Fri / 7.5 hours",
+      "weekdays": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "daily_hours": 7.5,
+      "hire_date": "2026-10-01",
+      "end_date": null
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "roster": "Mon-Wed / 7.5 hours",
+      "weekdays": [
+        0,
+        1,
+        2
+      ],
+      "daily_hours": 7.5,
+      "hire_date": "2026-10-05",
+      "end_date": "2026-10-28"
+    }
+  ],
+  "absence_episodes": [
+    {
+      "employee_id": "ROSTER-01",
+      "start_date": "2026-10-23",
+      "end_date": "2026-10-27"
+    },
+    {
+      "employee_id": "ROSTER-01",
+      "start_date": "2026-10-27",
+      "end_date": "2026-10-28"
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "start_date": "2026-10-25",
+      "end_date": "2026-10-28"
+    }
+  ],
+  "closed_dates": [
+    "2026-10-26"
+  ],
+  "roster_days": [
+    {
+      "employee_id": "ROSTER-01",
+      "date": "2026-10-01",
+      "planned_hours": 7.5,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 7.5,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-01",
+      "date": "2026-10-02",
+      "planned_hours": 7.5,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 7.5,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-01",
+      "date": "2026-10-03",
+      "planned_hours": 0,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 0,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-01",
+      "date": "2026-10-04",
+      "planned_hours": 0,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 0,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-01",
+      "date": "2026-10-05",
+      "planned_hours": 7.5,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 7.5,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-01",
+      "date": "2026-10-06",
+      "planned_hours": 7.5,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 7.5,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-01",
+      "date": "2026-10-07",
+      "planned_hours": 7.5,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 7.5,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-01",
+      "date": "2026-10-08",
+      "planned_hours": 7.5,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 7.5,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-01",
+      "date": "2026-10-09",
+      "planned_hours": 7.5,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 7.5,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-01",
+      "date": "2026-10-10",
+      "planned_hours": 0,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 0,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-01",
+      "date": "2026-10-11",
+      "planned_hours": 0,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 0,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-01",
+      "date": "2026-10-12",
+      "planned_hours": 7.5,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 7.5,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-01",
+      "date": "2026-10-13",
+      "planned_hours": 7.5,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 7.5,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-01",
+      "date": "2026-10-14",
+      "planned_hours": 7.5,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 7.5,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-01",
+      "date": "2026-10-15",
+      "planned_hours": 7.5,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 7.5,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-01",
+      "date": "2026-10-16",
+      "planned_hours": 7.5,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 7.5,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-01",
+      "date": "2026-10-17",
+      "planned_hours": 0,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 0,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-01",
+      "date": "2026-10-18",
+      "planned_hours": 0,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 0,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-01",
+      "date": "2026-10-19",
+      "planned_hours": 7.5,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 7.5,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-01",
+      "date": "2026-10-20",
+      "planned_hours": 7.5,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 7.5,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-01",
+      "date": "2026-10-21",
+      "planned_hours": 7.5,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 7.5,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-01",
+      "date": "2026-10-22",
+      "planned_hours": 7.5,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 7.5,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-01",
+      "date": "2026-10-23",
+      "planned_hours": 7.5,
+      "closed_day": 0,
+      "absence_day": 1,
+      "scheduled_hours": 7.5,
+      "lost_hours": 7.5
+    },
+    {
+      "employee_id": "ROSTER-01",
+      "date": "2026-10-24",
+      "planned_hours": 0,
+      "closed_day": 0,
+      "absence_day": 1,
+      "scheduled_hours": 0,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-01",
+      "date": "2026-10-25",
+      "planned_hours": 0,
+      "closed_day": 0,
+      "absence_day": 1,
+      "scheduled_hours": 0,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-01",
+      "date": "2026-10-26",
+      "planned_hours": 7.5,
+      "closed_day": 1,
+      "absence_day": 1,
+      "scheduled_hours": 0,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-01",
+      "date": "2026-10-27",
+      "planned_hours": 7.5,
+      "closed_day": 0,
+      "absence_day": 1,
+      "scheduled_hours": 7.5,
+      "lost_hours": 7.5
+    },
+    {
+      "employee_id": "ROSTER-01",
+      "date": "2026-10-28",
+      "planned_hours": 7.5,
+      "closed_day": 0,
+      "absence_day": 1,
+      "scheduled_hours": 7.5,
+      "lost_hours": 7.5
+    },
+    {
+      "employee_id": "ROSTER-01",
+      "date": "2026-10-29",
+      "planned_hours": 7.5,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 7.5,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-01",
+      "date": "2026-10-30",
+      "planned_hours": 7.5,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 7.5,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-01",
+      "date": "2026-10-31",
+      "planned_hours": 0,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 0,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "date": "2026-10-01",
+      "planned_hours": 0,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 0,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "date": "2026-10-02",
+      "planned_hours": 0,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 0,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "date": "2026-10-03",
+      "planned_hours": 0,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 0,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "date": "2026-10-04",
+      "planned_hours": 0,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 0,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "date": "2026-10-05",
+      "planned_hours": 7.5,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 7.5,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "date": "2026-10-06",
+      "planned_hours": 7.5,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 7.5,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "date": "2026-10-07",
+      "planned_hours": 7.5,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 7.5,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "date": "2026-10-08",
+      "planned_hours": 0,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 0,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "date": "2026-10-09",
+      "planned_hours": 0,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 0,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "date": "2026-10-10",
+      "planned_hours": 0,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 0,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "date": "2026-10-11",
+      "planned_hours": 0,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 0,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "date": "2026-10-12",
+      "planned_hours": 7.5,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 7.5,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "date": "2026-10-13",
+      "planned_hours": 7.5,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 7.5,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "date": "2026-10-14",
+      "planned_hours": 7.5,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 7.5,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "date": "2026-10-15",
+      "planned_hours": 0,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 0,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "date": "2026-10-16",
+      "planned_hours": 0,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 0,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "date": "2026-10-17",
+      "planned_hours": 0,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 0,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "date": "2026-10-18",
+      "planned_hours": 0,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 0,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "date": "2026-10-19",
+      "planned_hours": 7.5,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 7.5,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "date": "2026-10-20",
+      "planned_hours": 7.5,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 7.5,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "date": "2026-10-21",
+      "planned_hours": 7.5,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 7.5,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "date": "2026-10-22",
+      "planned_hours": 0,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 0,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "date": "2026-10-23",
+      "planned_hours": 0,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 0,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "date": "2026-10-24",
+      "planned_hours": 0,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 0,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "date": "2026-10-25",
+      "planned_hours": 0,
+      "closed_day": 0,
+      "absence_day": 1,
+      "scheduled_hours": 0,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "date": "2026-10-26",
+      "planned_hours": 7.5,
+      "closed_day": 1,
+      "absence_day": 1,
+      "scheduled_hours": 0,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "date": "2026-10-27",
+      "planned_hours": 7.5,
+      "closed_day": 0,
+      "absence_day": 1,
+      "scheduled_hours": 7.5,
+      "lost_hours": 7.5
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "date": "2026-10-28",
+      "planned_hours": 7.5,
+      "closed_day": 0,
+      "absence_day": 1,
+      "scheduled_hours": 7.5,
+      "lost_hours": 7.5
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "date": "2026-10-29",
+      "planned_hours": 0,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 0,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "date": "2026-10-30",
+      "planned_hours": 0,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 0,
+      "lost_hours": 0
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "date": "2026-10-31",
+      "planned_hours": 0,
+      "closed_day": 0,
+      "absence_day": 0,
+      "scheduled_hours": 0,
+      "lost_hours": 0
+    }
+  ],
+  "roster_summary": [
+    {
+      "employee_id": "ROSTER-01",
+      "roster": "Mon-Fri / 7.5 hours",
+      "planned_hours": 165.0,
+      "scheduled_hours": 157.5,
+      "lost_hours": 22.5,
+      "rate_pct": 14.286
+    },
+    {
+      "employee_id": "ROSTER-02",
+      "roster": "Mon-Wed / 7.5 hours",
+      "planned_hours": 90.0,
+      "scheduled_hours": 82.5,
+      "lost_hours": 15.0,
+      "rate_pct": 18.182
+    }
+  ],
+  "calendar_days": [
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-07-01",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-07-02",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-07-03",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-07-04",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-07-05",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-07-06",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-07-07",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-07-08",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-07-09",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-07-10",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-07-11",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-07-12",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-07-13",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-07-14",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-07-15",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-07-16",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-07-17",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-07-18",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-07-19",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-07-20",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-07-21",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-07-22",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-07-23",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-07-24",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-07-25",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-07-26",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-07-27",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-07-28",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-07-29",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-07-30",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-07-31",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-08-01",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-08-02",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-08-03",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-08-04",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-08-05",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-08-06",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-08-07",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-08-08",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-08-09",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-08-10",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-08-11",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-08-12",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-08-13",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-08-14",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-08-15",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-08-16",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-08-17",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-08-18",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-08-19",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-08-20",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-08-21",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-08-22",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-08-23",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-08-24",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-08-25",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-08-26",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-08-27",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-08-28",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-08-29",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-08-30",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-08-31",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-09-01",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-09-02",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-09-03",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-09-04",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-09-05",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-09-06",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-09-07",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-09-08",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-09-09",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-09-10",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-09-11",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-09-12",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-09-13",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-09-14",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-09-15",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-09-16",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-09-17",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-09-18",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-09-19",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-09-20",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-09-21",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-09-22",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-09-23",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-09-24",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-09-25",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-09-26",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-09-27",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-09-28",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-09-29",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-09-30",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-10-01",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-10-02",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-10-03",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-10-04",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-10-05",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-10-06",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-10-07",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-10-08",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-10-09",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-10-10",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-10-11",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-10-12",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-10-13",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-10-14",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-10-15",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-10-16",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-10-17",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-10-18",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-10-19",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-10-20",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-10-21",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-10-22",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-10-23",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-10-24",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-10-25",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-10-26",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-10-27",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-10-28",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-10-29",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-10-30",
+      "worked_hours": 10,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-01",
+      "date": "2026-10-31",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-07-01",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-07-02",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-07-03",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-07-04",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-07-05",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-07-06",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-07-07",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-07-08",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-07-09",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-07-10",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-07-11",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-07-12",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-07-13",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-07-14",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-07-15",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-07-16",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-07-17",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-07-18",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-07-19",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-07-20",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-07-21",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-07-22",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-07-23",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-07-24",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-07-25",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-07-26",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-07-27",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-07-28",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-07-29",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-07-30",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-07-31",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-08-01",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-08-02",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-08-03",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-08-04",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-08-05",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-08-06",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-08-07",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-08-08",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-08-09",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-08-10",
+      "worked_hours": 0,
+      "leave_kind": "Annual"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-08-11",
+      "worked_hours": 0,
+      "leave_kind": "Annual"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-08-12",
+      "worked_hours": 0,
+      "leave_kind": "Annual"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-08-13",
+      "worked_hours": 0,
+      "leave_kind": "Annual"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-08-14",
+      "worked_hours": 0,
+      "leave_kind": "Annual"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-08-15",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-08-16",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-08-17",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-08-18",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-08-19",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-08-20",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-08-21",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-08-22",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-08-23",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-08-24",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-08-25",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-08-26",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-08-27",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-08-28",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-08-29",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-08-30",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-08-31",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-09-01",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-09-02",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-09-03",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-09-04",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-09-05",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-09-06",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-09-07",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-09-08",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-09-09",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-09-10",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-09-11",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-09-12",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-09-13",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-09-14",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-09-15",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-09-16",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-09-17",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-09-18",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-09-19",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-09-20",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-09-21",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-09-22",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-09-23",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-09-24",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-09-25",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-09-26",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-09-27",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-09-28",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-09-29",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-09-30",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-10-01",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-10-02",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-10-03",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-10-04",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-10-05",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-10-06",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-10-07",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-10-08",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-10-09",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-10-10",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-10-11",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-10-12",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-10-13",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-10-14",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-10-15",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-10-16",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-10-17",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-10-18",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-10-19",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-10-20",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-10-21",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-10-22",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-10-23",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-10-24",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-10-25",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-10-26",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-10-27",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-10-28",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-10-29",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-10-30",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-02",
+      "date": "2026-10-31",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-07-01",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-07-02",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-07-03",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-07-04",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-07-05",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-07-06",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-07-07",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-07-08",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-07-09",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-07-10",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-07-11",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-07-12",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-07-13",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-07-14",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-07-15",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-07-16",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-07-17",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-07-18",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-07-19",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-07-20",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-07-21",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-07-22",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-07-23",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-07-24",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-07-25",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-07-26",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-07-27",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-07-28",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-07-29",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-07-30",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-07-31",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-08-01",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-08-02",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-08-03",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-08-04",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-08-05",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-08-06",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-08-07",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-08-08",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-08-09",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-08-10",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-08-11",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-08-12",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-08-13",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-08-14",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-08-15",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-08-16",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-08-17",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-08-18",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-08-19",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-08-20",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-08-21",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-08-22",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-08-23",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-08-24",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-08-25",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-08-26",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-08-27",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-08-28",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-08-29",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-08-30",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-08-31",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-09-01",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-09-02",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-09-03",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-09-04",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-09-05",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-09-06",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-09-07",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-09-08",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-09-09",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-09-10",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-09-11",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-09-12",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-09-13",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-09-14",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-09-15",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-09-16",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-09-17",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-09-18",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-09-19",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-09-20",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-09-21",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-09-22",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-09-23",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-09-24",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-09-25",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-09-26",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-09-27",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-09-28",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-09-29",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-09-30",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-10-01",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-10-02",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-10-03",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-10-04",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-10-05",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-10-06",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-10-07",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-10-08",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-10-09",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-10-10",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-10-11",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-10-12",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-10-13",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-10-14",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-10-15",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-10-16",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-10-17",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-10-18",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-10-19",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-10-20",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-10-21",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-10-22",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-10-23",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-10-24",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-10-25",
+      "worked_hours": 0,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-10-26",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-10-27",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-10-28",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-10-29",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    },
+    {
+      "employee_id": "TIME-03",
+      "date": "2026-10-30",
+      "worked_hours": 7.5,
+      "leave_kind": "None"
+    }
+  ],
+  "calendar_summary": [
+    {
+      "employee_id": "TIME-01",
+      "start_date": "2026-07-01",
+      "end_date": "2026-10-31",
+      "required_days": 123,
+      "reported_days": 123,
+      "excluded_leave_days": 0,
+      "eligible_days": 123,
+      "worked_hours": 880.0,
+      "average_hours": 50.08130081300813,
+      "result": "Above 48h / review"
+    },
+    {
+      "employee_id": "TIME-02",
+      "start_date": "2026-07-01",
+      "end_date": "2026-10-31",
+      "required_days": 123,
+      "reported_days": 123,
+      "excluded_leave_days": 5,
+      "eligible_days": 118,
+      "worked_hours": 622.5,
+      "average_hours": 36.92796610169491,
+      "result": "Below screen"
+    },
+    {
+      "employee_id": "TIME-03",
+      "start_date": "2026-07-01",
+      "end_date": "2026-10-31",
+      "required_days": 123,
+      "reported_days": 122,
+      "excluded_leave_days": 0,
+      "eligible_days": 123,
+      "worked_hours": 660.0,
+      "average_hours": null,
+      "result": "Incomplete / review"
+    }
+  ],
+  "time_source": "https://revisedacts.lawreform.ie/eli/1997/act/20/section/15/revised/en/html",
+  "scope": "Separate synthetic scenarios. Calendar-day base-pay proration and office closure are demonstration policies. The four-month time illustration excludes tagged annual/sick leave days; other statutory exclusions and applicability require HR/legal review."
+}

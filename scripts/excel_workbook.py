@@ -20,7 +20,7 @@ from analysis import AS_OF, DEPARTMENTS
 from sources import ROOT
 
 TARGET = ROOT / "outputs" / "People_Operations_Control_Workbook.xlsx"
-ROSE = "B11F4B"
+NAVY = "183247"
 
 
 def value(item):
@@ -43,7 +43,7 @@ def write_sheet(workbook, name, headers, rows):
     sheet.row_dimensions[1].height = 36
     for cell in sheet[1]:
         cell.font = Font(name="Aptos", bold=True, color="FFFFFF", size=11)
-        cell.fill = PatternFill("solid", fgColor=ROSE)
+        cell.fill = PatternFill("solid", fgColor=NAVY)
         cell.alignment = Alignment(wrap_text=True, vertical="center")
     for row in sheet.iter_rows(min_row=2):
         for cell in row:
@@ -75,12 +75,12 @@ def range_ref(sheet, column, count):
     return f"'{sheet}'!${column}$2:${column}${count + 1}"
 
 
-def build(public, sources, result):
+def build(public, sources, result, review):
     workbook = Workbook()
     workbook.remove(workbook.active)
     workbook.calculation = CalcProperties(calcId=191029, fullCalcOnLoad=True)
     readme = write_sheet(workbook, "Read Me", ["Section", "Instructions / evidence boundary"], [
-        ["People, in Balance", "An independent portfolio project tailored to People Data & Operations duties. No affiliation with Waystone."],
+        ["Workforce Analytics & People Operations", "An independent portfolio demonstration of HR reporting, payroll controls and operational analysis. No affiliation with Waystone."],
         ["Public data", "CSO EHQ03 official sector aggregates, CC BY 4.0; source URL and hash are in the Public Sources sheet."],
         ["Synthetic operations", "Every employee, payment, absence, visa and case record is fictional. Seed 731; as-of 2026-10-31."],
         ["How to review", "Start in Dashboard, inspect Reconciliation and Payroll Pivot, then investigate Exceptions with source references."],
@@ -90,11 +90,14 @@ def build(public, sources, result):
         ["Approvals", "This fixture has at most one current approved salary event per employee and recurring allowance events with no expiry. Multiple salary events trigger review. Real implementation needs effective start/end intervals and payroll cutoff rules."],
         ["Identity controls", "Remove exact duplicate payloads. Quarantine conflicting groups and invalid keys. Join records using verified exact-match employee keys."],
         ["Missing gross", "Classify missing or non-numeric pay as unknown. Reconciliation totals use the common population with confirmed actual and expected gross."],
-        ["Absence", "Rates use FTE-weighted scheduled hours, weekday calendars, employment dates and unioned lost dates. Public holidays and differing roster patterns are not implemented."],
+        ["Absence", "Baseline rates use FTE-weighted weekday exposure and unioned lost dates. Separate Roster Days/Summary examples use explicit working patterns and an assumed office closure."],
         ["Working time", "Operational review covers 17 complete weeks. Statutory assessment requires the applicable four-calendar-month reference period, leave adjustments, exemptions, weekly-rest checks and qualified review."],
         ["Visa", "30/90-day alert windows are operational service levels. Continuing permission requires verification by authorised HR or immigration providers."],
         ["Case data", "PIP/ER metadata only; no case narratives, health diagnoses, passport data or automated employment decisions."],
         ["Professional experience", "Employment history, live BambooHR expertise, immigration administration and hands-on Power BI experience require separate CV and interview evidence."],
+        ["Guided review", "Excel Walkthrough gives a four-step review of an approved salary change. Save a copy before editing inputs."],
+        ["Supplementary scenarios", "Closure Review/Evidence, Proration Examples, Roster Days/Summary and Calendar Days/Review are separate synthetic examples. Baseline Dashboard metrics remain unchanged."],
+        ["Scenario policies", review["scope"]],
         ["Source references", "CSO: https://data.gov.ie/dataset/ehq03-average-earnings-hours-worked-employment-and-labour-costs"],
         ["WRC guidance", "https://www.workplacerelations.ie/en/what_you_should_know/hours-and-wages/working_hours/"],
     ])
@@ -177,7 +180,7 @@ def build(public, sources, result):
         "Payroll Clean classifies nonnumeric gross as Unknown and excludes unresolved amounts from comparable totals.", "Portfolio")
     reconciliation.conditional_formatting.add(
         f"K2:K{n+1}", CellIsRule(operator="notBetween", formula=["-Parameters!$B$4", "Parameters!$B$4"],
-                                fill=PatternFill("solid", fgColor="FCE3E8"))
+                                fill=PatternFill("solid", fgColor="FFE7E7"))
     )
     for row in reconciliation.iter_rows(min_row=2):
         for cell in [row[index] for index in [3, 5, 6, 7, 8, 9, 10, 12]]:
@@ -334,10 +337,115 @@ def build(public, sources, result):
     workbook["Dashboard"]["B10"].number_format = "0.00%"
     workbook["Dashboard"].column_dimensions["A"].width = 36
     workbook["Dashboard"].column_dimensions["C"].width = 100
+    add_review_sheets(workbook, master, payroll, review)
     workbook._sheets.insert(1, workbook._sheets.pop(workbook.sheetnames.index("Dashboard")))
     TARGET.parent.mkdir(parents=True, exist_ok=True)
     workbook.save(TARGET)
     return TARGET
+
+
+def add_review_sheets(workbook, master, payroll, review):
+    case = review["closure"]
+    hr_row = list(master["employee_id"]).index("EMP0018") + 2
+    pay_row = list(payroll["employee_id"]).index("EMP0018") + 2
+    guide = write_sheet(workbook, "Excel Walkthrough", ["Step", "Workbook location", "Review task", "Expected evidence"], [
+        ["1 / Approval", "Approvals / APR-018", "Check employee key, effective date, approval status and annual salary.", "Approved salary change effective 1 October 2026."],
+        ["2 / Formula", f"Reconciliation / I{hr_row}, J{hr_row}, K{hr_row}; Lookup Lab", "Use F2 to inspect exact lookups, approved components and the delta. Compare missing-key handling across lookup methods.", f"Expected gross EUR {case['expected_gross_eur']:,.2f}; original variance EUR {case['original_delta_eur']:,.2f}."],
+        ["3 / Correction", "Closure Review / B7; Closure Evidence", "Inspect the separate corrected scenario. Change B7 in a copy to see the residual variance and control result recalculate.", "Zero residual variance after applying the independently approved salary."],
+        ["4 / Refresh", f"Payroll Clean / C{pay_row}, D{pay_row}; Payroll Pivot", "In a disposable copy, apply the approved base in column D and verified gross in column C; use Data > Refresh All. Review Dashboard and the pivot.", "The employee reconciles; two amount exceptions remain. Original distributed files preserve the baseline."],
+    ])
+    for column in ["B", "C", "D"]:
+        guide.column_dimensions[column].width = 70
+    for row in range(2, 6):
+        guide.row_dimensions[row].height = 68
+    closure = write_sheet(workbook, "Closure Review", ["Metric / input", "Value", "Source / interpretation"], [
+        ["Approved annual salary EUR", case["approved_salary_eur"], case["approval_id"]],
+        ["FTE", case["fte"], "Validated employee record"],
+        ["Approved monthly allowance EUR", case["allowance_eur"], "Independent allowance approval"],
+        ["Approved variable pay EUR", case["variable_eur"], "Independent component approvals"],
+        ["Baseline gross EUR", f"='Payroll Clean'!C{pay_row}", "PAY-0018 / current baseline clean input; original extract is retained"],
+        ["Corrected gross EUR / editable", case["corrected_gross_eur"], "SIM-CORR-001 / separate corrected extract"],
+        ["Independent expected gross EUR", "=ROUND(B2*B3/12,2)+B4+B5", "Salary / 12 x FTE plus approved components"],
+        ["Original variance EUR", "=ROUND(B6-B8,2)", "Original gross minus independent expectation"],
+        ["Corrected variance EUR", "=ROUND(B7-B8,2)", "Corrected gross minus independent expectation"],
+        ["Corrected result", '=IF(ABS(B10)<=Parameters!$B$4,"Reconciled","Amount exception")', "Uses the workbook rounding tolerance"],
+        ["Baseline signed variance EUR", "=Dashboard!B8", "Original baseline"],
+        ["Scenario signed variance EUR", "=B12-B9+B10", "Replace only this employee's variance"],
+        ["Baseline absolute variance EUR", "=Dashboard!B9", "Original baseline"],
+        ["Scenario absolute variance EUR", "=B14-ABS(B9)+ABS(B10)", "Replace only this employee's absolute variance"],
+        ["Comparable employees", case["before_qa"]["comparable_payroll_rows"], "The reporting population is unchanged"],
+        ["Baseline reconciled employees", "=Dashboard!B4", "Original baseline"],
+        ["Scenario reconciled employees", '=B17+IF(AND(ABS(B9)>Parameters!$B$4,ABS(B10)<=Parameters!$B$4),1,0)-IF(AND(ABS(B9)<=Parameters!$B$4,ABS(B10)>Parameters!$B$4),1,0)', "Separate corrected scenario"],
+    ])
+    closure.column_dimensions["A"].width = 40
+    closure.column_dimensions["C"].width = 80
+    closure["B7"].font = Font(name="Aptos", color="0078D4", size=10)
+    closure["B7"].fill = PatternFill("solid", fgColor="FFF4CC")
+    for row in [2, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15]:
+        closure.cell(row, 2).number_format = '"EUR " #,##0.00;("EUR " #,##0.00);"-"'
+    evidence = add_frame(workbook, "Closure Evidence", pd.DataFrame(case["events"]))
+    evidence.column_dimensions["D"].width = 110
+    for row in range(2, 7):
+        evidence.row_dimensions[row].height = 42
+    prorations = []
+    for row, item in enumerate(review["proration"], start=2):
+        prorations.append([
+            item["employee_id"], item["scenario"], item["annual_salary_eur"], item["fte"],
+            pd.Timestamp(item["hire_date"]), pd.Timestamp(item["end_date"]) if item["end_date"] else None,
+            pd.Timestamp(item["month"]), f"=DAY(EOMONTH(G{row},0))",
+            f'=MAX(0,MIN(IF(F{row}="",EOMONTH(G{row},0),F{row}),EOMONTH(G{row},0))-MAX(E{row},G{row})+1)',
+            f"=ROUND(C{row}*D{row}/12,2)", f"=ROUND(C{row}*D{row}/12*I{row}/H{row},2)",
+        ])
+    proration = write_sheet(workbook, "Proration Examples", [
+        "employee_id", "scenario", "annual_salary_eur", "fte", "hire_date", "end_date",
+        "month", "month_days", "active_days", "monthly_base_eur", "prorated_base_eur"], prorations)
+    proration["K2"].comment = Comment("Synthetic policy: inclusive active calendar days / days in month. Base salary only; actual payroll policy requires approval.", "Portfolio")
+    for row in range(2, len(prorations) + 2):
+        for column in [3, 10, 11]:
+            proration.cell(row, column).number_format = '"EUR " #,##0.00;("EUR " #,##0.00);"-"'
+    roster = []
+    for row, item in enumerate(review["roster_days"], start=2):
+        roster.append([item["employee_id"], pd.Timestamp(item["date"]), item["planned_hours"],
+                       item["closed_day"], item["absence_day"],
+                       f"=IF(D{row}=1,0,C{row})", f"=IF(E{row}=1,F{row},0)"])
+    write_sheet(workbook, "Roster Days", ["employee_id", "date", "planned_hours", "closed_day", "absence_day", "scheduled_hours", "lost_hours"], roster)
+    count = len(roster)
+    employee = range_ref("Roster Days", "A", count)
+    roster_summary = []
+    for row, item in enumerate(review["roster_summary"], start=2):
+        totals = [f'=SUMIF({employee},A{row},{range_ref("Roster Days", column, count)})' for column in ["C", "F", "G"]]
+        roster_summary.append([item["employee_id"], item["roster"], *totals, f'=IF(D{row}=0,"Unknown",E{row}/D{row})'])
+    sheet = write_sheet(workbook, "Roster Summary", ["employee_id", "roster", "planned_hours", "scheduled_hours", "lost_hours", "absence_rate"], roster_summary)
+    for row in range(2, len(roster_summary) + 2):
+        sheet.cell(row, 6).number_format = "0.0%"
+    sheet["D2"].comment = Comment("The synthetic office is closed on 26 October. Planned roster hours already reflect each working pattern; no additional FTE multiplier is applied.", "Portfolio")
+    count = len(review["calendar_days"])
+    ids, dates = range_ref("Calendar Days", "A", count), range_ref("Calendar Days", "B", count)
+    calendar = []
+    for row, item in enumerate(review["calendar_days"], start=2):
+        calendar.append([item["employee_id"], pd.Timestamp(item["date"]), item["worked_hours"], item["leave_kind"],
+                         f'=IF(OR(D{row}="Annual",D{row}="Sick"),0,1)',
+                         f'=IF(AND(ISNUMBER(C{row}),C{row}>=0,OR(D{row}="None",D{row}="Annual",D{row}="Sick"),IF(D{row}="None",TRUE,C{row}=0),COUNTIFS({ids},A{row},{dates},B{row})=1),1,0)'])
+    write_sheet(workbook, "Calendar Days", ["employee_id", "date", "worked_hours", "leave_kind", "eligible_day", "valid_record"], calendar)
+    calendar_summary = []
+    for row, item in enumerate(review["calendar_summary"], start=2):
+        criteria = f'{ids},A{row},{dates},">="&B{row},{dates},"<="&C{row}'
+        leave = range_ref("Calendar Days", "D", count)
+        calendar_summary.append([
+            item["employee_id"], pd.Timestamp(item["start_date"]), pd.Timestamp(item["end_date"]),
+            f"=C{row}-B{row}+1", f"=COUNTIFS({criteria})",
+            f'=SUMIFS({range_ref("Calendar Days", "F", count)},{criteria})',
+            f'=COUNTIFS({criteria},{leave},"Annual")+COUNTIFS({criteria},{leave},"Sick")',
+            f"=D{row}-G{row}", f'=SUMIFS({range_ref("Calendar Days", "C", count)},{criteria})',
+            f'=IF(AND(E{row}=D{row},F{row}=D{row},H{row}>0),I{row}/(H{row}/7),"Unknown")',
+            f'=IF(J{row}="Unknown","Incomplete / review",IF(J{row}>Parameters!$B$6,"Above screen / review","Below screen"))',
+        ])
+    sheet = write_sheet(workbook, "Calendar Review", [
+        "employee_id", "window_start", "window_end", "required_days", "reported_days",
+        "valid_days", "excluded_leave_days", "eligible_days", "worked_hours", "mean_weekly_hours", "result"], calendar_summary)
+    sheet["H2"].comment = Comment("Four-calendar-month illustration; tagged annual/sick-leave days are excluded. Other exclusions and legal applicability require qualified review. Source: " + review["time_source"], "Portfolio")
+    for row in range(2, len(calendar_summary) + 2):
+        sheet.cell(row, 10).number_format = "0.00"
 
 
 def calculate_and_pivot(path):

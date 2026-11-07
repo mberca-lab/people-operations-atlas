@@ -14,6 +14,7 @@ import pandas as pd
 import seaborn as sns
 
 from analysis import DEPARTMENTS, records, run
+from review_scenarios import make_review_pack
 from sources import ROOT
 
 
@@ -37,7 +38,7 @@ def plots(public, result):
     folder = ROOT / "outputs" / "plots"
     folder.mkdir(parents=True, exist_ok=True)
     sns.set_style("whitegrid")
-    palette = ["#b11f4b", "#5c5c5c", "#0078d4", "#919191", "#242424"]
+    palette = ["#0f6b70", "#183247", "#487da0", "#80949c", "#183247"]
     plt.rcParams.update({"font.family": "DejaVu Sans", "axes.spines.top": False, "axes.spines.right": False})
 
     def save(name):
@@ -59,7 +60,7 @@ def plots(public, result):
     changes = public[public["sector_code"].eq("K")].pivot(index="quarter", columns="metric", values="value").pct_change().dropna() * 100
     fig, ax = plt.subplots(figsize=(10, 7))
     sns.heatmap(changes.corr(), vmin=-1, vmax=1, center=0, annot=True, fmt=".2f",
-                cmap=sns.diverging_palette(240, 350, as_cmap=True), ax=ax)
+                cmap=sns.diverging_palette(220, 165, as_cmap=True), ax=ax)
     ax.set(title="Finance/insurance quarter-to-quarter changes · descriptive Pearson r", xlabel="Metric", ylabel="Metric")
     save("public_change_correlations")
     changes.to_csv(ROOT / "outputs" / "tables" / "public_quarterly_changes_K.csv")
@@ -103,8 +104,8 @@ def notebook(public, provenance, result):
     nbf = nbformat.v4
     cells = [
         nbf.new_markdown_cell(
-            "# People, in Balance\n"
-            "## A People Data & Operations portfolio analysis\n\n"
+            "# Workforce Analytics & People Operations\n"
+            "## An interactive portfolio demonstration\n\n"
             "Independent, AI-assisted project by Margarita Bermejo Cano. No affiliation with Waystone.\n\n"
             "**Data sources:** official CSO workforce aggregates and a synthetic multi-system HR dataset. "
             "Operational results describe the demonstration dataset."
@@ -185,7 +186,7 @@ def notebook(public, provenance, result):
         nbf.new_markdown_cell(
             "## 5 / Payroll reconciliation and investigation\n"
             "Approved full-time annual salary / 12 x FTE + approved recurring allowance + approved variable pay. "
-            "No mid-month proration, tax, PRSI, pension or net-pay checks. Unmatched or unknown amounts are excluded from the common comparable sum. "
+            "This baseline covers full months; separate examples below illustrate base-pay proration. Tax, PRSI, pension and net-pay checks remain outside scope. Unmatched or unknown amounts are excluded from the common comparable sum. "
             "Report signed and absolute discrepancies to show both the net effect and the total variance magnitude. Root-cause examples are deliberately introduced in the synthetic data."
         ),
         nbf.new_code_cell(
@@ -202,7 +203,7 @@ def notebook(public, provenance, result):
             "## 6 / Absence rates and scheduled exposure\n"
             "Deduplicate episodes, validate dates and keys, union scheduled lost dates and reconcile worked-time collisions. "
             "The denominator uses weekdays within employment dates multiplied by FTE x 7.5 hours/day. "
-            "Public-holiday and custom-roster adjustments are outside scope. The analysis uses synthetic scheduling metadata and excludes health information."
+            "Separate examples below apply explicit rosters and an assumed office closure. The baseline analysis uses synthetic scheduling metadata and excludes health information."
         ),
         nbf.new_code_cell(
             "display(result['absence_summary'])\n"
@@ -263,6 +264,31 @@ def notebook(public, provenance, result):
             "- CV/interview evidence required: years of experience, live BambooHR capability, immigration administration, Tier 2 ER judgement and hands-on Power BI authoring."
         ),
     ]
+    cells.extend([
+        nbf.new_markdown_cell(
+            "## Supplementary operational review\n\n"
+            "These separate synthetic cases extend the original reporting model. "
+            "The baseline workforce and exception register remain unchanged.\n\n"
+            "- **Payroll closure:** apply APR-018 in a separate extract, re-run the controls and independently verify the corrected gross. Role assignments and sign-offs are simulated.\n"
+            "- **Starter/leaver pay:** inclusive calendar-day base-pay proration under an explicitly assumed policy.\n"
+            "- **Absence:** employee-specific rosters, a synthetic office closure on 26 October, employment dates and overlapping episode union. Roster hours already encode working patterns.\n"
+            "- **Working time:** 1 July–31 October, complete calendar-day coverage including recorded rest days, and tagged annual/sick-leave exclusions. Other statutory exclusions, reference-period selection and legal applicability require qualified review.\n\n"
+            "[Organisation of Working Time Act, section 15](https://revisedacts.lawreform.ie/eli/1997/act/20/section/15/revised/en/html)."
+        ),
+        nbf.new_code_cell(
+            "from review_scenarios import make_review_pack\n"
+            "review = make_review_pack(sources, result)\n"
+            "closure = review['closure']\n"
+            "display(pd.DataFrame(closure['events']))\n"
+            "display(pd.DataFrame([{'version': name, **closure[key]} for name,key in [('Original','before_qa'),('Corrected scenario','after_qa')]])[['version','reconciled_employees','payroll_amount_exceptions','signed_payroll_delta_eur','absolute_payroll_delta_eur']])\n"
+            "assert closure['corrected_delta_eur'] == 0\n"
+            "display(pd.DataFrame(review['proration']))\n"
+            "display(pd.DataFrame(review['roster_summary']))\n"
+            "display(pd.DataFrame(review['calendar_summary']))\n"
+            "summary['review_scenarios'] = {key: review[key] for key in ['closure','proration','roster_summary','calendar_summary','scope','time_source']}\n"
+            "(OUTPUT/'analysis_summary.json').write_text(json.dumps(summary,indent=2),encoding='utf-8')"
+        ),
+    ])
     notebook = nbf.new_notebook(cells=cells, metadata={
         "kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"},
         "language_info": {"name": "python", "version": sys.version.split()[0]},
@@ -286,7 +312,8 @@ def execute_notebook():
     print("Executed notebook:", sum(cell.cell_type == "code" for cell in book.cells), "code cells")
 
 
-def build_site(public, provenance, sources, result):
+def build_site(public, provenance, sources, result, review):
+    from openpyxl import load_workbook
     requirements = json.loads((ROOT / "assets" / "requirements.json").read_text())
     excel = json.loads((ROOT / "outputs" / "excel_validation.json").read_text())
     flagged = set(result["exceptions"]["employee_id"])
@@ -294,8 +321,16 @@ def build_site(public, provenance, sources, result):
         "id": person["employee_id"], "department": person["department"],
         "flag": person["employee_id"] in flagged,
     } for person in records(sources["fixture_roster"])]
+    row = list(result["hr_clean"]["employee_id"]).index("EMP0018") + 2
+    book = load_workbook(ROOT / "outputs" / "People_Operations_Control_Workbook.xlsx", read_only=True, data_only=False)
+    try:
+        guide = {"reconciliation_row": row, "lookup": book["Lookup Lab"]["B2"].value,
+                 "expected": book["Reconciliation"][f"I{row}"].value,
+                 "delta": book["Reconciliation"][f"K{row}"].value}
+    finally:
+        book.close()
     payload = {
-        "qa": result["qa"], "provenance": provenance, "excel": excel,
+        "qa": result["qa"], "provenance": provenance, "excel": excel, "review": review, "excel_guide": guide,
         "public": records(public[["metric_code", "quarter", "sector_code", "value"]]),
         "public_findings": records(public_findings(public)),
         "metrics": records(public[["metric_code", "metric", "unit"]].drop_duplicates()),
@@ -326,12 +361,16 @@ def main():
     parser.add_argument("--execute", action="store_true")
     args = parser.parse_args()
     public, provenance, sources, result = run()
+    review = make_review_pack(sources, result)
+    (ROOT / "outputs" / "review_scenarios.json").write_text(json.dumps(review, indent=2, allow_nan=False), encoding="utf-8")
+    for key in ["corrected_payroll", "proration", "roster_days", "roster_summary", "calendar_days", "calendar_summary"]:
+        pd.DataFrame(review[key]).to_csv(ROOT / "outputs" / "tables" / f"review_{key}.csv", index=False)
     if args.excel:
         from excel_workbook import build, calculate_and_pivot
-        calculate_and_pivot(build(public, sources, result))
+        calculate_and_pivot(build(public, sources, result, review))
     plots(public, result)
     notebook(public, provenance, result)
-    build_site(public, provenance, sources, result)
+    build_site(public, provenance, sources, result, review)
     if args.execute:
         execute_notebook()
 

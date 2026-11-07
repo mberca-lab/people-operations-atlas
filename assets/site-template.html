@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="People, in Balance: public Irish workforce context and a fictional people-operations control lab, by Margarita Bermejo Cano.">
-<title>People, in Balance · A People Operations Atlas</title>
+<meta name="description" content="Workforce Analytics &amp; People Operations: an interactive portfolio demonstration of HR reporting, payroll controls and operational analysis, by Margarita Bermejo Cano.">
+<title>Workforce Analytics &amp; People Operations · Portfolio</title>
 <script>
   (() => {
     const param = new URLSearchParams(window.location.search).get("scoutTheme");
@@ -66,6 +66,28 @@ html[data-theme="dark"] {
   --cp-sheen: rgba(255, 255, 255, 0.04);
   --cp-highlight: rgba(253, 142, 161, 0.12);
 }
+:root {
+  --cp-bg: #f7f8f6; --cp-bg-elevated: #fcfdfb; --cp-surface-soft: #edf2f1;
+  --cp-border: #d5dfdf; --cp-border-strong: #789096;
+  --cp-text: #183247; --cp-text-muted: #4e6572; --cp-text-soft: #596e78;
+  --cp-accent: #0f6b70; --cp-accent-hover: #0b565b;
+  --cp-accent-soft: rgba(15, 107, 112, 0.08); --cp-accent-fg: #ffffff;
+  --cp-highlight: rgba(15, 107, 112, 0.12); --cp-link: #286889;
+  --cp-danger: #a32d35; --cp-danger-soft: rgba(163, 45, 53, 0.09);
+  --cp-warning-ink: #825513; --cp-warning-soft: #f6ecdd;
+}
+html[data-theme="dark"] {
+  --cp-bg: #142532; --cp-bg-elevated: #182f3d; --cp-surface: #10212d; --cp-surface-soft: #203643;
+  --cp-border: #354b57; --cp-border-strong: #778e98;
+  --cp-text: #edf3f4; --cp-text-muted: #adc0c6; --cp-text-soft: #b7c6cc;
+  --cp-accent: #75cdd0; --cp-accent-hover: #a0e1e3;
+  --cp-accent-soft: rgba(117, 205, 208, 0.1); --cp-accent-fg: #10212d;
+  --cp-highlight: rgba(117, 205, 208, 0.14); --cp-link: #88bcd9;
+  --cp-danger: #fda4a9; --cp-danger-soft: rgba(253, 164, 169, 0.11);
+  --cp-warning-ink: #e7c07f; --cp-warning-soft: #332e23;
+  --cp-panel: rgba(16, 33, 45, 0.86); --cp-panel-strong: rgba(16, 33, 45, 0.96);
+  --cp-overlay: rgba(16, 33, 45, 0.88);
+}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:84px}body{margin:0;background:var(--cp-bg);color:var(--cp-text);font:16px/1.6 "Segoe UI",Aptos,Calibri,-apple-system,BlinkMacSystemFont,sans-serif}
 button,input,select{font:inherit}button,select,input{color:var(--cp-text);background:var(--cp-surface);border:1px solid var(--cp-border);border-radius:10px;padding:10px 14px}button,select{cursor:pointer}button:hover{border-color:var(--cp-accent)}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--cp-accent);outline-offset:4px}
 button[aria-pressed="true"],.primary{background:var(--cp-accent);color:var(--cp-accent-fg);border-color:var(--cp-accent)}button:disabled{cursor:default;opacity:.55}a{color:var(--cp-accent);text-underline-offset:4px}a:hover{color:var(--cp-accent-hover)}p{margin:0 0 20px}h1,h2,h3{line-height:1.1;font-weight:400;margin:0}h1,h2,.display,.number{font-family:Georgia,"Times New Roman",serif}h2{font-size:clamp(40px,5vw,68px);letter-spacing:-2px;margin-bottom:24px}h3{font-weight:600;font-size:21px;line-height:1.35;margin-bottom:16px}em{color:var(--cp-accent);font-weight:400}small,.small{font-size:13px;line-height:1.65}.muted{color:var(--cp-text-muted)}.mono,.eyebrow,.tag,.section-index{font-family:Consolas,"Courier New",Courier,monospace}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:var(--cp-accent);margin-bottom:24px}.tag{font-size:11px;letter-spacing:.8px;text-transform:uppercase;border:1px solid var(--cp-border-strong);padding:6px 10px;border-radius:4px;display:inline-block}.tag.public{color:var(--cp-text)}.tag.lab{background:var(--cp-accent-soft);color:var(--cp-accent);border-color:var(--cp-accent)}.tag.design{color:var(--cp-text-muted)}.skip{position:fixed;left:16px;top:-80px;z-index:100;background:var(--cp-surface);padding:12px}.skip:focus{top:12px}
@@ -87,6 +109,11 @@ details{margin-top:20px;border-top:1px solid var(--cp-border);padding-top:16px}s
 @media(max-width:760px){.heat-table{min-width:0}.heat-table th{padding:10px 4px;white-space:normal;font-size:10px}.heat-table th:first-child{width:31%}.heat-table .row-button{font-size:10px}.heat-table td{padding:8px 3px}.heat-cell{font-size:11px;padding:12px 0}}
 html[data-theme="dark"] .muted,html[data-theme="dark"] .footnote,html[data-theme="dark"] .chapter-heading p,html[data-theme="dark"] .hero-sub,html[data-theme="dark"] .hero-foot,html[data-theme="dark"] .field,html[data-theme="dark"] .legend,html[data-theme="dark"] .metric-label,html[data-theme="dark"] .source-row,html[data-theme="dark"] summary,html[data-theme="dark"] .sources-list p,html[data-theme="dark"] .sources-list li,html[data-theme="dark"] .hash{color:var(--cp-text-soft)}html[data-theme="dark"] .chart text{fill:var(--cp-text-soft)}
 @media(prefers-reduced-motion:reduce){.signal{display:none}}
+.overview{padding-top:64px;padding-bottom:64px}.overview h2{font-size:clamp(36px,4vw,54px)}.brief-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.brief-card{border-top:2px solid var(--cp-accent);padding-top:24px}.brief-card h3{font-size:20px}.brief-card p{font-size:14px;color:var(--cp-text-muted)}.brief-card .mono{font-size:11px;color:var(--cp-accent)}.brief-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}.brief-links a{font-size:13px;padding:10px 16px;border:1px solid var(--cp-border);border-radius:10px;text-decoration:none;background:var(--cp-bg-elevated)}.brief-links a:first-child{background:var(--cp-accent);color:var(--cp-accent-fg);border-color:var(--cp-accent)}
+.review-steps{display:grid;gap:10px;margin:24px 0}.review-steps button{text-align:left;padding:14px 18px}.review-copy{font-size:15px;min-height:116px}.formula-note{white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.7 Consolas,monospace;background:var(--cp-surface-soft);border:1px solid var(--cp-border);padding:16px;margin:20px 0}.case-metrics{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}.case-metrics .metric-label{display:block;margin-bottom:12px}.case-metrics strong{display:block}.case-metrics .number{font-size:clamp(30px,3.5vw,46px);display:block;overflow-wrap:anywhere;line-height:1.15}.danger-value{color:var(--cp-danger)}.status.high{color:var(--cp-danger);background:var(--cp-danger-soft)}.status.medium{color:var(--cp-warning-ink);background:var(--cp-warning-soft)}.review-scope{font:11px/1.7 Consolas,monospace;color:var(--cp-text-muted);border-top:1px solid var(--cp-border);padding-top:16px}.scenario-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}.scenario-tabs button{font-size:13px}.scenario-notes{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:28px}.scenario-notes p{font-size:14px;color:var(--cp-text-muted)}.scenario-bars{display:grid;gap:18px;margin:28px 0}.scenario-row{display:grid;grid-template-columns:180px 1fr 120px;align-items:center;gap:20px;font-size:13px}.scenario-track{height:8px;background:var(--cp-border);border-radius:4px;overflow:hidden}.scenario-track span{display:block;height:100%;background:var(--cp-accent)}.scenario-value{text-align:right;font-variant-numeric:tabular-nums}
+@media(max-width:700px){.brief-grid,.scenario-notes{grid-template-columns:1fr}.brief-grid{gap:12px}.brief-card p{margin-bottom:8px}.review-copy{min-height:0}.scenario-row{grid-template-columns:1fr 110px;gap:10px}.scenario-track{grid-column:1/-1;grid-row:auto}.case-metrics{gap:16px}.case-metrics .number{font-size:34px}.overview{padding-top:52px;padding-bottom:52px}}
+.hero h1{font-size:clamp(64px,7.8vw,112px);letter-spacing:-4px}
+@media(max-width:700px){.hero h1{font-size:clamp(54px,17vw,70px);letter-spacing:-3px}}
 @media print{.theatre{padding:28px 5%;break-inside:avoid}.theatre h2{font-size:30px}.theatre-grid{grid-template-columns:1fr 1fr;gap:24px}.system-buttons,.signal{display:none}.theatre-detail .number{font-size:36px}.theatre .theatre-detail{min-height:0}.theatre-grid svg{max-height:300px}}
 @media print{html{scroll-behavior:auto}body{font-size:11px}.masthead-right,.hero-art,.hero-actions,.chapter-nav,.toolbar,.range,.art-controls,.theme-button,.desk-head button,.case-detail button,.skip{display:none!important}.hero{min-height:0;display:block;padding:28px 5%}.hero h1{font-size:68px}.hero h1 em{display:inline}.hero-lead{max-width:none}.hero-foot{margin-top:20px}.chapter{padding:32px 5%;break-inside:auto}.chapter-heading{margin-bottom:20px}.chapter h2{font-size:34px}.split,.investigation{grid-template-columns:1fr 1fr;gap:20px}.panel{padding:16px;break-inside:avoid}.gates{grid-template-columns:repeat(6,1fr);gap:0}.gate{padding:12px 8px}.gate .number{font-size:30px}.metrics{margin:20px 0}.metric .number{font-size:34px}.reveal,.js .reveal:not(.visible){opacity:1;transform:none}.queue,.timeline{max-height:none;overflow:visible}.download-grid,.control-map{grid-template-columns:repeat(3,1fr)}.print-note{display:block}.case-detail{min-height:0}.chart{max-height:260px}.table-wrap{overflow:visible}a{color:var(--cp-text)}details:not([open]){display:none}.requirement-table{font-size:10px}.requirement-table td{min-width:0!important}.sources-list{gap:24px}footer{padding:20px 5%}}
 </style>
@@ -95,17 +122,17 @@ html[data-theme="dark"] .muted,html[data-theme="dark"] .footnote,html[data-theme
 <a class="skip" href="#context">Skip to analysis</a>
 <noscript><div class="no-js">This interactive atlas needs JavaScript. The workbook, executed notebook and source files remain available in the project folder.</div></noscript>
 <header class="masthead">
-  <a class="brand" href="#top">People, in Balance.</a>
-  <div class="masthead-right"><span class="small">A People Operations Atlas</span><button class="theme-button" id="theme" type="button" aria-label="Switch colour theme">Light / dark</button></div>
+  <a class="brand" href="#top" aria-label="Workforce Analytics and People Operations portfolio">Workforce Analytics</a>
+  <div class="masthead-right"><span class="small">People Operations Portfolio</span><button class="theme-button" id="theme" type="button" aria-label="Switch colour theme">Light / dark</button></div>
 </header>
 <section class="hero" id="top" aria-labelledby="hero-title">
   <div class="hero-copy">
-    <div class="eyebrow">People analytics / operational intelligence</div>
+    <div class="eyebrow">An interactive portfolio demonstration</div>
     <span class="tag lab">Public evidence + fictional operations lab</span>
-    <h1 id="hero-title">People,<em>in Balance.</em></h1>
-    <p class="hero-lead">Workforce analytics.<br>People Operations controls.</p>
+    <h1 id="hero-title">Workforce<em>Analytics.</em></h1>
+    <p class="hero-lead">People Operations Portfolio.<br>HR reporting, payroll controls and operational analysis.</p>
     <p class="hero-sub">A case study combining Irish workforce statistics with a seven-source synthetic HR dataset to demonstrate data validation, payroll reconciliation and operational reporting.</p>
-    <div class="hero-actions"><a href="#context">Explore the analysis ↓</a><a href="#evidence">See the skill evidence</a></div>
+    <div class="hero-actions"><a href="#overview">Read the review brief ↓</a><a href="#evidence">See the skill evidence</a></div>
   </div>
   <div class="hero-art">
     <div class="canvas-wrap"><canvas id="workforce" role="img" aria-label="360 synthetic employees shown across source-system, department and control views. Each dot represents one employee in the demonstration dataset."></canvas></div>
@@ -120,9 +147,19 @@ html[data-theme="dark"] .muted,html[data-theme="dark"] .footnote,html[data-theme
   <div class="hero-foot"><span>MARGARITA BERMEJO CANO · PEOPLE ANALYTICS / PEOPLE SCIENCE / AI</span><span>Independent, AI-assisted portfolio · Public portfolio edition · No employer data</span></div>
 </section>
 <nav class="chapter-nav" aria-label="Atlas chapters">
-  <strong>THE ATLAS</strong><a href="#context">01 Context</a><a href="#controls">02 Integrity</a><a href="#payroll">03 Payroll</a><a href="#investigate">04 Investigate</a><a href="#absence">05 Absence</a><a href="#time">06 Time</a><a href="#operations">07 Operations</a><a href="#process">08 Action</a><a href="#evidence">09 Evidence</a><div class="progress" id="progress"></div>
+  <strong>THE ATLAS</strong><a href="#overview">Review brief</a><a href="#context">01 Context</a><a href="#controls">02 Integrity</a><a href="#payroll">03 Payroll</a><a href="#review">Excel walkthrough</a><a href="#investigate">04 Investigate</a><a href="#absence">05 Absence</a><a href="#time">06 Time</a><a href="#scenarios">Operational scenarios</a><a href="#operations">07 Operations</a><a href="#process">08 Action</a><a href="#evidence">09 Evidence</a><div class="progress" id="progress"></div>
 </nav>
 <main>
+<section class="chapter overview" id="overview" aria-labelledby="overview-title">
+  <div class="chapter-heading reveal"><div class="section-index">↳</div><div><span class="tag lab">Synthetic workforce · October 2026</span><h2 id="overview-title">Workforce review.<br><em>Findings and recommended actions.</em></h2><p>Seven source systems support a monthly review of workforce records, payroll and operational follow-up. The files below contain the calculations and source-linked evidence.</p></div></div>
+  <div class="brief-grid reveal">
+    <article class="brief-card"><span class="mono">01 / REPORTING INTEGRITY</span><h3><span data-qa="active_headcount"></span> validated active employees.</h3><p>Duplicates, conflicting identities and critical-field failures are separated from the reporting population. <span data-qa="exceptions"></span> control flags retain their original source references.</p><p><strong>Action:</strong> resolve quarantined records with the source owner and approve exact employee-key mappings.</p></article>
+    <article class="brief-card"><span class="mono">02 / PAYROLL CONTROL</span><h3><span data-qa="payroll_amount_exceptions"></span> amount discrepancies.</h3><p><span data-qa="reconciled_employees"></span> of <span data-qa="comparable_payroll_rows"></span> comparable payments reconcile. The absolute discrepancy is <strong id="brief-absolute"></strong>; signed net variance is <span id="brief-net"></span>.</p><p><strong>Action:</strong> verify the approval trail, correct the authorised source and independently re-check the payment.</p></article>
+    <article class="brief-card"><span class="mono">03 / PEOPLE OPERATIONS</span><h3>Owned, dated follow-up.</h3><p><span data-qa="time_above_screen"></span> complete time records exceed the screen; <span data-qa="time_incomplete"></span> has incomplete coverage. <span data-qa="visa_within_90_days"></span> unexpired permissions fall within 90 days, with expired records tracked separately.</p><p><strong>Action:</strong> assign accountable owners, verify evidence and escalate to the qualified HR or provider specialist.</p></article>
+  </div>
+  <div class="brief-links reveal"><a href="outputs/People_Operations_Control_Workbook.xlsx" download>Download the Excel workbook ↓</a><a href="#review">Follow the Excel review</a><a href="analysis.ipynb" download>Executed notebook ↓</a><a href="https://github.com/mberca/people-operations-atlas/releases/latest/download/Workforce_Analytics_Portfolio.zip">Complete portfolio ZIP ↓</a></div>
+  <p class="footnote">Operational findings use synthetic data. Public CSO statistics provide sector context. The supplementary correction and policy examples are separate from this baseline.</p>
+</section>
 <section class="chapter" id="context" aria-labelledby="context-title">
   <div class="chapter-heading reveal"><div class="section-index">01</div><div><span class="tag public">Public evidence · CSO Ireland</span><h2 id="context-title">Irish workforce trends<br><em>and sector context.</em></h2><p>Compare employment, earnings, paid hours and labour costs in finance and insurance with selected Irish sectors. Quarterly trends and year-on-year changes use CSO EHQ03 estimates.</p></div></div>
   <div class="split reveal">
@@ -194,6 +231,14 @@ html[data-theme="dark"] .muted,html[data-theme="dark"] .footnote,html[data-theme
   </div>
   <div class="callout"><strong>Approved compensation changes.</strong> EMP0044's approved 8% salary increase and EMP0055's approved EUR 420 variable payment both reconcile. The calculation covers full-month gross pay; tax, net pay, pensions and proration are outside its scope.</div>
 </section>
+<section class="chapter" id="review" aria-labelledby="review-title">
+  <div class="chapter-heading reveal"><div class="section-index">↳</div><div><span class="tag lab">Guided Excel review · synthetic case SIM-CLOSE-001</span><h2 id="review-title">Payroll correction<br><em>and documented sign-off.</em></h2><p>Follow an approved salary change from the original discrepancy through a separate corrected extract. Inspect the working formulas and review each stage of the evidence trail.</p></div></div>
+  <div class="split equal reveal">
+    <div><div class="eyebrow">EXCEL WALKTHROUGH</div><div class="review-steps" role="group" aria-label="Payroll review steps"><button type="button" data-review-step="0" aria-pressed="true">1. Check the approval</button><button type="button" data-review-step="1" aria-pressed="false">2. Inspect the formula</button><button type="button" data-review-step="2" aria-pressed="false">3. Apply the correction</button><button type="button" data-review-step="3" aria-pressed="false">4. Verify the result</button></div><div id="review-step-detail" class="review-copy" aria-live="polite"></div><a href="outputs/People_Operations_Control_Workbook.xlsx" download>Open the working Excel model ↓</a><p class="footnote">Use the workbook's Excel Walkthrough sheet. Save a copy before changing inputs. The guide demonstrates synthetic review steps.</p></div>
+    <div class="panel"><div class="panel-title"><h3>EMP0018 · approved salary change</h3><span class="small mono">PAY-0018 / APR-018</span></div><div class="segmented" role="group" aria-label="Correction example version"><button type="button" data-closure-version="original" aria-pressed="true">Original extract</button><button type="button" data-closure-version="corrected" aria-pressed="false">Corrected scenario</button></div><svg id="closure-chart" class="chart" viewBox="0 0 660 190" role="img" aria-label="Approved gross compared with the selected synthetic payroll extract"></svg><div class="case-metrics"><div><span class="metric-label">Employee variance</span><span class="number" id="closure-delta"></span></div><div><span class="metric-label">Control result</span><strong id="closure-result"></strong></div></div><p id="closure-population" class="small muted"></p><p class="review-scope">Separate scenario: the original 340-record comparison and 58-flag register remain unchanged. All correction approvals, role assignments and sign-offs shown here are simulated.</p></div>
+  </div>
+  <details class="reveal"><summary>Inspect the complete correction and review trail</summary><div class="table-wrap" id="closure-trail"></div><p class="hash" id="closure-hashes"></p></details>
+</section>
 <section class="chapter" id="investigate" aria-labelledby="investigate-title">
   <div class="chapter-heading reveal"><div class="section-index">04</div><div><span class="tag lab">Fictional investigation desk</span><h2 id="investigate-title">Exception management<br><em>and source-level evidence.</em></h2><p>Review control flags by area, severity and employee. Each record includes the observed issue, source reference, responsible owner and recommended action.</p></div></div>
   <div class="toolbar reveal"><label class="field">Control area<select id="area-filter"><option value="">All areas</option></select></label><label class="field">Severity<select id="severity-filter"><option value="">All severities</option></select></label><label class="field">Find an ID or theme<input id="exception-search" type="search" placeholder="Try EMP0018 or missing"></label></div>
@@ -222,6 +267,13 @@ html[data-theme="dark"] .muted,html[data-theme="dark"] .footnote,html[data-theme
     </div>
   </div>
   <div class="source-row"><a id="wrc-link" href="https://www.workplacerelations.ie/en/what_you_should_know/hours-and-wages/working_hours/" target="_blank" rel="noopener noreferrer">WRC working-hours guidance ↗</a><span>The scenario threshold affects the chart; source records and baseline results remain fixed.</span></div>
+</section>
+<section class="chapter" id="scenarios" aria-labelledby="scenarios-title">
+  <div class="chapter-heading reveal"><div class="section-index">↳</div><div><span class="tag lab">Supplementary synthetic examples</span><h2 id="scenarios-title">Employment dates, rosters<br><em>and calendar periods.</em></h2><p>Explore three operational edge cases with explicit policies, editable Excel calculations and source tables. Each example has its own reporting population.</p></div></div>
+  <div class="scenario-tabs reveal" role="group" aria-label="Operational scenario"><button type="button" data-scenario="proration" aria-pressed="true">Starter / leaver pay</button><button type="button" data-scenario="roster" aria-pressed="false">Roster-aware absence</button><button type="button" data-scenario="calendar" aria-pressed="false">Four-month time review</button></div>
+  <div class="panel reveal" id="scenario-detail" aria-live="polite"></div>
+  <div class="scenario-notes reveal"><div><h3>Inspect the assumptions.</h3><p>Proration uses inclusive calendar days and base salary only. The absence example assumes an office closure on 26 October and employee-specific scheduled hours. Working-time calculations require complete dated records, including recorded rest days.</p></div><div><h3>Validate before operational use.</h3><p>Confirm payroll policy, roster and holiday arrangements, leave classification and the applicable reference period with the responsible owner. Other statutory exclusions and exemptions require HR/legal review.</p><a class="small" href="https://revisedacts.lawreform.ie/eli/1997/act/20/section/15/revised/en/html" target="_blank" rel="noopener noreferrer">Working-time reference periods and exclusions · section 15 ↗</a></div></div>
+  <div class="brief-links"><a href="outputs/review_scenarios.json" download>Download scenario evidence ↓</a><a href="outputs/tables/review_corrected_payroll.csv" download>Corrected synthetic payroll extract ↓</a></div>
 </section>
 <section class="chapter" id="operations" aria-labelledby="operations-title">
   <div class="chapter-heading reveal"><div class="section-index">07</div><div><span class="tag lab">Fictional governance trackers</span><h2 id="operations-title">Renewal tracking<br><em>and case governance.</em></h2><p>Monitor visa expiry, renewal evidence, PIP reviews and ER administration through dated actions and named owners. The trackers use fictional case metadata.</p></div></div>
@@ -274,7 +326,7 @@ html[data-theme="dark"] .muted,html[data-theme="dark"] .footnote,html[data-theme
   <p class="print-note">Printed views show current scenario/filter selections. The baseline metrics and executed notebook remain the reference evidence.</p>
 </section>
 </main>
-<footer><div><a class="brand" href="#top">People, in Balance.</a><br>Margarita Bermejo Cano · Independent, AI-assisted portfolio</div><div><a href="https://mberca.github.io/cv-margarita/" target="_blank" rel="noopener noreferrer">People Analytics · People Science · AI portfolio ↗</a><br>Public portfolio edition · Not affiliated with Waystone</div></footer>
+<footer><div><a class="brand" href="#top">Workforce Analytics</a><br>People Operations Portfolio<br>Margarita Bermejo Cano · Independent, AI-assisted portfolio</div><div><a href="https://mberca.github.io/cv-margarita/" target="_blank" rel="noopener noreferrer">People Analytics · People Science · AI portfolio ↗</a><br>Public portfolio edition · Not affiliated with Waystone</div></footer>
 <script id="atlas-data" type="application/json">__DATA__</script>
 <script>
 "use strict";
@@ -319,15 +371,15 @@ function workforce(){
       if(phase===1){for(let i=0;i<5;i++){const a=i*Math.PI*2/5-Math.PI/2,b=(i+1)*Math.PI*2/5-Math.PI/2;ctx.beginPath();ctx.moveTo(280+Math.cos(a)*136,270+Math.sin(a)*136);ctx.quadraticCurveTo(280,270,280+Math.cos(b)*136,270+Math.sin(b)*136);ctx.stroke()}}
     }else{
       ctx.font='11px Consolas,monospace';ctx.textAlign="left";ctx.fillStyle=color("--cp-text-muted");ctx.fillText("ONE DOT = ONE FICTIONAL PERSON",80,92);ctx.fillText("FIXTURE ROSTER · 360 IDENTITIES",80,116);
-      ctx.fillText("FLAGGED FOR REVIEW",80,462);ctx.fillStyle=color("--cp-accent");ctx.beginPath();ctx.arc(64,458,3,0,Math.PI*2);ctx.fill();
+      ctx.fillText("FLAGGED FOR REVIEW",80,462);ctx.fillStyle=color("--cp-danger");ctx.beginPath();ctx.arc(64,458,3,0,Math.PI*2);ctx.fill();
       ctx.fillStyle=color("--cp-text-muted");ctx.fillText("SYNTHETIC ROSTER / BASELINE CONTROLS",80,486);
     }
-    positions.forEach((p,i)=>{const t=target(i);if(advance){p.x+=(t.x-p.x)*.06;p.y+=(t.y-p.y)*.06}else{p.x=t.x;p.y=t.y}const pulse=!paused&&phase===0?Math.sin(frame*.015+i)*1.3:0;ctx.beginPath();ctx.arc(p.x+pulse,p.y,phase===2?2.7:2.4,0,Math.PI*2);ctx.fillStyle=color(DATA.dots[i].flag&&phase===2?"--cp-accent":i%7===0?"--cp-accent":"--cp-text-muted");ctx.globalAlpha=phase===2?1:.68;ctx.fill();ctx.globalAlpha=1});
+    positions.forEach((p,i)=>{const t=target(i);if(advance){p.x+=(t.x-p.x)*.06;p.y+=(t.y-p.y)*.06}else{p.x=t.x;p.y=t.y}const pulse=!paused&&phase===0?Math.sin(frame*.015+i)*1.3:0;ctx.beginPath();ctx.arc(p.x+pulse,p.y,phase===2?2.7:2.4,0,Math.PI*2);ctx.fillStyle=color(DATA.dots[i].flag&&phase===2?"--cp-danger":i%7===0?"--cp-accent":"--cp-text-muted");ctx.globalAlpha=phase===2?1:.68;ctx.fill();ctx.globalAlpha=1});
     if(advance)frame++;
   }
-  function tick(){if(autoCycle&&frame>0&&frame%480===0){phase=(phase+1)%3;setPressed("[data-phase]",phase,"phase");$("art-note").textContent=["Employee records across seven source systems.","Employee identities grouped by department.","Rose dots identify baseline control flags."][phase]}draw();if(!paused&&visible)animation=requestAnimationFrame(tick)}
+  function tick(){if(autoCycle&&frame>0&&frame%480===0){phase=(phase+1)%3;setPressed("[data-phase]",phase,"phase");$("art-note").textContent=["Employee records across seven source systems.","Employee identities grouped by department.","Red dots identify baseline review flags."][phase]}draw();if(!paused&&visible)animation=requestAnimationFrame(tick)}
   function restart(){cancelAnimationFrame(animation);if(paused||!visible)draw(false);else tick()}
-  document.querySelectorAll("[data-phase]").forEach(b=>b.addEventListener("click",()=>{autoCycle=false;phase=Number(b.dataset.phase);setPressed("[data-phase]",phase,"phase");$("art-note").textContent=["Employee records across seven source systems.","Employee identities grouped by department.","Rose dots identify baseline control flags."][phase];restart()}));
+  document.querySelectorAll("[data-phase]").forEach(b=>b.addEventListener("click",()=>{autoCycle=false;phase=Number(b.dataset.phase);setPressed("[data-phase]",phase,"phase");$("art-note").textContent=["Employee records across seven source systems.","Employee identities grouped by department.","Red dots identify baseline review flags."][phase];restart()}));
   $("motion").textContent=paused?"Resume motion":"Pause motion";$("motion").setAttribute("aria-pressed",String(paused));
   $("motion").addEventListener("click",()=>{paused=!paused;document.body.classList.toggle("motion-paused",paused);paused?$("systems-diagram").pauseAnimations():$("systems-diagram").unpauseAnimations();$("motion").textContent=paused?"Resume motion":"Pause motion";$("motion").setAttribute("aria-pressed",String(paused));restart()});
   new ResizeObserver(resize).observe(canvas);
@@ -431,7 +483,7 @@ function renderExceptions(preferred){
   const area=$("area-filter").value,severity=$("severity-filter").value,search=$("exception-search").value.toLowerCase().trim();
   filteredExceptions=DATA.exceptions.filter(e=>(!area||e.area===area)&&(!severity||e.severity===severity)&&(!search||[e.employee_id,e.code,e.detail,e.exception_id,e.owner].join(" ").toLowerCase().includes(search)));
   $("desk-count").textContent=`${filteredExceptions.length} of ${DATA.exceptions.length} baseline flags`;
-  $("exception-table").innerHTML=filteredExceptions.length?`<table><caption>Fictional baseline exceptions. Select Inspect for the source trail.</caption><thead><tr><th scope="col">Record</th><th scope="col">Control flag</th><th scope="col">Severity</th><th scope="col">Evidence</th></tr></thead><tbody>${filteredExceptions.map(e=>`<tr data-exception-row="${esc(e.exception_id)}"><td><span class="mono">${esc(e.employee_id)}</span><br><span class="muted">${esc(e.area)}</span></td><td>${esc(e.code)}</td><td><span class="status ${e.severity==="Review"?"review":""}">${esc(e.severity)}</span></td><td><button type="button" data-exception="${esc(e.exception_id)}" aria-label="Inspect ${esc(e.exception_id+" "+e.code+" for "+e.employee_id)}">Inspect →</button></td></tr>`).join("")}</tbody></table>`:'<p class="empty">No matching control flags. Clear or change the filters.</p>';
+  $("exception-table").innerHTML=filteredExceptions.length?`<table><caption>Fictional baseline exceptions. Select Inspect for the source trail.</caption><thead><tr><th scope="col">Record</th><th scope="col">Control flag</th><th scope="col">Severity</th><th scope="col">Evidence</th></tr></thead><tbody>${filteredExceptions.map(e=>`<tr data-exception-row="${esc(e.exception_id)}"><td><span class="mono">${esc(e.employee_id)}</span><br><span class="muted">${esc(e.area)}</span></td><td>${esc(e.code)}</td><td><span class="status ${esc(e.severity.toLowerCase())}">${esc(e.severity)}</span></td><td><button type="button" data-exception="${esc(e.exception_id)}" aria-label="Inspect ${esc(e.exception_id+" "+e.code+" for "+e.employee_id)}">Inspect →</button></td></tr>`).join("")}</tbody></table>`:'<p class="empty">No matching control flags. Clear or change the filters.</p>';
   $("exception-table").querySelectorAll("[data-exception]").forEach(b=>b.addEventListener("click",()=>renderCase(b.dataset.exception)));
   renderCase(filteredExceptions.some(e=>e.exception_id===preferred)?preferred:filteredExceptions.some(e=>e.exception_id===selectedException)?selectedException:filteredExceptions[0]?.exception_id);
 }
@@ -516,7 +568,48 @@ $("validation-stamp").innerHTML=`<span class="dot-key"></span><strong>Workbook e
 const provenance=DATA.provenance;
 [["cso-api",provenance.url],["cso-license",provenance.license_url],["cso-methodology",provenance.methodology_url]].forEach(([id,url])=>{const a=$(id);a.href=url;a.target="_blank";a.rel="noopener noreferrer"});
 $("source-hash").textContent="SNAPSHOT SHA-256: "+provenance.sha256+" · Publisher updated: "+provenance.publisher_updated.slice(0,10)+" · Retrieved: "+provenance.retrieved_utc.slice(0,10);
-renderPublic();renderSystems();renderPay();renderExceptions();renderAbsence();renderTime();renderVisa();renderRequirements();workforce();
+let closureVersion="original",reviewStep=0;
+const closedCase=DATA.review.closure;
+function renderClosure(){
+  const corrected=closureVersion==="corrected",gross=corrected?closedCase.corrected_gross_eur:closedCase.original_gross_eur,delta=corrected?closedCase.corrected_delta_eur:closedCase.original_delta_eur,qa=corrected?closedCase.after_qa:closedCase.before_qa;
+  setPressed("[data-closure-version]",closureVersion,"closureVersion");
+  $("closure-delta").textContent=money(delta);$("closure-delta").classList.toggle("danger-value",!corrected);
+  $("closure-result").textContent=corrected?"Reconciled / simulated sign-off":"Amount exception";
+  $("closure-population").textContent=`${qa.reconciled_employees} of ${qa.comparable_payroll_rows} comparable employees reconcile. Remaining absolute variance: ${money(qa.absolute_payroll_delta_eur)}.`;
+  const width=v=>v/closedCase.expected_gross_eur*400;
+  $("closure-chart").innerHTML=svgText(24,36,"Approved expectation")+`<rect class="chart-fill" x="24" y="48" width="400" height="24" rx="3"/>`+svgText(634,65,money(closedCase.expected_gross_eur),'text-anchor="end" class="label-strong"')+svgText(24,112,corrected?"Corrected scenario":"Original export")+`<rect class="chart-main" x="24" y="124" width="${width(gross)}" height="24" rx="3"/>`+svgText(634,141,money(gross),'text-anchor="end" class="label-strong"');
+  $("closure-chart").setAttribute("aria-label",`${corrected?"Corrected":"Original"} gross ${money(gross)}, approved expectation ${money(closedCase.expected_gross_eur)}, variance ${money(delta)}.`);
+}
+function renderReviewStep(){
+  setPressed("[data-review-step]",reviewStep,"reviewStep");
+  const guide=DATA.excel_guide,details=[
+    `<h3>Confirm the independent approval.</h3><p>${esc(closedCase.approval_id)} records an approved annual salary of ${money(closedCase.approved_salary_eur)}, effective ${esc(closedCase.effective_date)}. Match the employee key and payment period in the workbook's Approvals sheet.</p>`,
+    `<h3>Inspect the calculation.</h3><p>Open Reconciliation row ${guide.reconciliation_row}. Press F2 to inspect the approved expectation and difference. Lookup Lab compares exact-match methods and includes a missing employee key.</p><pre class="formula-note">Lookup Lab / B2\n${esc(guide.lookup)}\n\nReconciliation / I${guide.reconciliation_row}\n${esc(guide.expected)}\n\nReconciliation / K${guide.reconciliation_row}\n${esc(guide.delta)}</pre>`,
+    `<h3>Apply the authorised correction.</h3><p>The separate extract applies the approved salary to PAY-0018. In a workbook copy, inspect Closure Review!B7 and change the amount to see the residual variance recalculate.</p><p class="small muted">The corrected CSV and original extract are both retained with canonical SHA-256 checksums.</p>`,
+    `<h3>Recalculate and review.</h3><p>The full control pipeline and an independent salary calculation return a zero residual variance. The corrected scenario has ${closedCase.after_qa.reconciled_employees} reconciled employees and ${closedCase.after_qa.payroll_amount_exceptions} remaining amount exceptions.</p><p class="small muted">To repeat the original-sheet exercise, follow Excel Walkthrough step 4 in a disposable copy and refresh the native Payroll Pivot.</p>`
+  ];
+  $("review-step-detail").innerHTML=details[reviewStep];
+}
+document.querySelectorAll("[data-review-step]").forEach(button=>button.addEventListener("click",()=>{reviewStep=Number(button.dataset.reviewStep);closureVersion=reviewStep>=2?"corrected":"original";renderReviewStep();renderClosure()}));
+document.querySelectorAll("[data-closure-version]").forEach(button=>button.addEventListener("click",()=>{closureVersion=button.dataset.closureVersion;renderClosure()}));
+$("closure-trail").innerHTML=table([{label:"Stage",key:"stage"},{label:"Review role",key:"owner"},{label:"Reference",key:"reference"},{label:"Action / evidence",key:"action"}],closedCase.events,"Synthetic correction, verification and sign-off trail.");
+$("closure-hashes").textContent=`Canonical payroll CSV / UTF-8, LF. Original SHA-256: ${closedCase.original_payroll_sha256}. Corrected SHA-256: ${closedCase.corrected_payroll_sha256}.`;
+$("brief-absolute").textContent=money(DATA.qa.absolute_payroll_delta_eur);$("brief-net").textContent=money(DATA.qa.signed_payroll_delta_eur);
+function renderScenario(kind="proration"){
+  setPressed("[data-scenario]",kind,"scenario");
+  let content="";
+  if(kind==="proration"){
+    const rows=DATA.review.proration;
+    content=`<h3>Starter and leaver base-pay proration.</h3><p class="muted">Under the assumed calendar-day policy, base salary follows inclusive employment dates. Part-time salary uses contractual FTE once.</p><div class="scenario-bars">${rows.map(row=>`<div class="scenario-row"><span>${esc(row.scenario)}</span><div class="scenario-track"><span style="width:${row.active_days/row.month_days*100}%"></span></div><strong class="scenario-value">${money(row.prorated_base_eur)}</strong></div>`).join("")}</div><div class="table-wrap">${table([{label:"Example",key:"employee_id"},{label:"Annual salary EUR",key:"annual_salary_eur",numeric:true,format:v=>fmt(v,2)},{label:"FTE",key:"fte",numeric:true},{label:"Active days",key:"active_days",numeric:true},{label:"Month days",key:"month_days",numeric:true},{label:"Prorated base EUR",key:"prorated_base_eur",numeric:true,format:v=>fmt(v,2)}],rows,"Separate synthetic employees; October 2026. Base salary only.")}</div><p class="footnote">Excel: Proration Examples. Actual salary, allowance and final-pay policies require Payroll approval.</p>`;
+  }else if(kind==="roster"){
+    content=`<h3>Scheduled exposure follows the employee's roster.</h3><p class="muted">The assumed office closure removes scheduled hours on 26 October. Overlapping absence episodes contribute each scheduled date once. The part-time pattern is already encoded in daily roster hours.</p><div class="table-wrap">${table([{label:"Example",key:"employee_id"},{label:"Roster",key:"roster"},{label:"Before closure / h",key:"planned_hours",numeric:true},{label:"Scheduled / h",key:"scheduled_hours",numeric:true},{label:"Lost / h",key:"lost_hours",numeric:true},{label:"Rate / %",key:"rate_pct",numeric:true,format:v=>v===null?"Unknown":fmt(v,3)}],DATA.review.roster_summary,"Employment-aware October schedules; no additional FTE multiplier.")}</div><p class="footnote">Excel: Roster Days and Roster Summary. Closed-day treatment is a demonstration policy; some employees work public holidays under different arrangements.</p>`;
+  }else{
+    content=`<h3>Four calendar months, with explicit coverage checks.</h3><p class="muted">The window runs from 1 July to 31 October: 123 calendar dates per employee. Rest days have explicit zero-hour records. Tagged annual/sick-leave days are excluded from the illustrated reference-day denominator.</p><div class="table-wrap">${table([{label:"Example",key:"employee_id"},{label:"Required dates",key:"required_days",numeric:true},{label:"Reported dates",key:"reported_days",numeric:true},{label:"Excluded leave",key:"excluded_leave_days",numeric:true},{label:"Eligible days",key:"eligible_days",numeric:true},{label:"Mean hours / week",key:"average_hours",numeric:true,format:v=>v===null?"Unknown":fmt(v,2)},{label:"Review result",key:"result"}],DATA.review.calendar_summary,"Separate calendar-month illustration. Missing dates retain an unknown result.")}</div><p class="footnote">Excel: Calendar Days and Calendar Review. Additional statutory exclusions, leave-period interpretation and reference-period applicability require qualified HR/legal validation.</p>`;
+  }
+  $("scenario-detail").innerHTML=content;
+}
+document.querySelectorAll("[data-scenario]").forEach(button=>button.addEventListener("click",()=>renderScenario(button.dataset.scenario)));
+renderPublic();renderSystems();renderPay();renderExceptions();renderAbsence();renderTime();renderVisa();renderRequirements();renderClosure();renderReviewStep();renderScenario();workforce();
 </script>
 </body>
 </html>

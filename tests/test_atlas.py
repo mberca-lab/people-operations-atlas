@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from analysis import analyse, employee_key, make_sources, resolve_duplicates
 from sources import decode_cube, load_public
+from review_scenarios import absence_on_roster, calendar_time_review, make_review_pack, prorated_pay
 
 
 class AtlasTests(unittest.TestCase):
@@ -22,6 +23,7 @@ class AtlasTests(unittest.TestCase):
         cls.public, cls.provenance = load_public()
         cls.sources = make_sources()
         cls.result = analyse(cls.sources)
+        cls.review = make_review_pack(cls.sources, cls.result)
         cls.cache = load_workbook(ROOT / "outputs" / "People_Operations_Control_Workbook.xlsx", data_only=True, read_only=True)
         cls.recon_excel = {row[0]: row for row in cls.cache["Reconciliation"].iter_rows(min_row=2, values_only=True)}
 
@@ -190,8 +192,9 @@ class AtlasTests(unittest.TestCase):
         import win32com.client
         pythoncom.CoInitialize()
         excel, book = None, None
+        temporary = tempfile.TemporaryDirectory(prefix="atlas-scenario-", dir=ROOT / "outputs", ignore_cleanup_errors=True)
         try:
-            with tempfile.TemporaryDirectory(prefix="atlas-scenario-", dir=ROOT / "outputs") as folder:
+            with temporary as folder:
                 path = Path(folder) / "scenario.xlsx"
                 shutil.copyfile(ROOT / "outputs" / "People_Operations_Control_Workbook.xlsx", path)
                 excel = win32com.client.DispatchEx("Excel.Application")
@@ -212,6 +215,30 @@ class AtlasTests(unittest.TestCase):
                 parameters.Range("B4").Value = 0.02
                 parameters.Range("B6").Value = 48
                 parameters.Range("B5").Value = 90
+                proration = book.Worksheets("Proration Examples")
+                proration.Range("E2").Value2 = proration.Range("G2").Value2 + 31
+                closure = book.Worksheets("Closure Review")
+                closure.Range("B7").Value = closure.Range("B8").Value + 100
+                calendar = book.Worksheets("Calendar Days")
+                calendar.Range("D2").Value = "Unsupported"
+                excel.CalculateFullRebuild()
+                self.assertEqual(proration.Range("K2").Value, 0)
+                self.assertEqual(closure.Range("B10").Value, 100)
+                self.assertEqual(closure.Range("B11").Value, "Amount exception")
+                self.assertEqual(book.Worksheets("Calendar Review").Range("J2").Value, "Unknown")
+                self.assertEqual(dashboard.Range("B4").Value, 337)
+                payroll_row = list(self.result["payroll_clean"]["employee_id"]).index("EMP0018") + 2
+                payroll = book.Worksheets("Payroll Clean")
+                payroll.Cells(payroll_row, 3).Value = self.review["closure"]["expected_gross_eur"]
+                payroll.Cells(payroll_row, 4).Value = round(self.review["closure"]["approved_salary_eur"] * self.review["closure"]["fte"] / 12, 2)
+                closure.Range("B7").Value = closure.Range("B8").Value
+                excel.CalculateFullRebuild()
+                book.RefreshAll()
+                excel.CalculateFullRebuild()
+                self.assertEqual(dashboard.Range("B4").Value, 338)
+                self.assertEqual(dashboard.Range("B5").Value, 2)
+                self.assertEqual(closure.Range("B18").Value, 338)
+                self.assertAlmostEqual(closure.Range("B13").Value, 2250, places=2)
                 approvals = book.Worksheets("Approvals")
                 approvals.Range("B4").Value = "EMP0018"
                 approvals.Range("C4").Value = "Salary"
@@ -229,7 +256,71 @@ class AtlasTests(unittest.TestCase):
                 book.Close(SaveChanges=False)
             if excel is not None:
                 excel.Quit()
+            temporary.cleanup()
             pythoncom.CoUninitialize()
+
+    def test_proration_dates_and_contractual_fte(self):
+        values = [row["prorated_base_eur"] for row in self.review["proration"]]
+        self.assertEqual(values, [3870.97, 3096.77, 2400])
+        for hire, end in [("2026-11-01", None), ("2025-01-01", "2026-09-30")]:
+            self.assertEqual(prorated_pay(72000, 1, hire, end, "2026-10-01")["prorated_base_eur"], 0)
+        for args in [(72000, 0, "2026-10-01", None, "2026-10-01"),
+                     (72000, 1, "2026-10-10", "2026-10-01", "2026-10-01"),
+                     (float("nan"), 1, "2026-10-01", None, "2026-10-01")]:
+            with self.assertRaises(ValueError):
+                prorated_pay(*args)
+
+    def test_roster_closure_overlap_and_zero_exposure(self):
+        full, part = self.review["roster_summary"]
+        self.assertEqual((full["scheduled_hours"], full["lost_hours"]), (157.5, 22.5))
+        self.assertEqual((part["scheduled_hours"], part["lost_hours"]), (82.5, 15))
+        closed = [row for row in self.review["roster_days"] if row["date"] == "2026-10-26"]
+        self.assertTrue(all(row["scheduled_hours"] == row["lost_hours"] == 0 for row in closed))
+        empty = {**self.review["roster_inputs"][0], "weekdays": []}
+        _, summary = absence_on_roster([empty], [], [], "2026-10-01", "2026-10-31")
+        self.assertIsNone(summary[0]["rate_pct"])
+
+    def test_calendar_leave_missing_days_and_invalid_records(self):
+        first, leave, missing = self.review["calendar_summary"]
+        self.assertGreater(first["average_hours"], 48)
+        self.assertEqual((leave["eligible_days"], leave["worked_hours"]), (118, 622.5))
+        self.assertAlmostEqual(leave["average_hours"], 622.5 * 7 / 118)
+        self.assertEqual(missing["reported_days"], 122)
+        self.assertIsNone(missing["average_hours"])
+        frame = pd.DataFrame(self.review["calendar_days"])
+        with self.assertRaises(ValueError):
+            calendar_time_review(pd.concat([frame, frame.iloc[[0]]]), "2026-07-01", ["TIME-01"])
+        for hours, kind in [(float("inf"), "None"), (1, "Annual"), (0, "Unsupported")]:
+            changed = frame.copy()
+            changed.loc[0, ["worked_hours", "leave_kind"]] = [hours, kind]
+            self.assertIsNone(calendar_time_review(changed, "2026-07-01", ["TIME-01"])[0]["average_hours"])
+
+    def test_closed_case_retains_original_sources_and_controls(self):
+        case = self.review["closure"]
+        pd.testing.assert_frame_equal(self.sources["payroll_raw"], make_sources()["payroll_raw"])
+        self.assertEqual(self.result["qa"]["reconciled_employees"], 337)
+        self.assertEqual(case["corrected_delta_eur"], 0)
+        self.assertEqual(case["after_qa"]["reconciled_employees"], 338)
+        self.assertEqual(case["after_qa"]["payroll_amount_exceptions"], 2)
+        self.assertEqual(case["after_qa"]["absolute_payroll_delta_eur"], 2250)
+        self.assertNotEqual(case["original_payroll_sha256"], case["corrected_payroll_sha256"])
+
+    def test_excel_supplementary_scenario_parity(self):
+        for excel, row in zip(self.cache["Proration Examples"].iter_rows(min_row=2, values_only=True), self.review["proration"]):
+            self.assertEqual(excel[8], row["active_days"])
+            self.assertAlmostEqual(excel[10], row["prorated_base_eur"], places=2)
+        for excel, row in zip(self.cache["Roster Summary"].iter_rows(min_row=2, values_only=True), self.review["roster_summary"]):
+            self.assertEqual(excel[3:5], (row["scheduled_hours"], row["lost_hours"]))
+            self.assertAlmostEqual(excel[5] * 100, row["rate_pct"], places=3)
+        for excel, row in zip(self.cache["Calendar Review"].iter_rows(min_row=2, values_only=True), self.review["calendar_summary"]):
+            self.assertEqual(excel[3:5], (row["required_days"], row["reported_days"]))
+            if row["average_hours"] is None:
+                self.assertEqual(excel[9], "Unknown")
+            else:
+                self.assertAlmostEqual(excel[9], row["average_hours"])
+        self.assertEqual(self.cache["Closure Review"]["B10"].value, 0)
+        self.assertEqual(self.cache["Closure Review"]["B18"].value, 338)
+        self.assertEqual(self.cache["Closure Review"]["B15"].value, 2250)
 
     def test_executed_notebook_and_site_match_current_analysis(self):
         notebook = nbformat.read(ROOT / "analysis.ipynb", as_version=4)

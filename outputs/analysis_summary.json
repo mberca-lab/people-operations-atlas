@@ -80,5 +80,231 @@
     "Simulated": 9,
     "Design-only": 4,
     "Not evidenced": 2
+  },
+  "review_scenarios": {
+    "closure": {
+      "case_id": "SIM-CLOSE-001",
+      "employee_id": "EMP0018",
+      "approval_id": "APR-018",
+      "effective_date": "2026-10-01",
+      "approved_salary_eur": 65232.00000000001,
+      "fte": 1.0,
+      "allowance_eur": 120.0,
+      "variable_eur": 0.0,
+      "expected_gross_eur": 5556.0,
+      "original_gross_eur": 5153.33,
+      "corrected_gross_eur": 5556.0,
+      "original_delta_eur": -402.67,
+      "corrected_delta_eur": 0.0,
+      "before_qa": {
+        "seed": 731,
+        "as_of": "2026-10-31",
+        "fixture_people": 360,
+        "hr_raw_rows": 364,
+        "hr_unique_keys": 360,
+        "hr_exact_duplicates_removed": 3,
+        "hr_conflicting_keys": 1,
+        "hr_critical_records_excluded": 4,
+        "hr_valid_records": 355,
+        "active_headcount": 344,
+        "active_fte": 324.0,
+        "payroll_raw_rows": 353,
+        "payroll_exact_duplicates_removed": 2,
+        "payroll_conflicting_keys": 1,
+        "payroll_resolved_rows": 348,
+        "reconciled_employees": 337,
+        "payroll_amount_exceptions": 3,
+        "comparable_payroll_rows": 340,
+        "expected_comparable_eur": 1788429.38,
+        "actual_comparable_eur": 1790276.71,
+        "signed_payroll_delta_eur": 1847.33,
+        "absolute_payroll_delta_eur": 2652.67,
+        "absence_raw_rows": 87,
+        "absence_exact_duplicates_removed": 4,
+        "absence_valid_episodes": 80,
+        "absence_naive_valid_days": 297,
+        "absence_unique_days": 296,
+        "absence_overlap_days_removed": 1,
+        "absence_rate_pct": 0.975,
+        "working_time_daily_rows": 29745,
+        "time_above_screen": 7,
+        "time_incomplete": 1,
+        "visa_within_90_days": 10,
+        "visa_expired_records": 2,
+        "case_followups": 10,
+        "exceptions": 58
+      },
+      "after_qa": {
+        "seed": 731,
+        "as_of": "2026-10-31",
+        "fixture_people": 360,
+        "hr_raw_rows": 364,
+        "hr_unique_keys": 360,
+        "hr_exact_duplicates_removed": 3,
+        "hr_conflicting_keys": 1,
+        "hr_critical_records_excluded": 4,
+        "hr_valid_records": 355,
+        "active_headcount": 344,
+        "active_fte": 324.0,
+        "payroll_raw_rows": 353,
+        "payroll_exact_duplicates_removed": 2,
+        "payroll_conflicting_keys": 1,
+        "payroll_resolved_rows": 348,
+        "reconciled_employees": 338,
+        "payroll_amount_exceptions": 2,
+        "comparable_payroll_rows": 340,
+        "expected_comparable_eur": 1788429.38,
+        "actual_comparable_eur": 1790679.38,
+        "signed_payroll_delta_eur": 2250.0,
+        "absolute_payroll_delta_eur": 2250.0,
+        "absence_raw_rows": 87,
+        "absence_exact_duplicates_removed": 4,
+        "absence_valid_episodes": 80,
+        "absence_naive_valid_days": 297,
+        "absence_unique_days": 296,
+        "absence_overlap_days_removed": 1,
+        "absence_rate_pct": 0.975,
+        "working_time_daily_rows": 29745,
+        "time_above_screen": 7,
+        "time_incomplete": 1,
+        "visa_within_90_days": 10,
+        "visa_expired_records": 2,
+        "case_followups": 10,
+        "exceptions": 57
+      },
+      "original_payroll_sha256": "bb596afb0c4d89d602bd7b1baf13991bf4fe51d08607d2692d54e88e56b489d9",
+      "corrected_payroll_sha256": "5958e48b39d50fb5142e311f663f2de9e0b93dd09476e08a6865e0baa13fd268",
+      "events": [
+        {
+          "stage": "1 / Evidence",
+          "owner": "Payroll reviewer",
+          "reference": "PAY-0018 + APR-018",
+          "action": "Compare the recorded payment with the approved salary effective 1 October."
+        },
+        {
+          "stage": "2 / Finding",
+          "owner": "Compensation owner",
+          "reference": "Synthetic source comparison",
+          "action": "The payroll export retains the previous base salary. The approved increase is absent from that export."
+        },
+        {
+          "stage": "3 / Correction",
+          "owner": "Authorised payroll preparer",
+          "reference": "SIM-CORR-001",
+          "action": "Apply the approved base salary in a separate corrected extract; retain both versions."
+        },
+        {
+          "stage": "4 / Verification",
+          "owner": "Independent review role",
+          "reference": "SIM-CHECK-001",
+          "action": "Re-run the full controls and independently calculate salary / 12 x FTE plus approved components."
+        },
+        {
+          "stage": "5 / Closure",
+          "owner": "Accountable control owner",
+          "reference": "SIM-SIGNOFF-001",
+          "action": "Record a zero residual variance and simulated sign-off. Add an effective-date approval-to-payroll check."
+        }
+      ]
+    },
+    "proration": [
+      {
+        "employee_id": "JOIN-01",
+        "scenario": "Mid-month starter",
+        "annual_salary_eur": 72000,
+        "fte": 1,
+        "hire_date": "2026-10-12",
+        "end_date": null,
+        "month": "2026-10-01",
+        "active_days": 20,
+        "month_days": 31,
+        "monthly_base_eur": 6000.0,
+        "prorated_base_eur": 3870.97
+      },
+      {
+        "employee_id": "LEAVE-01",
+        "scenario": "Mid-month leaver",
+        "annual_salary_eur": 57600,
+        "fte": 1,
+        "hire_date": "2025-01-01",
+        "end_date": "2026-10-20",
+        "month": "2026-10-01",
+        "active_days": 20,
+        "month_days": 31,
+        "monthly_base_eur": 4800.0,
+        "prorated_base_eur": 3096.77
+      },
+      {
+        "employee_id": "PART-01",
+        "scenario": "Part-time full month",
+        "annual_salary_eur": 48000,
+        "fte": 0.6,
+        "hire_date": "2025-01-01",
+        "end_date": null,
+        "month": "2026-10-01",
+        "active_days": 31,
+        "month_days": 31,
+        "monthly_base_eur": 2400.0,
+        "prorated_base_eur": 2400.0
+      }
+    ],
+    "roster_summary": [
+      {
+        "employee_id": "ROSTER-01",
+        "roster": "Mon-Fri / 7.5 hours",
+        "planned_hours": 165.0,
+        "scheduled_hours": 157.5,
+        "lost_hours": 22.5,
+        "rate_pct": 14.286
+      },
+      {
+        "employee_id": "ROSTER-02",
+        "roster": "Mon-Wed / 7.5 hours",
+        "planned_hours": 90.0,
+        "scheduled_hours": 82.5,
+        "lost_hours": 15.0,
+        "rate_pct": 18.182
+      }
+    ],
+    "calendar_summary": [
+      {
+        "employee_id": "TIME-01",
+        "start_date": "2026-07-01",
+        "end_date": "2026-10-31",
+        "required_days": 123,
+        "reported_days": 123,
+        "excluded_leave_days": 0,
+        "eligible_days": 123,
+        "worked_hours": 880.0,
+        "average_hours": 50.08130081300813,
+        "result": "Above 48h / review"
+      },
+      {
+        "employee_id": "TIME-02",
+        "start_date": "2026-07-01",
+        "end_date": "2026-10-31",
+        "required_days": 123,
+        "reported_days": 123,
+        "excluded_leave_days": 5,
+        "eligible_days": 118,
+        "worked_hours": 622.5,
+        "average_hours": 36.92796610169491,
+        "result": "Below screen"
+      },
+      {
+        "employee_id": "TIME-03",
+        "start_date": "2026-07-01",
+        "end_date": "2026-10-31",
+        "required_days": 123,
+        "reported_days": 122,
+        "excluded_leave_days": 0,
+        "eligible_days": 123,
+        "worked_hours": 660.0,
+        "average_hours": null,
+        "result": "Incomplete / review"
+      }
+    ],
+    "scope": "Separate synthetic scenarios. Calendar-day base-pay proration and office closure are demonstration policies. The four-month time illustration excludes tagged annual/sick leave days; other statutory exclusions and applicability require HR/legal review.",
+    "time_source": "https://revisedacts.lawreform.ie/eli/1997/act/20/section/15/revised/en/html"
   }
 }

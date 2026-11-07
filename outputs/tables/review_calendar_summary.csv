@@ -1,0 +1,4 @@
+employee_id,start_date,end_date,required_days,reported_days,excluded_leave_days,eligible_days,worked_hours,average_hours,result
+TIME-01,2026-07-01,2026-10-31,123,123,0,123,880.0,50.08130081300813,Above 48h / review
+TIME-02,2026-07-01,2026-10-31,123,123,5,118,622.5,36.92796610169491,Below screen
+TIME-03,2026-07-01,2026-10-31,123,122,0,123,660.0,,Incomplete / review

@@ -1,0 +1,3 @@
+employee_id,roster,planned_hours,scheduled_hours,lost_hours,rate_pct
+ROSTER-01,Mon-Fri / 7.5 hours,165.0,157.5,22.5,14.286
+ROSTER-02,Mon-Wed / 7.5 hours,90.0,82.5,15.0,18.182
