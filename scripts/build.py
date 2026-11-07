@@ -15,6 +15,7 @@ import seaborn as sns
 
 from analysis import DEPARTMENTS, records, run
 from review_scenarios import make_review_pack
+from pay_lens import make_pay_lens
 from sources import ROOT
 
 
@@ -331,6 +332,7 @@ def build_site(public, provenance, sources, result, review):
         book.close()
     payload = {
         "qa": result["qa"], "provenance": provenance, "excel": excel, "review": review, "excel_guide": guide,
+        "pay_lens": make_pay_lens(),
         "public": records(public[["metric_code", "quarter", "sector_code", "value"]]),
         "public_findings": records(public_findings(public)),
         "metrics": records(public[["metric_code", "metric", "unit"]].drop_duplicates()),
@@ -352,6 +354,7 @@ def build_site(public, provenance, sources, result, review):
     (ROOT / "index.html").write_text(template.replace("__DATA__", encoded), encoding="utf-8")
     public_findings(public).to_csv(ROOT / "outputs" / "tables" / "public_findings.csv", index=False)
     (ROOT / "outputs" / "site_data.json").write_text(encoded, encoding="utf-8")
+    (ROOT / "outputs" / "pay_lens.json").write_text(json.dumps(payload["pay_lens"], indent=2, allow_nan=False), encoding="utf-8")
     print("Built offline portfolio:", ROOT / "index.html")
 
 

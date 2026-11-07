@@ -6,6 +6,10 @@ An independent, AI-assisted People Data & Operations portfolio project by Margar
 
 The atlas presents Irish workforce trends, multi-source data validation, payroll reconciliation, absence reporting, working-time review and case governance. An interactive source-system map and a 29-requirement evidence map connect the analysis to the People Data & Operations role.
 
+The opening **Gender Pay Lens** follows the same 200 fictional people from whole-workforce hourly-pay distributions into four job levels. Filled/open dots, mean/median markers, exact figures and keyboard controls make the comparison inspectable. A one-time guided transition respects global pause, reduced motion, interaction and off-screen visibility. The overall gap remains fixed when the layout changes.
+
+This is a **separate constructed cohort**, not employer data or the operations lab. Paired rates deliberately produce equal means and medians within each level; differing representation produces the overall gap. Hourly base pay excludes bonus, overtime and benefits. The lens is neither an equal-pay assessment nor a statutory gender-pay report; the illustrative women/men categories are not an exhaustive gender model. `scripts\pay_lens.py` reproduces the fixture and calculations; `outputs\pay_lens.json` contains its labelled records, summaries and limitations. The existing workbook and notebook are unchanged.
+
 The main review follows four sections: **review brief → payroll investigation → People Operations → Excel and evidence**. An annotated **Evidence Folio** brings the original payment, approved calculation and review note together; selecting a review stage highlights the corresponding evidence. The correction uses a separate extract and simulated sign-off. Navy/teal styling distinguishes analytical content from amber/red control warnings.
 
 The complete public-data charts, source-system map, reporting populations, exception register, absence/time/renewal trackers and operational scenarios remain in **Detailed analysis and methods**, collapsed initially. Existing topic links open the relevant detail automatically, including links shared directly to a section. All 29 requirements are available in the expandable evidence map; important synthetic-data and professional-experience boundaries remain visible in the main review.
@@ -26,7 +30,7 @@ For offline review, extract `Workforce_Analytics_Portfolio.zip` and open `index.
 
 | File | What to inspect |
 |---|---|
-| `index.html` | Four-section interactive portfolio, annotated payroll Evidence Folio and expandable analytical detail; desktop/mobile; light/dark; reduced motion; keyboard inspection; accessible tables; no trackers or runtime requests |
+| `index.html` | Opening Gender Pay Lens, four-section review, annotated payroll Evidence Folio and expandable analytical detail; desktop/mobile; light/dark; reduced motion; keyboard inspection; accessible tables; no trackers or runtime requests |
 | `analysis.ipynb` | Executed in-depth notebook: source audit, missingness, descriptive trends/distributions, change correlations/sensitivity, reconciliation, exceptions and limitations |
 | `outputs\People_Operations_Control_Workbook.xlsx` | Editable formulas, XLOOKUP, INDEX/MATCH, exact VLOOKUP, nested logic, validation, absence exposure, time/visa/case controls and **two genuine native Excel PivotTables** |
 | `outputs\analysis_summary.json` | Source provenance, baseline operational metrics and requirement-level counts |

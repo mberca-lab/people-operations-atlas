@@ -15,6 +15,42 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from analysis import analyse, employee_key, make_sources, resolve_duplicates
 from sources import decode_cube, load_public
 from review_scenarios import absence_on_roster, calendar_time_review, make_review_pack, prorated_pay
+from pay_lens import make_pay_lens, pay_statistics
+
+
+class PayLensTests(unittest.TestCase):
+    def test_gap_uses_men_as_reference_and_distinguishes_mean_median(self):
+        rows = [{"gender": "Women", "hourly_eur": value} for value in [10, 10, 25]]
+        rows += [{"gender": "Men", "hourly_eur": value} for value in [20, 20, 50]]
+        summary = pay_statistics(rows)
+        self.assertEqual(summary["women"]["mean"], 15)
+        self.assertEqual(summary["men"]["median"], 20)
+        self.assertEqual(summary["mean_gap_pct"], 50)
+        self.assertEqual(summary["median_gap_pct"], 50)
+        rows[-1]["hourly_eur"] = 80
+        self.assertEqual(pay_statistics(rows)["median_gap_pct"], 50)
+        self.assertEqual(pay_statistics(rows)["mean_gap_pct"], 62.5)
+
+    def test_missing_or_zero_reference_is_not_a_zero_gap(self):
+        for rows in [
+            [{"gender": "Women", "hourly_eur": 10}],
+            [{"gender": "Women", "hourly_eur": 10}, {"gender": "Men", "hourly_eur": 0}],
+            [],
+        ]:
+            self.assertIsNone(pay_statistics(rows)["mean_gap_pct"])
+            self.assertIsNone(pay_statistics(rows)["median_gap_pct"])
+
+    def test_constructed_level_composition_preserves_rows_and_overall_gap(self):
+        model = make_pay_lens()
+        self.assertEqual(model, make_pay_lens())
+        self.assertEqual(len({row["id"] for row in model["rows"]}), len(model["rows"]))
+        self.assertEqual(model["overall"], pay_statistics(model["rows"]))
+        self.assertGreater(model["overall"]["mean_gap_pct"], 20)
+        for level in model["levels"]:
+            rows = [row for row in model["rows"] if row["level"] == level["id"]]
+            self.assertEqual(level["women"]["n"] + level["men"]["n"], len(rows))
+            self.assertAlmostEqual(pay_statistics(rows)["mean_gap_pct"], 0)
+            self.assertAlmostEqual(pay_statistics(rows)["median_gap_pct"], 0)
 
 
 class AtlasTests(unittest.TestCase):
@@ -335,10 +371,10 @@ class AtlasTests(unittest.TestCase):
 
 
 if __name__ == "__main__":
-    suite = unittest.defaultTestLoader.loadTestsFromTestCase(AtlasTests)
+    suite = unittest.TestSuite(unittest.defaultTestLoader.loadTestsFromTestCase(case) for case in [AtlasTests, PayLensTests])
     result = unittest.TextTestRunner(verbosity=2).run(suite)
     report = {"tests": result.testsRun, "failures": len(result.failures), "errors": len(result.errors),
               "skipped": len(result.skipped), "successful": result.wasSuccessful(),
-              "scope": "Source decoding, seeded control fixtures, missing-time edge cases, Python/Excel parity, native Excel scenarios, genuine pivots and executed notebook."}
+              "scope": "Source decoding, seeded control fixtures, missing-time edge cases, Python/Excel parity, native Excel scenarios, genuine pivots, executed notebook and constructed gender-pay calculations."}
     (ROOT / "outputs" / "test_validation.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
     sys.exit(not result.wasSuccessful())

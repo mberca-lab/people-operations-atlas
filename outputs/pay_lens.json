@@ -1,0 +1,1289 @@
+{
+  "scope": "Separate illustrative cohort: 200 fictional people; no employer data.",
+  "pay_basis": "Hourly base pay in EUR; excludes bonus, overtime and benefits.",
+  "definition": "(Men's statistic - women's statistic) / men's statistic x 100.",
+  "construction": "Paired rates deliberately give equal means and medians within each level. Different job-level representation creates the overall gap.",
+  "limitations": "A descriptive, constructed example, not an equal-pay assessment or statutory report. Women/men are illustrative categories, not an exhaustive gender model.",
+  "rows": [
+    {
+      "id": "GP001",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 16.97
+    },
+    {
+      "id": "GP002",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 19.03
+    },
+    {
+      "id": "GP003",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 16.05
+    },
+    {
+      "id": "GP004",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 19.95
+    },
+    {
+      "id": "GP005",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 17.18
+    },
+    {
+      "id": "GP006",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 18.82
+    },
+    {
+      "id": "GP007",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 16.26
+    },
+    {
+      "id": "GP008",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 19.74
+    },
+    {
+      "id": "GP009",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 17.39
+    },
+    {
+      "id": "GP010",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 18.61
+    },
+    {
+      "id": "GP011",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 16.47
+    },
+    {
+      "id": "GP012",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 19.53
+    },
+    {
+      "id": "GP013",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 15.55
+    },
+    {
+      "id": "GP014",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 20.45
+    },
+    {
+      "id": "GP015",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 16.68
+    },
+    {
+      "id": "GP016",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 19.32
+    },
+    {
+      "id": "GP017",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 15.76
+    },
+    {
+      "id": "GP018",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 20.24
+    },
+    {
+      "id": "GP019",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 16.89
+    },
+    {
+      "id": "GP020",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 19.11
+    },
+    {
+      "id": "GP021",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 15.98
+    },
+    {
+      "id": "GP022",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 20.02
+    },
+    {
+      "id": "GP023",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 17.11
+    },
+    {
+      "id": "GP024",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 18.89
+    },
+    {
+      "id": "GP025",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 16.19
+    },
+    {
+      "id": "GP026",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 19.81
+    },
+    {
+      "id": "GP027",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 17.32
+    },
+    {
+      "id": "GP028",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 18.68
+    },
+    {
+      "id": "GP029",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 16.4
+    },
+    {
+      "id": "GP030",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 19.6
+    },
+    {
+      "id": "GP031",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 15.48
+    },
+    {
+      "id": "GP032",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 20.52
+    },
+    {
+      "id": "GP033",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 16.61
+    },
+    {
+      "id": "GP034",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 19.39
+    },
+    {
+      "id": "GP035",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 15.69
+    },
+    {
+      "id": "GP036",
+      "gender": "Women",
+      "level": "G1",
+      "hourly_eur": 20.31
+    },
+    {
+      "id": "GP037",
+      "gender": "Men",
+      "level": "G1",
+      "hourly_eur": 16.97
+    },
+    {
+      "id": "GP038",
+      "gender": "Men",
+      "level": "G1",
+      "hourly_eur": 19.03
+    },
+    {
+      "id": "GP039",
+      "gender": "Men",
+      "level": "G1",
+      "hourly_eur": 16.05
+    },
+    {
+      "id": "GP040",
+      "gender": "Men",
+      "level": "G1",
+      "hourly_eur": 19.95
+    },
+    {
+      "id": "GP041",
+      "gender": "Men",
+      "level": "G1",
+      "hourly_eur": 17.18
+    },
+    {
+      "id": "GP042",
+      "gender": "Men",
+      "level": "G1",
+      "hourly_eur": 18.82
+    },
+    {
+      "id": "GP043",
+      "gender": "Men",
+      "level": "G1",
+      "hourly_eur": 16.26
+    },
+    {
+      "id": "GP044",
+      "gender": "Men",
+      "level": "G1",
+      "hourly_eur": 19.74
+    },
+    {
+      "id": "GP045",
+      "gender": "Men",
+      "level": "G1",
+      "hourly_eur": 17.39
+    },
+    {
+      "id": "GP046",
+      "gender": "Men",
+      "level": "G1",
+      "hourly_eur": 18.61
+    },
+    {
+      "id": "GP047",
+      "gender": "Men",
+      "level": "G1",
+      "hourly_eur": 16.47
+    },
+    {
+      "id": "GP048",
+      "gender": "Men",
+      "level": "G1",
+      "hourly_eur": 19.53
+    },
+    {
+      "id": "GP049",
+      "gender": "Men",
+      "level": "G1",
+      "hourly_eur": 15.55
+    },
+    {
+      "id": "GP050",
+      "gender": "Men",
+      "level": "G1",
+      "hourly_eur": 20.45
+    },
+    {
+      "id": "GP051",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 26.39
+    },
+    {
+      "id": "GP052",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 29.61
+    },
+    {
+      "id": "GP053",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 24.96
+    },
+    {
+      "id": "GP054",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 31.04
+    },
+    {
+      "id": "GP055",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 26.72
+    },
+    {
+      "id": "GP056",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 29.28
+    },
+    {
+      "id": "GP057",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 25.29
+    },
+    {
+      "id": "GP058",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 30.71
+    },
+    {
+      "id": "GP059",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 27.05
+    },
+    {
+      "id": "GP060",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 28.95
+    },
+    {
+      "id": "GP061",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 25.62
+    },
+    {
+      "id": "GP062",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 30.38
+    },
+    {
+      "id": "GP063",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 24.19
+    },
+    {
+      "id": "GP064",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 31.81
+    },
+    {
+      "id": "GP065",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 25.95
+    },
+    {
+      "id": "GP066",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 30.05
+    },
+    {
+      "id": "GP067",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 24.52
+    },
+    {
+      "id": "GP068",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 31.48
+    },
+    {
+      "id": "GP069",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 26.28
+    },
+    {
+      "id": "GP070",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 29.72
+    },
+    {
+      "id": "GP071",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 24.85
+    },
+    {
+      "id": "GP072",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 31.15
+    },
+    {
+      "id": "GP073",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 26.61
+    },
+    {
+      "id": "GP074",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 29.39
+    },
+    {
+      "id": "GP075",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 25.18
+    },
+    {
+      "id": "GP076",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 30.82
+    },
+    {
+      "id": "GP077",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 26.94
+    },
+    {
+      "id": "GP078",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 29.06
+    },
+    {
+      "id": "GP079",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 25.51
+    },
+    {
+      "id": "GP080",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 30.49
+    },
+    {
+      "id": "GP081",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 24.08
+    },
+    {
+      "id": "GP082",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 31.92
+    },
+    {
+      "id": "GP083",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 25.84
+    },
+    {
+      "id": "GP084",
+      "gender": "Women",
+      "level": "G2",
+      "hourly_eur": 30.16
+    },
+    {
+      "id": "GP085",
+      "gender": "Men",
+      "level": "G2",
+      "hourly_eur": 26.39
+    },
+    {
+      "id": "GP086",
+      "gender": "Men",
+      "level": "G2",
+      "hourly_eur": 29.61
+    },
+    {
+      "id": "GP087",
+      "gender": "Men",
+      "level": "G2",
+      "hourly_eur": 24.96
+    },
+    {
+      "id": "GP088",
+      "gender": "Men",
+      "level": "G2",
+      "hourly_eur": 31.04
+    },
+    {
+      "id": "GP089",
+      "gender": "Men",
+      "level": "G2",
+      "hourly_eur": 26.72
+    },
+    {
+      "id": "GP090",
+      "gender": "Men",
+      "level": "G2",
+      "hourly_eur": 29.28
+    },
+    {
+      "id": "GP091",
+      "gender": "Men",
+      "level": "G2",
+      "hourly_eur": 25.29
+    },
+    {
+      "id": "GP092",
+      "gender": "Men",
+      "level": "G2",
+      "hourly_eur": 30.71
+    },
+    {
+      "id": "GP093",
+      "gender": "Men",
+      "level": "G2",
+      "hourly_eur": 27.05
+    },
+    {
+      "id": "GP094",
+      "gender": "Men",
+      "level": "G2",
+      "hourly_eur": 28.95
+    },
+    {
+      "id": "GP095",
+      "gender": "Men",
+      "level": "G2",
+      "hourly_eur": 25.62
+    },
+    {
+      "id": "GP096",
+      "gender": "Men",
+      "level": "G2",
+      "hourly_eur": 30.38
+    },
+    {
+      "id": "GP097",
+      "gender": "Men",
+      "level": "G2",
+      "hourly_eur": 24.19
+    },
+    {
+      "id": "GP098",
+      "gender": "Men",
+      "level": "G2",
+      "hourly_eur": 31.81
+    },
+    {
+      "id": "GP099",
+      "gender": "Men",
+      "level": "G2",
+      "hourly_eur": 25.95
+    },
+    {
+      "id": "GP100",
+      "gender": "Men",
+      "level": "G2",
+      "hourly_eur": 30.05
+    },
+    {
+      "id": "GP101",
+      "gender": "Men",
+      "level": "G2",
+      "hourly_eur": 24.52
+    },
+    {
+      "id": "GP102",
+      "gender": "Men",
+      "level": "G2",
+      "hourly_eur": 31.48
+    },
+    {
+      "id": "GP103",
+      "gender": "Men",
+      "level": "G2",
+      "hourly_eur": 26.28
+    },
+    {
+      "id": "GP104",
+      "gender": "Men",
+      "level": "G2",
+      "hourly_eur": 29.72
+    },
+    {
+      "id": "GP105",
+      "gender": "Men",
+      "level": "G2",
+      "hourly_eur": 24.85
+    },
+    {
+      "id": "GP106",
+      "gender": "Men",
+      "level": "G2",
+      "hourly_eur": 31.15
+    },
+    {
+      "id": "GP107",
+      "gender": "Men",
+      "level": "G2",
+      "hourly_eur": 26.61
+    },
+    {
+      "id": "GP108",
+      "gender": "Men",
+      "level": "G2",
+      "hourly_eur": 29.39
+    },
+    {
+      "id": "GP109",
+      "gender": "Men",
+      "level": "G2",
+      "hourly_eur": 25.18
+    },
+    {
+      "id": "GP110",
+      "gender": "Men",
+      "level": "G2",
+      "hourly_eur": 30.82
+    },
+    {
+      "id": "GP111",
+      "gender": "Women",
+      "level": "G3",
+      "hourly_eur": 39.58
+    },
+    {
+      "id": "GP112",
+      "gender": "Women",
+      "level": "G3",
+      "hourly_eur": 44.42
+    },
+    {
+      "id": "GP113",
+      "gender": "Women",
+      "level": "G3",
+      "hourly_eur": 37.44
+    },
+    {
+      "id": "GP114",
+      "gender": "Women",
+      "level": "G3",
+      "hourly_eur": 46.56
+    },
+    {
+      "id": "GP115",
+      "gender": "Women",
+      "level": "G3",
+      "hourly_eur": 40.08
+    },
+    {
+      "id": "GP116",
+      "gender": "Women",
+      "level": "G3",
+      "hourly_eur": 43.92
+    },
+    {
+      "id": "GP117",
+      "gender": "Women",
+      "level": "G3",
+      "hourly_eur": 37.93
+    },
+    {
+      "id": "GP118",
+      "gender": "Women",
+      "level": "G3",
+      "hourly_eur": 46.07
+    },
+    {
+      "id": "GP119",
+      "gender": "Women",
+      "level": "G3",
+      "hourly_eur": 40.58
+    },
+    {
+      "id": "GP120",
+      "gender": "Women",
+      "level": "G3",
+      "hourly_eur": 43.42
+    },
+    {
+      "id": "GP121",
+      "gender": "Women",
+      "level": "G3",
+      "hourly_eur": 38.43
+    },
+    {
+      "id": "GP122",
+      "gender": "Women",
+      "level": "G3",
+      "hourly_eur": 45.57
+    },
+    {
+      "id": "GP123",
+      "gender": "Women",
+      "level": "G3",
+      "hourly_eur": 36.29
+    },
+    {
+      "id": "GP124",
+      "gender": "Women",
+      "level": "G3",
+      "hourly_eur": 47.71
+    },
+    {
+      "id": "GP125",
+      "gender": "Women",
+      "level": "G3",
+      "hourly_eur": 38.93
+    },
+    {
+      "id": "GP126",
+      "gender": "Women",
+      "level": "G3",
+      "hourly_eur": 45.07
+    },
+    {
+      "id": "GP127",
+      "gender": "Women",
+      "level": "G3",
+      "hourly_eur": 36.78
+    },
+    {
+      "id": "GP128",
+      "gender": "Women",
+      "level": "G3",
+      "hourly_eur": 47.22
+    },
+    {
+      "id": "GP129",
+      "gender": "Women",
+      "level": "G3",
+      "hourly_eur": 39.42
+    },
+    {
+      "id": "GP130",
+      "gender": "Women",
+      "level": "G3",
+      "hourly_eur": 44.58
+    },
+    {
+      "id": "GP131",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 39.58
+    },
+    {
+      "id": "GP132",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 44.42
+    },
+    {
+      "id": "GP133",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 37.44
+    },
+    {
+      "id": "GP134",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 46.56
+    },
+    {
+      "id": "GP135",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 40.08
+    },
+    {
+      "id": "GP136",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 43.92
+    },
+    {
+      "id": "GP137",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 37.93
+    },
+    {
+      "id": "GP138",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 46.07
+    },
+    {
+      "id": "GP139",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 40.58
+    },
+    {
+      "id": "GP140",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 43.42
+    },
+    {
+      "id": "GP141",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 38.43
+    },
+    {
+      "id": "GP142",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 45.57
+    },
+    {
+      "id": "GP143",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 36.29
+    },
+    {
+      "id": "GP144",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 47.71
+    },
+    {
+      "id": "GP145",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 38.93
+    },
+    {
+      "id": "GP146",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 45.07
+    },
+    {
+      "id": "GP147",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 36.78
+    },
+    {
+      "id": "GP148",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 47.22
+    },
+    {
+      "id": "GP149",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 39.42
+    },
+    {
+      "id": "GP150",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 44.58
+    },
+    {
+      "id": "GP151",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 37.27
+    },
+    {
+      "id": "GP152",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 46.73
+    },
+    {
+      "id": "GP153",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 39.92
+    },
+    {
+      "id": "GP154",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 44.08
+    },
+    {
+      "id": "GP155",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 37.77
+    },
+    {
+      "id": "GP156",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 46.23
+    },
+    {
+      "id": "GP157",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 40.41
+    },
+    {
+      "id": "GP158",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 43.59
+    },
+    {
+      "id": "GP159",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 38.27
+    },
+    {
+      "id": "GP160",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 45.73
+    },
+    {
+      "id": "GP161",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 36.12
+    },
+    {
+      "id": "GP162",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 47.88
+    },
+    {
+      "id": "GP163",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 38.76
+    },
+    {
+      "id": "GP164",
+      "gender": "Men",
+      "level": "G3",
+      "hourly_eur": 45.24
+    },
+    {
+      "id": "GP165",
+      "gender": "Women",
+      "level": "G4",
+      "hourly_eur": 58.44
+    },
+    {
+      "id": "GP166",
+      "gender": "Women",
+      "level": "G4",
+      "hourly_eur": 65.56
+    },
+    {
+      "id": "GP167",
+      "gender": "Women",
+      "level": "G4",
+      "hourly_eur": 55.27
+    },
+    {
+      "id": "GP168",
+      "gender": "Women",
+      "level": "G4",
+      "hourly_eur": 68.73
+    },
+    {
+      "id": "GP169",
+      "gender": "Women",
+      "level": "G4",
+      "hourly_eur": 59.17
+    },
+    {
+      "id": "GP170",
+      "gender": "Women",
+      "level": "G4",
+      "hourly_eur": 64.83
+    },
+    {
+      "id": "GP171",
+      "gender": "Women",
+      "level": "G4",
+      "hourly_eur": 56.0
+    },
+    {
+      "id": "GP172",
+      "gender": "Women",
+      "level": "G4",
+      "hourly_eur": 68.0
+    },
+    {
+      "id": "GP173",
+      "gender": "Women",
+      "level": "G4",
+      "hourly_eur": 59.9
+    },
+    {
+      "id": "GP174",
+      "gender": "Women",
+      "level": "G4",
+      "hourly_eur": 64.1
+    },
+    {
+      "id": "GP175",
+      "gender": "Men",
+      "level": "G4",
+      "hourly_eur": 58.44
+    },
+    {
+      "id": "GP176",
+      "gender": "Men",
+      "level": "G4",
+      "hourly_eur": 65.56
+    },
+    {
+      "id": "GP177",
+      "gender": "Men",
+      "level": "G4",
+      "hourly_eur": 55.27
+    },
+    {
+      "id": "GP178",
+      "gender": "Men",
+      "level": "G4",
+      "hourly_eur": 68.73
+    },
+    {
+      "id": "GP179",
+      "gender": "Men",
+      "level": "G4",
+      "hourly_eur": 59.17
+    },
+    {
+      "id": "GP180",
+      "gender": "Men",
+      "level": "G4",
+      "hourly_eur": 64.83
+    },
+    {
+      "id": "GP181",
+      "gender": "Men",
+      "level": "G4",
+      "hourly_eur": 56.0
+    },
+    {
+      "id": "GP182",
+      "gender": "Men",
+      "level": "G4",
+      "hourly_eur": 68.0
+    },
+    {
+      "id": "GP183",
+      "gender": "Men",
+      "level": "G4",
+      "hourly_eur": 59.9
+    },
+    {
+      "id": "GP184",
+      "gender": "Men",
+      "level": "G4",
+      "hourly_eur": 64.1
+    },
+    {
+      "id": "GP185",
+      "gender": "Men",
+      "level": "G4",
+      "hourly_eur": 56.73
+    },
+    {
+      "id": "GP186",
+      "gender": "Men",
+      "level": "G4",
+      "hourly_eur": 67.27
+    },
+    {
+      "id": "GP187",
+      "gender": "Men",
+      "level": "G4",
+      "hourly_eur": 53.56
+    },
+    {
+      "id": "GP188",
+      "gender": "Men",
+      "level": "G4",
+      "hourly_eur": 70.44
+    },
+    {
+      "id": "GP189",
+      "gender": "Men",
+      "level": "G4",
+      "hourly_eur": 57.46
+    },
+    {
+      "id": "GP190",
+      "gender": "Men",
+      "level": "G4",
+      "hourly_eur": 66.54
+    },
+    {
+      "id": "GP191",
+      "gender": "Men",
+      "level": "G4",
+      "hourly_eur": 54.29
+    },
+    {
+      "id": "GP192",
+      "gender": "Men",
+      "level": "G4",
+      "hourly_eur": 69.71
+    },
+    {
+      "id": "GP193",
+      "gender": "Men",
+      "level": "G4",
+      "hourly_eur": 58.19
+    },
+    {
+      "id": "GP194",
+      "gender": "Men",
+      "level": "G4",
+      "hourly_eur": 65.81
+    },
+    {
+      "id": "GP195",
+      "gender": "Men",
+      "level": "G4",
+      "hourly_eur": 55.02
+    },
+    {
+      "id": "GP196",
+      "gender": "Men",
+      "level": "G4",
+      "hourly_eur": 68.98
+    },
+    {
+      "id": "GP197",
+      "gender": "Men",
+      "level": "G4",
+      "hourly_eur": 58.92
+    },
+    {
+      "id": "GP198",
+      "gender": "Men",
+      "level": "G4",
+      "hourly_eur": 65.08
+    },
+    {
+      "id": "GP199",
+      "gender": "Men",
+      "level": "G4",
+      "hourly_eur": 55.76
+    },
+    {
+      "id": "GP200",
+      "gender": "Men",
+      "level": "G4",
+      "hourly_eur": 68.24
+    }
+  ],
+  "levels": [
+    {
+      "id": "G1",
+      "title": "Support",
+      "women": {
+        "n": 36,
+        "mean": 18.0,
+        "median": 18.0
+      },
+      "men": {
+        "n": 14,
+        "mean": 18.0,
+        "median": 18.0
+      },
+      "mean_gap_pct": 0.0,
+      "median_gap_pct": 0.0
+    },
+    {
+      "id": "G2",
+      "title": "Specialist",
+      "women": {
+        "n": 34,
+        "mean": 28.0,
+        "median": 28.0
+      },
+      "men": {
+        "n": 26,
+        "mean": 28.0,
+        "median": 28.0
+      },
+      "mean_gap_pct": 0.0,
+      "median_gap_pct": 0.0
+    },
+    {
+      "id": "G3",
+      "title": "Manager",
+      "women": {
+        "n": 20,
+        "mean": 42.0,
+        "median": 42.0
+      },
+      "men": {
+        "n": 34,
+        "mean": 42.0,
+        "median": 42.0
+      },
+      "mean_gap_pct": 0.0,
+      "median_gap_pct": 0.0
+    },
+    {
+      "id": "G4",
+      "title": "Leadership",
+      "women": {
+        "n": 10,
+        "mean": 62.0,
+        "median": 62.0
+      },
+      "men": {
+        "n": 26,
+        "mean": 62.0,
+        "median": 62.0
+      },
+      "mean_gap_pct": 0.0,
+      "median_gap_pct": 0.0
+    }
+  ],
+  "overall": {
+    "women": {
+      "n": 100,
+      "mean": 30.6,
+      "median": 26.665
+    },
+    "men": {
+      "n": 100,
+      "mean": 40.2,
+      "median": 38.845
+    },
+    "mean_gap_pct": 23.880597,
+    "median_gap_pct": 31.355387
+  }
+}
