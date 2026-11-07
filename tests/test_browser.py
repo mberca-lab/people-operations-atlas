@@ -57,6 +57,15 @@ def main():
         page.wait_for_function("document.getElementById('lens-chart').dataset.settled==='true'")
         check(page.locator("#top #pay-lens").is_visible() and page.locator("#lens-chart").bounding_box()["y"] < 960, "Gender pay lens is the opening visual")
         check(page.locator(".lens-dot").count() == 200 and page.locator(".lens-dot.women").count() == 100, "Each opening dot represents one person in the separate fictional cohort")
+        check(page.locator(".lens-legend svg").count() == 0 and page.locator(".lens-dot.men").first.evaluate("dot=>getComputedStyle(dot).fill===getComputedStyle(document.querySelector('.lens-men-key')).color && getComputedStyle(dot).stroke==='none'"), "Pay groups use equally filled marks with direct labels, without person icons")
+        check("Mean €30.60" in page.locator("#lens-labels").text_content() and "Mean €40.20" in page.locator("#lens-labels").text_content(), "Overall distributions expose their exact mean hourly rates directly")
+        page.locator("#workforce").scroll_into_view_if_needed()
+        check(page.locator("#workforce").bounding_box()["width"] >= 450 and page.locator("#workforce").evaluate("""canvas=>{
+            const pixels=canvas.getContext('2d').getImageData(0,0,canvas.width,canvas.height).data;
+            let solid=0;for(let i=0;i<pixels.length;i+=4)if(pixels[i+3]>=240&&pixels[i+1]-pixels[i]>60&&pixels[i+2]-pixels[i]>60)solid++;
+            return solid>2000;
+        }"""), "Workforce preview paints large, opaque high-contrast marks instead of faint dots")
+        page.screenshot(path=str(SHOTS / "workforce-preview-desktop-light.png"))
         check("Separate illustrative cohort" in page.locator(".lens-scope").inner_text(), "Gender-pay cohort boundary is explicit in the opening view")
         pay_lens = json.loads((ROOT / "outputs" / "pay_lens.json").read_text())
         headline = f'{pay_lens["overall"]["mean_gap_pct"]:.1f}%'
@@ -67,11 +76,13 @@ def main():
         check(page.locator("#lens-chart").get_attribute("data-mode") == "levels" and original_dot != page.locator(".lens-dot").first.get_attribute("transform"), "Keyboard selection rearranges the same employees into job levels")
         check(page.locator(".lens-dot").count() == 200 and page.locator("#lens-mean-gap").inner_text() == headline, "Job-level view preserves people and the overall gap")
         check(page.locator("#lens-labels").text_content().count("0.0% mean gap") == 4, "Constructed within-level gaps remain distinct from the overall statistic")
+        check(page.locator("#lens-chart").evaluate("svg=>[...svg.querySelectorAll('.lens-median')].every(marker=>{const box=marker.getBBox();return box.y+box.height<svg.viewBox.baseVal.height-26})"), "Median markers remain separate from the pay-axis tick labels")
         page.locator("#lens-method > summary").click()
         check(page.locator("#lens-table tbody tr").count() == 5 and "€30.60" in page.locator("#lens-table").inner_text(), "Accessible pay table exposes exact overall and level summaries")
         page.locator("#lens-method > summary").click()
         page.locator('[data-lens-mode="overall"]').click()
         check(page.locator("#lens-chart").get_attribute("data-settled") == "true", "Reduced-motion preference renders pay transitions immediately")
+        page.evaluate("window.scrollTo({top:0,behavior:'instant'})")
         page.get_by_role("button", name="03 / Controlled", exact=True).click()
         check(page.locator('[data-phase="2"]').get_attribute("aria-pressed") == "true", "Workforce identity/control visual switches")
         check(page.locator("#motion").inner_text() == "Resume motion", "Reduced-motion setting pauses animation")
@@ -201,6 +212,8 @@ def main():
             check(page.locator("#lens-chart").bounding_box()["y"] < 844, "Opening gender-pay graph is visible in the first mobile screen / " + theme)
             page.screenshot(path=str(SHOTS / f"hero-mobile-{theme}.png"))
             page.screenshot(path=str(SHOTS / f"portfolio-concise-mobile-{theme}.png"), full_page=True)
+            check(page.locator(".lens-dot").first.evaluate("dot=>Number(dot.getAttribute('r'))*dot.ownerSVGElement.getBoundingClientRect().width/dot.ownerSVGElement.viewBox.baseVal.width>=1.8") and page.locator("#workforce").bounding_box()["width"] >= 250, "Pay and workforce marks retain a readable mobile scale / " + theme)
+            page.locator("#workforce-preview .hero-art").screenshot(path=str(SHOTS / f"workforce-preview-mobile-{theme}.png"))
             page.locator('[data-lens-mode="levels"]').click()
             check(page.locator(".lens-dot").count() == 200 and page.evaluate("document.documentElement.scrollWidth<=innerWidth"), "Mobile level breakdown preserves records without overflow / " + theme)
             page.locator("#pay-lens").screenshot(path=str(SHOTS / f"gender-pay-levels-mobile-{theme}.png"))
