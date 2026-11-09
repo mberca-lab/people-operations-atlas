@@ -2,7 +2,7 @@
 
 An independent, AI-assisted **sample People Analytics & Operations portfolio** by Margarita Bermejo Cano. **Real data:** official Irish sector statistics. **Synthetic data:** fictional employee, pay and HR-control examples. No employer records or business-impact claims; not affiliated with Waystone.
 
-**[Explore the live portfolio](https://mberca.github.io/people-operations-atlas/)** · [Download the complete portfolio package](https://github.com/mberca/people-operations-atlas/releases/latest/download/Workforce_Analytics_Portfolio.zip)
+**[Explore the live portfolio](https://mbc81.github.io/people-operations-atlas/)** · [Download the complete portfolio package](https://github.com/Mbc81/people-operations-atlas/releases/latest/download/Workforce_Analytics_Portfolio.zip)
 
 The atlas presents Irish workforce trends, multi-source data validation, payroll reconciliation, absence reporting, working-time review and case governance. An interactive source-system map and a 29-requirement evidence map connect the analysis to the People Data & Operations role.
 
